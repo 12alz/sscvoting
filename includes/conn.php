@@ -9,7 +9,7 @@ $password = "1Votesystem";
 //create connection
 	$conn = new mysqli($host, $port, $username, $password, $dbname);
 
-	if (!$conn) {
+	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
 	}
 	echo "Connected";
