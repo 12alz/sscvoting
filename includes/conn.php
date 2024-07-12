@@ -1,4 +1,5 @@
 <?php
+echo "hello world";
 // database credential
 $host = "localhost";
 $dbname = "u510162695_votesystem";
