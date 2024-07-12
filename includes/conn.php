@@ -1,10 +1,9 @@
 <?php
-echo "hello world";
 // database credential
 $host = "127.0.0.1:3306";
 $dbname = "u510162695_votesystem";
 $username = "u510162695_votesystem";
-$password = "1Votesystem";
+$password = "1Votesystem123";
 
 //create connection
 	$conn = new mysqli($host, $username, $password, $dbname);
