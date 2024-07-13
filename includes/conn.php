@@ -13,4 +13,4 @@ $password = "1Votesystem";
 		echo "Connection Failed";
 	}
 	echo "Connection Success";
-?>
+?>`
