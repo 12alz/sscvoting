@@ -112,7 +112,7 @@
                 <center>
                     <div class="box-header with-border">
                         <a href="index.php" class="btn btn-secondary"><i class="fa fa-user"></i> Admin</a>
-                        <a href="https://mccsscvoting.com" class="btn btn-secondary"><i class="fa fa-users"></i> Student Voters</a>
+                        <a href="https://mccsscvoting.com/" class="btn btn-secondary"><i class="fa fa-users"></i> Student Voters</a>
                     </div>
                 </center>
             </form>
