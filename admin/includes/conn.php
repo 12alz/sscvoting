@@ -14,4 +14,3 @@ $password = "1Votesystem";
 	}
 	echo "Connection Success";
 ?>
-// dalawa pala yan? oo lods Hahahaha g lods pakita ko sayu 
