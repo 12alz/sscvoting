@@ -1,6 +1,5 @@
 <div class="modal fade" id="addnew">
   <br><br><br><br><br><br><br><br>
-
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,7 +8,7 @@
         </center>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="sign_up.php" enctype="multipart/form-data">
+        <form class="form-horizontal" id="registrationForm" enctype="multipart/form-data">
           <div class="form-group">
             <label for="voters_id" class="col-sm-3 control-label">Student id</label>
             <div class="col-sm-9">
@@ -17,21 +16,21 @@
             </div>
           </div>
           <script>
-    document.getElementById('voters_id').addEventListener('input', function(e) {
-        var value = e.target.value.replace(/\D/g, ''); // Remove all non-numeric characters
-        if (value.length > 8) {
-            value = value.slice(0, 8); // Limit to 8 digits
-        }
-        var formattedValue = '';
-        for (var i = 0; i < value.length; i += 4) {
-            if (i > 0) {
-                formattedValue += '-';
-            }
-            formattedValue += value.substring(i, i + 4);
-        }
-        e.target.value = formattedValue;
-    });
-</script>
+            document.getElementById('voters_id').addEventListener('input', function(e) {
+                var value = e.target.value.replace(/\D/g, ''); // Remove all non-numeric characters
+                if (value.length > 8) {
+                    value = value.slice(0, 8); // Limit to 8 digits
+                }
+                var formattedValue = '';
+                for (var i = 0; i < value.length; i += 4) {
+                    if (i > 0) {
+                        formattedValue += '-';
+                    }
+                    formattedValue += value.substring(i, i + 4);
+                }
+                e.target.value = formattedValue;
+            });
+          </script>
           <div class="form-group">
             <label for="firstname" class="col-sm-3 control-label">Firstname</label>
             <div class="col-sm-9">
@@ -74,7 +73,7 @@
           </center>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary btn-block btn-flat" name="add"><i class="fa fa-sign-in"></i> Register</button>
+        <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-sign-in"></i> Register</button>
         <br>
       </div>
       </form>
@@ -136,3 +135,38 @@
     padding-top: 10px;
   }
 </style>
+
+<script>
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var formData = new FormData(this);
+
+    fetch('sign_up.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Registration Successful',
+                text: 'You have been registered successfully!'
+            });
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Registration Failed',
+                text: 'There was an error registering your account. Please try again.'
+            });
+        }
+    })
+    .catch(error => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'There was an error processing your request. Please try again.'
+        });
+    });
+});
+</script>
