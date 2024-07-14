@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_SESSION['admin'])){
+    if (isset($_SESSION['admin'])) {
         header('location:home.php');
     }
 ?>
@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Include SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <style>
     body {
@@ -21,16 +25,16 @@
         margin: 0;
         font-family: 'Arial', sans-serif;
     }
-     .login-box {
-            background: white;	
-            padding: 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 320px; /* Adjusted width */
-            max-width: 100%; /* Ensure it doesn't exceed the viewport width */
-            margin-left: auto; /* Center horizontally */
-            margin-right: auto; /* Center horizontally */
-        }
+    .login-box {
+        background: white;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 320px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .login-logo h2 {
         color: #34495e;
         font-weight: bold;
@@ -39,7 +43,6 @@
     }
     .login-box-body {
         margin-top: 20px;
-		
     }
     .login-box-msg {
         margin: 0;
@@ -54,7 +57,7 @@
         border-radius: 5px;
     }
     .btn-primary {
-        background-color: #blue;
+        background-color: #007bff;
         border: none;
         transition: background-color 0.3s;
     }
@@ -105,28 +108,48 @@
                 <div>
                     <button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i class="fa fa-sign-in-alt"></i> Sign In</button>
                 </div>
-                
                 <br>
                 <center>
                     <div class="box-header with-border">
                         <a href="index.php" class="btn btn-secondary"><i class="fa fa-user"></i> Admin</a>
-                        <a href="http://mccsscvoting.com/" class="btn btn-secondary"><i class="fa fa-users"></i> Student Voters</a>
+                        <a href="../inde" class="btn btn-secondary"><i class="fa fa-users"></i> Student Voters</a>
                     </div>
                 </center>
             </form>
         </div>
+
         <?php
-            if(isset($_SESSION['error'])){
+            if (isset($_SESSION['error'])) {
                 echo "
-                    <div class='callout callout-danger'>
-                        <p>".$_SESSION['error']."</p> 
-                    </div>
+                    <script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Login Failed',
+                            text: '{$_SESSION['error']}',
+                        });
+                    </script>
                 ";
                 unset($_SESSION['error']);
             }
+
+            if (isset($_SESSION['success'])) {
+                echo "
+                    <script>
+                        Swal.fire({
+                        timer: '1500', 
+                            icon: 'success',
+                            title: 'Login Successful',
+                            text: '{$_SESSION['success']}',
+                        }).then(function() {
+                            window.location = 'home.php';
+                        });
+                    </script>
+                ";
+                unset($_SESSION['success']);
+            }
         ?>
     </div>
-    
-    <?php include 'includes/scripts.php' ?>
+
+    <?php include 'includes/scripts.php'; ?>
 </body>
 </html>
