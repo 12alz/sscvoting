@@ -70,7 +70,7 @@
             </div>
           </div>
           <center>
-            <div class="g-recaptcha" data-sitekey="6LdRBqsfAAAAAMkeA1SlWRFlUrz142pCiDwL7Rw_"></div>
+            <div class="g-recaptcha" data-sitekey="6LcRzQ8qAAAAAFRx7HFGBPVW6Zgq9F0TcQh63Jwt"></div>
           </center>
       </div>
       <div class="modal-footer">
