@@ -1,19 +1,22 @@
 <?php
-    session_start();
-    if(isset($_SESSION['admin'])){
-        header('location: admin/home.php');
-        exit(); // Ensure no further execution after redirection
-    }
+session_start();
+if(isset($_SESSION['admin'])){
+    header('location: admin/home.php');
+    exit(); // Ensure no further execution after redirection
+}
 
-    if(isset($_SESSION['voter'])){
-        header('location: home.php');
-        exit(); // Ensure no further execution after redirection
-    }
+if(isset($_SESSION['voter'])){
+    header('location: home.php');
+    exit(); // Ensure no further execution after redirection
+}
 ?>
 
 <?php include 'includes/header.php'; ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport meta tag for responsiveness -->
+
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <style>
@@ -29,13 +32,14 @@
     }
     .login-box {
         background: white;
-        padding: 20px;
+        padding: 30px;
         border-radius: 30px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         width: 320px; /* Adjusted width */
         max-width: 100%; /* Ensure it doesn't exceed the viewport width */
         margin-left: auto; /* Center horizontally */
         margin-right: auto; /* Center horizontally */
+        text-align: center
     }
     .login-logo {
         text-align: center;
@@ -62,7 +66,7 @@
         border-radius: 5px;
     }
     .btn-primary {
-        background-color: #blue;
+        background-color: #blue; /* There was a mistake here, it should be '#blue' */
         border: none;
         transition: background-color 0.3s;
     }
@@ -109,21 +113,21 @@
                 </div>
 
                 <script>
-                function formatStudentID(input) {
-                    // Remove any non-numeric characters
-                    var formatted = input.value.replace(/\D/g, '');
+                    function formatStudentID(input) {
+                        // Remove any non-numeric characters
+                        var formatted = input.value.replace(/\D/g, '');
 
-                    // Limit to 8 numeric characters total
-                    formatted = formatted.slice(0, 8);
+                        // Limit to 8 numeric characters total
+                        formatted = formatted.slice(0, 8);
 
-                    // Insert a dash after the first 4 characters if there are more than 4 characters
-                    if (formatted.length > 4) {
-                        formatted = formatted.slice(0, 4) + '-' + formatted.slice(4);
+                        // Insert a dash after the first 4 characters if there are more than 4 characters
+                        if (formatted.length > 4) {
+                            formatted = formatted.slice(0, 4) + '-' + formatted.slice(4);
+                        }
+
+                        // Update the input value
+                        input.value = formatted;
                     }
-
-                    // Update the input value
-                    input.value = formatted;
-                }
                 </script>
 
                 <div class="form-group has-feedback">
@@ -143,36 +147,48 @@
                 </div>
             </form>
         </div>
-
-        <?php
-            if(isset($_SESSION['error'])){
-                echo "
-                    <div class='alert alert-danger alert-dismissible'>
-                        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                        <h4><i class='icon fa fa-warning'></i> Error!</h4>
-                        ".$_SESSION['error']."
-                    </div>
-                ";
-                unset($_SESSION['error']);
-            }
-            if(isset($_SESSION['success'])){
-                echo "
-                    <div class='alert alert-success alert-dismissible'>
-                        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                        <h4><i class='icon fa fa-check'></i> Success!</h4>
-                        ".$_SESSION['success']."
-                    </div>
-                ";
-                unset($_SESSION['success']);
-            }
-        ?>
     </div>
-    
-    <?php include 'register.php' ?>
-    <?php include 'includes/scripts.php' ?>
-    
+
+    <?php include 'register.php'; ?>
+    <?php include 'includes/scripts.php'; ?>
+
     <footer>
         <p><b>NOTE:</b> Vote Wisely</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        <?php
+        // Check for error messages set by login.php
+        if(isset($_SESSION['error'])){
+            echo "
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: '".$_SESSION['error']."',
+                    onClose: () => {
+                        window.location.href = 'index.php';
+                    }
+                });
+            ";
+            unset($_SESSION['error']);
+        }
+
+        // Check for success messages if needed
+        if(isset($_SESSION['success'])){
+            echo "
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: '".$_SESSION['success']."',
+                    onClose: () => {
+                        window.location.href = 'index.php';
+                    }
+                });
+            ";
+            unset($_SESSION['success']);
+        }
+        ?>
+    </script>
 </body>
 </html>
