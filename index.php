@@ -97,7 +97,7 @@
 <body>
     <div class="login-box">
         <div class="login-logo">
-            <h2>Supreme Student Council Voting System</h2>
+            <h2>Supreme Student Council Voting System V2</h2>
         </div>
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
