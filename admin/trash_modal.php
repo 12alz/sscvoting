@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="trash_delete.php">
-                <input type="hidden" class="id" name="id">
+                <input type="text" class="id" name="id">
                 <div class="text-center">
                     <p>Delete Voter</p>
                     <h2 class="bold fullname"></h2>
