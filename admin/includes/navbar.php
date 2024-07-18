@@ -25,7 +25,7 @@
 
               <p>
                 <?php echo $user['firstname'].' '.$user['lastname']; ?>
-                <small>Member since <?php echo date('M. Y', strtotime($user['created_on'])); ?></small>
+                <small>Member since July 2024</small>
               </p>
             </li>
             <li class="user-footer">
