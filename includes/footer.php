@@ -3,7 +3,7 @@
       <div class="pull-right hidden-xs">
         <b>All rights reserved</b>
       </div>
-      <strong>Copyright &copy; 2021 BSIT-Student</strong>
+      <strong>Copyright &copy; 2024 BSIT-Student</strong>
     </div>
     <!-- /.container -->
 </footer>
