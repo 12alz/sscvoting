@@ -23,7 +23,10 @@
             <li class="user-header">
               <img src="<?php echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '../images/profile.jpg'; ?>" class="img-circle" alt="User Image">
 
-              
+              <p>
+                <?php echo $user['firstname'].' '.$user['lastname']; ?>
+                <small>Member since <?php echo date('M. Y', strtotime($user['created_on'])); ?></small>
+              </p>
             </li>
             <li class="user-footer">
               <div class="pull-left">
