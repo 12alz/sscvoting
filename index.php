@@ -21,7 +21,7 @@ if(isset($_SESSION['voter'])){
 
 <style>
     body {
-        background: url('images/mcc.jpg') no-repeat center center fixed;
+        background: url('../images/mcc.jpg') no-repeat center center fixed;
         background-size: cover;
         display: flex;
         justify-content: center;
@@ -40,23 +40,20 @@ if(isset($_SESSION['voter'])){
         margin-left: auto;
         margin-right: auto;
     }
-    .login-logo {
+    .login-logo h2 {
+        color: #34495e;
+        font-weight: bold;
         text-align: center;
         margin-bottom: 20px;
-    }
-    .login-logo h2 {
-        color: #333;
-        font-weight: bold;
-        font-size: 24px;
     }
     .login-box-body {
         margin-top: 20px;
     }
     .login-box-msg {
+        margin: 0;
         text-align: center;
         font-weight: bold;
-        color: #333;
-        margin-bottom: 20px;
+        color: #34495e;
     }
     .form-group .form-control {
         border-radius: 5px;
@@ -65,38 +62,35 @@ if(isset($_SESSION['voter'])){
         border-radius: 5px;
     }
     .btn-primary {
-        background-color: #blue; /* There was a mistake here, it should be '#blue' */
+        background-color: #007bff;
         border: none;
         transition: background-color 0.3s;
     }
-    
     .btn-primary:hover {
         background-color: #2c3e50;
     }
     .btn a {
         color: white;
     }
-    .box-header {
+    .callout-danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        padding: 10px;
+        border-radius: 5px;
         margin-top: 20px;
         text-align: center;
     }
     .box-header .btn {
         margin: 5px;
     }
-    .alert {
-        margin-top: 20px;
-    }
-    footer {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 14px;
-        color: black;
+    .form-control-feedback {
         position: absolute;
-        bottom: 10px;
-        width: 100%;
+        right: 15px;
+        top: 10px;
+        color: #999;
     }
 </style>
-
 <body>
     <div class="login-box">
         <div class="login-logo">
