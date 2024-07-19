@@ -93,7 +93,7 @@ if(isset($_SESSION['voter'])){
         text-align: center;
         margin-top: 20px;
         font-size: 14px;
-        color: black;
+        color: #777;
         position: absolute;
         bottom: 10px;
         width: 100%;
