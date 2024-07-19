@@ -94,7 +94,7 @@
     }
 </style>
 
-<body>
+<body>o-removebg-preview
     <div class="login-box">
     <div class="login-logo">
         <img src="images/o-removebg-preview.png">
