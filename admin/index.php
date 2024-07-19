@@ -35,6 +35,13 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .login-logo img {
+        max-width: 100px; 
+        height: auto;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+    }
     .login-logo h2 {
         color: #34495e;
         font-weight: bold;
@@ -90,7 +97,9 @@
 <body>
     <div class="login-box">
         <div class="login-logo">
-            <h2>Supreme Student Council<br> Voting System</h2>
+        <img src="images/o-removebg-preview.png">
+        <h2>Supreme Student Council Voting System </h2>
+
         </div>
       
         <div class="login-box-body">

@@ -41,7 +41,7 @@ if(isset($_SESSION['voter'])){
         margin-right: auto;
     }
     .login-logo img {
-        max-width: 100px; /* Adjust as necessary */
+        max-width: 100px; 
         height: auto;
         margin-bottom: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
