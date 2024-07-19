@@ -154,7 +154,7 @@ if(isset($_SESSION['voter'])){
     <?php include 'includes/scripts.php'; ?>
 
     <footer>
-       
+    <p><b>NOTE:</b> Vote Wisely</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
