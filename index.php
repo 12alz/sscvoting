@@ -30,7 +30,7 @@ if(isset($_SESSION['voter'])){
         margin: 0;
         font-family: 'Arial', sans-serif;
     }
-    .login-box {
+   .login-box {
         background: white;
         padding: 20px;
         border-radius: 30px;
