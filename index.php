@@ -40,9 +40,12 @@ if(isset($_SESSION['voter'])){
         margin-left: auto;
         margin-right: auto;
     }
-    .login-logo {
-        text-align: center;
-        margin-bottom: 20px;
+    .login-logo img {
+        max-width: 100px; /* Adjust as necessary */
+        height: auto;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
     }
     .login-logo h2 {
         color: #333;
@@ -100,7 +103,8 @@ if(isset($_SESSION['voter'])){
 <body>
     <div class="login-box">
         <div class="login-logo">
-            <h2>Supreme Student Council Voting System</h2>
+        <img src="images/jerson.png">
+        <h2>Supreme Student Council Voting System </h2>
         </div>
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
