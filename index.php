@@ -15,7 +15,7 @@ if(isset($_SESSION['voter'])){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport meta tag for responsiveness -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
@@ -23,11 +23,11 @@ if(isset($_SESSION['voter'])){
     body {
         background: url('images/mcc.jpg') no-repeat center center fixed;
         background-size: cover;
+        height: 100vh;
+        margin: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        margin: 0;
         font-family: 'Arial', sans-serif;
     }
     .login-box {
@@ -37,11 +37,10 @@ if(isset($_SESSION['voter'])){
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         width: 320px;
         max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
+        text-align: center;
     }
     .login-logo {
-        text-align: center;
         margin-bottom: 20px;
     }
     .login-logo h2 {
@@ -53,7 +52,6 @@ if(isset($_SESSION['voter'])){
         margin-top: 20px;
     }
     .login-box-msg {
-        text-align: center;
         font-weight: bold;
         color: #333;
         margin-bottom: 20px;
@@ -65,26 +63,22 @@ if(isset($_SESSION['voter'])){
         border-radius: 5px;
     }
     .btn-primary {
-        background-color: #blue; /* There was a mistake here, it should be '#blue' */
+        background-color: #2c3e50;
         border: none;
         transition: background-color 0.3s;
     }
     
     .btn-primary:hover {
-        background-color: #2c3e50;
+        background-color: #1a252f;
     }
     .btn a {
         color: white;
     }
     .box-header {
         margin-top: 20px;
-        text-align: center;
     }
     .box-header .btn {
         margin: 5px;
-    }
-    .alert {
-        margin-top: 20px;
     }
     footer {
         text-align: center;
@@ -108,7 +102,7 @@ if(isset($_SESSION['voter'])){
             <form action="login.php" method="POST">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" name="voter" placeholder="Student's ID" required oninput="formatStudentID(this)">
-                    <span class="fas fa-user form-control-feedback"></span> <!-- Assuming this is for an icon -->
+                    <span class="fa fa-user form-control-feedback"></span> <!-- Assuming this is for an icon -->
                 </div>
 
                 <script>
@@ -131,7 +125,7 @@ if(isset($_SESSION['voter'])){
 
                 <div class="form-group has-feedback">
                     <input type="password" class="form-control" name="password" placeholder="Password" required>
-                    <span class="fas fa-lock form-control-feedback"></span> <!-- Updated icon class to Font Awesome -->
+                    <span class="fa fa-lock form-control-feedback"></span> <!-- Updated icon class to Font Awesome -->
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary btn-block" name="login"><i class="fa fa-sign-in"></i> Sign In</button>
@@ -165,7 +159,7 @@ if(isset($_SESSION['voter'])){
                     icon: 'error',
                     title: 'Oops...',
                     text: '".$_SESSION['error']."',
-                    onClose: () => {a
+                    onClose: () => {
                         window.location.href = 'index.php';
                     }
                 });
