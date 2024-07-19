@@ -96,15 +96,12 @@
 
 <body>
     <div class="login-box">
-        <div class="login-logo">
+    <div class="login-logo">
         <img src="images/o-removebg-preview.png">
         <h2>Supreme Student Council Voting System </h2>
-
         </div>
       
         <div class="login-box-body">
-            <p class="login-box-msg">Sign in to start your session</p>
-
             <form action="login.php" method="POST">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" name="username" placeholder="Username" required>
