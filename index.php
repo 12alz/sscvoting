@@ -103,7 +103,7 @@ if(isset($_SESSION['voter'])){
 <body>
     <div class="login-box">
         <div class="login-logo">
-        <img src="images/1.png">
+        <img src="images/jerson.png">
         <h2>Supreme Student Council Voting System </h2>
         </div>
         <div class="login-box-body">
