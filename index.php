@@ -32,14 +32,13 @@ if(isset($_SESSION['voter'])){
     }
     .login-box {
         background: white;
-        padding: 30px;
+        padding: 20px;
         border-radius: 30px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 320px; /* Adjusted width */
-        max-width: 100%; /* Ensure it doesn't exceed the viewport width */
-        margin-left: auto; /* Center horizontally */
-        margin-right: auto; /* Center horizontally */
-        text-align: center
+        width: 320px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .login-logo {
         text-align: center;
