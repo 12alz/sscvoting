@@ -1,15 +1,18 @@
 <?php
     session_start();
-    if(isset($_SESSION['admin'])){
-        header('location: home.php');
+    if (isset($_SESSION['admin'])) {
+        header('location:home.php');
     }
 ?>
-
 <?php include 'includes/header.php'; ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Include SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <style>
     body {
@@ -33,10 +36,9 @@
         margin-right: auto;
     }
     .login-logo img {
-        max-width: 100px;
+        max-width: 100px; 
         height: auto;
-        display: block;
-        margin: 0 auto 10px auto;
+        margin-bottom: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 50%;
     }
@@ -67,7 +69,7 @@
         transition: background-color 0.3s;
     }
     .btn-primary:hover {
-        background-color: #0056b3;
+        background-color: #2c3e50;
     }
     .btn a {
         color: white;
@@ -93,13 +95,14 @@
 </style>
 
 <body>
-    <div class="login-box">
+<div class="login-box">
         <div class="login-logo">
-            <img src="../images/2.png" alt="Logo">
-            <h2>Supreme Student Council Voting System</h2>
+        <img src="admin/2.png">
+        <h2>Supreme Student Council Voting System </h2>
         </div>
+      
         <div class="login-box-body">
-            <form action="index.php" method="POST">
+            <form action="login.php" method="POST">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" name="username" placeholder="Username" required>
                     <span class="fas fa-user form-control-feedback"></span>
@@ -122,44 +125,37 @@
         </div>
 
         <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Example of checking username and password (replace with your actual validation logic)
-                $valid_username = 'admin';
-                $valid_password = 'password';
-    
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-    
-                if ($username == $valid_username && $password == $valid_password) {
-                    $_SESSION['admin'] = $username;
-                    echo "
-                        <script>
-                            swal({
-                                title: 'Login Successful!',
-                                text: 'Welcome, $username!',
-                                icon: 'success',
-                                button: 'OK'
-                            }).then(function() {
-                                window.location = 'home.php';
-                            });
-                        </script>
-                    ";
-                } else {
-                    echo "
-                        <script>
-                            swal({
-                                title: 'Login Failed!',
-                                text: 'Invalid username or password!',
-                                icon: 'error',
-                                button: 'OK'
-                            });
-                        </script>
-                    ";
-                }
+            if (isset($_SESSION['error'])) {
+                echo "
+                    <script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Login Failed',
+                            text: '{$_SESSION['error']}',
+                        });
+                    </script>
+                ";
+                unset($_SESSION['error']);
             }
-            ?>
-    
-            <?php include 'includes/scripts.php'; ?>
-        </div>
-    </body>
-    </html>
+
+            if (isset($_SESSION['success'])) {
+                echo "
+                    <script>
+                        Swal.fire({
+                        timer: '1500', 
+                            icon: 'success',
+                            title: 'Login Successful',
+                            text: '{$_SESSION['success']}',
+                        }).then(function() {
+                            window.location = 'home.php';
+                        });
+                    </script>
+                ";
+                unset($_SESSION['success']);
+            }
+        ?>
+    </div>
+
+    <?php include 'includes/scripts.php'; ?>
+</body>
+</html>
