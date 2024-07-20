@@ -1,18 +1,15 @@
 <?php
     session_start();
-    if (isset($_SESSION['admin'])) {
-        header('location:home.php');
+    if(isset($_SESSION['admin'])){
+        header('location: home.php');
     }
 ?>
+
 <?php include 'includes/header.php'; ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Include SweetAlert -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <style>
     body {
@@ -36,9 +33,10 @@
         margin-right: auto;
     }
     .login-logo img {
-        max-width: 100px; 
+        max-width: 100px;
         height: auto;
-        margin-bottom: 10px;
+        display: block;
+        margin: 0 auto 10px auto;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 50%;
     }
@@ -69,7 +67,7 @@
         transition: background-color 0.3s;
     }
     .btn-primary:hover {
-        background-color: #2c3e50;
+        background-color: #0056b3;
     }
     .btn a {
         color: white;
@@ -95,13 +93,14 @@
 </style>
 
 <body>
-<div class="login-box">
+    <div class="login-box">
         <div class="login-logo">
-        <img src="admin/2.png">
-        <h2>Supreme Student Council Voting System </h2>
+            <img src="../images/jerson.png" alt="Logo">
+            <h2>Supreme Student Council Voting System</h2>
         </div>
-      
         <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+
             <form action="login.php" method="POST">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" name="username" placeholder="Username" required>
@@ -123,39 +122,18 @@
                 </center>
             </form>
         </div>
-
         <?php
-            if (isset($_SESSION['error'])) {
+            if(isset($_SESSION['error'])){
                 echo "
-                    <script>
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Login Failed',
-                            text: '{$_SESSION['error']}',
-                        });
-                    </script>
+                    <div class='callout callout-danger'>
+                        <p>".$_SESSION['error']."</p> 
+                    </div>
                 ";
                 unset($_SESSION['error']);
             }
-
-            if (isset($_SESSION['success'])) {
-                echo "
-                    <script>
-                        Swal.fire({
-                        timer: '1500', 
-                            icon: 'success',
-                            title: 'Login Successful',
-                            text: '{$_SESSION['success']}',
-                        }).then(function() {
-                            window.location = 'home.php';
-                        });
-                    </script>
-                ";
-                unset($_SESSION['success']);
-            }
         ?>
     </div>
-
-    <?php include 'includes/scripts.php'; ?>
+    
+    <?php include 'includes/scripts.php' ?>
 </body>
 </html>
