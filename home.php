@@ -1,6 +1,6 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
-<body class="hold-transition skin-red layout-top-nav <?php echo date('Y-m-d H:i:s'); ?>">
+<body class="hold-transition skin-red layout-top-nav">
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
