@@ -1,7 +1,7 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-<body class="hold-transition skin-red sidebar-mini">
+<body class="hold-transition skin-red layout-top-nav <?php echo date('Y-m-d H:i:s'); ?>">
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
