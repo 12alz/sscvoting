@@ -97,7 +97,7 @@
 <body>
 <div class="login-box">
         <div class="login-logo">
-        <img src="admin/2.png">
+        <img src="../images/2.png" alt="Logo">
         <h2>Supreme Student Council Voting System </h2>
         </div>
       
