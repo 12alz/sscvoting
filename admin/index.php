@@ -16,7 +16,7 @@
 
 <style>
     body {
-        background: url('../images/mcc2.jpg') no-repeat center center fixed;
+        background: url('../images/mcc.jpg') no-repeat center center fixed;
         background-size: cover;
         display: flex;
         justify-content: center;
