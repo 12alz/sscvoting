@@ -99,9 +99,7 @@
             <h2>Supreme Student Council Voting System</h2>
         </div>
         <div class="login-box-body">
-            <p class="login-box-msg">Sign in to start your session</p>
-
-            <form action="login.php" method="POST">
+            <form action="index.php" method="POST">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" name="username" placeholder="Username" required>
                     <span class="fas fa-user form-control-feedback"></span>
@@ -122,18 +120,46 @@
                 </center>
             </form>
         </div>
+
         <?php
-            if(isset($_SESSION['error'])){
-                echo "
-                    <div class='callout callout-danger'>
-                        <p>".$_SESSION['error']."</p> 
-                    </div>
-                ";
-                unset($_SESSION['error']);
-            }
-        ?>
-    </div>
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Example of checking username and password (replace with your actual validation logic)
+                $valid_username = 'admin';
+                $valid_password = 'password';
     
-    <?php include 'includes/scripts.php' ?>
-</body>
-</html>
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+    
+                if ($username == $valid_username && $password == $valid_password) {
+                    $_SESSION['admin'] = $username;
+                    echo "
+                        <script>
+                            swal({
+                                title: 'Login Successful!',
+                                text: 'Welcome, $username!',
+                                icon: 'success',
+                                button: 'OK'
+                            }).then(function() {
+                                window.location = 'home.php';
+                            });
+                        </script>
+                    ";
+                } else {
+                    echo "
+                        <script>
+                            swal({
+                                title: 'Login Failed!',
+                                text: 'Invalid username or password!',
+                                icon: 'error',
+                                button: 'OK'
+                            });
+                        </script>
+                    ";
+                }
+            }
+            ?>
+    
+            <?php include 'includes/scripts.php'; ?>
+        </div>
+    </body>
+    </html>
