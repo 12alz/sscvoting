@@ -92,10 +92,6 @@
       </div>
     </section>   
   </div>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-
-<!-- Include SweetAlert JS -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
   <?php include 'includes/footer.php'; ?>
   <?php include 'includes/voters_modal.php'; ?>
@@ -112,43 +108,9 @@ $(function(){
 
   $(document).on('click', '.delete', function(e){
     e.preventDefault();
+    $('#delete').modal('show');
     var id = $(this).data('id');
-
-    Swal.fire({
-      title: 'Are you sure?',
-      text: 'You will not be able to recover this voter!',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'Cancel'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // Proceed with deletion
-        $.ajax({
-          type: 'POST',
-          url: 'voters_delete.php',
-          data: {id: id},
-          success: function(data){
-            Swal.fire({
-              icon: 'success',
-              title: 'Deleted!',
-              text: 'The voter has been deleted.',
-            }).then(function() {
-              location.reload(); // Reload page after closing alert
-            });
-          },
-          error: function(){
-            Swal.fire({
-              icon: 'error',
-              title: 'Error!',
-              text: 'Failed to delete the voter.',
-            });
-          }
-        });
-      }
-    });
+    getRow(id);
   });
 
   $(document).on('click', '.photo', function(e){
@@ -171,7 +133,7 @@ function getRow(id){
       $('#edit_lastname').val(response.lastname);
       $('#edit_password').val(response.password);
       $('#edit_course').val(response.course);
-      $('#edit_status').val(response.status);
+       $('#edit_status').val(response.status);
       $('#edit_voters_id').val(response.voters_id);
       $('.fullname').html(response.firstname+' '+response.lastname);
     }
