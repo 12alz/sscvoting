@@ -7,6 +7,7 @@
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -39,10 +40,9 @@
           echo "
                     <script>
                         Swal.fire({
-                        
-                            icon: 'success',
-                            text: '{$_SESSION['success']}',
-                       
+                        icon: 'success',
+                        text: '{$_SESSION['success']}',
+                        width: '500px'
                         });
                     </script>
                 ";
