@@ -31,11 +31,27 @@
               <span class="hidden-xs"><?php echo $voter['firstname'].' '.$voter['lastname']; ?></span>
             </a>
           </li>
-          <li><a href="logout.php"><i class="fa fa-sign-out"></i> LOGOUT</a></li>  
+          <li><a href=""><i class="fa fa-sign-out"></i> LOGOUT</a></li>  
         </ul>
       </div>
       <!-- /.navbar-custom-menu -->
     </div>
-    <!-- /.container-fluid -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <?php
+      
+    echo "
+    Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: '".$_SESSION['success']."',
+        onClose: () => {
+            window.location.href = 'logout.php';
+        }
+    });
+";
+?>
+    <!-
+   
   </nav>
 </header>
