@@ -102,7 +102,7 @@
         </div>
       
         <div class="login-box-body">
-            <form action="login.php" method="GET">
+            <form action="login.php" method="POSTzzz">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" name="username" placeholder="Username" required>
                     <span class="fas fa-user form-control-feedback"></span>
