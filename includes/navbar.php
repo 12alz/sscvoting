@@ -43,11 +43,11 @@
         e.preventDefault();
         Swal.fire({
           icon: 'success',
-          title: 'Success!',
+          title: 'Successfully sign out!',
           text: '<?php echo $_SESSION['success']; ?>',
-          willClose: () => {
+        
             window.location.href = 'logout.php';
-          }
+          
         });
       });
     </script>
