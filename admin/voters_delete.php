@@ -10,9 +10,8 @@
 				icon: 'success',
 				title: 'Success!',
 				text: '".$_SESSION['success']."',
-				onClose: () => {
-					window.location.href = 'voters.php';
-				}
+				title: 'Success!',
+				
 			});
 		";
 		
