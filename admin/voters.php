@@ -41,8 +41,8 @@
                     <script>
                         Swal.fire({
                         timer: '1500', 
-                            icon: 'success',
-                            title: 'Login Successful',
+                            icon: '',
+                            title: '',
                             text: '{$_SESSION['success']}',
                        
                         });
