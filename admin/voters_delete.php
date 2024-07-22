@@ -4,7 +4,7 @@
 	if(isset($_POST['delete'])){
 		$id = $_POST['id'];
 		$sql = "UPDATE voters SET recstat = 1 WHERE id = '$id'";
-		if($conn->query($sql)){z
+		if($conn->query($sql)){
 			$_SESSION['success'] = 'The records was successfully archived';
 		}
 		else{
