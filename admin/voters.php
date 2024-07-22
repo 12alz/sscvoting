@@ -39,9 +39,9 @@
           echo "
                     <script>
                        Swal.fire({
-                       title: "Good job!",
-                       text: "You clicked the button!",
-                       icon: "success"
+                       title: 'Good job!',
+                       text: 'You clicked the button!',
+                       icon: 'success',
 
                         text: '{$_SESSION['success']}',
                        
