@@ -15,7 +15,7 @@
 			});
 		";
 		
-			// $_SESSION['success'] = 'The records was successfully archived';
+			$_SESSION['success'] = 'The records was successfully archived';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
