@@ -38,10 +38,12 @@
         if(isset($_SESSION['success'])){
           echo "
                     <script>
-                        Swal.fire({
-                        timer: '1500', 
-                            icon: 'success',
-                            text: '{$_SESSION['success']}',
+                       Swal.fire({
+                       title: "Good job!",
+                       text: "You clicked the button!",
+                       icon: "success"
+
+                        text: '{$_SESSION['success']}',
                        
                         });
                     </script>
