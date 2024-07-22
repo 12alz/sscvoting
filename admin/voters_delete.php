@@ -5,7 +5,19 @@
 		$id = $_POST['id'];
 		$sql = "UPDATE voters SET recstat = 1 WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'The records was successfully archived';
+			echo "
+			 <script>
+                        Swal.fire({
+                        timer: '1500', 
+                            icon: 'success',
+                            title: 'The records was successfully archived',
+                            text: '{$_SESSION['success']}',
+                        }).then(function() {
+                            window.location = 'voters.php';
+                        });
+                    </script>
+                ";
+			// $_SESSION['success'] = 'The records was successfully archived';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
