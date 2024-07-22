@@ -31,25 +31,11 @@
               <span class="hidden-xs"><?php echo $voter['firstname'].' '.$voter['lastname']; ?></span>
             </a>
           </li>
-          <li><a href="#" id="logout"><i class="fa fa-sign-out"></i> LOGOUT</a></li>  
+          <li><a href="logout.php"><i class="fa fa-sign-out"></i> LOGOUT</a></li>  
         </ul>
       </div>
       <!-- /.navbar-custom-menu -->
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script>
-      document.getElementById('logout').addEventListener('click', function(e) {
-        e.preventDefault();
-        Swal.fire({
-          icon: 'success',
-          title: 'Successfully sign out!',
-          text: '<?php echo $_SESSION['success']; ?>',
-        
-            window.location.href = 'logout.php';
-          
-        });
-      });
-    </script>
+    <!-- /.container-fluid -->
   </nav>
 </header>
