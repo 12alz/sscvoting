@@ -29,7 +29,6 @@
           <script>
               Swal.fire({
                   icon: 'error',
-                  title: 'Login Failed',
                   text: '{$_SESSION['error']}',
               });
           </script>
@@ -41,8 +40,7 @@
                     <script>
                         Swal.fire({
                         timer: '1500', 
-                            icon: '',
-                            title: '',
+                            icon: 'success',
                             text: '{$_SESSION['success']}',
                        
                         });
