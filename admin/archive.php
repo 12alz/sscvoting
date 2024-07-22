@@ -6,6 +6,8 @@
 
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
