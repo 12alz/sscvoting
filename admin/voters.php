@@ -39,7 +39,7 @@
           echo "
                     <script>
                         Swal.fire({
-                        timer: '1500', 
+                        
                             icon: 'success',
                             text: '{$_SESSION['success']}',
                        
