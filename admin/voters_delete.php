@@ -8,14 +8,13 @@
 			echo "
 			Swal.fire({
 				icon: 'success',
-				title: 'Success!',
 				text: '".$_SESSION['success']."',
-				title: 'Success!',
+				title: 'The records was successfully archived',
 				
 			});
 		";
 		
-			$_SESSION['success'] = 'The records was successfully archived';
+			// $_SESSION['success'] = 'The records was successfully archived';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
