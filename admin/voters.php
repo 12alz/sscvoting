@@ -43,6 +43,7 @@
                         icon: 'success',
                         text: '{$_SESSION['success']}',
                         width: '500px'
+                         padding: '1em',
                         });
                     </script>
                 ";
