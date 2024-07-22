@@ -5,7 +5,9 @@
 		$id = $_POST['id'];
 		$sql = "UPDATE voters SET recstat = 1 WHERE id = '$id'";
 		if($conn->query($sql)){
+			//  $_SESSION['success'] {
 			echo "
+			 $_SESSION['success'] {
 			Swal.fire({
 				icon: 'success',
 				text: '".$_SESSION['success']."',
