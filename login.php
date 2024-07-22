@@ -27,7 +27,7 @@
 				$_SESSION['voter'] = $row['id'];
 			}
 			else{
-				$_SESSION['error'] = 'Incorrect password';
+				$_SESSION['error'] = 'Incorrect username or password';
 			}
 		}
 		
