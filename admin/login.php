@@ -6,11 +6,11 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		$sql = "SELECT * FROM admin WHERE username = '$username'";
+		$sql = "SELECT * FROM admin WHERE username = '$username' $password'";
 		$query = $conn->query($sql);
 
 		if($query->num_rows < 1){
-			$_SESSION['error'] = 'Cannot find account with the username';
+			$_SESSION['error'] = 'Cannot find account with the username or ';
 		}
 		else{
 			$row = $query->fetch_assoc();
@@ -18,7 +18,7 @@
 				$_SESSION['admin'] = $row['id'];
 			}
 			else{
-				$_SESSION['error'] = 'Incorrect password';
+				$_SESSION['error'] = 'Incorrect username or password';
 			}
 		}
 		
