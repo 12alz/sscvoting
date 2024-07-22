@@ -42,8 +42,10 @@
                         Swal.fire({
                         icon: 'success',
                         text: '{$_SESSION['success']}',
-                        width: '500px'
+                        width: '500px',
+                        height: '100px',
                          padding: '1em',
+                        
                         });
                     </script>
                 ";
