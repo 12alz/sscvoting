@@ -6,6 +6,8 @@
 
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -24,12 +26,14 @@
       <?php
         if(isset($_SESSION['error'])){
           echo "
-            <div class='alert alert-danger alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-warning'></i> Error!</h4>
-              ".$_SESSION['error']."
-            </div>
-          ";
+          <script>
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Login Failed',
+                  text: '{$_SESSION['error']}',
+              });
+          </script>
+      ";
           unset($_SESSION['error']);
         }
         if(isset($_SESSION['success'])){
