@@ -1,4 +1,4 @@
-<!-- Config -->
+c<!-- Config -->
 <div class="modal fade" id="config">
     <div class="modal-dialog">
         <div class="modal-content">
