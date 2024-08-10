@@ -9,7 +9,9 @@
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">
     <!-- Sidebar toggle button-->
-    <a  class="sidebar-toggle" data-toggle="push-menu" data-action="toggle-sidebar"role="button">
+    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+
+</a>
    
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">

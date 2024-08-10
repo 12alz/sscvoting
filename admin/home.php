@@ -49,7 +49,7 @@
       <div class="row">
         <div class="col-lg-3 col-xs-3">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-purple">
             <div class="inner">
               <?php
                 $sql = "SELECT * FROM positions";
@@ -69,7 +69,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-3">
           <!-- small box -->
-          <div class="small-box bg-green">
+          <div class="small-box bg-purple">
             <div class="inner">
               <?php
                 $sql = "SELECT * FROM candidates";
@@ -89,7 +89,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-3">
           <!-- small box -->
-          <div class="small-box bg-yellow">
+          <div class="small-box bg-purple">
             <div class="inner">
               <?php
                 $sql = "SELECT * FROM voters";
@@ -109,7 +109,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-3">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box bg-purple">
             <div class="inner">
               <?php
                 $sql = "SELECT * FROM votes GROUP BY voters_id";
