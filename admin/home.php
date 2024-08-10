@@ -47,7 +47,7 @@
       ?>
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-2 col-xs-3">
+        <div class="col-lg-3 col-xs-3">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
@@ -67,7 +67,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-2 col-xs-3">
+        <div class="col-lg-3 col-xs-3">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
@@ -87,7 +87,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-2 col-xs-3">
+        <div class="col-lg-3 col-xs-3">
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
@@ -107,7 +107,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-2 col-xs-3">
+        <div class="col-lg-3 col-xs-3">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -134,7 +134,7 @@
           <h3>Voting Tally</h3>
         </div>
         <div class="col-xs-6 text-right">
-          <button id="fullscreen-btn" class="btn btn-primary">Fullscreen</button>
+          <button id="fullscreen-btn" class="btn btn-primary bg-purple">Fullscreen</button>
         </div>
       </div>
       <div id="voting-tally">
