@@ -112,7 +112,7 @@
           <div class="small-box bg-purple">
             <div class="inner">
               <?php
-                $sql = "SELECT * FROM candidates ORDER BY id = 0";
+                $sql = "SELECT * FROM votes GROUP BY voters_id";
                 $query = $conn->query($sql);
 
                 echo "<h3>".$query->num_rows."</h3>";
