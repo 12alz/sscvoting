@@ -297,7 +297,7 @@ if(isset($_SESSION['voter'])){
                           <input type="file" id="photo" accept=".jpg, .jpeg, .png" name="photo">
                         </div>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6LcRzQ8qAAAAAFRx7HFGBPVW6Zgq9F0TcQh63Jwt"></div>
+                        
                         <div class="offset-top-20">
                           <button class="btn button-primary" type="submit" name="add">Register</button>
                         </div>
@@ -325,6 +325,7 @@ if(isset($_SESSION['voter'])){
           </div>
         </div>
       </section>
+      <div class="g-recaptcha" data-sitekey="6LcRzQ8qAAAAAFRx7HFGBPVW6Zgq9F0TcQh63Jwt"></div>
       <!-- Page Footer-->
       <!-- Corporate footer-->
       <footer class="page-footer">
