@@ -152,7 +152,7 @@
         <div class="row row-30">
           <!-- News Item 1 -->
           <div class="col-md-6 col-lg-4">
-            <article class="post-news"><a class="post-news-image" href="#"><img src="images/national.jpg" alt="" width="370" height="255"/></a>
+            <article class="post-news"><a class="post-news-image" href="#"><img src="../images/national.jpg" alt="" width="370" height="255"/></a>
               <h5 class="post-news-title"><a href="#">News Title 1</a></h5>
               <p class="post-news-meta">Dec 26, 2024</p>
               <p class="post-news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="button button-primary" href="#">Read More</a>
