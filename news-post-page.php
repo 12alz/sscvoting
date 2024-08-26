@@ -162,10 +162,15 @@
           <!-- News Item
 
             
-    <!-- Global Mailform Output-->
+    < Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Java script-->
     <script src="dist/js/core.min.js"></script>
     <script src="dist/js/script.js"></script>
+    <script src="dist/js/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+
 
 </html>
