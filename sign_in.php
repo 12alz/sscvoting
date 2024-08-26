@@ -275,10 +275,6 @@ if(isset($_SESSION['voter'])){
                     </div>
                     <div class="tab-pane fade" id="tabs-login-2">
                       <form method="POST" action="sign_up.php"  enctype="multipart/form-data">
-                        <div class="form-wrap">
-                          <label class="form-label form-label-outside" for="form-register-id">Student ID:</label>
-                          <input class="form-input bg-default" id="form-register-username" type="text" name="name" data-constraints="@Required">
-                        </div>
                         <div class="form-wrap offset-top-15">
                           <label class="form-label form-label-outside" for="form-register-firstname">First Name:</label>
                           <input class="form-input bg-default" id="form-register-email" type="text" name="firstname" data-constraints="@Required @Email">
