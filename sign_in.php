@@ -273,7 +273,7 @@ if(isset($_SESSION['voter'])){
                       </form>
                     </div>
                     <div class="tab-pane fade" id="tabs-login-2">
-                      <form class="rd-mailform text-start" data-form-output="form-output-global" data-form-type="contact" method="post" action="">
+                      <form method="post" action="register.php">
                         <div class="form-wrap">
                           <label class="form-label form-label-outside" for="form-register-id">Student ID:</label>
                           <input class="form-input bg-default" id="form-register-username" type="text" name="name" data-constraints="@Required">
