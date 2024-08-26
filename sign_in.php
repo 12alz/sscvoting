@@ -324,9 +324,7 @@ if(isset($_SESSION['voter'])){
                           <label class="form-label form-label-outside" for="password">Password:</label>
                           <input class="form-input bg-default" id="password" type="password" name="password" data-constraints="@Required">
                         </div>
-                        <div class="offset-top-20">
                         <a href="" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
-                        <br>
                         <div class="offset-top-20">
                           <button class="btn button-primary" type="submit" name="login">Login As Administrator</button>
                         </div>
@@ -335,7 +333,27 @@ if(isset($_SESSION['voter'])){
                   </div>
                 </div>
               </div>
+               <!-- Forgot Password Modal -->
+    <div class="modal fade" id="modal-forgotpass" tabindex="-1" role="dialog" aria-labelledby="modal-forgotpass-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-forgotpass-label">Forgot Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="../admin/function.php" method="POST">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat btn-lg" name="btn-forgotpass">Forgot Password</button>
+                    </form>
+                </div>
             </div>
+     
           </div>
         </div>
       </section>
