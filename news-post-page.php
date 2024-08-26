@@ -2,7 +2,7 @@
 <html class="wide wow-animation scrollTo" lang="en">
   <head>
     <!-- Site Title-->
-     <title>News</title>
+    <title>Contacts</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -37,7 +37,7 @@
               <div class="rd-navbar-panel">
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
-                <h4 class="panel-title d-lg-none">News</h4>
+                <h4 class="panel-title d-lg-none">Contacts</h4>
                 <!-- RD Navbar Right Side Toggle-->
                 <button class="rd-navbar-top-panel-toggle d-lg-none" data-rd-navbar-toggle=".rd-navbar-top-panel"><span></span></button>
                 <div class="rd-navbar-top-panel">
@@ -46,20 +46,20 @@
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-phone align-middle"></span></div>
-                          <div class="unit-body"><a href="tel:#">1-800-1234-567</a> <a class="d-block d-lg-inline-block" href="tel:#"></a>
+                          <div class="unit-body"><a href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block" href="tel:#">1-800-6547-321</a>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle"></span></div>
-                          <div class="unit-body"><a href="#">Bantayan Island, Cebu Philippines</a></div>
+                          <div class="unit-body"><a href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
                         </div>
                       </li>
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-email-open align-middle"></span></div>
-                          <div class="unit-body"><a href="mailto:#">madridejoscommunitycollege@edu.ph</a></div>
+                          <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
                         </div>
                       </li>
                     </ul>
@@ -92,7 +92,7 @@
                       <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
-                    <!-- <ul class="rd-navbar-nav">
+                    <ul class="rd-navbar-nav">
                       <li><a href="index.php">Home</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="home-1.html">Home 1</a>
@@ -102,7 +102,7 @@
                           <li><a href="home-3.html">Home 3</a>
                           </li>
                         </ul>
-                      </li> -->
+                      </li>
                       <!-- <li><a href="#">Elements</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="grid.html">Grid</a>
@@ -225,7 +225,7 @@
                       </li>
                       <li><a href="donate.html">Donate</a>
                       </li> -->
-                      <li class="active"><a href="contacts.php">News</a>
+                      <li class="active"><a href="contacts.php">Contacts</a>
                       </li>
                       <!-- <li class="d-lg-none"><a href="shopping-cart.html">Shopping Cart (2)</a></li> -->
                     </ul>
@@ -263,7 +263,7 @@
       <!-- Classic Breadcrumbs-->
       <section class="section breadcrumb-classic context-dark">
         <div class="container">
-          <h1>Latest News</h1>
+          <h1>Contacts</h1>
           <div class="offset-top-10 offset-md-top-35">
             <ul class="list-inline list-inline-lg list-inline-dashed p">
               <li><a href="index.php">Home</a></li>
