@@ -16,68 +16,6 @@
     <link rel="stylesheet" href="dist/css/fonts.css">
     <link rel="stylesheet" href="dist/css/style.css">
   </head>
-  <style>
-    .news-section {
-  padding: 20px 0;
-  background-color: #f9f9f9;
-}
-
-.news-post {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 15px;
-}
-
-.news-post-header {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-
-.news-post-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.news-post-info {
-  flex: 1;
-}
-
-.news-post-title {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.news-post-date {
-  margin: 0;
-  color: #888;
-  font-size: 14px;
-}
-
-.news-post-content {
-  font-size: 16px;
-  color: #333;
-}
-
-.news-post-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.news-post-link:hover {
-  text-decoration: underline;
-}
-
-    </style>
   <body>
     <div class="preloader"> 
       <div class="preloader-body">
@@ -218,26 +156,6 @@
               </li>
             </ul>
           </div>
-          <!-- News Section -->
-<section class="news-section">
-  <div class="container">
-    <div class="news-post">
-      <div class="news-post-header">
-        <img src="images/user-avatar.png" alt="User Avatar" class="news-post-avatar">
-        <div class="news-post-info">
-          <h3 class="news-post-title">News Title Here</h3>
-          <p class="news-post-date">August 27, 2024</p>
-        </div>
-      </div>
-      <div class="news-post-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula justo sit amet ligula lacinia, ac condimentum libero varius.</p>
-        <a href="#" class="news-post-link">Read more</a>
-      </div>
-    </div>
-    <!-- Add more news-post elements as needed -->
-  </div>
-</section>
-
         </div>
       </section>
     
