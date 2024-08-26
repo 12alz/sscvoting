@@ -259,7 +259,7 @@ if(isset($_SESSION['voter'])){
                           <input class="form-input bg-default" id="form-login-username" type="text" name="voter" data-constraints="@Required">
                         </div>
                         <div class="form-wrap offset-top-15">
-                          <label class="form-label form-label-outside" for="form-login-password">Password:</label>
+                          <label class="form-label form-label-outside" for="form-login-password">Passwordjajaj:</label>
                           <input class="form-input bg-default" id="form-login-password" type="password" name="password" data-constraints="@Required">
                         </div>
                         <div class="offset-top-20">
