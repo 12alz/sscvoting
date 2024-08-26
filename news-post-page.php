@@ -134,7 +134,7 @@
                                 </ul>
                               </li>
                             </ul>
-                            <ul class="col-lg-3">
+                            <!-- <ul class="col-lg-3">
                               <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
@@ -182,7 +182,7 @@
                             </ul>
                           </div>
                         </div>
-                      </li>
+                      </li> -->
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="classic-news.html">Classic news</a>
