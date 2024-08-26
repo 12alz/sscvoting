@@ -17,39 +17,44 @@
     if ( !in_array($imageExtension, $validImageExtension) ){
     
     $_SESSION['error'] =  'Invalid Images';
+    header('Location: sign_in.php');
     }
-        else{
+    else{
         if(!empty($filename)){
             move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);   
+        }        
+            $course = $_POST['course'];
+            $status = $_POST['status'];
+            $voters_id = $_POST['voters_id'];
+            $checkUser = "SELECT * FROM voters WHERE voters_id ='$voters_id'";
+            $result = mysqli_query($conn , $checkUser);
+            $count = mysqli_num_rows($result);
+            if($count>0){
+                    $_SESSION['error'] = 'ID already exist';
+                    header('Location: sign_in.php');
         }
-        
-        $course = $_POST['course'];
-        $status = $_POST['status'];
-        $voters_id = $_POST['voters_id'];
-        $checkUser = "SELECT * FROM voters WHERE voters_id ='$voters_id'";
-        $result = mysqli_query($conn , $checkUser);
-        $count = mysqli_num_rows($result);
-        if($count>0){
-                $_SESSION['error'] = 'ID already exist';
+        else{
+                $sql = "INSERT INTO voters (voters_id, password, firstname, lastname,  course, status, photo) VALUES ('$voters_id', '$password', '$firstname', '$lastname','$course',       '$status' , '$filename')";
+            if($conn->query($sql)){
+                $_SESSION['success'] = 'Voter added successfully';
+                header('Location: sign_in.php');
             }
-        else{
-            $sql = "INSERT INTO voters (voters_id, password, firstname, lastname,  course, status, photo) VALUES ('$voters_id', '$password', '$firstname', '$lastname','$course',       '$status' , '$filename')";
-        if($conn->query($sql)){
-            $_SESSION['success'] = 'Voter added successfully';
-        }
 
-        else{
-            $_SESSION['error'] = "You are Failed to Register";
-        }
+            else{
+                $_SESSION['error'] = "You are Failed to Register";
+                header('Location: sign_in.php');
+            }
         }
     }   
     }
     else{
             $_SESSION['error'] = "You are Failed to Register";
+            header('Location: sign_in.php');
         }
 }
 else{
             $_SESSION['error'] = "Check the Captcha";
+            header('Location: sign_in.php');
         }
 
 
