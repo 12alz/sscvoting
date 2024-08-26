@@ -292,6 +292,19 @@ if(isset($_SESSION['voter'])){
                           <input class="form-input bg-default" id="form-register-confirm-password" type="password" name="password" data-constraints="@Required">
                         </div>
                         <div class="form-wrap offset-top-15">
+                          <label for="course" class="form-label form-label-outside" for="course">Course</label>
+                          <div class="col-sm-9">
+                            <select type="text" class="form-input bg-default" id="course" name="course" required>
+                              <option value="" selected>-Select-</option>
+                              <option value="BSIT">BSIT</option>
+                              <option value="BSBA">BSBA</option>
+                              <option value="BSED">BSED</option>
+                              <option value="BEED">BEED</option>
+                              <option value="BSHM">BSHM</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-wrap offset-top-15">
                           <label for="photo" class="form-label form-label-outside" for="photo">Photo</label>
                           <input type="file" id="photo" accept=".jpg, .jpeg, .png" name="photo">
                         </div>                        
