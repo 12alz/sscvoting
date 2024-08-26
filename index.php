@@ -58,7 +58,7 @@ if(isset($_SESSION['voter'])){
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-phone align-middle"></span></div>
-                          <div class="unit-body"><a href="tel:#">63-777-1234-567,</a> <a class="d-block d-lg-inline-block" href="tel:#">2-777-6547-321</a>
+                          <div class="unit-body"><a href="tel:#">63-777-1234-567,</a> <a class="d-block d-lg-inline-block" href="tel:#"></a>
                           </div>
                         </div>
                       </li>
