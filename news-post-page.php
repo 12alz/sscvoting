@@ -2,7 +2,7 @@
 <html class="wide wow-animation scrollTo" lang="en">
   <head>
     <!-- Site Title-->
-    <title>Contacts</title>
+    <title>News</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -37,7 +37,7 @@
               <div class="rd-navbar-panel">
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
-                <h4 class="panel-title d-lg-none">Contacts</h4>
+                <h4 class="panel-title d-lg-none">Lates News</h4>
                 <!-- RD Navbar Right Side Toggle-->
                 <button class="rd-navbar-top-panel-toggle d-lg-none" data-rd-navbar-toggle=".rd-navbar-top-panel"><span></span></button>
                 <div class="rd-navbar-top-panel">
@@ -111,35 +111,8 @@
                           </li>
                         </ul>
                       </li>
-                      <!-- <li><a href="#">Campus</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="grid-gallery.html">Grid Gallery</a>
-                          </li>
-                          <li><a href="grid-without-padding-gallery.html">Grid Without Padding Gallery</a>
-                          </li>
-                          <li><a href="masonry-gallery.html">Masonry Gallery</a>
-                          </li>
-                          <li><a href="cobbles-gallery.html">Cobbles Gallery</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a href="#">Shop</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="product-catalog.html">Product Catalog</a>
-                          </li>
-                          <li><a href="single-product.html">Single Product</a>
-                          </li>
-                          <li><a href="shopping-cart.html">Shopping Cart</a>
-                          </li>
-                          <li><a href="checkout.html">Checkout</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a href="donate.html">Donate</a>
-                      </li> -->
                       <li class="active"><a href="contacts.php">Contacts</a>
                       </li>
-                      <!-- <li class="d-lg-none"><a href="shopping-cart.html">Shopping Cart (2)</a></li> -->
                     </ul>
                     <!--RD Navbar Mobile Search-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
@@ -175,11 +148,11 @@
       <!-- Classic Breadcrumbs-->
       <section class="section breadcrumb-classic context-dark">
         <div class="container">
-          <h1>Contacts</h1>
+          <h1>Latest News</h1>
           <div class="offset-top-10 offset-md-top-35">
             <ul class="list-inline list-inline-lg list-inline-dashed p">
               <li><a href="index.php">Home</a></li>
-              <li>Contacts
+              <li>News
               </li>
             </ul>
           </div>
