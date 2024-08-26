@@ -15,6 +15,7 @@ if(isset($_SESSION['voter'])){
   <head>
     <!-- Site Title-->
     <title>Login/Register</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -26,8 +27,7 @@ if(isset($_SESSION['voter'])){
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,700%7CMerriweather:400,300,300italic,400italic,700,700italic">
     <link rel="stylesheet" href="dist/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/fonts.css">
-    <link rel="stylesheet" href="dist/css/style.css">
-    <script src="//www.google.com/recaptcha/api.js?onload=renderReCaptchaCallback&amp;render=explicit&amp;hl=en-US" async defer></script>
+    <link rel="stylesheet" href="dist/css/style.css">    
   </head>
   <body>
     <div class="preloader"> 
