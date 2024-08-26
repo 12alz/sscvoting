@@ -17,73 +17,53 @@
     <link rel="stylesheet" href="dist/css/style.css">
     <style>
       .news-container {
-        max-width: 600px;
-        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
       }
 
       .news-item {
         background: #fff;
-        border: 1px solid #dddfe2;
         border-radius: 8px;
-        padding: 15px;
-        margin-bottom: 20px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      }
-
-      .news-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-
-      .news-header img {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        margin-right: 10px;
-      }
-
-      .news-header .news-author {
-        font-weight: bold;
-        font-size: 14px;
-      }
-
-      .news-header .news-meta {
-        color: #65676b;
-        font-size: 12px;
-      }
-
-      .news-content img {
-        width: 100%;
-        border-radius: 8px;
-        margin-top: 10px;
-      }
-
-      .news-content p {
-        font-size: 14px;
-        color: #1c1e21;
-        margin-top: 10px;
-        line-height: 1.5;
-      }
-
-      .news-actions {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        border-top: 1px solid #dddfe2;
-        padding-top: 10px;
-      }
-
-      .news-actions button {
-        background: none;
-        border: none;
-        color: #65676b;
-        font-size: 14px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        width: calc(33.333% - 20px);
         cursor: pointer;
       }
 
-      .news-actions button:hover {
-        text-decoration: underline;
+      .news-item img {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .news-item h3 {
+        font-size: 1.5rem;
+        margin-top: 15px;
+      }
+
+      .news-item p {
+        font-size: 1rem;
+        margin-top: 10px;
+        color: #555;
+      }
+
+      .news-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 768px) {
+        .news-item {
+          width: calc(50% - 20px);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .news-item {
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -124,42 +104,20 @@
       <section class="section section-md bg-gray-100">
         <div class="container">
           <div class="news-container">
-            <div class="news-item">
-              <div class="news-header">
-                <img src="images/profile1.jpg" alt="User Profile Picture">
-                <div>
-                  <div class="news-author">John Doe</div>
-                  <div class="news-meta">2 hrs ago • Madridejos Community College</div>
-                </div>
-              </div>
-              <div class="news-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula sapien sed neque euismod, ac suscipit est tincidunt.</p>
-                <img src="images/news1.jpg" alt="News Image">
-              </div>
-              <div class="news-actions">
-                <button>Like</button>
-                <button>Comment</button>
-                <button>Share</button>
-              </div>
+            <div class="news-item wow fadeInUp" data-wow-delay="0.1s">
+              <img src="images/news1.jpg" alt="News Image">
+              <h3>News Title 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-
-            <div class="news-item">
-              <div class="news-header">
-                <img src="images/profile2.jpg" alt="User Profile Picture">
-                <div>
-                  <div class="news-author">Jane Smith</div>
-                  <div class="news-meta">4 hrs ago • Madridejos Community College</div>
-                </div>
-              </div>
-              <div class="news-content">
-                <p>Sed quis ligula non nunc hendrerit dictum. Nulla facilisi. Cras sit amet tortor ac libero venenatis tempus a eget lacus.</p>
-                <img src="images/news2.jpg" alt="News Image">
-              </div>
-              <div class="news-actions">
-                <button>Like</button>
-                <button>Comment</button>
-                <button>Share</button>
-              </div>
+            <div class="news-item wow fadeInUp" data-wow-delay="0.2s">
+              <img src="images/news2.jpg" alt="News Image">
+              <h3>News Title 2</h3>
+              <p>Integer vehicula sapien sed neque euismod, ac suscipit est tincidunt.</p>
+            </div>
+            <div class="news-item wow fadeInUp" data-wow-delay="0.3s">
+              <img src="images/news3.jpg" alt="News Image">
+              <h3>News Title 3</h3>
+              <p>Sed quis ligula non nunc hendrerit dictum.</p>
             </div>
           </div>
         </div>
@@ -168,5 +126,18 @@
     </div>
     <script src="dist/js/jquery.js"></script>
     <script src="dist/js/bootstrap.js"></script>
+    <script src="dist/js/wow.js"></script>
+    <script>
+      new WOW().init();
+    </script>
   </body>
+</html>
+
+            
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Java script-->
+    <script src="dist/js/core.min.js"></script>
+    <script src="dist/js/script.js"></script>
+
 </html>
