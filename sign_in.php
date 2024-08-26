@@ -289,7 +289,7 @@ if(isset($_SESSION['voter'])){
                         </div>
                         <div class="form-wrap offset-top-15">
                           <label class="form-label form-label-outside" for="form-register-confirm-password">Password:</label>
-                          <input class="form-input bg-default" id="form-register-confirm-password" type="password" name="confirmpass" data-constraints="@Required">
+                          <input class="form-input bg-default" id="form-register-confirm-password" type="password" name="password" data-constraints="@Required">
                         </div>
                         <div class="form-wrap offset-top-15">
                           <label for="photo" class="form-label form-label-outside" for="photo">Photo</label>
