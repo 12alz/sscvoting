@@ -132,8 +132,8 @@ if(isset($_SESSION['voter'])){
                             <ul class="rd-navbar-dropdown">                                  
                                   <li><a href="sign_in.php">Login/Register</a></li>
                                   <li><a href="coming-soon.html">Vision Statement</a></li>
-                                  <li><a href="search-results.html">Search Results</a></li>
-                                  <li><a href="apply.html">Apply</a></li>
+                                  <!-- <li><a href="search-results.html">Search Results</a></li>
+                                  <li><a href="apply.html">Apply</a></li> -->
                             </ul>
                       </li>
                       <li><a href="#">News</a>
@@ -226,7 +226,7 @@ if(isset($_SESSION['voter'])){
                         <h1 class="fw-bold">Providing Higher Education</h1>
                       </div>
                       <div class="offset-top-20 offset-xs-top-40 offset-xl-top-45" data-caption-animate="fadeInUp" data-caption-delay="150">
-                        <h5>Any successful career starts with advanced higher education. At our university, you will have a deeper knowledge of the subjects that will be particularly useful when climbing the career ladder.</h5>
+                        <h5>Any successful career starts with advanced higher education. At our school, you will have a deeper knowledge of the subjects that will be particularly useful when climbing the career ladder.</h5>
                       </div>
                       <div class="offset-top-20 offset-xl-top-30" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="btn button-primary" href="#">Start a Journey</a>
                         <!-- <div class="inset-sm-left-30 d-xl-inline-block"><a class="btn button-default d-none d-xl-inline-block" href="index.php/#" target="_blank">Mission Vision</a></div> -->
@@ -245,7 +245,7 @@ if(isset($_SESSION['voter'])){
                         <h1 class="fw-bold">Creating Your Future</h1>
                       </div>
                       <div class="offset-top-20 offset-xs-top-40 offset-xl-top-45" data-caption-animate="fadeInUp" data-caption-delay="150">
-                        <h5>Together with our university's professors and academics, you can create the future for yourself. It means obtaining necessary skills and knowledge to make everything you learned here work for you in the future.</h5>
+                        <h5>Together with our school professors and academics, you can create the future for yourself. It means obtaining necessary skills and knowledge to make everything you learned here work for you in the future.</h5>
                       </div>
                       <div class="offset-top-20 offset-xl-top-30" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="btn button-primary" href="#">Start a Journey</a>
                         <!-- <div class="inset-sm-left-30 d-xl-inline-block"><a class="btn button-default d-none d-xl-inline-block" href="" target="_blank">Mission Vision</a></div> -->
@@ -264,7 +264,7 @@ if(isset($_SESSION['voter'])){
                         <h1 class="fw-bold">More Than Just Studying</h1>
                       </div>
                       <div class="offset-top-20 offset-xs-top-40 offset-xl-top-45" data-caption-animate="fadeInUp" data-caption-delay="150">
-                        <h5>Besides providing you with new knowledge and training in chosen disciplines, our university also gives you an opportunity to benefit from spending your free time by playing sports, taking part in conferences, and enjoying student life.</h5>
+                        <h5>Besides providing you with new knowledge and training in chosen disciplines, our school also gives you an opportunity to benefit from spending your free time by playing sports, taking part in conferences, and enjoying student life.</h5>
                       </div>
                       <div class="offset-top-20 offset-xl-top-30" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="btn button-primary" href="#">Start a Journey</a>                      
                       </div>
