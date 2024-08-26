@@ -27,6 +27,7 @@ if(isset($_SESSION['voter'])){
     <link rel="stylesheet" href="dist/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/fonts.css">
     <link rel="stylesheet" href="dist/css/style.css">
+    <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
   </head>
   <body>
     <div class="preloader"> 
