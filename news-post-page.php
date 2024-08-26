@@ -163,7 +163,14 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="active"><a href="news.php">News</a></li>
+                                        <!-- Classic Breadcrumbs-->
+      <section class="section breadcrumb-classic context-dark">
+        <div class="container">
+          <h1>Contacts</h1>
+          <div class="offset-top-10 offset-md-top-35">
+            <ul class="list-inline list-inline-lg list-inline-dashed p">
+              <li><a href="index.php">Home</a></li>
+              <li>Contacts
                                         <li><a href="about-us.html">About Us</a></li>
                                     </ul>
                                 </div>
@@ -198,13 +205,13 @@
             </div>
         </section>
         <!-- Page Footer-->
-        <footer class="page-footer text-left">
+        <!-- <footer class="page-footer text-left">
             <div class="shell section-60">
                 <div class="range range-md-center range-50">
                     <div class="cell-xs-10 cell-sm-7 cell-md-4">
                         <div class="footer-brand">
                             <a href="index.html"><img width='136' height='138' src='images/logo-170x172.png' alt='' /></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
