@@ -148,7 +148,7 @@ if(isset($_SESSION['voter'])){
                           </li>
                           <li><a href="modern-news.html">Modern News</a>
                           </li>
-                          <li><a href="news-post-page.html">News Post Page</a>
+                          <li><a href="news-post-page.php">News Post Page</a>
                           </li>
                         </ul>
                       </li>
