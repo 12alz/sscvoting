@@ -149,11 +149,10 @@
     <!-- News Section -->
     <section class="section section-md bg-gray-light text-center">
       <div class="container">
-        <h2>Latest News</h2>
         <div class="row row-30">
           <!-- News Item 1 -->
           <div class="col-md-6 col-lg-4">
-            <article class="post-news"><a class="post-news-image" href="#"><img src="images/news-1.jpg" alt="" width="370" height="255"/></a>
+            <article class="post-news"><a class="post-news-image" href="#"><img src="images/national.jpg" alt="" width="370" height="255"/></a>
               <h5 class="post-news-title"><a href="#">News Title 1</a></h5>
               <p class="post-news-meta">Dec 26, 2024</p>
               <p class="post-news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="button button-primary" href="#">Read More</a>
@@ -167,10 +166,6 @@
     <!-- Java script-->
     <script src="dist/js/core.min.js"></script>
     <script src="dist/js/script.js"></script>
-    <script src="dist/js/wow.min.js"></script>
-<script>
-  new WOW().init();
-</script>
-
+    
 
 </html>
