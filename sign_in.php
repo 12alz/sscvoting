@@ -259,11 +259,10 @@ if(isset($_SESSION['voter'])){
                           <input class="form-input bg-default" id="form-login-username" type="text" name="voter" data-constraints="@Required">
                         </div>
                         <div class="form-wrap offset-top-15">
-                          <label class="form-label form-label-outside" for="form-login-password">Passwordjajaj:</label>
+                          <label class="form-label form-label-outside" for="form-login-password">Password:</label>
                           <input class="form-input bg-default" id="form-login-password" type="password" name="password" data-constraints="@Required">
                         </div>
                         <div class="offset-top-20">
-                        <a href="" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
                           <button class="btn button-primary d-block d-xl-inline-block" type="submit" name="login">Sign in</button><span class="inset-xl-left-20 align-middle small d-inline-block offset-top-20 offset-lg-top-0">or enter with</span>
                           <ul class="list-inline list-inline-xs list-inline-madison d-xl-inline-block inset-xl-left-10 inset-xxl-left-20 align-middle offset-top-15 offset-lg-top-0">
                             <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="#"></a></li>
