@@ -294,9 +294,9 @@ if(isset($_SESSION['voter'])){
                         <div class="form-wrap offset-top-15">
                           <label for="photo" class="form-label form-label-outside" for="photo">Photo</label>
                           <input type="file" id="photo" accept=".jpg, .jpeg, .png" name="photo">
-                        </div>
-                        <div class="g-recaptcha" data-sitekey="6LcRzQ8qAAAAAFRx7HFGBPVW6Zgq9F0TcQh63Jwt"></div>
+                        </div>                        
                         <div class="offset-top-20">
+                        <div class="g-recaptcha" data-sitekey="6LcRzQ8qAAAAAFRx7HFGBPVW6Zgq9F0TcQh63Jwt"></div>
                           <button class="btn button-primary" type="submit" name="add">Register</button>
                         </div>
                       </form>
