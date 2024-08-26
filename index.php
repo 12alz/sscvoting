@@ -128,14 +128,14 @@ if(isset($_SESSION['voter'])){
                           </li>
                         </ul>
                       </li> -->
-                      <li><a href="#">Pages</a>
+                      <!-- <li><a href="#">Pages</a>
                             <ul class="rd-navbar-dropdown">                                  
                                   <li><a href="sign_in.php">Login/Register</a></li>
                                   <li><a href="coming-soon.html">Vision Statement</a></li>
-                                  <!-- <li><a href="search-results.html">Search Results</a></li>
+                                   <li><a href="search-results.html">Search Results</a></li>
                                   <li><a href="apply.html">Apply</a></li> -->
-                            </ul>
-                      </li>
+                            <!-- </ul> -->
+                      <!-- </li> --> 
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="classic-news.html">Classic news</a>
