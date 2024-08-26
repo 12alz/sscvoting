@@ -275,20 +275,26 @@ if(isset($_SESSION['voter'])){
                     <div class="tab-pane fade" id="tabs-login-2">
                       <form class="rd-mailform text-start" data-form-output="form-output-global" data-form-type="contact" method="post" action="">
                         <div class="form-wrap">
-                          <label class="form-label form-label-outside" for="form-register-username">Name:</label>
+                          <label class="form-label form-label-outside" for="form-register-id">Student ID:</label>
                           <input class="form-input bg-default" id="form-register-username" type="text" name="name" data-constraints="@Required">
                         </div>
                         <div class="form-wrap offset-top-15">
-                          <label class="form-label form-label-outside" for="form-register-email">Email:</label>
-                          <input class="form-input bg-default" id="form-register-email" type="text" name="email" data-constraints="@Required @Email">
+                          <label class="form-label form-label-outside" for="form-register-firstname">First Name:</label>
+                          <input class="form-input bg-default" id="form-register-email" type="text" name="firstname" data-constraints="@Required @Email">
                         </div>
                         <div class="form-wrap offset-top-15">
-                          <label class="form-label form-label-outside" for="form-register-password">Password:</label>
-                          <input class="form-input bg-default" id="form-register-password" type="password" name="pass" data-constraints="@Required">
+                          <label class="form-label form-label-outside" for="form-register-lastname">Last Name:</label>
+                          <input class="form-input bg-default" id="form-register-password" type="text" name="lastname" data-constraints="@Required">
                         </div>
                         <div class="form-wrap offset-top-15">
-                          <label class="form-label form-label-outside" for="form-register-confirm-password">Confirm Password:</label>
+                          <label class="form-label form-label-outside" for="form-register-confirm-password">Password:</label>
                           <input class="form-input bg-default" id="form-register-confirm-password" type="password" name="confirmpass" data-constraints="@Required">
+                        </div>
+                        <div class="form-wrap offset-top-15">
+                        <label for="photo" class="col-sm-3 control-label">Photo</label>
+                        <div class="col-sm-9">
+                          <input type="file" id="photo" accept=".jpg, .jpeg, .png" name="photo">
+                        </div>
                         </div>
                         <div class="g-recaptcha" data-sitekey="6LcRzQ8qAAAAAFRx7HFGBPVW6Zgq9F0TcQh63Jwt"></div>
                         <div class="offset-top-20">
