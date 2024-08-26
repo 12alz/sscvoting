@@ -103,25 +103,8 @@
                           </li>
                         </ul>
                       </li>
-                      <!-- <li><a href="#">Elements</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="grid.html">Grid</a>
-                          </li>
-                          <li><a href="icons.html">Icons</a>
-                          </li>
-                          <li><a href="tables.html">Tables</a>
-                          </li>
-                          <li><a href="progress-bars.html">Progress bars</a>
-                          </li>
-                          <li><a href="tabs-and-accordions.html">Tabs &amp; Accordions</a>
-                          </li>
-                          <li><a href="forms.html">Forms</a>
-                          </li>
-                          <li><a href="buttons.html">Buttons</a>
-                          </li>
-                          <li><a href="typography.html">Typography</a>
-                          </li>
-                        </ul> -->
+                   
+                   
                       </li>
                       <li><a href="#">Pages</a>
                         <div class="rd-navbar-megamenu">
@@ -136,52 +119,7 @@
                             </ul>
                             <ul class="col-lg-3">
                               <li>
-                                <h6>Pages</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="404.html">404</a></li>
-                                  <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                  <li><a href="maintenance.html">Maintenance</a></li>
-                                  <li><a href="sign_in.php">Login/Register</a></li>
-                                  <li><a href="coming-soon.html">Coming Soon</a></li>
-                                  <li><a href="search-results.html">Search Results</a></li>
-                                  <li><a href="apply.html">Apply</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                            <ul class="col-lg-3">
-                              <li>
-                                <h6>Layouts</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="header-transparent.html">Header Transparent</a></li>
-                                  <li><a href="header-center.html">Header Center, Footer Center</a></li>
-                                  <li><a href="header-minimal.html">Header Minimal, Footer Center</a></li>
-                                  <li><a href="header-corporate.html">Header Corporate</a></li>
-                                  <li><a href="header-hamburger-menu.html">Header Hamburger Menu</a></li>
-                                  <li><a href="footer-minimal.html">Footer Minimal</a></li>
-                                  <li><a href="footer-widget.html">Footer Widget</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                            <ul class="col-lg-3">
-                              <li>
-                                <h6>About</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="history.html">History</a></li>
-                                  <li><a href="people.html">People</a></li>
-                                  <li><a href="team-member-profile.html">Team Member Profile</a></li>
-                                </ul>
-                              </li>
-                              <li>
-                                <h6>Event Calendar</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="calendar.html">Calendar</a></li>
-                                  <li><a href="day-event.html">Day Event</a></li>
-                                  <li><a href="event-page.html">Event Page</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
+                                
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
