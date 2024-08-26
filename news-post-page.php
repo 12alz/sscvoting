@@ -15,57 +15,6 @@
     <link rel="stylesheet" href="dist/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/fonts.css">
     <link rel="stylesheet" href="dist/css/style.css">
-    <style>
-      .news-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
-      }
-
-      .news-item {
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        transition: transform 0.3s, box-shadow 0.3s;
-        width: calc(33.333% - 20px);
-        cursor: pointer;
-      }
-
-      .news-item img {
-        width: 100%;
-        border-radius: 8px;
-      }
-
-      .news-item h3 {
-        font-size: 1.5rem;
-        margin-top: 15px;
-      }
-
-      .news-item p {
-        font-size: 1rem;
-        margin-top: 10px;
-        color: #555;
-      }
-
-      .news-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      @media (max-width: 768px) {
-        .news-item {
-          width: calc(50% - 20px);
-        }
-      }
-
-      @media (max-width: 480px) {
-        .news-item {
-          width: 100%;
-        }
-      }
-    </style>
   </head>
   <body>
     <div class="preloader"> 
@@ -82,8 +31,117 @@
       <header class="page-head">
         <!-- RD Navbar Transparent-->
         <div class="rd-navbar-wrap">
-          <nav class="rd-navbar rd-navbar-default">
-            <!-- Navbar content here -->
+          <nav class="rd-navbar rd-navbar-default" data-auto-height="false" data-lg-auto-height="true" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="210px" data-xl-stick-up-offset="85px" data-xxl-stick-up-offset="85px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
+                <h4 class="panel-title d-lg-none">Lates News</h4>
+                <!-- RD Navbar Right Side Toggle-->
+                <button class="rd-navbar-top-panel-toggle d-lg-none" data-rd-navbar-toggle=".rd-navbar-top-panel"><span></span></button>
+                <div class="rd-navbar-top-panel">
+                  <div class="rd-navbar-top-panel-left-part">
+                    <ul class="list-unstyled">
+                      <li>
+                        <div class="unit flex-row align-items-center unit-spacing-xs">
+                          <div class="unit-left"><span class="icon mdi mdi-phone align-middle"></span></div>
+                          <div class="unit-body"><a href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block" href="tel:#">1-800-6547-321</a>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit flex-row align-items-center unit-spacing-xs">
+                          <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle"></span></div>
+                          <div class="unit-body"><a href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit flex-row align-items-center unit-spacing-xs">
+                          <div class="unit-left"><span class="icon mdi mdi-email-open align-middle"></span></div>
+                          <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="rd-navbar-top-panel-right-part">
+                    <div class="rd-navbar-top-panel-left-part">
+                      <div class="unit flex-row align-items-center unit-spacing-xs">
+                        <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
+                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rd-navbar-menu-wrap clearfix">
+                <!--Navbar Brand-->
+                <div class="rd-navbar-brand"><a class="d-inline-block" href="index.php">
+                    <div class="unit align-items-sm-center unit-xl unit-spacing-custom">
+                      <div class="unit-left"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
+                      </div>
+                      <div class="unit-body">
+                        <div class="rd-navbar-brand-title">Madridejos</div>
+                        <div class="rd-navbar-brand-slogan">Community College</div>
+                      </div>
+                    </div></a></div>
+                <div class="rd-navbar-nav-wrap">
+                  <div class="rd-navbar-mobile-scroll">
+                    <div class="rd-navbar-mobile-header-wrap">
+                      <!--Navbar Brand Mobile-->
+                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
+                    </div>
+                    <!-- RD Navbar Nav-->
+                    <ul class="rd-navbar-nav">
+                      <li><a href="index.php">Home</a>
+                      
+                      <li><a href="#">News</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="classic-news.html">Classic news</a>
+                          </li>
+                          <li><a href="grid-news.html">Grid News</a>
+                          </li>
+                          <li><a href="masonry-news.html">Masonry News</a>
+                          </li>
+                          <li><a href="grid-news-3-columns.html">3 Column Grid News</a>
+                          </li>
+                          <li><a href="modern-news.html">Modern News</a>
+                          </li>
+                          <li><a href="news-post-page.html">News Post Page</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="active"><a href="contacts.php">Contacts</a>
+                      </li>
+                    </ul>
+                    <!--RD Navbar Mobile Search-->
+                    <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="http://livedemo00.template-help.com/wt_59029_v3/search-results.html" method="GET">
+                        <div class="form-wrap">
+                          <label class="form-label" for="rd-navbar-mobile-search-form-input">Search...</label>
+                          <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-mobile-search-form-input" type="text" name="s" autocomplete="off"/>
+                        </div>
+                        <button class="icon fa fa-search rd-navbar-search-button" type="submit"></button>
+                      </form>
+                    </div>
+                  </div>
+                  <div>
+                    <!--RD Navbar Search-->
+                    <div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="http://livedemo00.template-help.com/wt_59029_v3/search-results.html" data-search-live="rd-search-results-live" method="GET">
+                        <div class="form-wrap">
+                          <label class="form-label" for="rd-navbar-search-form-input">Search</label>
+                          <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off"/>
+                          <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                        </div>
+                      </form>
+                    </div>
+                    <!--RD Navbar shop-->
+                    <!-- <div class="rd-navbar-cart"><span class="icon fa fa-shopping-cart"></span><a class="inset-left-10" href="shopping-cart.html">2</a></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
           </nav>
         </div>
       </header>
@@ -94,45 +152,16 @@
           <div class="offset-top-10 offset-md-top-35">
             <ul class="list-inline list-inline-lg list-inline-dashed p">
               <li><a href="index.php">Home</a></li>
-              <li>News</li>
+              <li>
+              </li>
             </ul>
           </div>
         </div>
       </section>
-
-      <!-- News Section -->
-      <section class="section section-md bg-gray-100">
-        <div class="container">
-          <div class="news-container">
-            <div class="news-item wow fadeInUp" data-wow-delay="0.1s">
-              <img src="images/news1.jpg" alt="News Image">
-              <h3>News Title 1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    
+                </form>
+              </div>
             </div>
-            <div class="news-item wow fadeInUp" data-wow-delay="0.2s">
-              <img src="images/news2.jpg" alt="News Image">
-              <h3>News Title 2</h3>
-              <p>Integer vehicula sapien sed neque euismod, ac suscipit est tincidunt.</p>
-            </div>
-            <div class="news-item wow fadeInUp" data-wow-delay="0.3s">
-              <img src="images/news3.jpg" alt="News Image">
-              <h3>News Title 3</h3>
-              <p>Sed quis ligula non nunc hendrerit dictum.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End of News Section -->
-    </div>
-    <script src="dist/js/jquery.js"></script>
-    <script src="dist/js/bootstrap.js"></script>
-    <script src="dist/js/wow.js"></script>
-    <script>
-      new WOW().init();
-    </script>
-  </body>
-</html>
-
             
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
