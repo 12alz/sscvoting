@@ -11,6 +11,7 @@
 
 		if($query->num_rows < 1){
 			$_SESSION['error'] = 'Cannot find account with the username';
+			header('location: ../sign_in.php');
 		}
 		else{
 			$row = $query->fetch_assoc();
@@ -19,14 +20,16 @@
 			}
 			else{
 				$_SESSION['error'] = 'Incorrect username or password';
+				header('location: ../sign_in.php');
 			}
 		}
 		
 	}
 	else{
 		$_SESSION['error'] = 'Input admin credentials first';
+		header('location: ../sign_in.php');
 	}
 
-	header('location: index.php');
+	header('location: ../sign_in.php');
 
 ?>
