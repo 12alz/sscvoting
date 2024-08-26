@@ -274,7 +274,7 @@ if(isset($_SESSION['voter'])){
                       </form>
                     </div>
                     <div class="tab-pane fade" id="tabs-login-2">
-                      <form method="post" action="sign_up.php">
+                      <form method="POST" action="sign_up.php">
                         <div class="form-wrap">
                           <label class="form-label form-label-outside" for="form-register-id">Student ID:</label>
                           <input class="form-input bg-default" id="form-register-username" type="text" name="name" data-constraints="@Required">
@@ -292,8 +292,7 @@ if(isset($_SESSION['voter'])){
                           <input class="form-input bg-default" id="form-register-confirm-password" type="password" name="confirmpass" data-constraints="@Required">
                         </div>
                         <div class="form-wrap offset-top-15">
-                        <label for="photo" class="col-sm-3 control-label">Photo</label>
-                        <div class="col-sm-9">
+                          <label for="photo" class="form-label form-label-outside" for="photo">Photo</label>
                           <input type="file" id="photo" accept=".jpg, .jpeg, .png" name="photo">
                         </div>
                         </div>
