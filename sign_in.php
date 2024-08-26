@@ -273,7 +273,7 @@ if(isset($_SESSION['voter'])){
                       </form>
                     </div>
                     <div class="tab-pane fade" id="tabs-login-2">
-                      <form method="post" action="register.php">
+                      <form method="post" action="sign_up.php">
                         <div class="form-wrap">
                           <label class="form-label form-label-outside" for="form-register-id">Student ID:</label>
                           <input class="form-input bg-default" id="form-register-username" type="text" name="name" data-constraints="@Required">
@@ -298,7 +298,7 @@ if(isset($_SESSION['voter'])){
                         </div>
                         <div class="g-recaptcha" data-sitekey="6LcRzQ8qAAAAAFRx7HFGBPVW6Zgq9F0TcQh63Jwt"></div>
                         <div class="offset-top-20">
-                          <button class="btn button-primary" type="submit">Register</button>
+                          <button class="btn button-primary" type="submit" name="add">Register</button>
                         </div>
                       </form>
                     </div>
