@@ -134,7 +134,7 @@
                                 </ul>
                               </li>
                             </ul>
-                            <!-- <ul class="col-lg-3">
+                            <ul class="col-lg-3">
                               <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
@@ -182,7 +182,7 @@
                             </ul>
                           </div>
                         </div>
-                      </li> -->
+                      </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="classic-news.html">Classic news</a>
@@ -277,7 +277,7 @@
         <div class="container">
           <div class="row row-50 justify-content-sm-center">
             <div class="col-sm-10 col-lg-8 text-lg-start">
-              <h2 class="fw-bold">Get in Touch</h2>
+              <h2 class="fw-bold">Get in Touchjsjs</h2>
               <hr class="divider bg-madison divider-lg-0">
               <div class="offset-top-30 offset-md-top-60">
                 <p>You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
