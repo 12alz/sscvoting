@@ -158,14 +158,93 @@
               <p class="post-news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="button button-primary" href="#">Read More</a>
             </article>
           </div>
-          <!-- News Item
+                    <!-- News Item 2 -->
+                    <div class="col-md-6 col-lg-4">
+            <article class="post-news wow fadeInUp" data-wow-delay="0.1s">
+              <a class="post-news-image" href="#">
+                <img src="images/news-2.jpg" alt="" width="370" height="255"/>
+              </a>
+              <h5 class="post-news-title">
+                <a href="#">News Title 2</a>
+              </h5>
+              <p class="post-news-meta">Dec 25, 2024</p>
+              <p class="post-news-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <a class="button button-primary" href="#">Read More</a>
+            </article>
+          </div>
 
-            
-    < Global Mailform Output-->
+          <!-- News Item 3 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="post-news wow fadeInUp" data-wow-delay="0.2s">
+              <a class="post-news-image" href="#">
+                <img src="images/news-3.jpg" alt="" width="370" height="255"/>
+              </a>
+              <h5 class="post-news-title">
+                <a href="#">News Title 3</a>
+              </h5>
+              <p class="post-news-meta">Dec 24, 2024</p>
+              <p class="post-news-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <a class="button button-primary" href="#">Read More</a>
+            </article>
+          </div>
+
+          <!-- News Item 4 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="post-news wow fadeInUp" data-wow-delay="0.3s">
+              <a class="post-news-image" href="#">
+                <img src="images/news-4.jpg" alt="" width="370" height="255"/>
+              </a>
+              <h5 class="post-news-title">
+                <a href="#">News Title 4</a>
+              </h5>
+              <p class="post-news-meta">Dec 23, 2024</p>
+              <p class="post-news-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <a class="button button-primary" href="#">Read More</a>
+            </article>
+          </div>
+
+          <!-- News Item 5 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="post-news wow fadeInUp" data-wow-delay="0.4s">
+              <a class="post-news-image" href="#">
+                <img src="images/news-5.jpg" alt="" width="370" height="255"/>
+              </a>
+              <h5 class="post-news-title">
+                <a href="#">News Title 5</a>
+              </h5>
+              <p class="post-news-meta">Dec 22, 2024</p>
+              <p class="post-news-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              <a class="button button-primary" href="#">Read More</a>
+            </article>
+          </div>
+
+          <!-- News Item 6 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="post-news wow fadeInUp" data-wow-delay="0.5s">
+              <a class="post-news-image" href="#">
+                <img src="images/news-6.jpg" alt="" width="370" height="255"/>
+              </a>
+              <h5 class="post-news-title">
+                <a href="#">News Title 6</a>
+              </h5>
+              <p class="post-news-meta">Dec 21, 2024</p>
+              <p class="post-news-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+              <a class="button button-primary" href="#">Read More</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Mailform Output -->
     <div class="snackbars" id="form-output-global"></div>
-    <!-- Java script-->
+    <!-- JavaScript -->
     <script src="dist/js/core.min.js"></script>
     <script src="dist/js/script.js"></script>
-    
-
+    <script src="dist/js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </div>
+</body>
 </html>
