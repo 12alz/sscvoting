@@ -10,186 +10,359 @@ if(isset($_SESSION['voter'])){
     exit(); // Ensure no further execution after redirection
 }
 ?>
-
-<?php include 'includes/header.php'; ?>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<style>
-    body {
-        background: url('images/mcc.jpg') no-repeat center center fixed;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-    }
-   .login-box {
-        background: white;
-        padding: 20px;
-        border-radius: 30px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 320px;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .login-logo img {
-        max-width: 100px; 
-        height: auto;
-        margin-bottom: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 50%;
-    }
-    .login-logo h2 {
-        color: #333;
-        font-weight: bold;
-        font-size: 24px;
-    }
-    .login-box-body {
-        margin-top: 20px;
-    }
-    .login-box-msg {
-        text-align: center;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 20px;
-    }
-    .form-group .form-control {
-        border-radius: 5px;
-    }
-    .btn {
-        border-radius: 5px;
-    }
-    .btn-primary {
-        background-color: #blue; /* There was a mistake here, it should be '#blue' */
-        border: none;
-        transition: background-color 0.3s;
-    }
-    
-    .btn-primary:hover {
-        background-color: #2c3e50;
-    }
-    .btn a {
-        color: white;
-    }
-    .box-header {
-        margin-top: 20px;
-        text-align: center;
-    }
-    .box-header .btn {
-        margin: 5px;
-    }
-    .alert {
-        margin-top: 20px;
-    }
-    footer {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 14px;
-        color: #777;
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-    }
-</style>
-
-<body>
-    <div class="login-box">
-        <div class="login-logo">
-        <img src="images/2.png">
-        <h2>Supreme Student Council Voting System </h2>
+<!DOCTYPE html>
+<html class="wide wow-animation scrollTo" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="intense web design multipurpose template">
+    <meta name="date" content="Dec 26">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,700%7CMerriweather:400,300,300italic,400italic,700,700italic">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/fonts.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+  </head>
+  <body>
+    <div class="preloader"> 
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
         </div>
-        <div class="login-box-body">
-            <form action="login.php" method="POST">
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="voter" placeholder="Student's ID" required oninput="formatStudentID(this)">
-                    <span class="fas fa-user form-control-feedback"></span> <!-- Assuming this is for an icon -->
-                </div>
-
-                <script>
-                    function formatStudentID(input) {
-                        // Remove any non-numeric characters
-                        var formatted = input.value.replace(/\D/g, '');
-
-                        // Limit to 8 numeric characters total
-                        formatted = formatted.slice(0, 8);
-
-                        // Insert a dash after the first 4 characters if there are more than 4 characters
-                        if (formatted.length > 4) {
-                            formatted = formatted.slice(0, 4) + '-' + formatted.slice(4);
-                        }
-
-                        // Update the input value
-                        input.value = formatted;
-                    }
-                </script>
-
-                <div class="form-group has-feedback">
-                    <input type="password" class="form-control" name="password" placeholder="Password" required>
-                    <span class="fas fa-lock form-control-feedback"></span> <!-- Updated icon class to Font Awesome -->
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-primary btn-block" name="login"><i class="fa fa-sign-in"></i> Sign In</button>
-                </div>
-                <br>
-                <div>
-                    <p class="text-center">Don't have an account? <a href="#addnew" data-toggle="modal" class="btn">Register Here</a></p>
-                </div>
-                <div class="box-header">
-                    <a href="admin/index.php" class="btn btn-secondary"><i class="fa fa-user"></i> Admin</a>
-                    <a href="index.php" class="btn btn-secondary"><i class="fa fa-users"></i> Student voters</a>
-                </div>
-            </form>
-        </div>
+        <p>Loading...</p>
+      </div>
     </div>
-
-    <?php include 'register.php'; ?>
-    <?php include 'includes/scripts.php'; ?>
-
-    <footer>
-    <p><b>NOTE:</b> Vote Wisely</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        <?php
-        // Check for error messages set by login.php
-        if(isset($_SESSION['error'])){
-            echo "
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: '".$_SESSION['error']."',
-                    onClose: () => {a
-                        window.location.href = 'index.php';
-                    }
-                });
-            ";
-            unset($_SESSION['error']);
-        }
-
-        // Check for success messages if needed
-        if(isset($_SESSION['success'])){
-            echo "
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success!',
-                    text: '".$_SESSION['success']."',
-                    onClose: () => {
-                        window.location.href = 'index.php';
-                    }
-                });
-            ";
-            unset($_SESSION['success']);
-        }
-        ?>
-    </script>
-</body>
+    <!-- Page-->
+    <div class="page text-center">
+      <!-- Page Header-->
+      <header class="page-head header-panel-absolute">
+        <!-- RD Navbar Transparent-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-default" data-auto-height="false" data-lg-auto-height="true" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="210px" data-xl-stick-up-offset="85px" data-xxl-stick-up-offset="85px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
+                <h4 class="panel-title d-lg-none">Home</h4>
+                <!-- RD Navbar Right Side Toggle-->
+                <button class="rd-navbar-top-panel-toggle d-lg-none" data-rd-navbar-toggle=".rd-navbar-top-panel"><span></span></button>
+                <div class="rd-navbar-top-panel">
+                  <div class="rd-navbar-top-panel-left-part">
+                    <ul class="list-unstyled">
+                      <li>
+                        <div class="unit flex-row align-items-center unit-spacing-xs">
+                          <div class="unit-left"><span class="icon mdi mdi-phone align-middle"></span></div>
+                          <div class="unit-body"><a href="tel:#">63-777-1234-567,</a> <a class="d-block d-lg-inline-block" href="tel:#">2-777-6547-321</a>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit flex-row align-items-center unit-spacing-xs">
+                          <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle"></span></div>
+                          <div class="unit-body"><a href="#">1234 Bantayan Island, Cebu Philippines</a></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit flex-row align-items-center unit-spacing-xs">
+                          <div class="unit-left"><span class="icon mdi mdi-email-open align-middle"></span></div>
+                          <div class="unit-body"><a href="mailto:#">info@school.edu</a></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="rd-navbar-top-panel-right-part">
+                    <div class="rd-navbar-top-panel-left-part">
+                      <div class="unit flex-row align-items-center unit-spacing-xs">
+                        <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
+                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rd-navbar-menu-wrap clearfix">
+                <!--Navbar Brand-->
+                <div class="rd-navbar-brand"><a class="d-inline-block" href="index.php">
+                    <div class="unit align-items-sm-center unit-xl unit-spacing-custom">
+                      <div class="unit-left"><img width='170' height='172' src='https://mccsscvoting.com/images/2.png' alt=''/>
+                      </div>
+                      <div class="unit-body">
+                        <div class="rd-navbar-brand-title">Madridejos</div>
+                        <div class="rd-navbar-brand-slogan">Community College</div>
+                      </div>
+                    </div></a></div>
+                <div class="rd-navbar-nav-wrap">
+                  <div class="rd-navbar-mobile-scroll">
+                    <div class="rd-navbar-mobile-header-wrap">
+                      <!--Navbar Brand Mobile-->
+                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='https://mccsscvoting.com/images/2.png' alt=''/></a></div>
+                    </div>
+                    <!-- RD Navbar Nav-->
+                    <ul class="rd-navbar-nav">
+                      <li class="active"><a href="index.php">Home</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="home-1.html">Home 1</a>
+                          </li>
+                          <li><a href="home-2.html">Home 2</a>
+                          </li>
+                          <li><a href="home-3.html">Home 3</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <!-- <li><a href="#">Elements</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="grid.html">Grid</a>
+                          </li>
+                          <li><a href="icons.html">Icons</a>
+                          </li>
+                          <li><a href="tables.html">Tables</a>
+                          </li>
+                          <li><a href="progress-bars.html">Progress bars</a>
+                          </li>
+                          <li><a href="tabs-and-accordions.html">Tabs &amp; Accordions</a>
+                          </li>
+                          <li><a href="forms.html">Forms</a>
+                          </li>
+                          <li><a href="buttons.html">Buttons</a>
+                          </li>
+                          <li><a href="typography.html">Typography</a>
+                          </li>
+                        </ul>
+                      </li> -->
+                      <li><a href="#">Pages</a>
+                            <ul class="rd-navbar-dropdown">                                  
+                                  <li><a href="sign_in.php">Login/Register</a></li>
+                                  <li><a href="coming-soon.html">Vision Statement</a></li>
+                                  <li><a href="search-results.html">Search Results</a></li>
+                                  <li><a href="apply.html">Apply</a></li>
+                            </ul>
+                      </li>
+                      <li><a href="#">News</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="classic-news.html">Classic news</a>
+                          </li>
+                          <li><a href="grid-news.html">Grid News</a>
+                          </li>
+                          <li><a href="masonry-news.html">Masonry News</a>
+                          </li>
+                          <li><a href="grid-news-3-columns.html">3 Column Grid News</a>
+                          </li>
+                          <li><a href="modern-news.html">Modern News</a>
+                          </li>
+                          <li><a href="news-post-page.html">News Post Page</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <!-- <li><a href="#">Campus</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="grid-gallery.html">Grid Gallery</a>
+                          </li>
+                          <li><a href="grid-without-padding-gallery.html">Grid Without Padding Gallery</a>
+                          </li>
+                          <li><a href="masonry-gallery.html">Masonry Gallery</a>
+                          </li>
+                          <li><a href="cobbles-gallery.html">Cobbles Gallery</a>
+                          </li>
+                        </ul>
+                      </li> -->
+                      <!-- <li><a href="#">Shop</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="product-catalog.html">Product Catalog</a>
+                          </li>
+                          <li><a href="single-product.html">Single Product</a>
+                          </li>
+                          <li><a href="shopping-cart.html">Shopping Cart</a>
+                          </li>
+                          <li><a href="checkout.html">Checkout</a>
+                          </li>
+                        </ul>
+                      </li> -->
+                      <!-- <li><a href="donate.html">Donate</a> -->
+                      </li>
+                      <li><a href="contacts.php">Contacts</a>
+                      </li>
+                      <!-- <li class="d-lg-none"><a href="shopping-cart.html">Shopping Cart (2)</a></li> -->
+                    </ul>
+                    <!--RD Navbar Mobile Search-->
+                    <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="" method="GET">
+                        <div class="form-wrap">
+                          <label class="form-label" for="rd-navbar-mobile-search-form-input">Search...</label>
+                          <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-mobile-search-form-input" type="text" name="s" autocomplete="off"/>
+                        </div>
+                        <button class="icon fa fa-search rd-navbar-search-button" type="submit"></button>
+                      </form>
+                    </div>
+                  </div>
+                  <div>
+                    <!--RD Navbar Search-->
+                    <div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="" data-search-live="rd-search-results-live" method="GET">
+                        <div class="form-wrap">
+                          <label class="form-label" for="rd-navbar-search-form-input">Search</label>
+                          <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off"/>
+                          <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                        </div>
+                      </form>
+                    </div>
+                    <!--RD Navbar shop-->
+                    <!-- <div class="rd-navbar-cart"><span class="icon fa fa-shopping-cart"></span><a class="inset-left-10" href="shopping-cart.html">2</a></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section class="section">
+        <!-- Swiper-->
+        <div class="swiper-container swiper-slider swiper-slider-modern" data-loop="true" data-autoplay="4000" data-slide-effect="fade" data-height="42.1875%" data-min-height="480px">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-slide-bg="https://mccsscvoting.com/images/mcc.jpg" style="background-position: 80% center">
+              <div class="swiper-slide-caption">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-9 col-sm-10">
+                      <div data-caption-animate="fadeInUp" data-caption-delay="100">
+                        <h1 class="fw-bold">Providing Higher Education</h1>
+                      </div>
+                      <div class="offset-top-20 offset-xs-top-40 offset-xl-top-45" data-caption-animate="fadeInUp" data-caption-delay="150">
+                        <h5>Any successful career starts with advanced higher education. At our university, you will have a deeper knowledge of the subjects that will be particularly useful when climbing the career ladder.</h5>
+                      </div>
+                      <div class="offset-top-20 offset-xl-top-30" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="btn button-primary" href="#">Start a Journey</a>
+                        <!-- <div class="inset-sm-left-30 d-xl-inline-block"><a class="btn button-default d-none d-xl-inline-block" href="index.php/#" target="_blank">Mission Vision</a></div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-slide-bg="images/slide-02-1920x810.jpg" style="background-position: 80% center">
+              <div class="swiper-slide-caption">
+                <div class="container">
+                  <div class="row justify-content-sm-center">
+                    <div class="col-lg-9 col-sm-10">
+                      <div data-caption-animate="fadeInUp" data-caption-delay="100">
+                        <h1 class="fw-bold">Creating Your Future</h1>
+                      </div>
+                      <div class="offset-top-20 offset-xs-top-40 offset-xl-top-45" data-caption-animate="fadeInUp" data-caption-delay="150">
+                        <h5>Together with our university's professors and academics, you can create the future for yourself. It means obtaining necessary skills and knowledge to make everything you learned here work for you in the future.</h5>
+                      </div>
+                      <div class="offset-top-20 offset-xl-top-30" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="btn button-primary" href="#">Start a Journey</a>
+                        <!-- <div class="inset-sm-left-30 d-xl-inline-block"><a class="btn button-default d-none d-xl-inline-block" href="" target="_blank">Mission Vision</a></div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-slide-bg="images/slide-03-1920x810.jpg" style="background-position: 80% center">
+              <div class="swiper-slide-caption">
+                <div class="container">
+                  <div class="row justify-content-sm-center">
+                    <div class="col-lg-9 col-sm-10">
+                      <div data-caption-animate="fadeInUp" data-caption-delay="100">
+                        <h1 class="fw-bold">More Than Just Studying</h1>
+                      </div>
+                      <div class="offset-top-20 offset-xs-top-40 offset-xl-top-45" data-caption-animate="fadeInUp" data-caption-delay="150">
+                        <h5>Besides providing you with new knowledge and training in chosen disciplines, our university also gives you an opportunity to benefit from spending your free time by playing sports, taking part in conferences, and enjoying student life.</h5>
+                      </div>
+                      <div class="offset-top-20 offset-xl-top-30" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="btn button-primary" href="#">Start a Journey</a>                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Swiper Pagination-->
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      <!-- <section class="section section-lg">
+        <div class="container container-wide">
+          <div class="row row-30 align-items-lg-center">
+            <div class="col-lg-6 col-xl-7"><img class="img-responsive" src="images/landing-3.png" alt=""></div>
+            <div class="col-lg-6 col-xl-5 text-start">
+              <h2>Home Layouts and Demos</h2>
+              <hr class="divider bg-madison divider-md-0">
+              <p>Choose from our wide range of predefined Homepage layouts and demos to create your Own Amazing Experience.</p> -->
+              <!-- <div class="offset-top-50"><a class="btn button-primary" href="https://www.templatemonster.com/website-templates/responsive-website-template-59029.html" target="_blank">Get Template!</a></div> -->
+            <!-- </div>
+          </div>
+          <div class="offset-top-60">
+            <div class="row row-30 isotope-wrap"> -->
+              <!-- Isotope Filters-->
+              <!-- <div class="col-xl-12">
+                <div class="isotope-filters isotope-filters-horizontal">
+                  <button class="isotope-filters-toggle btn button-primary" data-custom-toggle="#isotope-filters" data-custom-toggle-disable-on-blur="true" data-custom-toggle-hide-on-blur="true">Filter<span class="caret"></span></button>
+                  <ul class="isotope-filters-modern isotope-filters-list" id="isotope-filters">
+                    <li><a class="active" data-isotope-filter="*" href="#">All</a></li>
+                    <li><a data-isotope-filter="Home" href="#">Home</a></li>
+                    <li><a data-isotope-filter="News" href="#">News</a></li> -->
+                    <!-- <li><a data-isotope-filter="Shop" href="#">Shop</a></li>
+                    <li><a data-isotope-filter="Campus" href="#">Campus</a></li>
+                    <li><a data-isotope-filter="Elements" href="#">Elements</a></li> -->
+                    <!-- <li><a data-isotope-filter="Pages" href="#">Pages</a></li> -->
+                  <!-- </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section> -->
+      <section class="section bg-catskill section-lg">
+        <div class="container">
+          <h2>Vision Statement</h2>
+          <hr class="divider bg-madison">
+          <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-7 col-xl-6">
+              <p>The Madridejos Community College dreams to mold professionally competitive,service   oriented,   productive,   and value-laden   citizens,   through   quality   education   andintegral formation. Inspired by its four-fold functions of effective instruction, personalenhancement, research and extension, and production, it shall become a deeply rootedfoundation   of   the   town   's   socio-economic   upliftment   and   a   prime   mover   for   nationbuilding.</p>
+              <div class="offset-top-35">
+                <ul class="list-inline list-inline-sm list-inline-madison">
+                  <li><a class="icon icon-xxs fa fa-facebook icon-rect icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon icon-xxs fa fa-twitter icon-rect icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon icon-xxs fa fa-google icon-rect icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon icon-xxs fa fa-instagram icon-rect icon-gray-light-filled" href="#"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer Classic-->
+      <footer class="page-footer bg-catskill section-xs">
+        <div class="container">
+          <div class="row row-20 justify-content-sm-center align-items-md-center text-lg-start">
+            <div class="col-sm-10 col-lg-6">
+              <!--Footer brand--><a class="d-inline-block" href="index.php">
+                <div class="unit align-items-sm-center flex-column unit-md flex-lg-row unit-spacing-xxs">
+                  <div class="unit-left"><img class="img-responsive d-inline-block" src="https://mccsscvoting.com/images/2.png" width="70" height="70" alt=""></div>
+                  <div class="unit-body text-xxl-start">
+                    <div>
+                      <h6 class="barnd-name text-ubold">Madridejos</h6>
+                    </div>
+                    <div>
+                      <p class="brand-slogan text-gray fst-italic font-accent">Community College</p>
+                    </div>
+                  </div>
+                </div></a>
+            </div>
+            <div class="col-sm-10 col-lg-6 text-lg-end">
+              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span><a class="text-dark" href="https://mccsscvoting.com/">Madridejos Community College</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Java script-->
+    <script src="dist/js/core.min.js"></script>
+    <script src="dist/js/script.js"></script>
 </html>
