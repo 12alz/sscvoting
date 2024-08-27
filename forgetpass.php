@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Forgot Password</h2>
-    <form action="function.php" method="post">
+    <form action="../admin/function.php" method="post">
         <label for="email">Enter your email:</label>
         <input type="email" id="email" name="email" required>
         <br>
