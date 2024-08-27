@@ -314,47 +314,32 @@ if(isset($_SESSION['voter'])){
                         </div>
                       </form>
                     </div>
-                  <!-- Login Form -->
-<div class="tab-pane fade" id="tabs-login-3">
-    <form method="post" action="admin/login.php">
-        <div class="form-wrap">
-            <label class="form-label form-label-outside" for="username">Username:</label>
-            <input class="form-input bg-default" id="username" type="text" name="username" data-constraints="@Required">
-        </div>
-        <div class="form-wrap offset-top-15">
-            <label class="form-label form-label-outside" for="password">Password:</label>
-            <input class="form-input bg-default" id="password" type="password" name="password" data-constraints="@Required">
-        </div>
-        <a href="" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
-        <div class="offset-top-20">
-            <button class="btn button-primary" type="submit" name="login">Login As Administrator</button>
-        </div>
-    </form>
-</div>
-
-<!-- Forget Password Modal -->
-<div class="modal fade" id="modal-forgotpass" tabindex="-1" role="dialog" aria-labelledby="modal-forgotpass-label" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modal-forgotpass-label">Forgot Password</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="../admin/function.php" method="POST">
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    <div class="tab-pane fade" id="tabs-login-3">
+                      <form method="post" action="admin/login.php">
+                        <div class="form-wrap">
+                          <label class="form-label form-label-outside" for="username">Username:</label>
+                          <input class="form-input bg-default" id="username" type="text" name="username" data-constraints="@Required">
+                        </div>
+                        <div class="form-wrap offset-top-15">
+                          <label class="form-label form-label-outside" for="password">Password:</label>
+                          <input class="form-input bg-default" id="password" type="password" name="password" data-constraints="@Required">
+                        </div>
+                        <a href="forgetpass.php" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
+                       
+                        <div class="offset-top-20">
+                          <button class="btn button-primary" type="submit" name="login">Login As Administrator</button>
+                        </div>
+                      </form>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block btn-lg" name="btn-forgotpass">Send Reset Link</button>
-                </form>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-
+      </section>
+      <!--forget password-->
+      
       
       <!-- Page Footer-->
       <!-- Corporate footer-->
