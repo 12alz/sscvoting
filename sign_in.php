@@ -339,6 +339,7 @@ if(isset($_SESSION['voter'])){
         </div>
       </section>
       <!--forget password-->
+                      </div>
       <div class="modal fade" id="modal-forgotpass" tabindex="-1" role="dialog" aria-labelledby="modal-forgotpass-label" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -357,6 +358,7 @@ if(isset($_SESSION['voter'])){
                         <button type="submit" class="btn btn-primary btn-block btn-flat btn-lg" name="btn-forgotpass">Forgot Password</button>
                     </form>
                 </div>
+                      </div>
       
       <!-- Page Footer-->
       <!-- Corporate footer-->
