@@ -351,7 +351,7 @@
                   </div>
                   <div class="offset-top-15">
                     <ul class="list list-unstyled">
-                      <li><span class="icon icon-xs text-madison mdi mdi-email-outline align-middle"></span><a class="align-middle inset-left-10" href="mailto:info@demolink.org">info@demolink.org</a></li>
+                      <li><span class="icon icon-xs text-madison mdi mdi-email-outline align-middle"></span><a class="align-middle inset-left-10" href="mailto:info@demolink.org">mccssc@gmail.com</a></li>
                     </ul>
                   </div>
                 </div>
@@ -364,7 +364,7 @@
                     <div class="unit flex-row unit-spacing-xs">
                       <div class="unit-left"><span class="icon icon-xs mdi mdi-map-marker text-madison"></span></div>
                       <div class="unit-body">
-                        <p><a class="text-dark" href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></p>
+                        <p><a class="text-dark" href="#">Bunakan Madridejos Cebu</a></p>
                       </div>
                     </div>
                   </div>
