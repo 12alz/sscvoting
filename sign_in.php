@@ -371,7 +371,7 @@ if(isset($_SESSION['voter'])){
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">Bunakan Madridejos Cebu</a></div>
                     </div>
                   </li>
                   <li class="offset-top-15">
@@ -391,7 +391,7 @@ if(isset($_SESSION['voter'])){
                 </ul>
               </div>
             </div>
-            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
+            <!-- <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
               <h6 class="fw-bold">Newsletter</h6>
               <div class="text-subline"></div>
               <div class="offset-top-30 text-start">
@@ -408,7 +408,7 @@ if(isset($_SESSION['voter'])){
                 </form>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="bg-madison context-dark">
           <div class="container text-lg-start section-5">
