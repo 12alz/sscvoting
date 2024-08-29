@@ -391,8 +391,8 @@ if(isset($_SESSION['voter'])){
                 </ul>
               </div>
             </div>
-            <!-- <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
-              <h6 class="fw-bold">Newsletter</h6>
+            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
+              <!-- <h6 class="fw-bold">Newsletter</h6>
               <div class="text-subline"></div>
               <div class="offset-top-30 text-start">
                 <p>Enter your email address to get the latest University news, special events and student activities delivered right to your inbox.</p>
@@ -403,12 +403,12 @@ if(isset($_SESSION['voter'])){
                     <div class="input-group input-group-sm">
                       <input class="form-input" placeholder="Your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
                         <button class="btn btn-sm button-primary" type="submit">Subscribe</button></span>
-                    </div>
+                    </div> -->
                   </div>
                 </form>
               </div>
             </div>
-          </div> -->
+          </div> 
           </div>
         </div>
         <div class="bg-madison context-dark">
