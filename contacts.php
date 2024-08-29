@@ -46,20 +46,20 @@
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-phone align-middle"></span></div>
-                          <div class="unit-body"><a href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block" href="tel:#">1-800-6547-321</a>
+                          <div class="unit-body"><a href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block" href="tel:#"></a>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle"></span></div>
-                          <div class="unit-body"><a href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
+                          <div class="unit-body"><a href="#">Bunakan Madridejos Cebu</a></div>
                         </div>
                       </li>
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-email-open align-middle"></span></div>
-                          <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                          <div class="unit-body"><a href="mailto:#">mccsscvoting.com</a></div>
                         </div>
                       </li>
                     </ul>
