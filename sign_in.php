@@ -377,7 +377,7 @@ if(isset($_SESSION['voter'])){
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                      <div class="unit-body"><a href="mailto:#">mccssvoting@gmail.com</a></div>
                     </div>
                   </li>
                 </ul>
@@ -409,6 +409,7 @@ if(isset($_SESSION['voter'])){
               </div>
             </div>
           </div> -->
+          </div>
         </div>
         <div class="bg-madison context-dark">
           <div class="container text-lg-start section-5">
