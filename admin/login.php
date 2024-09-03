@@ -1,9 +1,10 @@
-'-<?php
+<?php
 session_start();
 include 'includes/conn.php';
 
 if (isset($_POST['login'])) {
-    $username = $_POST['username'];
+    // Sanitize input
+    $username = preg_replace('/[^a-zA-Z0-9]/', '', $_POST['username']); // Remove all non-alphanumeric characters
     $password = $_POST['password'];
 
     // Prepare the SQL statement
@@ -13,7 +14,7 @@ if (isset($_POST['login'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows < 1) {
-        $_SESSION['error'] = 'Incorrect username or passwordssss';
+        $_SESSION['error'] = 'Incorrect username or password';
     } else {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
