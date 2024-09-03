@@ -314,21 +314,19 @@ if(isset($_SESSION['voter'])){
                         </div>
                       </form>
                     </div>
-                    <div class="tab-pane fade" id="tabs-login-3">
-                      <form method="post" action="admin/login.php">
-                        <div class="form-wrap">
-                          <label class="form-label form-label-outside" for="username">Username:</label>
-                          <input class="form-input bg-default" id="username" type="text" name="username" data-constraints="@Required">
-                        </div>
-                        <div class="form-wrap offset-top-15">
-                          <label class="form-label form-label-outside" for="password">Password:</label>
-                          <input class="form-input bg-default" id="password" type="password" name="password" data-constraints="@Required">
-                        </div>
-                        <a href="forgetpass.php" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
-                       
-                        <div class="offset-top-20">
-                          <button class="btn button-primary" type="submit" name="login">Login As Administrator</button>
-                        </div>
+                    <form method="post" action="admin/login.php">
+                                <div class="form-wrap">
+                                    <label class="form-label form-label-outside" for="username">Username:</label>
+                                    <input class="form-input bg-default" id="username" type="text" name="username" data-constraints="@Required" required>
+                                </div>
+                                <div class="form-wrap offset-top-15">
+                                    <label class="form-label form-label-outside" for="password">Password:</label>
+                                    <input class="form-input bg-default" id="password" type="password" name="password" data-constraints="@Required" required>
+                                </div>
+                                <a href="forgetpass.php" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
+                                <div class="offset-top-20">
+                                    <button class="btn button-primary" type="submit" name="login">Login As Administrator</button>
+                                </div>
                       </form>
                     </div>
                   </div>

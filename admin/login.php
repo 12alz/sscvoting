@@ -19,7 +19,7 @@
 				$_SESSION['admin'] = $row['id'];
 			}
 			else{
-				$_SESSION['error'] = 'Incorrect username or passwordsss';
+				$_SESSION['error'] = 'Incorrect username or password';
 				header('location: ../sign_in.php');
 			}
 		}
