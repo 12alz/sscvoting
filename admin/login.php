@@ -4,12 +4,12 @@ include 'includes/conn.php';
 
 if (isset($_POST['login'])) {
     // Sanitize input
-    $username = preg_replace('/[^a-zA-Z0-9]/', '', $_POST['username']); 
+    $username = preg_replace('/[^a-zA-Z0-9]/', '', $_POST['username']); // Remove all non-alphanumeric characters
     $password = $_POST['password'];
 
     // Prepare the SQL statement
     $stmt = $conn->prepare("SELECT * FROM admin WHERE username = ?");
-    $stmt->bind_param('s', $username); 
+    $stmt->bind_param('s', $username); // 's' specifies the type => 'string'
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -22,12 +22,12 @@ if (isset($_POST['login'])) {
 			header('location: ../sign_in.php');
             exit();
         } else {
-            $_SESSION['error'] = 'Incorrect username or passwordssssssss';
+            $_SESSION['error'] = 'Incorrect username or password';
         }
     }
     $stmt->close();
 } else {
-    $_SESSION['error'] = 'Input admin credentials ssssfirst';
+    $_SESSION['error'] = 'Input admin credentials first';
 }
 
 header('location: ../sign_in.php');
