@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
 			header('location: ../sign_in.php');
             exit();
         } else {
-            $_SESSION['error'] = 'Incorrect username or password';
+            $_SESSION['error'] = 'Incorrect username or passwordssssssss';
         }
     }
     $stmt->close();
