@@ -1,2 +1,2 @@
-Capstone Project 1
+Capstone Project 2
 VOTING SYSTEM V2
