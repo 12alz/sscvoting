@@ -27,6 +27,21 @@ if(isset($_SESSION['voter'])){
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,700%7CMerriweather:400,300,300italic,400italic,700,700italic">
     <link rel="stylesheet" href="dist/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/fonts.css">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Subscription</title>
+    <!-- Include SweetAlert CSS and JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Your form code here -->
+
+</body>
+</html>
+
     <link rel="stylesheet" href="dist/css/style.css">    
   </head>
   <body>
@@ -246,7 +261,7 @@ if(isset($_SESSION['voter'])){
                   <!--Nav tabs-->
                   <ul class="nav nav-tabs">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-login-1" data-bs-toggle="tab">Login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-login-2" data-bs-toggle="tab">Registration</a></li>
+                    <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-login-2" data-bs-toggle="tab">Registration</a></li> -->
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-login-3" data-bs-toggle="tab">Login as Admin</a></li>
                   </ul>
                   <!--Tab panes-->
@@ -255,7 +270,7 @@ if(isset($_SESSION['voter'])){
                       <!-- RD Mailform-->
                       <form method="post" action="login.php">
                         <div class="form-wrap">
-                          <label class="form-label form-label-outside" for="form-login-username">Username or e-mail:</label>
+                          <label class="form-label form-label-outside" for="form-login-username">Student ID:</label>
                           <input class="form-input bg-default" id="form-login-username" type="text" name="voter" data-constraints="@Required">
                         </div>
                         <div class="form-wrap offset-top-15">
@@ -263,17 +278,15 @@ if(isset($_SESSION['voter'])){
                           <input class="form-input bg-default" id="form-login-password" type="password" name="password" data-constraints="@Required">
                         </div>
                         <div class="offset-top-20">
-                          <button class="btn button-primary d-block d-xl-inline-block" type="submit" name="login">Sign in</button><span class="inset-xl-left-20 align-middle small d-inline-block offset-top-20 offset-lg-top-0">or enter with</span>
+                          <button class="btn button-primary d-block d-xl-inline-block" type="submit" name="login">Sign in</button><span class="inset-xl-left-20 align-middle small d-inline-block offset-top-20 offset-lg-top-0">Don't Have a account?</span>
                           <ul class="list-inline list-inline-xs list-inline-madison d-xl-inline-block inset-xl-left-10 inset-xxl-left-20 align-middle offset-top-15 offset-lg-top-0">
-                            <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="#"></a></li>
-                            <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
-                            <li><a class="icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
+                          <a href="verification.php" data-toggle="modal">Register Here</a>
                             
                           </ul>
                         </div>
                       </form>
                     </div>
-                    <div class="tab-pane fade" id="tabs-login-2">
+                    <!-- <div class="tab-pane fade" id="tabs-login-2">
                       <form method="POST" action="sign_up.php"  enctype="multipart/form-data">
                         <div class="form-wrap">
                           <label class="form-label form-label-outside" for="form-register-id">Student ID:</label>
@@ -313,7 +326,7 @@ if(isset($_SESSION['voter'])){
                           <button class="btn button-primary" type="submit" name="add">Register</button>
                         </div>
                       </form>
-                    </div>
+                    </div> -->
                     <div class="tab-pane fade" id="tabs-login-3">
                       <form method="post" action="admin/login.php">
                         <div class="form-wrap">
@@ -324,7 +337,7 @@ if(isset($_SESSION['voter'])){
                           <label class="form-label form-label-outside" for="password">Password:</label>
                           <input class="form-input bg-default" id="password" type="password" name="password" data-constraints="@Required">
                         </div>
-                        <a href="forgetpass.php" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
+                         <a href="forgetpass.php" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
                        
                         <div class="offset-top-20">
                           <button class="btn button-primary" type="submit" name="login">Login As Administrator</button>
@@ -371,13 +384,13 @@ if(isset($_SESSION['voter'])){
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">Bunakan Madridejos Cebu</a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a href="mailto:#">mccssvoting@gmail.com</a></div>
+                      <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
                     </div>
                   </li>
                 </ul>
@@ -392,23 +405,24 @@ if(isset($_SESSION['voter'])){
               </div>
             </div>
             <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
-              <!-- <h6 class="fw-bold">Newsletter</h6>
-              <div class="text-subline"></div>
-              <div class="offset-top-30 text-start">
-                <p>Enter your email address to get the latest University news, special events and student activities delivered right to your inbox.</p>
-              </div>
-              <div class="offset-top-10">
-                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="http://livedemo00.template-help.com/wt_59029_v3/bat/rd-mailform.php">
-                  <div class="form-wrap">
-                    <div class="input-group input-group-sm">
-                      <input class="form-input" placeholder="Your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
-                        <button class="btn btn-sm button-primary" type="submit">Subscribe</button></span>
-                    </div> -->
+    <h6 class="fw-bold">Newsletter</h6>
+    <div class="text-subline"></div>
+    <div class="offset-top-30 text-start">
+        <p>Enter your email address to get the latest University news, special events, and student activities delivered right to your inbox.</p>
+    </div>
+    <div class="offset-top-10">
+        <form class="rd-mailform form-subscribe" method="POST" action="admin/subscribe.php">
+            <div class="form-wrap">
+                <div class="input-group input-group-sm">
+                    <input class="form-input" placeholder="Your e-mail" id="email" type="email" name="email" data-constraints="@Required @Email" required>
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm button-primary" type="submit">Subscribe</button>
+                    </span>
+                </div>
                   </div>
                 </form>
               </div>
             </div>
-          </div> 
           </div>
         </div>
         <div class="bg-madison context-dark">
