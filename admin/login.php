@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
     }
     $stmt->close();
 } else {
-    $_SESSION['error'] = 'Input admin credentials first';
+    $_SESSION['error'] = 'Input admin credentials ssssfirst';
 }
 
 header('location: ../sign_in.php');
