@@ -106,7 +106,7 @@
             <h2>Forgot Password</h2>
             <form action="admin/function.php" method="post">
                 <label for="email">Enter your email:</label>
-                <input type="email" id="email" name="email" placeholder="bsit@gmail.com" required>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
                 <button type="submit" name="btn-forgotpass">Send Reset Link</button>
             </form>
             <p>We'll send a link to reset your password.</p>
