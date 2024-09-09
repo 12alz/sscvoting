@@ -39,7 +39,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->Body = "
                          <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
-                <p>To cast your vote, please click the link below to register your account:</p>
+                <p>Please click the link below to register your account:</p>
                 <p><a href='$reset_url'>Register</a></p>
                 <p>Please note that voting is only available for a limited time. Don't miss out on your chance to make a difference!</p>
                 <p>Sincerely,</p>
