@@ -35,7 +35,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
-            $reset_url = "http://localhost/jerson/msfunction.php";
+            $reset_url = "https://mccsscvoting.com/msfunction.php";
             $mail->Body = "
                          <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
