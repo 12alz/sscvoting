@@ -30,13 +30,15 @@ if (isset($_POST["btn-forgotpass"])) {
         //OTP has been sent please check your email
         $_SESSION["notify"] = "success";
  
-        header('Location: sign_in.php');
+  
+        header("location: ../sign_in.php");
  
     }else {
  
         $_SESSION["notify"] = "failed";
  
-        header('Location: sign_in.php');
+      
+        header("location: ../sign_in.php");
  
  
     }
@@ -76,13 +78,15 @@ if (isset($_POST["btn-forgotpass"])) {
 
             $_SESSION["notify"] = "success";
 
-            header("location: index.php");
+          
+            header("location: ../sign_in.php");
  
         }else {
 
             $_SESSION["notify"] = "invalid";
 
-            header("location: index.php");
+            
+            header("location: ../sign_in.php");
             
 
         }
@@ -91,8 +95,8 @@ if (isset($_POST["btn-forgotpass"])) {
 
             $_SESSION["notify"] = "invalid";
 
-            header("location: index.php");
- 
+       
+            header("location: ../sign_in.php");
 
     }
 }
