@@ -404,12 +404,6 @@ if(isset($_SESSION['voter'])){
                 </ul>
               </div>
             </div>
-            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
-    <h6 class="fw-bold">Newsletter</h6>
-    <div class="text-subline"></div>
-
-                  </div>
-                </form>
               </div>
             </div>
           </div>
