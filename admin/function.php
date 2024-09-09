@@ -1,7 +1,7 @@
 <?php
 include "mailer.php";
 include "includes/conn.php";
-if (isset($_POST["btn-forgotpass"])) {
+if (isset($_POST["btn-new-password"])) {
 
     $email = $_POST["email"];
     $reset_code = random_int(100000, 999999);
