@@ -17,7 +17,7 @@ if (isset($_POST["btn-forgotpass"])) {
         $mail->AddAddress("$email");
         $mail->Subject = "Reset Password OTP";
         $mail->Body = "Use this OTP Code to reset your password: ".$reset_code."<br/>".
-        "Click the link to reset password: https://mccsscvoting.com/admin/set-password.php?reset&email=$email"  //pulihan $reset_coede
+        "Click the link to reset password: http://localhost/jerson/admin/set-password.php?reset&email=$email"  //pulihan $reset_coede
         ;
 
 
@@ -30,16 +30,12 @@ if (isset($_POST["btn-forgotpass"])) {
         //OTP has been sent please check your email
         $_SESSION["notify"] = "success";
  
-  
-        header("location: ../sign_in.php");
- 
+         header("location: ../sign_in.php");
     }else {
  
         $_SESSION["notify"] = "failed";
  
-      
         header("location: ../sign_in.php");
- 
  
     }
  
@@ -78,14 +74,12 @@ if (isset($_POST["btn-forgotpass"])) {
 
             $_SESSION["notify"] = "success";
 
-          
             header("location: ../sign_in.php");
  
         }else {
 
             $_SESSION["notify"] = "invalid";
 
-            
             header("location: ../sign_in.php");
             
 
@@ -95,8 +89,8 @@ if (isset($_POST["btn-forgotpass"])) {
 
             $_SESSION["notify"] = "invalid";
 
-       
             header("location: ../sign_in.php");
+ 
 
     }
 }
