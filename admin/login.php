@@ -3,7 +3,7 @@ session_start();
 include 'includes/conn.php';
 
 
-$max_attempts = 10;
+$max_attempts = 3;
 $delay_time = 1000; 
 
 if (!isset($_SESSION['login_attempts'])) {
@@ -32,7 +32,7 @@ if (isset($_POST['login'])) {
 
         $_SESSION['login_attempts']++;
         $_SESSION['last_attempt_time'] = time();
-        $_SESSION['error'] = 'Cannot find account with the username';
+        $_SESSION['error'] = 'Incorrect username or password';
     } else {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
