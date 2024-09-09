@@ -3,7 +3,7 @@ session_start();
 include 'includes/conn.php';
 
 
-$max_attempts = 3;
+$max_attempts = 10;
 $delay_time = 1000; 
 
 if (!isset($_SESSION['login_attempts'])) {
