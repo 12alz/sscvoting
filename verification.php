@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>MS365 Verification</title>
     <style>
         body {
@@ -142,8 +143,8 @@
                 padding: 10px;
             }
         }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="container">
@@ -153,12 +154,29 @@
         <div class="right-section">
             <h2>MS365 Verification</h2>
             <form id="ms365Form" action="admin/msmailer.php" method="post">
-            <label for="email">Enter your MS365 Email:</label>
-               <input type="username" id="email" name="username" placeholder="jersonvillaceran@mcclawis.edu.ph" required>
-               <button type="submit" name="btn-forgotpass">Submit</button>
+                <label for="email">Enter your MS365 Email:</label>
+                <input type="username" id="email" name="username" placeholder="jersonvillaceran@mcclawis.edu.ph" required>
+                <button type="submit" name="btn-forgotpass">Submit</button>
             </form>
             <p>We'll send a link to your MS365.</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const message = urlParams.get('message');
+
+            if (status && message) {
+                Swal.fire({
+                    icon: status === 'success' ? 'success' : 'error',
+                    title: status === 'success' ? 'Success' : 'Error',
+                    text: message,
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
 </body>
 </html>
