@@ -30,13 +30,13 @@ if (isset($_POST["btn-forgotpass"])) {
         //OTP has been sent please check your email
         $_SESSION["notify"] = "success";
  
-        header('Location: sign_in.php');
+        header('Location: ../sign_in.php');
  
     }else {
  
         $_SESSION["notify"] = "failed";
  
-        header('Location: sign_in.php');
+        header('Location: ../sign_in.php');
  
  
     }
