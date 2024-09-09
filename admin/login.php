@@ -19,7 +19,9 @@ if (time() - $_SESSION['last_attempt_time'] < $delay_time && $_SESSION['login_at
 
 if (isset($_POST['login'])) {
     // Sanitize input
-   
+    $username = preg_replace('/[^a-zA-Z0-9]/', '', $_POST['username']); 
+    $password = $_POST['password'];
+
     // Prepare the SQL statement
     $stmt = $conn->prepare("SELECT * FROM admin WHERE username = ?");
     $stmt->bind_param('s', $username); 
@@ -30,7 +32,7 @@ if (isset($_POST['login'])) {
 
         $_SESSION['login_attempts']++;
         $_SESSION['last_attempt_time'] = time();
-        $_SESSION['error'] = 'Incorrect username or passwordaa';
+        $_SESSION['error'] = 'Incorrect username or password';
     } else {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
