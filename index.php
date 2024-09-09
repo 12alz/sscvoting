@@ -58,20 +58,20 @@ if(isset($_SESSION['voter'])){
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-phone align-middle"></span></div>
-                          <div class="unit-body"><a href="tel:#">63-777-1234-567</a> <a class="d-block d-lg-inline-block" href="tel:#"></a>
+                          <div class="unit-body"><a href="tel:#">63-948-3618-713</a> <a class="d-block d-lg-inline-block" href="tel:#"></a>
                           </div>
                         </div>
                       </li>
                       <li>  
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle"></span></div>
-                          <div class="unit-body"><a href="#">Bantayan Island, Cebu Philippines</a></div>
+                          <div class="unit-body"><a href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a></div>
                         </div>
                       </li>
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-email-open align-middle"></span></div>
-                          <div class="unit-body"><a href="mailto:#">madridejoscommunitycollege@edu.ph</a></div>
+                          <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
                         </div>
                       </li>
                     </ul>
