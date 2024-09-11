@@ -155,7 +155,7 @@
             <h2>MS365 Verification</h2>
             <form id="ms365Form" action="admin/msmailer.php" method="post">
                 <label for="email">Enter your MS365 Email:</label>
-                <input type="username" id="email" name="username" placeholder="jersonvillaceran@mcclawis.edu.ph" required>
+                <input type="username" id="email" name="username" placeholder="example@mcclawis.edu.ph" required>
                 <button type="submit" name="btn-forgotpass">Submit</button>
             </form>
             <p>We'll send a link to your MS365.</p>
