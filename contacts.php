@@ -46,20 +46,20 @@
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-phone align-middle"></span></div>
-                          <div class="unit-body"><a href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block" href="tel:#"></a>
+                          <div class="unit-body"><a href="tel:#">63-948-3618-713</a> <a class="d-block d-lg-inline-block" href="tel:#"></a>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle"></span></div>
-                          <div class="unit-body"><a href="#">Bunakan Madridejos Cebu</a></div>
+                          <div class="unit-body"><a href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a></div>
                         </div>
                       </li>
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-email-open align-middle"></span></div>
-                          <div class="unit-body"><a href="mailto:#">mccsscvoting.com</a></div>
+                          <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
                         </div>
                       </li>
                     </ul>
@@ -280,7 +280,7 @@
               <h2 class="fw-bold">Get in Touch</h2>
               <hr class="divider bg-madison divider-lg-0">
               <div class="offset-top-30 offset-md-top-60">
-                <p>You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
+                <p>You can contact us any way that is convenient for you. We are available 24/7 messenger or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
               </div>
               <div class="offset-top-30">
                 <form class="rd-mailform text-start" data-form-output="form-output-global" data-form-type="contact" method="post" action="http://livedemo00.template-help.com/wt_59029_v3/bat/rd-mailform.php">
@@ -431,20 +431,20 @@
                   <li>
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">1-800-6547-321</a>
+                      <div class="unit-body"><a class="text-dark" href="tel:#">63-948-3618-713</a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">1-800-6547-321</a>
                       </div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a></div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                      <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
                     </div>
                   </li>
                 </ul>
