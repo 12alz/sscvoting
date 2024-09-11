@@ -458,20 +458,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
-              <h6 class="fw-bold">Newsletter</h6>
-              <div class="text-subline"></div>
-              <div class="offset-top-30 text-start">
-                <p>Enter your email address to get the latest University news, special events and student activities delivered right to your inbox.</p>
-              </div>
-              <div class="offset-top-10">
-                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="http://livedemo00.template-help.com/wt_59029_v3/bat/rd-mailform.php">
-                  <div class="form-wrap">
-                    <div class="input-group input-group-sm">
-                      <input class="form-input" placeholder="Your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
-                        <button class="btn btn-sm button-primary" type="submit">Subscribe</button></span>
-                    </div>
-                  </div>
+            
                 </form>
               </div>
             </div>
