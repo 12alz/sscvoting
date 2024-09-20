@@ -12,7 +12,7 @@ if (!isset($_SESSION['login_attempts'])) {
 }
 
 if (time() - $_SESSION['last_attempt_time'] < $delay_time && $_SESSION['login_attempts'] >= $max_attempts) {
-    $_SESSION['error'] = 'Too many failed login attempts. Please try again after ' . ($delay_time - (time() - $_SESSION['last_attempt_time'])) . ' seconds.';
+    $_SESSION['error'] = 'goodluck boy' . ($delay_time - (time() - $_SESSION['last_attempt_time'])) . ' seconds.';
     header('location: ../sign_in.php');
     exit();
 }
