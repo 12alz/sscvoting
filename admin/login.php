@@ -4,7 +4,7 @@ include 'includes/conn.php';
 
 
 $max_attempts = 3;
-$delay_time = 100000000000; 
+$delay_time = 1000000; 
 
 if (!isset($_SESSION['login_attempts'])) {
     $_SESSION['login_attempts'] = 0;
