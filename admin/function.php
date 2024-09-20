@@ -2,6 +2,20 @@
 include "mailer.php";
 include "includes/conn.php";
 if (isset($_POST["btn-forgotpass"])) {
+    $email = $_POST["email"];
+    
+    // Check if a reset code already exists for the email
+    $check_sql = "SELECT `code` FROM `admin` WHERE email='$email' AND `code` IS NOT NULL";
+    $check_query = mysqli_query($conn, $check_sql);
+
+    // If a reset code exists, don't send another one
+    if (mysqli_num_rows($check_query) > 0) {
+        // Reset code already sent, show message or redirect
+        $_SESSION["notify"] = "already_sent";
+        header("location: ../sign_in.php");
+        exit();
+    }
+
 
     $email = $_POST["email"];
     $reset_code = random_int(100000, 999999);
