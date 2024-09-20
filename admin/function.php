@@ -2,22 +2,20 @@
 include "mailer.php";
 include "includes/conn.php";
 if (isset($_POST["btn-forgotpass"])) {
+
+   
     $email = $_POST["email"];
     
-    // Check if a reset code already exists for the email
-    $check_sql = "SELECT `code` FROM `admin` WHERE email='$email' AND `code` IS NOT NULL";
-    $check_query = mysqli_query($conn, $check_sql);
+    // Specify the allowed Gmail address
+    $allowed_gmail = "santillanbsit@gmail.com";
 
-    // If a reset code exists, don't send another one
-    if (mysqli_num_rows($check_query) > 0) {
-        // Reset code already sent, show message or redirect
-        $_SESSION["notify"] = "already_sent";
+    // Check if the provided email matches the allowed Gmail
+    if ($email !== $allowed_gmail) {
+        // If the email doesn't match, show a message or redirect
+        $_SESSION["notify"] = "not_allowed";
         header("location: ../sign_in.php");
         exit();
     }
-
-
-    $email = $_POST["email"];
     $reset_code = random_int(100000, 999999);
     
     $sql = "UPDATE `admin` SET `code`='$reset_code' WHERE email='$email'";
