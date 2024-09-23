@@ -30,7 +30,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->SMTPAuth = true;
             $mail->Username = 'kamatyanun@outlook.com'; // Your email address
             $mail->Password = 'alexandre@123'; // Your email password
-            $mail->setFrom('jeffreycahutay@outlook.com');
+            $mail->setFrom('kamatyanun@outlook.com');
             $mail->addAddress($username); // Email address to send to
             $mail->isHTML(true);
 
