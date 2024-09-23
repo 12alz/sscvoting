@@ -1,9 +1,5 @@
 RewriteEngine On
 
-# Prevent direct access to msfunction.php
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+msfunction\.php [NC]
-RewriteRule ^ - [F,L]
-
 # Rewrite rule to redirect /register to msfunction.php
 RewriteRule ^register$ msfunction.php [L]
 
