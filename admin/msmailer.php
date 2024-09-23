@@ -28,14 +28,14 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->Port = 587;
             $mail->SMTPSecure = 'tls';
             $mail->SMTPAuth = true;
-            $mail->Username = 'zilongs12@outlook.com'; // Your email address
-            $mail->Password = 'alexandre@123'; // Your email password
+            $mail->Username = 'jeffreycahutay@outlook.com'; // Your email address
+            $mail->Password = 'richman12@'; // Your email password
             $mail->setFrom('jeffreycahutay@outlook.com');
             $mail->addAddress($username); // Email address to send to
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
-            $reset_url = "https://mccsscvoting.com/admin/msfunction.php";
+            $reset_url = "https://mccsscvoting.com/msfunction.php";
             $mail->Body = "
                          <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
