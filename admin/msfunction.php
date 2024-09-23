@@ -1,15 +1,4 @@
-<?php
-session_start();
-if(isset($_SESSION['admin'])){
-    header('location: admin/home.php');
-    exit(); // Ensure no further execution after redirection
-}
 
-if(isset($_SESSION['voter'])){
-    header('location: home.php');
-    exit(); // Ensure no further execution after redirection
-}
-?>
 <!DOCTYPE html>
 <html class="wide wow-animation scrollTo" lang="en">
   <head>
