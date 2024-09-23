@@ -9,6 +9,13 @@ if(isset($_SESSION['voter'])){
     header('location: home.php');
     exit(); // Ensure no further execution after redirection
 }
+
+if (isset($_GET['timestamp'])) {
+  $timestamp = intval($_GET['timestamp']);
+  if (time() - $timestamp > $expiration_time) {
+      die("This link has expired.");
+  }
+}
 ?>
 <!DOCTYPE html>
 <html class="wide wow-animation scrollTo" lang="en">

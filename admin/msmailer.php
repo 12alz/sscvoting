@@ -3,7 +3,8 @@
 include "includes/conn.php";
 
 if (isset($_POST["btn-forgotpass"])) {
-    session_start(); // Start session to use session variables
+    session_start();
+     // Start session to use session variables
 
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
@@ -35,7 +36,9 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
-            $reset_url = "https://mccsscvoting.com/msfunction.php";
+            $timestamp = time();
+            $expiration_time = 300; // 5 minutes in seconds
+            $reset_url = "https://mccsscvoting.com/msfunction.php?timestamp=$timestamp";
             $mail->Body = "
                          <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
