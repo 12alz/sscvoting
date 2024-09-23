@@ -1,29 +1,15 @@
 <?php
 session_start();
-
-if (isset($_SESSION['admin'])) {
+if(isset($_SESSION['admin'])){
     header('location: admin/home.php');
     exit(); // Ensure no further execution after redirection
 }
 
-if (isset($_SESSION['voter'])) {
+if(isset($_SESSION['voter'])){
     header('location: home.php');
     exit(); // Ensure no further execution after redirection
 }
-
-$expiration_time = 300; // 5 minutes in seconds
-
-if (isset($_GET['timestamp'])) {
-    $timestamp = intval($_GET['timestamp']);
-    if (time() - $timestamp > $expiration_time) {
-        die("This link has expired.");
-    }
-    // Proceed with the registration process here
-} else {
-    die("Invalid request.");
-}
 ?>
-
 <!DOCTYPE html>
 <html class="wide wow-animation scrollTo" lang="en">
   <head>
