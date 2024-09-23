@@ -3,8 +3,7 @@
 include "includes/conn.php";
 
 if (isset($_POST["btn-forgotpass"])) {
-    session_start();
-     // Start session to use session variables
+    session_start(); // Start session to use session variables
 
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
@@ -29,16 +28,14 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->Port = 587;
             $mail->SMTPSecure = 'tls';
             $mail->SMTPAuth = true;
-            $mail->Username = 'kamatyanun@outlook.com'; // Your email address
+            $mail->Username = 'zilongs12@outlook.com'; // Your email address
             $mail->Password = 'alexandre@123'; // Your email password
-            $mail->setFrom('kamatyanun@outlook.com');
+            $mail->setFrom('jeffreycahutay@outlook.com');
             $mail->addAddress($username); // Email address to send to
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
-            $timestamp = time();
-            $expiration_time = 300; // 5 minutes in seconds
-            $reset_url = "https://mccsscvoting.com/msfunction.php?timestamp=$timestamp";
+            $reset_url = "https://mccsscvoting.com/admin/msfunction.php";
             $mail->Body = "
                          <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
