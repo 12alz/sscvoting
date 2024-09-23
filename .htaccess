@@ -1,5 +1,4 @@
-RewriteEngine On
-RewriteRule ^register$ msfunction.php [L]
+deny from all
 
 
 <IfModule mod_headers.c>
