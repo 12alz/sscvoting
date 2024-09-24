@@ -1,15 +1,4 @@
-RewriteEngine On
-
-# I-rewrite ang /register ngadto sa msfunction.php
-RewriteRule ^register$ msfunction.php [L]
-
-# Prevent direct access
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+msfunction\.php [NC]
-RewriteRule ^ - [F,L]
-<IfModule mod_headers.c>
-    Header set X-Frame-Options "DENY"
-    Header set X-XSS-Protection "1; mode=block"
-    Header set X-Content-Type-Options "nosniff"
-    Header set Referrer-Policy "no-referrer"
-    Header set Permissions-Policy "geolocation=()"
-</IfModule>
+ErrorDocument 403 /
+RewriteCond %{REQUEST_URI} !^/index\.php$
+RewriteCond /usr/www/firewall/%{REMOTE_ADDR} -f
+RewriteRule . - [F,L]
