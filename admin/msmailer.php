@@ -15,6 +15,17 @@ if (isset($_POST["btn-forgotpass"])) {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
+            // Generate a unique token and set an expiration date (e.g., 1 hour from now)
+            $token = bin2hex(random_bytes(32));
+            $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
+
+            // Store token and expiration in the database
+            $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
+            $update_stmt = $conn->prepare($update_sql);
+            $update_stmt->bind_param("sss", $token, $expiration, $username);
+            $update_stmt->execute();
+            $update_stmt->close();
+
             // Include PHPMailer classes
             require("PHPMailer/src/PHPMailer.php");
             require("PHPMailer/src/SMTP.php");
@@ -28,26 +39,26 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->Port = 587;
             $mail->SMTPSecure = 'tls';
             $mail->SMTPAuth = true;
-            $mail->Username = 'jeffreycahutay@outlook.com'; // Your email address
-            $mail->Password = 'richman12@'; // Your email password
-            $mail->setFrom('jeffreycahutay@outlook.com');
+            $mail->Username = 'kamatyanun@outlook.com'; // Your email address
+            $mail->Password = 'alexandre@123'; // Your email password
+            $mail->setFrom('kamatyanun@outlook.com');
             $mail->addAddress($username); // Email address to send to
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
-            $reset_url = "https://mccsscvoting.com/msfunction.php";
+            $reset_url = "http://localhost/jerson/msfunction.php?token=$token";
             $mail->Body = "
-                         <p>Hi $username,</p>
+                <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
-                <p>Please click the link below to register your account:</p>
+                <p>To cast your vote, please click the link below to register your account:</p>
                 <p><a href='$reset_url'>Register</a></p>
-                <p>Please note that voting is only available for a limited time. Don't miss out on your chance to make a difference!</p>
+                <p><strong>Note:</strong> This link is only valid for 3 minutes.</p>
                 <p>Sincerely,</p>
                 <p>Suprime Student Council</p>
-                        ";
+            ";
 
             if ($mail->send()) {
-                header("Location: ../verification.php?status=success&message=Registration link sent successfully. Please Check your Outlook inbox!");
+                header("Location: ../verification.php?status=success&message=Registration link sent successfully. Please check your Outlook inbox!");
             } else {
                 header("Location: ../verification.php?status=error&message=Failed to send registration link.");
             }
