@@ -18,8 +18,38 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="notification-btn">
             <i class="fa fa-bell"></i>
        
-           
-           
+            <?php
+            
+            include '../includes/conn.php'; 
+            $sql = "SELECT COUNT(*) as count FROM voters WHERE  notified = 0";
+            $result = mysqli_query($conn, $sql);
+            $notification_count = mysqli_fetch_assoc($result)['count'];
+            ?>
+            <span class="label label-warning" id="notification-count"><?php echo $notification_count; ?></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="header">You have <?php echo $notification_count; ?> notifications</li>
+            <li>
+             
+              <ul class="menu" id="notification-list">
+                <?php
+              
+                $sql = "SELECT * FROM voters WHERE  notified";
+                $query = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_assoc($query)) {
+                  echo '<li>
+                          <a href="../admin/voters.php?id=' . htmlspecialchars($row['voters_id']) . '">
+                            <i class="fa fa-users text-aqua"></i> ' . htmlspecialchars($row['firstname'] . ' ' . $row['lastname']) . '
+                          </a>
+                        </li>';
+                }
+                ?>
+              </ul>
+            </li>
+            <li class="footer"><a href="../admin/voters.php">View all</a></li>
+          </ul>
+        </li>
+ 
 
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
