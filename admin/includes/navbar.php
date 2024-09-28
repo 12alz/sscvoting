@@ -2,17 +2,25 @@
   <!-- Logo -->
   <a href="home.php" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>C</b>P</span>
+    <span class="logo-mini"></span>
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg"><b>SSC Voting System </span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">
     <!-- Sidebar toggle button-->
-    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
 
-</a>
-   
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <!-- Notifications Menu -->
+        <li class="dropdown notifications-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="notification-btn">
+            <i class="fa fa-bell"></i>
+       
+           
+           
+
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
         <!-- User Account: style can be found in dropdown.less -->
@@ -42,6 +50,29 @@
           </ul>
         </li>
       </ul>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#notification-btn').click(function(e) {
+    e.preventDefault();
+
+    $.ajax({
+      type: 'POST',
+      url: 'includes/notification.php',
+      data: { action: 'mark_as_read' },
+      success: function(response) {
+        if (response.success) {
+          $('#notification-count').text('0');
+        } else {
+          console.error('Failed to update notifications.');
+        }
+      },
+      dataType: 'json'
+    });
+  });
+});
+</script>
+
     </div>
   </nav>
 </header>
