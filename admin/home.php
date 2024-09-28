@@ -1,13 +1,8 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/slugify.php'; ?>
 <?php include 'includes/header.php'; ?>
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-<body class=" skin-red" style="background: rgba(60, 141, 188, 0.9);">
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,700%7CMerriweather:400,300,300italic,400italic,700,700italic">
-<link rel="stylesheet" href="dist/css/bootstrap.css">
-<link rel="stylesheet" href="dist/css/fonts.css">
-<link rel="stylesheet" href="dist/css/style.css">
+<body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
@@ -16,7 +11,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header" skin-red>
+    <section class="content-header" skin-green>
       <h1>
         Dashboard
       </h1>
@@ -52,9 +47,9 @@
       ?>
       <!-- Small boxes (Stat box) -->
       <div class="row">
-       <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-xs-3">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box bg-purple">
             <div class="inner">
               <?php
                 $sql = "SELECT * FROM positions";
@@ -71,29 +66,10 @@
             <a href="positions.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <?php
-                $sql = "SELECT * FROM `microsoft`";
-                $query = $conn->query($sql);
-
-                echo "<h3>".$query->num_rows."</h3>";
-              ?>
-
-              <p>No. of <br>In Active Voters</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-child"></i>
-            </div>
-            <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-xs-3">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box bg-purple">
             <div class="inner">
               <?php
                 $sql = "SELECT * FROM candidates";
@@ -111,13 +87,12 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-xs-3">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box bg-purple">
             <div class="inner">
               <?php
-                $sql = "SELECT * FROM voters WHERE recstat = 0";
-                // $sql = "SELECT * FROM voters";
+                $sql = "SELECT * FROM voters";
                 $query = $conn->query($sql);
 
                 echo "<h3>".$query->num_rows."</h3>";
@@ -132,13 +107,12 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-xs-3">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box bg-purple">
             <div class="inner">
               <?php
                 $sql = "SELECT * FROM votes GROUP BY voters_id";
-                // $sql = "SELECT * FROM votes WHERE stat = 0";
                 $query = $conn->query($sql);
 
                 echo "<h3>".$query->num_rows."</h3>";
@@ -286,23 +260,6 @@
   <?php
     }
   ?>
-</script> 
-
-<style>
-.small-box.bg-red {
-    background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
-    color: white; /* Ensure the text is visible */
-}
-.small-box.bg-purple {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Adjust the colors as per your preference */
-    color: white; /* Ensure the text color stands out against the gradient */
-}
-
-</style>
+</script>
 </body>
 </html>
- <!-- ##violet -->
-<!-- .small-box.bg-purple {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Adjust the colors as per your preference */
-    color: white; /* Ensure the text color stands out against the gradient */
-} -->
