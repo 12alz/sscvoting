@@ -20,7 +20,7 @@
        
             <?php
             
-            include '../includes/conn.php'; 
+            include 'includes/conn.php'; 
             $sql = "SELECT COUNT(*) as count FROM voters WHERE  notified = 0";
             $result = mysqli_query($conn, $sql);
             $notification_count = mysqli_fetch_assoc($result)['count'];
