@@ -160,7 +160,7 @@
           <h3>Voting Tally</h3>
         </div>
         <div class="col-xs-6 text-right">
-          <button id="fullscreen-btn" class="btn btn-primary bg-purple">Fullscreen</button>
+          <button id="fullscreen-btn" class="btn btn-primary bg-blue">Fullscreen</button>
         </div>
       </div>
       <div id="voting-tally">
