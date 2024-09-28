@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+ 
     <title>Forgot Password</title>
     <style>
         body {
@@ -19,8 +19,8 @@
 
         .container {
             display: flex;
-            flex-direction: row; /* Set row layout */
-            width: 900px; /* Adjust width similar to the login page */
+            flex-direction: row;
+            width: 900px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
@@ -28,22 +28,22 @@
         }
 
         .container .left-section {
-            background-color: #d32f2f; /* Matches the red background */
-            padding: 40px;
+            background-color: #d32f2f;
+            padding: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 40%; /* Occupies the left 40% */
+            width: 35%;
         }
 
         .container .left-section img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
         }
 
         .container .right-section {
-            padding: 100px;
-            width: 40%; /* Occupies the right 60% */
+            padding: 60px 40px;
+            width: 65%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -53,17 +53,18 @@
         h2 {
             margin-bottom: 20px;
             color: #333;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 600;
+            text-align: center;
         }
 
         label {
             font-weight: bold;
             display: block;
             margin-bottom: 10px;
-            text-align: left;
             width: 100%;
             color: #333;
+            text-align: left;
         }
 
         input[type="email"] {
@@ -94,6 +95,53 @@
         .container p {
             margin-top: 15px;
             color: #666;
+            text-align: center;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .container {
+                width: 700px; /* Fixed width for tablets */
+            }
+
+            .container .left-section {
+                padding: 20px;
+            }
+
+            .container .right-section {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input[type="email"], button {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 500px; /* Fixed width for mobile */
+            }
+
+            .container .right-section {
+                padding: 30px 15px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            input[type="email"], button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button {
+                padding: 10px;
+            }
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -105,7 +153,7 @@
         </div>
         <div class="right-section">
             <h2>Forgot Password</h2>
-            <form action="../admin/function.php" method="post">
+            <form action="admin/function.php" method="post">
                 <label for="email">Enter your email:</label>
                 <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
                 <button type="submit" name="btn-forgotpass">Send Reset Link</button>
@@ -113,5 +161,7 @@
             <p>We'll send a link to reset your password.</p>
         </div>
     </div>
+    <script src="dist/js/core.min.js"></script>
+    <script src="dist/js/script.js"></script>
 </body>
 </html>
