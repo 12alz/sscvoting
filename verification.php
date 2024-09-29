@@ -20,7 +20,7 @@
         .container {
             display: flex;
             flex-direction: row;
-            width: 900px;
+            width: 700px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
