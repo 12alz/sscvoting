@@ -1,7 +1,7 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-<body class="skin-red sidebar-mini">
+<body class=" skin-red" style="background: rgba(60, 141, 188, 0.9);">
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
