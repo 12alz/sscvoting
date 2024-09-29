@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>MS365 Verification</title>
     <style>
-        body {
+         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: url('images/color4.jpg') no-repeat center center fixed;
             background-size: cover;
@@ -29,21 +28,21 @@
 
         .container .left-section {
             background-color: #d32f2f;
-            padding: 40px;
+            padding: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 40%;
+            width: 35%;
         }
 
         .container .left-section img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
         }
 
         .container .right-section {
-            padding: 100px;
-            width: 60%;
+            padding: 60px 40px;
+            width: 65%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -53,7 +52,7 @@
         h2 {
             margin-bottom: 20px;
             color: #333;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 600;
             text-align: center;
         }
@@ -101,41 +100,41 @@
         /* Responsive styling */
         @media (max-width: 768px) {
             .container {
-                flex-direction: column;
-                width: 90%;
-                padding: 20px;
+                width: 700px; /* Fixed width for tablets */
             }
 
             .container .left-section {
-                width: 100%;
                 padding: 20px;
             }
 
             .container .right-section {
                 padding: 40px 20px;
-                width: 100%;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input[type="username"], button {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 500px; /* Fixed width for mobile */
+            }
+
+            .container .right-section {
+                padding: 30px 15px;
             }
 
             h2 {
                 font-size: 22px;
             }
 
-            input[type="email"], button {
+            input[type="username"], button {
                 font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container .right-section {
-                padding: 20px 10px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            input[type="email"], button {
-                font-size: 13px;
                 padding: 10px;
             }
 
@@ -143,6 +142,8 @@
                 padding: 10px;
             }
         }
+    
+       
         </style>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -155,7 +156,7 @@
             <h2>MS365 Verification</h2>
             <form id="ms365Form" action="admin/msmailer.php" method="post">
                 <label for="email">Enter your MS365 Email:</label>
-                <input type="username" id="email" name="username" placeholder="example@mcclawis.edu.ph" required>
+                <input type="username" id="email" name="username" placeholder="" required>
                 <button type="submit" name="btn-forgotpass">Submit</button>
             </form>
             <p>We'll send a link to your MS365.</p>
