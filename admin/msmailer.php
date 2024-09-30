@@ -57,7 +57,7 @@ if (isset($_POST["btn-forgotpass"])) {
                 <p>Suprime Student Council</p>
             ";
             if ($mail->send()) {
-                $_SESSION['message'] = 'MS365 account sent successfully!';
+                $_SESSION['message'] = 'Email sent successfully!';
             } else {
                 $_SESSION['message'] = 'Failed to send email. Please try again.';
             }
