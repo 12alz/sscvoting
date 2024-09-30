@@ -170,7 +170,7 @@ session_start(); // Start session to use session variables
         // Check if there's a session message to display
         if (isset($_SESSION['message'])) {
             $message = addslashes($_SESSION['message']);
-            if (strpos($message, 'Email sent successfully') !== false) {
+            if (strpos($message, 'MS365 Account sent successfully. Please check your Outlook inbox!') !== false) {
                 echo "Swal.fire({
                     title: 'Success',
                     text: '$message',
