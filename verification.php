@@ -1,3 +1,7 @@
+<?php
+session_start(); // Start session to use session variables
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +10,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>MS365 Verification</title>
     <style>
-         body {
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: url('images/color4.jpg') no-repeat center center fixed;
             background-size: cover;
@@ -93,13 +97,13 @@
         }
 
         .container p {
-            margin-top: 15px;
+            margin-top: 15px;   
             color: #666;
             text-align: center;
         }
 
         /* Responsive styling */
-        @media (max-width: 768px) {
+        @media (max-width: 500px) {
             .container {
                 width: 700px; /* Fixed width for tablets */
             }
@@ -140,13 +144,11 @@
             }
 
             button {
-                padding: 10px;
+                padding: 8px;
             }
         }
-    
-       
-        </style>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="container">
@@ -157,7 +159,7 @@
             <h2>MS365 Verification</h2>
             <form id="ms365Form" action="admin/msmailer.php" method="post">
                 <label for="email">Enter your MS365 Email:</label>
-                <input type="username" id="email" name="username" placeholder="" required>
+                <input type="username" id="email" name="username" placeholder="jersonvillaceran@mcclawis.edu.ph" required>
                 <button type="submit" name="btn-forgotpass">Submit</button>
             </form>
             <p>We'll send a link to your MS365.</p>
@@ -165,20 +167,19 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const status = urlParams.get('status');
-            const message = urlParams.get('message');
-
-            if (status && message) {
-                Swal.fire({
-                    icon: status === 'success' ? 'success' : 'error',
-                    title: status === 'success' ? 'Success' : 'Error',
-                    text: message,
-                    confirmButtonText: 'OK'
-                });
-            }
-        });
+        <?php
+        // Check if there's a session message to display
+        if (isset($_SESSION['message'])) {
+            echo "Swal.fire({
+                title: 'Notification',
+                text: '" . addslashes($_SESSION['message']) . "',
+                icon: 'info',
+                confirmButtonText: 'OK'
+            });";
+            // Unset the message after displaying it
+            unset($_SESSION['message']);
+        }
+        ?>
     </script>
 </body>
 </html>

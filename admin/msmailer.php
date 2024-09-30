@@ -3,7 +3,7 @@
 include "includes/conn.php";
 
 if (isset($_POST["btn-forgotpass"])) {
-    session_start(); 
+    session_start(); // Start session to use session variables
 
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
@@ -46,7 +46,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
-            $reset_url ="https://mccsscvoting.com/msfunction.php?token=$token";
+            $reset_url = "http://localhost/jerson/msfunction.php?token=$token";
             $mail->Body = "
                 <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
@@ -56,23 +56,21 @@ if (isset($_POST["btn-forgotpass"])) {
                 <p>Sincerely,</p>
                 <p>Suprime Student Council</p>
             ";
-
             if ($mail->send()) {
-                header("Location: ../verification.php?status=success&message=Registration link sent successfully. Please check your Outlook inbox!");
+                $_SESSION['message'] = 'Email sent successfully!';
             } else {
-                header("Location: ../verification.php?status=error&message=Failed to send registration link.");
+                $_SESSION['message'] = 'Failed to send email. Please try again.';
             }
         } else {
-            header("Location: ../verification.php?status=error&message=Email not found.");
+            $_SESSION['message'] = 'Email not found. Please check and try again.';
         }
 
         // Close the statement and connection
         $stmt->close();
         $conn->close();
-    } else {
-        header("Location: ../verification.php?status=error&message=Username is required.");
+        
+        header("Location: ../verification.php");
+        exit();
     }
-
-    exit();
 }
 ?>
