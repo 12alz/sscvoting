@@ -170,10 +170,12 @@ session_start(); // Start session to use session variables
         <?php
         // Check if there's a session message to display
         if (isset($_SESSION['message'])) {
+            // Determine icon based on success or error
+            $icon = strpos($_SESSION['message'], 'Error') !== false ? 'error' : 'success';
             echo "Swal.fire({
                 title: 'Notification',
                 text: '" . addslashes($_SESSION['message']) . "',
-                icon: 'info',
+                icon: '$icon',
                 confirmButtonText: 'OK'
             });";
             // Unset the message after displaying it
