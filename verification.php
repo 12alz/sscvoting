@@ -165,17 +165,26 @@ session_start(); // Start session to use session variables
             <p>We'll send a link to your MS365.</p>
         </div>
     </div>
-
     <script>
         <?php
         // Check if there's a session message to display
         if (isset($_SESSION['message'])) {
-            echo "Swal.fire({
-                title: 'Notification',
-                text: '" . addslashes($_SESSION['message']) . "',
-                icon: 'info',
-                confirmButtonText: 'OK'
-            });";
+            $message = addslashes($_SESSION['message']);
+            if (strpos($message, 'Email sent successfully') !== false) {
+                echo "Swal.fire({
+                    title: 'Success',
+                    text: '$message',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });";
+            } else {
+                echo "Swal.fire({
+                    title: 'Error',
+                    text: '$message',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });";
+            }
             // Unset the message after displaying it
             unset($_SESSION['message']);
         }
