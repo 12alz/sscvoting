@@ -1,9 +1,13 @@
+<?php
+session_start(); // Start session to use session variables
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Forgot Password</title>
     <style>
         body {
@@ -161,7 +165,29 @@
             <p>We'll send a link to reset your password.</p>
         </div>
     </div>
-    <script src="dist/js/core.min.js"></script>
-    <script src="dist/js/script.js"></script>
+    <script>
+    <?php
+    // Check if there's a session message to display
+    if (isset($_SESSION['notify'])) {
+        $message = addslashes($_SESSION['notify']);
+        if (strpos($message, 'A reset link has been sent to your email') !== false) {
+            echo "Swal.fire({
+                title: 'Success',
+                text: '$message',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });";
+        } else {
+            echo "Swal.fire({
+                title: 'Error',
+                text: '$message',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });";
+        }
+        unset($_SESSION['notify']);
+    }
+    ?>
+</script>
 </body>
 </html>

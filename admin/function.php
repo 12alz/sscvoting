@@ -1,21 +1,18 @@
 <?php
+session_start();
 include "mailer.php";
 include "includes/conn.php";
 if (isset($_POST["btn-forgotpass"])) {
-
-   
     $email = $_POST["email"];
     
-    // Specify the allowed Gmail address
-    $allowed_gmail = "santillanbsit@gmail.com";
-
-    // Check if the provided email matches the allowed Gmail
+    $allowed_gmail = "villaceranjerson55@gmail.com";
     if ($email !== $allowed_gmail) {
         // If the email doesn't match, show a message or redirect
-        $_SESSION["notify"] = "not_allowed";
-        header("location: ../sign_in.php");
+        $_SESSION["notify"] = "Email not found! Please contact the administrator to reset a password.";
+        header("location: ../forgetpass.php");
         exit();
     }
+
     $reset_code = random_int(100000, 999999);
     
     $sql = "UPDATE `admin` SET `code`='$reset_code' WHERE email='$email'";
@@ -29,29 +26,25 @@ if (isset($_POST["btn-forgotpass"])) {
         $mail->AddAddress("$email");
         $mail->Subject = "Reset Password OTP";
         $mail->Body = "Use this OTP Code to reset your password: ".$reset_code."<br/>".
-        "Click the link to reset password: https://mccsscvoting.com/admin/set-password.php?reset&email=$email"  //pulihan $reset_coede
+        "Click the link to reset password:  https://mccsscvoting.com/admin/set-password.php?reset&email=$email"  //pulihan $reset_coede
         ;
 
 
-        if(!$mail->Send()) {
-            echo "Mailer Error: " . $mail->ErrorInfo;
+        if (!$mail->send()) {
+            $_SESSION["notify"] = "Mailer Error: " . $mail->ErrorInfo;
         } else {
-            echo "Message has been sent";
+            $_SESSION["notify"] = "A reset link has been sent to your email.";
         }
 
-        //OTP has been sent please check your email
-        $_SESSION["notify"] = "success";
- 
-         header("location: ../sign_in.php");
-    }else {
- 
-        $_SESSION["notify"] = "failed";
- 
-        header("location: ../sign_in.php");
- 
+        // Redirect to the forgot password page
+        header("Location: ../forgetpass.php");
+        exit();
+    } else {
+        $_SESSION["notify"] = "Failed to update the reset code. Please try again.";
+        header("Location: ../forgetpass.php");
+        exit();
     }
- 
- }
+}
  // new password 
  if (isset($_POST["btn-new-password"])) {
 
@@ -84,28 +77,18 @@ if (isset($_POST["btn-forgotpass"])) {
 
             $query = mysqli_query($conn, $sql);
 
-            $_SESSION["notify"] = "success";
-
-            header("location: ../sign_in.php");
- 
-        }else {
-
-            $_SESSION["notify"] = "invalid";
-
-            header("location: ../sign_in.php");
-            
-
+            $_SESSION["notify"] = "Your password has been reset successfully.";
+            header("Location: ../sign_in.php");
+            exit();
+        } else {
+            $_SESSION["notify"] = "Invalid OTP. Please try again.";
+            header("Location: ../sign_in.php");
+            exit();
         }
-
-    }else {
-
-            $_SESSION["notify"] = "invalid";
-
-            header("location: ../sign_in.php");
- 
-
+    } else {
+        $_SESSION["notify"] = "Email not found.";
+        header("Location: ../sign_in.php");
+        exit();
     }
 }
-
-
 ?>
