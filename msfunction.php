@@ -38,9 +38,9 @@ include "includes/conn.php";
 // } else {
 //     echo "<script>alert('No token provided.');</script>";
 // }
-}
+
 // Close the database connection
-$conn->close();
+
 ?>
 
 <!DOCTYPE html>
