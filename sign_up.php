@@ -3,8 +3,8 @@ session_start();
 include 'includes/conn.php';
 
 if (isset($_POST['add'])) {
-    $firstname = mysql_real_escape_string($_POST['firstname']);
-    $lastname = mysql_real_escape_string($_POST['lastname']);
+    $firstname = ($_POST['firstname']);
+    $lastname = htmlspecialchars($_POST['lastname']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $filename = $_FILES['photo']['name'];
     $validImageExtension = ['jpg', 'jpeg', 'png'];
@@ -19,9 +19,9 @@ if (isset($_POST['add'])) {
             move_uploaded_file($_FILES['photo']['tmp_name'], '../images/' . $filename);   
         }
         
-        $course = mysql_real_escape_string($_POST['course']);
-        $status = mysql_real_escape_string($_POST['status']);
-        $voters_id = mysql_real_escape_string($_POST['voters_id']);
+        $course = htmlspecialchars($_POST['course']);
+        $status = htmlspecialchars($_POST['status']);
+        $voters_id = htmlspecialchars($_POST['voters_id']);
         $checkUser = "SELECT * FROM voters WHERE voters_id ='$voters_id'";
         $result = mysqli_query($conn, $checkUser);
         $count = mysqli_num_rows($result);
