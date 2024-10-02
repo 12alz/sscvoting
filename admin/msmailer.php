@@ -15,9 +15,9 @@ if (isset($_POST["btn-forgotpass"])) {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            // Generate a unique token and set an expiration date (e.g., 1 hour from now)
-            $token = bin2hex(random_bytes(32));
-            $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
+            // // Generate a unique token and set an expiration date (e.g., 1 hour from now)
+            // $token = bin2hex(random_bytes(32));
+            // $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
 
             // Store token and expiration in the database
             $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
