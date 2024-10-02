@@ -71,7 +71,6 @@
 </head>
 <body>
 
-<?php if ($showForm): ?>
     <div class="container">
         <form method="POST" action="sign_up.php" enctype="multipart/form-data">
             <div class="form-wrap">
@@ -111,9 +110,7 @@
             <p>Don’t have an account? <a href="sign_in.php">Login here</a></p>
         </div>
     </div>
-<?php else: ?>
-    <p>The registration link has expired or is invalid.</p>
-<?php endif; ?>
+
 
 <script>
     // JavaScript for formatting student ID
