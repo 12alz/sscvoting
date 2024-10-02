@@ -97,7 +97,7 @@ if(isset($_SESSION['voter'])){
                     <div class="rd-navbar-top-panel-left-part">
                       <div class="unit flex-row align-items-center unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
-                        <div class="unit-body"><a href="sign_in.html">Login/Register</a></div>
+                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
                       </div>
                     </div>
                   </div>
