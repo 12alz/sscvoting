@@ -154,7 +154,9 @@ include "includes/conn.php";
             <p>Don’t have an account? <a href="sign_in.php">Login here</a></p>
         </div>
     </div>
-
+<!-- <?php else: ?>
+    <p>The registration link has expired or is invalid.</p>
+<?php endif; ?> -->
 
 <script>
     // JavaScript for formatting student ID
