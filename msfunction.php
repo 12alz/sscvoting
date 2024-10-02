@@ -1,10 +1,10 @@
 <?php
 include "includes/conn.php";
 
-$showForm = false; // Variable to control whether to show the form
+// $showForm = false; // Variable to control whether to show the form
 
-if (isset($_GET['token'])) {
-    $token = $_GET['token'];
+// if (isset($_GET['token'])) {
+//     $token = $_GET['token'];
 
 //     // Prepare the SQL statement to prevent SQL injection
 //     $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
