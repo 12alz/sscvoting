@@ -1,3 +1,47 @@
+<?php
+include "includes/conn.php";
+
+$showForm = false; // Variable to control whether to show the form
+
+if (isset($_GET['token'])) {
+    $token = $_GET['token'];
+
+    // Prepare the SQL statement to prevent SQL injection
+    $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
+    $stmt = $conn->prepare($sql);
+
+    // Check if preparation was successful
+    if ($stmt === false) {
+        die('MySQL prepare error: ' . htmlspecialchars($conn->error));
+    }
+
+    $stmt->bind_param("s", $token);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $expiration = $row['token_expiration'];
+
+        // Check if the token has expired
+        if (strtotime($expiration) > time()) {
+            // Token is valid, allow the user to proceed
+            $showForm = true; // Enable the registration form
+        } else {
+            echo "<script>alert('This link has expired. Please request a new registration link.');</script>";
+        }
+    } else {
+        echo "<script>alert('Invalid token.');</script>";
+    }
+
+    $stmt->close();
+} else {
+    echo "<script>alert('No token provided.');</script>";
+}
+
+// Close the database connection
+$conn->close();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +154,9 @@
             <p>Don’t have an account? <a href="sign_in.php">Login here</a></p>
         </div>
     </div>
-
+<?php else: ?>
+    <p>The registration link has expired or is invalid.</p>
+<?php endif; ?>
 
 <script>
     // JavaScript for formatting student ID
