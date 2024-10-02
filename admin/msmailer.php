@@ -20,11 +20,11 @@ if (isset($_POST["btn-forgotpass"])) {
             // $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
 
             // Store token and expiration in the database
-            $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
-            $update_stmt = $conn->prepare($update_sql);
-            $update_stmt->bind_param("sss", $token, $expiration, $username);
-            $update_stmt->execute();
-            $update_stmt->close();
+            // // $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
+            // $update_stmt = $conn->prepare($update_sql);
+            // $update_stmt->bind_param("sss", $token, $expiration, $username);
+            // $update_stmt->execute();
+            // $update_stmt->close();
 
             // Include PHPMailer classes
             require("PHPMailer/src/PHPMailer.php");
