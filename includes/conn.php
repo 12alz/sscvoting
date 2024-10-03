@@ -12,10 +12,6 @@ $password = "1Votesystem";
 	    die("Connection failed: " . $conn->connect_error);
 		//echo "Connection Failed";
 	}
-
-
-	echo "Connection Success"; 
-
 // Function to export the database
 function ExportDatabase($host, $user, $pass, $name)
 {
@@ -43,4 +39,8 @@ function ExportDatabase($host, $user, $pass, $name)
 
 // Usage
 ExportDatabase("127.0.0.1:3306", "u510162695_votesystem", "1Votesystem", "u510162695_votesystem");
+
+echo "Connection Success"; 
+
+
 ?>
