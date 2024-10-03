@@ -16,13 +16,6 @@ $password = "1Votesystem";
 
 	echo "Connection Success"; 
 
-
-	// backup
-$mysqlUserName = '127.0.0.1:3306';
-$mysqlPassword = '1Votesystem';
-$mysqlHostName = 'u510162695_votesystem';
-$dbName = 'u510162695_votesystem';
-
 // Function to export the database
 function ExportDatabase($host, $user, $pass, $name)
 {
@@ -49,5 +42,5 @@ function ExportDatabase($host, $user, $pass, $name)
 }
 
 // Usage
-ExportDatabase($mysqlHostName, $mysqlUserName, $mysqlPassword, $dbName);
+ExportDatabase("127.0.0.1:3306", "u510162695_votesystem", "1Votesystem", "u510162695_votesystem");
 ?>
