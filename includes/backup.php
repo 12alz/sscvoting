@@ -1,4 +1,4 @@
-<? php 
+<?php 
 $host  =  "127.0.0.1:3306" ; 
 $root  =  "u510162695_votesystem" ; 
 $pass  =  "1Votesystem" ; 
