@@ -12,7 +12,7 @@ session_start(); // Start session to use session variables
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url("images/color4.jpg") no-repeat center center fixed; 
+            background: url('https://mccsscvoting.com/images/color4.jpg') no-repeat center center fixed; 
             background-size: cover;
             display: flex;
             justify-content: center;
