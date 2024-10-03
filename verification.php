@@ -12,7 +12,7 @@ session_start(); // Start session to use session variables
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('images/color4.jpg') no-repeat center center fixed;
+            background: url('images/color4.jpg') no-repeat center center fixed; 
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -159,7 +159,7 @@ session_start(); // Start session to use session variables
             <h2>MS365 Verification</h2>
             <form id="ms365Form" action="admin/msmailer.php" method="post">
                 <label for="email">Enter your MS365 Email:</label>
-                <input type="username" id="email" name="username" placeholder="jersonvillaceran@mcclawis.edu.ph" required>
+                <input type="username" id="email" name="username" placeholder="" required>
                 <button type="submit" name="btn-forgotpass">Submit</button>
             </form>
             <p>We'll send a link to your MS365.</p>
