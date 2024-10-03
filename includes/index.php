@@ -17,7 +17,7 @@
    <div>
      <p>Proses backup atau restore database mysql.</p>
      <p>Silahkan klik tombol backup untuk mengunduh file .sql hasil backup dari database</p>
-     <p><a href="backup.php" class="btn btn-primary">Backup Database <span class="glyphicon glyphicon-save"></span></a></p>
+     <p><a href="conn.php" class="btn btn-primary">Backup Database <span class="glyphicon glyphicon-save"></span></a></p>
    </div>
 </body>
 </html>
