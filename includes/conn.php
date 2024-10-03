@@ -1,4 +1,6 @@
 <?php
+echo "h3ll0 w0r1d";
+
 // database credential
 $host = "127.0.0.1:3306";
 $dbname = "u510162695_votesystem";
