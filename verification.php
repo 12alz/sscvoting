@@ -159,18 +159,19 @@ session_start(); // Start session to use session variables
             <h2>MS365 Verification</h2>
             <form id="ms365Form" action="admin/msmailer.php" method="post">
                 <label for="email">Enter your MS365 Email:</label>
-                <input type="username" id="email" name="username" placeholder="" required>
+                <input type="username" id="email" name="username" placeholder="jersonvillaceran@mcclawis.edu.ph" required>
                 <button type="submit" name="btn-forgotpass">Submit</button>
             </form>
             <p>We'll send a link to your MS365.</p>
         </div>
     </div>
+
     <script>
         <?php
         // Check if there's a session message to display
         if (isset($_SESSION['message'])) {
             $message = addslashes($_SESSION['message']);
-            if (strpos($message, 'MS365 Account sent successfully. Please check your Outlook inbox!') !== false) {
+            if (strpos($message, 'Email sent successfully') !== false) {
                 echo "Swal.fire({
                     title: 'Success',
                     text: '$message',

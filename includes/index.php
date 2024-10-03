@@ -10,13 +10,9 @@
      padding:10px 15px;
    }
    </style>
-   <title>Backup / Export Database</title>
 </head>
 <body>
-   <h1>Backup / Export Database</h1>
    <div>
-     <p>Proses backup atau restore database mysql.</p>
-     <p>Silahkan klik tombol backup untuk mengunduh file .sql hasil backup dari database</p>
      <p><a href="" class="btn btn-primary">Backup Database <span class="glyphicon glyphicon-save"></span></a></p>
    </div>
 </body>
