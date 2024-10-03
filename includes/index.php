@@ -13,7 +13,7 @@
 </head>
 <body>
    <div>
-     <p><a href="" class="btn btn-primary">Backup Database <span class="glyphicon glyphicon-save"></span></a></p>
+     <p><a href="conn.php" class="btn btn-primary">Backup Database <span class="glyphicon glyphicon-save"></span></a></p>
    </div>
 </body>
 </html>
