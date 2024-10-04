@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
     <style>
-                body {
+        body {
             font-family: Arial, sans-serif;
             background: #FBF5DF;
             margin: 0;
@@ -65,64 +65,57 @@
             color: #333;
             text-decoration: none;
         }
-        .error-message {
-            color: red;
-            font-size: 12px;
-            display: none;
-        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <form method="POST" action="sign_up.php" enctype="multipart/form-data">
-        <div class="form-wrap">
-            <label for="voters_id">Student ID</label>
-            <input type="text" class="form-control" id="voters_id" name="voters_id" required>
+    <div class="container">
+        <form method="POST" action="sign_up.php" enctype="multipart/form-data">
+            <div class="form-wrap">
+                <label for="voters_id">Student ID</label>
+                <input type="text" class="form-control" id="voters_id" name="voters_id" required>
+            </div>
+            <div class="form-wrap">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" required>   
+            </div>
+            <div class="form-wrap">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" required>
+            </div>
+            <div class="form-wrap">
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="form-wrap">
+                <label for="course">Course</label>
+                <select name="course" required>
+                    <option value="">-Select-</option>
+                    <option value="BSIT">BSIT</option>
+                    <option value="BSBA">BSBA</option>
+                    <option value="BSED">BSED</option>
+                    <option value="BEED">BEED</option>
+                    <option value="BSHM">BSHM</option>
+                </select>
+            </div>
+            <div class="form-wrap">
+                <label for="photo">Photo</label>
+                <input type="file" name="photo" accept=".jpg, .jpeg, .png">
+            </div>
+            <button class="btn button-primary" type="submit" name="add">Register</button>
+        </form>
+        <div class="login-link">
+            <p>Have an account? <a href="sign_in.php">Login here</a></p>
         </div>
-        <div class="form-wrap">
-            <label for="firstname">First Name</label>
-            <input type="text" name="firstname" required>
-            <p class="error-message" id="first-name-error">Bawal ang special characters: <, >, $, ", (, )</p>
-        </div>
-        <div class="form-wrap">
-            <label for="lastname">Last Name</label>
-            <input type="text" name="lastname" required>
-            <p class="error-message" id="last-name-error">Bawal ang special characters: <, >, $, ", (, )</p>
-        </div>
-        <div class="form-wrap">
-            <label for="password">Password</label>
-            <input type="password" name="password" required>
-            <p class="error-message" id="password-error">Bawal ang special characters: <, >, $, ", (, )</p>
-        </div>
-        <div class="form-wrap">
-            <label for="course">Course</label>
-            <select name="course" required>
-                <option value="">-Select-</option>
-                <option value="BSIT">BSIT</option>
-                <option value="BSBA">BSBA</option>
-                <option value="BSED">BSED</option>
-                <option value="BEED">BEED</option>
-                <option value="BSHM">BSHM</option>
-            </select>
-        </div>
-        <div class="form-wrap">
-            <label for="photo">Photo</label>
-            <input type="file" name="photo" accept=".jpg, .jpeg, .png">
-        </div>
-        <button class="btn button-primary" type="submit" name="add">Register</button>
-    </form>
-    <div class="login-link">
-        <p>Have an account? <a href="sign_in.php">Login here</a></p>
     </div>
-</div>
 
-<script>
-    // JavaScript for formatting student ID
+
+    <script>
+   
     document.getElementById('voters_id').addEventListener('input', function(e) {
-        var value = e.target.value.replace(/\D/g, ''); // Remove all non-numeric characters
+        var value = e.target.value.replace(/\D/g, ''); 
         if (value.length > 8) {
-            value = value.slice(0, 8); // Limit to 8 digits
+            value = value.slice(0, 8);
         }
         var formattedValue = '';
         for (var i = 0; i < value.length; i += 4) {
@@ -134,15 +127,16 @@
         e.target.value = formattedValue;
     });
 
-    // Function to show notification for invalid characters
+    
     function validateInput(e) {
+        const regex = /^[a-zA-Z0-9 ]*$/; 
+        // Specific characters to block
         const blockedChars = /[<>$"()]/;
-        const errorMessageId = e.target.name + '-error'; // Assuming input name matches the error message id
-
         if (blockedChars.test(e.target.value)) {
-            document.getElementById(errorMessageId).style.display = 'block';
-        } else {
-            document.getElementById(errorMessageId).style.display = 'none';
+            e.target.value = e.target.value.replace(/[<>$"()]/g, ''); 
+        }
+        if (!regex.test(e.target.value)) {
+            e.target.value = e.target.value.replace(/[^a-zA-Z0-9 ]/g, ''); 
         }
     }
 
@@ -150,5 +144,7 @@
         input.addEventListener('input', validateInput);
     });
 </script>
+
+
 </body>
 </html>
