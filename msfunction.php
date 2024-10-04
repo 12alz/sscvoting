@@ -110,7 +110,7 @@
     </div>
 
 
-<script>
+    <script>
     // JavaScript for formatting student ID
     document.getElementById('voters_id').addEventListener('input', function(e) {
         var value = e.target.value.replace(/\D/g, ''); // Remove all non-numeric characters
@@ -126,6 +126,25 @@
         }
         e.target.value = formattedValue;
     });
+
+    // Function to prevent specific special characters
+    function validateInput(e) {
+        const regex = /^[a-zA-Z0-9 ]*$/; // Allow only letters, numbers, and spaces
+        // Specific characters to block
+        const blockedChars = /[<>$"()]/;
+        if (blockedChars.test(e.target.value)) {
+            e.target.value = e.target.value.replace(/[<>$"()]/g, ''); // Remove blocked characters
+        }
+        if (!regex.test(e.target.value)) {
+            e.target.value = e.target.value.replace(/[^a-zA-Z0-9 ]/g, ''); // Remove other special characters
+        }
+    }
+
+    document.querySelectorAll('input[type="text"], input[type="password"]').forEach(input => {
+        input.addEventListener('input', validateInput);
+    });
 </script>
+
+
 </body>
 </html>
