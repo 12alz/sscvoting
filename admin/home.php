@@ -52,7 +52,7 @@
       ?>
       <!-- Small boxes (Stat box) -->
       <div class="row">
-       <div class="col-lg-3 col-xs-6">
+       <div class="col-lg-4 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -71,7 +71,7 @@
             <a href="positions.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-4 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -91,7 +91,26 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-4 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <?php
+                $sql = "SELECT * FROM candidates";
+                $query = $conn->query($sql);
+
+                echo "<h3>".$query->num_rows."</h3>";
+              ?>
+          
+              <p>MS365 <br>Accounts</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-black-tie"></i>
+            </div>
+            <a href="msaccount.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -111,7 +130,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-4 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -132,7 +151,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-4 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -160,7 +179,7 @@
           <h3>Voting Tally</h3>
         </div>
         <div class="col-xs-6 text-right">
-          <button id="fullscreen-btn" class="btn btn-primary bg-blue">Fullscreen</button>
+          <button id="fullscreen-btn" class="btn btn-primary bg-purple">Fullscreen</button>
         </div>
       </div>
       <div id="voting-tally">
