@@ -77,7 +77,7 @@
             </div>
             <div class="form-wrap">
                 <label for="firstname">First Name</label>
-                <input type="text" name="firstname" required>
+                <input type="text" name="firstname" required>   
             </div>
             <div class="form-wrap">
                 <label for="lastname">Last Name</label>

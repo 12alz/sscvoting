@@ -4,9 +4,11 @@
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
+	
 	 
-	<div class="content-wrapper">
+	  <div class="content-wrapper">
 	    <div class="container">
+
 	      <!-- Main content -->
 	      <section class="content">
 	      	<?php
@@ -15,10 +17,6 @@
 	      	?>
 	      	<h1 class="page-header text-center title"><b><?php echo strtoupper($title); ?></b></h1>
 	        <div class="row">
-				<!-- Time Display -->
-				<div id="timeNotification"></div>
-				<div id="currentTime" class="time-display"></div>
-
 	        	<div class="col-sm-10 col-sm-offset-1">
 	        		<?php
 				        if(isset($_SESSION['error'])){
@@ -28,13 +26,16 @@
 					        	<ul>
 					        		<?php
 					        			foreach($_SESSION['error'] as $error){
-					        				echo "<li>".$error."</li>";
+					        				echo "
+					        					<li>".$error."</li>
+					        				";
 					        			}
 					        		?>
 					        	</ul>
 					        </div>
 				        	<?php
 				         	unset($_SESSION['error']);
+
 				        }
 				        if(isset($_SESSION['success'])){
 				          	echo "
@@ -46,6 +47,7 @@
 				          	";
 				          	unset($_SESSION['success']);
 				        }
+
 				    ?>
  
 				    <div class="alert alert-danger alert-dismissible" id="alert" style="display:none;">
@@ -132,6 +134,7 @@
 										';
 
 										$candidate = '';
+
 									}	
 
 				        		?>
@@ -143,10 +146,13 @@
 				        	<!-- End Voting Ballot -->
 				    		<?php
 				    	}
+
 				    ?>
+
 	        	</div>
 	        </div>
 	      </section>
+	     
 	    </div>
 	  </div>
   
@@ -157,54 +163,17 @@
 <?php include 'includes/scripts.php'; ?>
 <script>
 $(function(){
-	var votingStart = "07:00";
-	var votingEnd = "17:00";
-	var timeNotification = $('#timeNotification');
-
-	function updateTime() {
-		var now = new Date();
-		var hours = now.getHours();
-		var minutes = now.getMinutes();
-		var seconds = now.getSeconds();
-		var ampm = hours >= 12 ? 'PM' : 'AM';
-		hours = hours % 12;
-		hours = hours ? hours : 12; // the hour '0' should be '12'
-		minutes = minutes < 10 ? '0' + minutes : minutes;
-		seconds = seconds < 10 ? '0' + seconds : seconds;
-		var currentTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
-
-		$('#currentTime').text(currentTime);
-	}
-	updateTime();
-	setInterval(updateTime, 1000); // Update every second
-
-	function checkVotingTime() {
-		var now = new Date();
-		var currentTime = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
-		if (currentTime >= votingStart && currentTime <= votingEnd) {
-			timeNotification.text('Voting is currently open.').show();
-		} else {
-			timeNotification.text('Voting is closed.').show();
-			$('form#ballotForm').hide();
-		}
-	}
-	checkVotingTime();
-	setInterval(checkVotingTime, 60000); // Check every minute
-
-	// Initialize iCheck
 	$('.content').iCheck({
 		checkboxClass: 'icheckbox_flat-green',
 		radioClass: 'iradio_flat-green'
 	});
 
-	// Reset button functionality
 	$(document).on('click', '.reset', function(e){
 	    e.preventDefault();
 	    var desc = $(this).data('desc');
 	    $('.'+desc).iCheck('uncheck');
 	});
 
-	// Platform button functionality
 	$(document).on('click', '.platform', function(e){
 		e.preventDefault();
 		$('#platform').modal('show');
@@ -214,12 +183,11 @@ $(function(){
 		$('#plat_view').html(platform);
 	});
 
-	// Preview button functionality
 	$('#preview').click(function(e){
 		e.preventDefault();
 		var form = $('#ballotForm').serialize();
 		if(form == ''){
-			$('.message').html('You must vote at least one candidate');
+			$('.message').html('You must vote atleast one candidate');
 			$('#alert').show();
 		}
 		else{
@@ -245,34 +213,10 @@ $(function(){
 				}
 			});
 		}
+		
 	});
+
 });
 </script>
-
-<style>
-.time-display {
-	font-size: 24px;
-	font-weight: bold;
-	color: #333;
-	text-align: center;
-	padding: 10px;
-	background: #f8f9fa;
-	border-radius: 5px;
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-	margin-bottom: 15px;
-}
-
-#timeNotification {
-	font-size: 18px;
-	color: #fff;
-	background-color: #007bff;
-	padding: 10px;
-	text-align: center;
-	border-radius: 5px;
-	margin-bottom: 10px;
-	display: none;
-}
-</style>
-
 </body>
 </html>
