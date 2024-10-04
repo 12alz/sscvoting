@@ -3,8 +3,8 @@ session_start();
 include 'includes/conn.php';
 
 if(isset($_POST['login'])){
-		$voter = mysql_real_escape_string($_POST['voter']);
-		$password = mysql_real_escape_string($_POST['password']);
+		$voter = $_POST['voter'];
+		$password = $_POST['password'];
 
 		$sql = "SELECT * FROM voters WHERE voters_id = '$voter'";
 		$query = $conn->query($sql);
