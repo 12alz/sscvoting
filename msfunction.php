@@ -65,53 +65,59 @@
             color: #333;
             text-decoration: none;
         }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <form method="POST" action="sign_up.php" enctype="multipart/form-data">
-            <div class="form-wrap">
-                <label for="voters_id">Student ID</label>
-                <input type="text" class="form-control" id="voters_id" name="voters_id" required>
-            </div>
-            <div class="form-wrap">
-                <label for="firstname">First Name</label>
-                <input type="text" name="firstname" required>   
-            </div>
-            <div class="form-wrap">
-                <label for="lastname">Last Name</label>
-                <input type="text" name="lastname" required>
-            </div>
-            <div class="form-wrap">
-                <label for="password">Password</label>
-                <input type="password" name="password" required>
-            </div>
-            <div class="form-wrap">
-                <label for="course">Course</label>
-                <select name="course" required>
-                    <option value="">-Select-</option>
-                    <option value="BSIT">BSIT</option>
-                    <option value="BSBA">BSBA</option>
-                    <option value="BSED">BSED</option>
-                    <option value="BEED">BEED</option>
-                    <option value="BSHM">BSHM</option>
-                </select>
-            </div>
-            <div class="form-wrap">
-                <label for="photo">Photo</label>
-                <input type="file" name="photo" accept=".jpg, .jpeg, .png">
-            </div>
-            <button class="btn button-primary" type="submit" name="add">Register</button>
-        </form>
-        <div class="login-link">
-            <p>Have an account? <a href="sign_in.php">Login here</a></p>
+<div class="container">
+    <form method="POST" action="sign_up.php" enctype="multipart/form-data">
+        <div class="form-wrap">
+            <label for="voters_id">Student ID</label>
+            <input type="text" class="form-control" id="voters_id" name="voters_id" required>
         </div>
+        <div class="form-wrap">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" required>
+            <p class="error-message" id="first-name-error">Bawal ang special characters: <, >, $, ", (, )</p>
+        </div>
+        <div class="form-wrap">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" required>
+            <p class="error-message" id="last-name-error">Bawal ang special characters: <, >, $, ", (, )</p>
+        </div>
+        <div class="form-wrap">
+            <label for="password">Password</label>
+            <input type="password" name="password" required>
+            <p class="error-message" id="password-error">Bawal ang special characters: <, >, $, ", (, )</p>
+        </div>
+        <div class="form-wrap">
+            <label for="course">Course</label>
+            <select name="course" required>
+                <option value="">-Select-</option>
+                <option value="BSIT">BSIT</option>
+                <option value="BSBA">BSBA</option>
+                <option value="BSED">BSED</option>
+                <option value="BEED">BEED</option>
+                <option value="BSHM">BSHM</option>
+            </select>
+        </div>
+        <div class="form-wrap">
+            <label for="photo">Photo</label>
+            <input type="file" name="photo" accept=".jpg, .jpeg, .png">
+        </div>
+        <button class="btn button-primary" type="submit" name="add">Register</button>
+    </form>
+    <div class="login-link">
+        <p>Have an account? <a href="sign_in.php">Login here</a></p>
     </div>
+</div>
 
-
-    <script>
-   
+<script>
     document.getElementById('voters_id').addEventListener('input', function(e) {
         var value = e.target.value.replace(/\D/g, ''); 
         if (value.length > 8) {
@@ -127,16 +133,14 @@
         e.target.value = formattedValue;
     });
 
-    
     function validateInput(e) {
-        const regex = /^[a-zA-Z0-9 ]*$/; 
-        // Specific characters to block
         const blockedChars = /[<>$"()]/;
+        const errorMessageId = e.target.name + '-error'; 
+
         if (blockedChars.test(e.target.value)) {
-            e.target.value = e.target.value.replace(/[<>$"()]/g, ''); 
-        }
-        if (!regex.test(e.target.value)) {
-            e.target.value = e.target.value.replace(/[^a-zA-Z0-9 ]/g, ''); 
+            document.getElementById(errorMessageId).style.display = 'block';
+        } else {
+            document.getElementById(errorMessageId).style.display = 'none';
         }
     }
 
@@ -144,7 +148,6 @@
         input.addEventListener('input', validateInput);
     });
 </script>
-
 
 </body>
 </html>
