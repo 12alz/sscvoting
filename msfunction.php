@@ -126,10 +126,10 @@
         e.target.value = formattedValue;
     });
 
-    // JavaScript for preventing special characters in names
+    mes
     function validateNameInput(event) {
         const value = event.target.value;
-        // Allow letters and spaces only
+     
         const filteredValue = value.replace(/[^a-zA-Z\s]/g, '');
         event.target.value = filteredValue;
     }
