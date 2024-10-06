@@ -331,8 +331,8 @@ if(isset($_SESSION['voter'])){
                     <div class="tab-pane fade" id="tabs-login-3">
                       <form method="post" action="admin/login.php">
                         <div class="form-wrap">
-                          <label class="form-label form-label-outside" for="username">Username:</label>
-                          <input class="form-input bg-default" id="username" type="text" name="username" data-constraints="@Required">
+                        <label class="form-label form-label-outside" for="email">Email:</label>
+                        <input class="form-input bg-default" id="email" type="email" name="email" data-constraints="@Required">
                         </div>
                         <div class="form-wrap offset-top-15">
                           <label class="form-label form-label-outside" for="password">Password:</label>

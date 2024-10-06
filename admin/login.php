@@ -2,51 +2,58 @@
 session_start();
 include 'includes/conn.php';
 
-
-// $max_attempts = 3; test
-// $delay_time = 1000000; 
-
-// if (!isset($_SESSION['login_attempts'])) {
-//     $_SESSION['login_attempts'] = 0;
-//     $_SESSION['last_attempt_time'] = 0; 
-// }
-
-
-// if (time() - $_SESSION['last_attempt_time'] < $delay_time && $_SESSION['login_attempts'] >= $max_attempts) {
-//     $_SESSION['error'] = 'Too many failed login attempts. Please try again after ' . ($delay_time - (time() - $_SESSION['last_attempt_time'])) . 'seconds.';
-//     header('location: ../sign_in.php');
-//     exit();
-// }
-
 if (isset($_POST['login'])) {
     // Sanitize input
-    $username = preg_replace('/[^a-zA-Z0-9]/', '', $_POST['username']); 
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL); 
     $password = $_POST['password'];
 
-    // Prepare the SQL statement
-    $stmt = $conn->prepare("SELECT * FROM admin WHERE username = ?");
-    $stmt->bind_param('s', $username); 
+    // Check login attempts
+    $loginAttempts = "SELECT attempts, last_attempt_time FROM login_attempts WHERE username = ?";
+    $stmt = $conn->prepare($loginAttempts);
+    $stmt->bind_param('s', $email);
     $stmt->execute();
     $result = $stmt->get_result();
+    $row = $result->fetch_Assoc();
 
-    if ($result->num_rows < 1) {
+    $attemptsCount = $row['attempts'];
+    $lastAttempts = $row['last_attempt_time'];
+    $nowTimestamp = time();
+    $timeoutDuration = 30; // in seconds
 
-        // $_SESSION['login_attempts']++;sss
-        // $_SESSION['last_attempt_time'] = time();
-        $_SESSION['error'] = 'Incorrect username or password';
-    } else {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            // Reset login attempts on successful login
-            //$_SESSION['login_attempts'] = 0;
-            $_SESSION['admin'] = $row['id'];
-            header('location: ../sign_in.php');
-            exit();
+    if($attemptsCount >= 3 && ($nowTimestamp - $lastAttempts) < $timeoutDuration){
+        $timeWait = ($nowTimestamp - $lastAttempts);
+        $_SESSION['error'] = 'Too many login attempts. Please try again later."\n"'.'Wait: '.$timeWait; 
+    }else{
+        // Prepare the SQL statement
+        $stmt = $conn->prepare("SELECT * FROM admin WHERE email = ?"); 
+        $stmt->bind_param('s', $email); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows < 1) {
+            $_SESSION['error'] = 'Incorrect email or password'; 
         } else {
-            // Increment login attempts
-            // $_SESSION['login_attempts']++;
-            // $_SESSION['last_attempt_time'] = time();
-            $_SESSION['error'] = 'Incorrect username or password';
+            $row = $result->fetch_assoc();
+            if (password_verify($password, $row['password'])) {
+                // Reset login attempts on successful login
+                $_SESSION['admin'] = $row['id'];
+                $updateLoginAttempts = "UPDATE login_attempts SET attempts = 0, last_attempt_time = NULL 
+                WHERE username = ?";
+                $stmt = $conn->prepare($updateLoginAttempts);
+                $stmt->bind_param('s', $email);
+                $stmt->execute();
+                header('location: ../sign_in.php');
+                exit();
+            } else {
+                $_SESSION['error'] = 'Incorrect email or password'; 
+                $updateLoginAttempts = "INSERT INTO login_attempts (username, attempts, last_attempt_time)
+                VALUE (?, 1, NOW()) ON DUPLICATE KEY UPDATE attempts = attempts + 1, last_attempt_time = NOW()";
+                // $updateLoginAttempts = "UPDATE login_attempts SET attempts = attempts+1, last_attempt_time = NOW() 
+                // WHERE username = ?";
+                $stmt = $conn->prepare($updateLoginAttempts);
+                $stmt->bind_param('s', $email);
+                $stmt->execute();
+            }
         }
     }
     $stmt->close();
