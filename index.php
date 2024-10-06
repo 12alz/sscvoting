@@ -1,3 +1,8 @@
+<?php
+header("Cache-control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
 <!DOCTYPE html>
 <html class="wide wow-animation scrollTo" lang="en">
   <head>
