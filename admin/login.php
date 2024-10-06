@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
 
     if ($result->num_rows < 1) {
 
-        // $_SESSION['login_attempts']++;
+        // $_SESSION['login_attempts']++;sss
         // $_SESSION['last_attempt_time'] = time();
         $_SESSION['error'] = 'Incorrect username or password';
     } else {
