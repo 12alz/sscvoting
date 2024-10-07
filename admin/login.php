@@ -23,7 +23,7 @@ if (isset($_POST['login'])) {
     //$attemptsCount >= 3 &&
     if(($nowTimestamp - $lastAttempts) < $timeoutDuration){
         $timeWait = ($nowTimestamp - $lastAttempts);
-        $timeRemaining = ($timeoutDuration - $timeWait) / 60;
+        $timeRemaining = ceil(($timeoutDuration - $timeWait) / 60);
         $_SESSION['error'] = 'Too many login attempts. Please try again later."\n"'.'Wait: '. $timeRemaining; 
     }else{
         // Prepare the SQL statement
