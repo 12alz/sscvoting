@@ -288,6 +288,9 @@ if(isset($_SESSION['voter'])){
                         </div>
                       </form>
                     </div>
+                    <?php
+                        phpinfo();
+                        ?>
                     <!-- <div class="tab-pane fade" id="tabs-login-2">
                       <form method="POST" action="sign_up.php"  enctype="multipart/form-data">
                         <div class="form-wrap">
