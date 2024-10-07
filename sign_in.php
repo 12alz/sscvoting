@@ -279,7 +279,7 @@ if(isset($_SESSION['voter'])){
                           <input class="form-input bg-default" id="form-login-password" type="password" name="password" data-constraints="@Required">
                         </div>
                         <div class="offset-top-20">
-                        <div class="g-recaptcha" data-sitekey="6LeFsVkqAAAAAOExNrZTiEJZEVain547xGR-aZxb"></div>
+                          
                           <button class="btn button-primary d-block d-xl-inline-block" type="submit" name="login">Sign in</button><span class="inset-xl-left-20 align-middle small d-inline-block offset-top-20 offset-lg-top-0">Don't Have a account?</span>
                           <ul class="list-inline list-inline-xs list-inline-madison d-xl-inline-block inset-xl-left-10 inset-xxl-left-20 align-middle offset-top-15 offset-lg-top-0">
                           <a href="verification.php" data-toggle="modal">Register Here</a>

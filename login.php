@@ -2,19 +2,7 @@
 session_start();
 include 'includes/conn.php';
 
-if (isset($_POST['login'])) {
-    // Verify reCAPTCHA response
-    $recaptchaSecret = '6LeFsVkqAAAAADwZFdcBquzrg4nHk8y0bSe6JlE4';
-    $recaptchaResponse = $_POST['g-recaptcha-response'];
-    
-    $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$recaptchaSecret.'&response='.$recaptchaResponse);
-    $responseData = json_decode($verifyResponse);
-
-    if (!$responseData->success) {
-        $_SESSION['error'] = 'reCAPTCHA verification failed. Please try again.';
-        header('Location: sign_in.php');
-        exit();
-    }
+if (isset($_POST['login'])) {c
     $voter = $_POST['voter'];
     $password = $_POST['password'];
 
