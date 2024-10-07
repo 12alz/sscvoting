@@ -24,10 +24,9 @@ if (isset($_POST['login'])) {
     if(($nowTimestamp - $lastAttempts) < $timeoutDuration){
         $timeWait = ($nowTimestamp - $lastAttempts);
 
-        $remainMin = floor($timeWait/60);
-        $remainSec = $timewait % 60;
+        $remainMin = ceil(($timeoutDuration - $timeWait) / 60);
 
-        $_SESSION['error'] = 'Too many login attempts. Please try again later."\n"'.'Wait: '.$remainMin.':'.$remainSec; 
+        $_SESSION['error'] = 'Too many login attempts. Please try again later."\n"'.'Wait: '.$remainMin.'minutes'; 
     }else{
         // Prepare the SQL statement
         $stmt = $conn->prepare("SELECT * FROM admin WHERE email = ?"); 
