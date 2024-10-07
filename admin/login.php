@@ -1,18 +1,11 @@
 <?php
+session_start();
+include 'includes/conn.php';
+
 if (isset($_POST['login'])) {
-    // Verify reCAPTCHA response
-    $recaptchaSecret = '6LeFsVkqAAAAADwZFdcBquzrg4nHk8y0bSe6JlE4'; 
-    $recaptchaResponse = $_POST['g-recaptcha-response'];
-    
-    $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$recaptchaSecret.'&response='.$recaptchaResponse);
-    $responseData = json_decode($verifyResponse);
-
-    if (!$responseData->success) {
-        $_SESSION['error'] = 'reCAPTCHA verification failed. Please try again.';
-        header('location: ../sign_in.php');
-        exit();
-    }
-
+    // Sanitize input
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL); 
+    $password = $_POST['password'];
 
     // Check login attempts
     $loginAttempts = "SELECT attempts, last_attempt_time FROM login_attempts WHERE username = ?";
@@ -22,9 +15,9 @@ if (isset($_POST['login'])) {
     $result = $stmt->get_result();
     $row = $result->fetch_Assoc();
 
-        $attemptsCount = $row['attempts'];
-    $lastAttempts = $row['last_attempt_time'];
-    $nowTimestamp = time();
+    $attemptsCount = $row['attempts'];
+    $lastAttempts = strtotime($row['last_attempt_time']);
+    $nowTimestamp = strtotime(time());
     $timeoutDuration = 30; // in seconds
 
     if($attemptsCount >= 3 && ($nowTimestamp - $lastAttempts) < $timeoutDuration){

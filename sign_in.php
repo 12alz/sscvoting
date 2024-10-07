@@ -339,7 +339,7 @@ if(isset($_SESSION['voter'])){
                           <label class="form-label form-label-outside" for="password">Password:</label>
                           <input class="form-input bg-default" id="password" type="password" name="password" data-constraints="@Required">
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6LeFsVkqAAAAAOExNrZTiEJZEVain547xGR-aZxb"></div>
+                       
                          <a href="forgetpass.php" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
                        
                         <div class="offset-top-20">
