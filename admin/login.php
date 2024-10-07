@@ -11,7 +11,8 @@ if (isset($_POST['login'])) {
         $_SESSION['error'] = 'reCAPTCHA verification failed. Please try again.';
         header('location: ../sign_in.php');
         exit();
-    };
+    }
+
 
     // Check login attempts
     $loginAttempts = "SELECT attempts, last_attempt_time FROM login_attempts WHERE username = ?";
