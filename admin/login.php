@@ -17,7 +17,7 @@ if (isset($_POST['login'])) {
 
     $attemptsCount = $row['attempts'];
     $lastAttempts = strtotime($row['last_attempt_time']);
-    $nowTimestamp = strtotime(time());
+    $nowTimestamp = time();
     $timeoutDuration = 30; // in seconds
 //$attemptsCount >= 3 &&
     if(($nowTimestamp - $lastAttempts) < $timeoutDuration){
