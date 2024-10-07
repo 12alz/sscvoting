@@ -16,23 +16,23 @@
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
 		$photo = $_FILES['photo']['name'];
-		if(password_verify($curr_password, $email['password'])){
+		if(password_verify($curr_password, $user['password'])){
 			if(!empty($photo)){
 				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$photo);
 				$filename = $photo;	
 			}
 			else{
-				$filename = $email['photo'];
+				$filename = $user['photo'];
 			}
 
-			if($password == $email['password']){
-				$password = $email['password'];
+			if($password == $user['password']){
+				$password = $user['password'];
 			}
 			else{
 				$password = password_hash($password, PASSWORD_DEFAULT);
 			}
 
-			$sql = "UPDATE admin SET email = '$email', password = '$password', firstname = '$firstname', lastname = '$lastname', photo = '$filename' WHERE id = '".$user['id']."'";
+			$sql = "UPDATE admin SET email = '$username', password = '$password', firstname = '$firstname', lastname = '$lastname', photo = '$filename' WHERE id = '".$user['id']."'";
 			if($conn->query($sql)){
 				$_SESSION['success'] = 'Admin profile updated successfully';
 			}
