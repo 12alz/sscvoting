@@ -2,45 +2,34 @@
 session_start();
 include 'includes/conn.php';
 
-if(isset($_POST['login'])){
-		$voter = $_POST['voter'];
-		$password = $_POST['password'];
+if (isset($_POST['login'])) {
+    $voter = $_POST['voter'];
+    $password = $_POST['password'];
 
-		$sql = "SELECT * FROM voters WHERE voters_id = '$voter'";
-		$query = $conn->query($sql);
-
-		$row = mysqli_query($conn,$sql);
-		$count = mysqli_num_rows($row);
-
-	if($count > 0){
-		$rows = mysqli_fetch_object($row);
-		if($rows->recstat == '0'){
-			
-				if($query->num_rows < 1){
-				$_SESSION['error'] = 'Cannot  find voter with the ID';
-				header('Location: sign_in.php');
-				}
-				else{
-				$row = $query->fetch_assoc();
-				if(password_verify($password, $row['password'])){
-					$_SESSION['voter'] = $row['id'];
-					header('Location: home.php');
-				}
-				else{
-					$_SESSION['error'] = 'Incorrect password';
-					header('Location: sign_in.php');
-				}
-			}
-		}
-		else{
-			$_SESSION['error'] = 'You dont have permission to login';
-			header('Location: sign_in.php');
-		}
-	}
+    $stmt = $conn->prepare("SELECT * FROM voters WHERE voters_id = ?");
+    $stmt->bind_param("s", $voter);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if ($row['recstat'] == '0') {
+            if (password_verify($password, $row['password'])) {
+                $_SESSION['voter'] = $row['id'];
+                header('Location: home.php');
+                exit;
+            } else {
+                $_SESSION['error'] = 'Incorrect password';
+            }
+        } else {
+            $_SESSION['error'] = 'You don’t have permission to login';
+        }
+    } else {
+        $_SESSION['error'] = 'Cannot find voter with the ID';
+    }
+} else {
+    $_SESSION['error'] = 'Input voter credentials first';
 }
-else{
-		$_SESSION['error'] = 'Input voter credentials first';
-		header('Location: sign_in.php');
-}
-header('location: sign_in.php');
+header('Location: sign_in.php');
+exit;
 ?>
