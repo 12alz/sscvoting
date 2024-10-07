@@ -96,7 +96,7 @@
           <div class="small-box bg-red">
             <div class="inner">
               <?php
-                $sql = "SELECT * FROM candidates";
+                $sql = "SELECT * FROM import_ms365";
                 $query = $conn->query($sql);
 
                 echo "<h3>".$query->num_rows."</h3>";
@@ -179,7 +179,8 @@
           <h3>Voting Tally</h3>
         </div>
         <div class="col-xs-6 text-right">
-          <button id="fullscreen-btn" class="btn btn-primary bg-purple">Fullscreen</button>
+       <input type="checkbox" data-toggle="switchbutton" checked data-onstyle="primary" data-offstyle="secondary">
+         
         </div>
       </div>
       <div id="voting-tally">
@@ -223,6 +224,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
 
 <script>
   function AutoRefresh(t){
@@ -259,26 +262,7 @@
     });
   }
 
-  document.getElementById('fullscreen-btn').addEventListener('click', function() {
-    var elem = document.getElementById('voting-tally');
-    if (!document.fullscreenElement) {
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.mozRequestFullScreen) { /* Firefox */
-        elem.mozRequestFullScreen();
-      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-        elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE/Edge */
-        elem.msRequestFullscreen();
-      }
-      elem.style.backgroundColor = "lightgray";
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      }
-      elem.style.backgroundColor = "";
-    }
-  });
+  
 
   <?php
     $sql = "SELECT * FROM positions ORDER BY priority ASC";
