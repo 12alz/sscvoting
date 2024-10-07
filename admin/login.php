@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
     $result = $stmt->get_result();
     $row = $result->fetch_Assoc();
 
-    $attemptsCount = $row['attempts'];
+        $attemptsCount = $row['attempts'];
     $lastAttempts = $row['last_attempt_time'];
     $nowTimestamp = time();
     $timeoutDuration = 30; // in seconds
