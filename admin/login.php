@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
     $nowTimestamp = time();
     $timeoutDuration = 300; // in seconds
 
-    //$attemptsCount >= 3 &&shaha
+    //$attemptsCount >= 3 &&shuhay
     if(($nowTimestamp - $lastAttempts) < $timeoutDuration){
         $timeWait = ($nowTimestamp - $lastAttempts);
 
