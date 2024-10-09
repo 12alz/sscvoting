@@ -39,9 +39,9 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->Port = 587;
             $mail->SMTPSecure = 'tls';
             $mail->SMTPAuth = true;
-            $mail->Username = 'ayawkobatapakukol@outlook.com';
-            $mail->Password = 'Alexandre1234';
-            $mail->setFrom('ayawkobatapakukol@outlook.com');
+            $mail->Username = 'RosmarRosmar@outlook.coms';
+            $mail->Password = 'Jersonvillaceran';
+            $mail->setFrom('RosmarRosmar@outlook.com');
             $mail->addAddress($username);
             $mail->isHTML(true);
 
