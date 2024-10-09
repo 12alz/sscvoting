@@ -73,23 +73,23 @@
         <form method="POST" action="sign_up.php" enctype="multipart/form-data">
             <div class="form-wrap">
                 <label for="voters_id">Student ID</label>
-                <input type="text" id="voters_id" name="voters_id" required>
+                <input type="text" class="form-control" id="voters_id" name="voters_id" required>
             </div>
             <div class="form-wrap">
                 <label for="firstname">First Name</label>
-                <input type="text" id="firstname" name="firstname" required>
+                <input type="text" name="firstname" required>
             </div>
             <div class="form-wrap">
                 <label for="lastname">Last Name</label>
-                <input type="text" id="lastname" name="lastname" required>
+                <input type="text" name="lastname" required>
             </div>
             <div class="form-wrap">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" name="password" required>
             </div>
             <div class="form-wrap">
                 <label for="course">Course</label>
-                <select id="course" name="course" required>
+                <select name="course" required>
                     <option value="">-Select-</option>
                     <option value="BSIT">BSIT</option>
                     <option value="BSBA">BSBA</option>
@@ -100,15 +100,14 @@
             </div>
             <div class="form-wrap">
                 <label for="photo">Photo</label>
-                <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png">
+                <input type="file" name="photo" accept=".jpg, .jpeg, .png">
             </div>
-            <button type="submit" name="add">Register</button>
+            <button class="btn button-primary" type="submit" name="add">Register</button>
         </form>
         <div class="login-link">
-            <p>Have an account? <a href="sign_in.php">Login here</a></p>
+            <p>Don’t have an account? <a href="sign_in.php">Login here</a></p>
         </div>
     </div>
-
 <script>
     // JavaScript for formatting student ID
     document.getElementById('voters_id').addEventListener('input', function(e) {
