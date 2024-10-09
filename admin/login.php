@@ -7,7 +7,7 @@ if (isset($_POST['login'])) {
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL); 
     $password = $_POST['password'];
 
-    // Check login attempts
+    // Check login attemptss
     $loginAttempts = "SELECT attempts, last_attempt_time FROM login_attempts WHERE username = ?";
     $stmt = $conn->prepare($loginAttempts);
     $stmt->bind_param('s', $email);
