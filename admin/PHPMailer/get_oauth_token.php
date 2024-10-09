@@ -101,7 +101,7 @@ if (array_key_exists('provider', $_POST)) {
 }
 
 //If you don't want to use the built-in form, set your client id and secret here
-//$clientId = 'RANDOMCHARS-----duv1n2.apps.googleusercontent.com';
+//$clientId = 'RANDOMCHARS-----sduv1n2.apps.googleusercontent.com';
 //$clientSecret = 'RANDOMCHARS-----lGyjPcRtvP';
 
 //If this automatic URL doesn't work, set it yourself manually to the URL of this script
