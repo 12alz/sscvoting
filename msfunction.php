@@ -10,7 +10,7 @@ if (isset($_GET['token'])) {
     $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
     $stmt = $conn->prepare($sql);
 
-    // Check if preparation was successful
+    // Check if preparation was successfuls
     if ($stmt === false) {
         die('MySQL prepare error: ' . htmlspecialchars($conn->error));
     }
