@@ -73,5 +73,6 @@ if (isset($_POST["btn-forgotpass"])) {
         header("Location: ../verification.php");
         exit();
     }
+}
 
 ?>
