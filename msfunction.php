@@ -106,7 +106,7 @@
             <button class="btn button-primary" type="submit" name="add">Register</button>
         </form>
         <div class="login-link">
-            <p>Don’t have an account? <a href="sign_in.php">Login here</a></p>
+            <p>Have an account? <a href="sign_in.php">Login here</a></p>
         </div>
     </div>
 
