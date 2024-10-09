@@ -3,7 +3,7 @@
 include "includes/conn.php";
 
 if (isset($_POST["btn-forgotpass"])) {
-    session_start(); 
+    session_start(); // Start session to use session variables
 
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
@@ -34,15 +34,15 @@ if (isset($_POST["btn-forgotpass"])) {
             // Initialize PHPMailer
             $mail = new PHPMailer\PHPMailer\PHPMailer();
             $mail->isSMTP();
-            $mail->SMTPDebug = 0; // Set to 0 for no debug output
+            $mail->SMTPDebug = 0; 
             $mail->Host = 'smtp.office365.com';
             $mail->Port = 587;
             $mail->SMTPSecure = 'tls';
             $mail->SMTPAuth = true;
-            $mail->Username = 'imomamalibat@outlook.com'; // Your email address
-            $mail->Password = 'alexandre123'; // Your email password
-            $mail->setFrom('imomamalibat@outlook.com');
-            $mail->addAddress($username); // Email address to send to
+            $mail->Username = 'ayawkobatapakukol@outlook.com';
+            $mail->Password = 'Alexandre1234';
+            $mail->setFrom('ayawkobatapakukol@outlook.com');
+            $mail->addAddress($username);
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
@@ -57,12 +57,12 @@ if (isset($_POST["btn-forgotpass"])) {
                 <p>Suprime Student Council</p>
             ";
             if ($mail->send()) {
-                $_SESSION['message'] = 'MS365 Account sent successfully. Please check your Outlook inbox!';
+                $_SESSION['message'] = 'Email sent successfully!';
             } else {
                 $_SESSION['message'] = 'Failed to send email. Please try again.';
             }
         } else {
-            $_SESSION['message'] = 'MS365 account not found. Please check and try again.';
+            $_SESSION['message'] = 'Email not found. Please check and try again.';
         }
 
         // Close the statement and connection
