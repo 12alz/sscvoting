@@ -69,7 +69,6 @@
 </head>
 <body>
 
-
     <div class="container">
         <form method="POST" action="sign_up.php" enctype="multipart/form-data">
             <div class="form-wrap">
@@ -109,6 +108,7 @@
             <p>Have an account? <a href="sign_in.php">Login here</a></p>
         </div>
     </div>
+
 
 <script>
     // JavaScript for formatting student ID
