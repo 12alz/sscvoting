@@ -1,13 +1,3 @@
-<?php
-include "includes/conn.php";
-
-$showForm = false; // Variable to control whether to show the form
-
-
-// Close the database connection
-$conn->close();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,10 +108,7 @@ $conn->close();
         <div class="login-link">
             <p>Don’t have an account? <a href="sign_in.php">Login here</a></p>
         </div>
-    </div>
-<?php else: ?>
-    <p>The registration link has expired or is invalid.</p>
-<?php endif; ?>
+    
 
 <script>
     // JavaScript for formatting student ID
