@@ -21,7 +21,7 @@ if (isset($_POST['login'])) {
     $timeoutDuration = 300; // in seconds
 
     //$attemptsCount >= 3 &&shuhay
-    if(($nowTimestamp - $lastAttempts) < $timeoutDuration){
+    if(($nowTimestamp - $lastAttempts) || $timeoutDuration){
         $timeWait = ($nowTimestamp - $lastAttempts);
 
         $remainMin = ceil(($timeoutDuration - $timeWait) / 60);
