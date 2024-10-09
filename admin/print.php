@@ -90,6 +90,7 @@
   $pdf->AddPage();  
   $content = '';  
   $content .= '
+     <h2 align="center"><img src="../images/o-logo.png"></h2>
       <h2 align="center">'.$title.'</h2>
       <h4 align="center">Tally Result</h4>
       <table border="1" cellspacing="0" cellpadding="3">  
