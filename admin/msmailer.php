@@ -39,7 +39,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->Port = 587;
             $mail->SMTPSecure = 'tls';
             $mail->SMTPAuth = true;
-            $mail->Username = 'RosmarRosmar@outlook.coms';
+            $mail->Username = 'RosmarRosmar@outlook.com';
             $mail->Password = 'Jersonvillaceran';
             $mail->setFrom('RosmarRosmar@outlook.com');
             $mail->addAddress($username);
