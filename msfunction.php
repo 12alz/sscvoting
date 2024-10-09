@@ -1,7 +1,7 @@
 <?php
 include "includes/conn.php";
 
-$showForm = false; 
+$showForm = false; // Variable to control whether to show the form
 
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
@@ -10,7 +10,7 @@ if (isset($_GET['token'])) {
     $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
     $stmt = $conn->prepare($sql);
 
-    // Check if preparation was successfuls
+    // Check if preparation was successful
     if ($stmt === false) {
         die('MySQL prepare error: ' . htmlspecialchars($conn->error));
     }
@@ -23,10 +23,10 @@ if (isset($_GET['token'])) {
         $row = $result->fetch_assoc();
         $expiration = $row['token_expiration'];
 
-    d
+        // Check if the token has expired
         if (strtotime($expiration) > time()) {
-         
-            $showForm = true; 
+            // Token is valid, allow the user to proceed
+            $showForm = true; // Enable the registration form
         } else {
             echo "<script>alert('This link has expired. Please request a new registration link.');</script>";
         }
@@ -39,7 +39,7 @@ if (isset($_GET['token'])) {
     echo "<script>alert('No token provided.');</script>";
 }
 
-
+// Close the database connection
 $conn->close();
 ?>
 
