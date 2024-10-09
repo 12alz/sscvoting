@@ -7,7 +7,7 @@ if (isset($_POST['login'])) {
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL); 
     $password = $_POST['password'];
 
-    // Check login attemptss
+    // Check login attempts
     $loginAttempts = "SELECT attempts, last_attempt_time FROM login_attempts WHERE username = ?";
     $stmt = $conn->prepare($loginAttempts);
     $stmt->bind_param('s', $email);
@@ -21,7 +21,7 @@ if (isset($_POST['login'])) {
     $timeoutDuration = 300; // in seconds
 
     //$attemptsCount >= 3 &&shuhay
-    if(($nowTimestamp - $lastAttempts) || $timeoutDuration){
+    if(($nowTimestamp - $lastAttempts) < $timeoutDuration){
         $timeWait = ($nowTimestamp - $lastAttempts);
 
         $remainMin = ceil(($timeoutDuration - $timeWait) / 60);
