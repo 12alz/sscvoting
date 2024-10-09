@@ -1,3 +1,48 @@
+<?php
+include "includes/conn.php";
+
+$showForm = false; 
+
+if (isset($_GET['token'])) {
+    $token = $_GET['token'];
+
+    // Prepare the SQL statement to prevent SQL injection
+    $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
+    $stmt = $conn->prepare($sql);
+
+    // Check if preparation was successful
+    if ($stmt === false) {
+        die('MySQL prepare error: ' . htmlspecialchars($conn->error));
+    }
+
+    $stmt->bind_param("s", $token);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $expiration = $row['token_expiration'];
+
+    d
+        if (strtotime($expiration) > time()) {
+         
+            $showForm = true; 
+        } else {
+            echo "<script>alert('This link has expired. Please request a new registration link.');</script>";
+        }
+    } else {
+        echo "<script>alert('Invalid token.');</script>";
+    }
+
+    $stmt->close();
+} else {
+    echo "<script>alert('No token provided.');</script>";
+}
+
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +114,7 @@
 </head>
 <body>
 
+<?php if ($showForm): ?>
     <div class="container">
         <form method="POST" action="sign_up.php" enctype="multipart/form-data">
             <div class="form-wrap">
@@ -77,11 +123,11 @@
             </div>
             <div class="form-wrap">
                 <label for="firstname">First Name</label>
-                <input type="text" name="firstname" id="firstname" required>   
+                <input type="text" name="firstname" required>
             </div>
             <div class="form-wrap">
                 <label for="lastname">Last Name</label>
-                <input type="text" name="lastname" id="lastname" required>
+                <input type="text" name="lastname" required>
             </div>
             <div class="form-wrap">
                 <label for="password">Password</label>
@@ -105,9 +151,12 @@
             <button class="btn button-primary" type="submit" name="add">Register</button>
         </form>
         <div class="login-link">
-            <p>Have an account? <a href="sign_in.php">Login here</a></p>
+            <p>Don’t have an account? <a href="sign_in.php">Login here</a></p>
         </div>
     </div>
+<?php else: ?>
+    <p>The registration link has expired or is invalid.</p>
+<?php endif; ?>
 
 <script>
     // JavaScript for formatting student ID
@@ -125,17 +174,6 @@
         }
         e.target.value = formattedValue;
     });
-
-    mes
-    function validateNameInput(event) {
-        const value = event.target.value;
-     
-        const filteredValue = value.replace(/[^a-zA-Z\s]/g, '');
-        event.target.value = filteredValue;
-    }
-
-    document.getElementById('firstname').addEventListener('input', validateNameInput);
-    document.getElementById('lastname').addEventListener('input', validateNameInput);
 </script>
 </body>
 </html>

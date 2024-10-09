@@ -3,7 +3,7 @@
 include "includes/conn.php";
 
 if (isset($_POST["btn-forgotpass"])) {
-    session_start(); // Start session to use session variables
+    session_start(); 
 
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
@@ -39,9 +39,9 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->Port = 587;
             $mail->SMTPSecure = 'tls';
             $mail->SMTPAuth = true;
-            $mail->Username = 'kamatyanun@outlook.com'; // Your email address
-            $mail->Password = 'alexandre@123'; // Your email password
-            $mail->setFrom('kamatyanun@outlook.com');
+            $mail->Username = 'imomamalibat@outlook.com'; // Your email address
+            $mail->Password = 'alexandre123'; // Your email password
+            $mail->setFrom('imomamalibat@outlook.com');
             $mail->addAddress($username); // Email address to send to
             $mail->isHTML(true);
 
