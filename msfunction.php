@@ -69,7 +69,6 @@
 </head>
 <body>
 
-<?php if ($showForm): ?>
     <div class="container">
         <form method="POST" action="sign_up.php" enctype="multipart/form-data">
             <div class="form-wrap">
