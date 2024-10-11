@@ -345,7 +345,7 @@ header("Pragma: no-cache");
         </div>
       </footer>
     </div>
-    <!-- Global Mailform Output-->
+    <!-- Global Mailform Output-->s
     <div class="snackbars" id="form-output-global"></div>
     <!-- Java script-->
     <script src="dist/js/core.min.js"></script>
