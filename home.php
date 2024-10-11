@@ -143,7 +143,7 @@
 					        		<button type="submit" class="btn btn-primary btn-flat" name="vote"><i class="fa fa-check-square-o"></i> Submit</button>
 					        	</div>
 				        	</form>
-				        	<!-- End Voting Ballot -->
+				        	<!-- End Votisng Ballot -->
 				    		<?php
 				    	}
 
