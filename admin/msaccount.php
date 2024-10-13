@@ -52,23 +52,24 @@
             <div class="box-header with-border">
               <div class="row">
                 <div class="col-md-6">
-                  <!-- Button to open CSV Upload Modal -->
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#csvUploadModal">
                     <i class="fa fa-upload"></i> Import MS365 Account
                   </button>
-                  <!-- Button to open Download CSV Modal -->
                   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadCsvModal">
                     <i class="fa fa-download"></i> Download Template CSV
+                  </button>
+                  <button type="button" class="btn btn-danger" id="delete_selected">
+                    <i class="fa fa-trash"></i> Delete Selected
                   </button>
                 </div>
               </div>
             </div>
             <div class="box-body">
-              <!-- Responsive Table -->
               <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
                     <tr>
+                      <th><input type="checkbox" id="select_all"></th> <!-- Select All Checkbox -->
                       <th>Firstname</th>
                       <th>Lastname</th>
                       <th>Username</th>
@@ -77,7 +78,7 @@
                   </thead>
                   <tbody>
                     <?php
-                    include "includes/conn.php"; // Make sure your database connection is included
+                    include "includes/conn.php"; // Ensure your database connection is included
 
                     // Fetch the records from the database
                     $query = "SELECT id, firstname, lastname, username FROM import_ms365"; // Adjust the query as needed
@@ -87,17 +88,18 @@
                         // Output data for each row
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>
+                                    <td><input type='checkbox' class='row-checkbox' value='{$row['id']}'></td> <!-- Individual Checkbox -->
                                     <td>{$row['firstname']}</td>
                                     <td>{$row['lastname']}</td>
                                     <td>{$row['username']}</td>
                                     <td>
-                                           <a href ='' class='btn btn-sm edit btn-flat fa fa-edit' data-id='".$row['id']."'></a>
-                                          <a href ='' class='btn btn-sm delete btn-flat fa fa-trash' data-id='".$row['id']."'></a>
+                                        <a href='' class='btn btn-sm edit btn-flat fa fa-edit' data-id='".$row['id']."'></a>
+                                        <a href='' class='btn btn-sm delete btn-flat fa fa-trash' data-id='".$row['id']."'></a>
                                     </td>
                                   </tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='4'>No records found.</td></tr>";
+                        echo "<tr><td colspan='5'>No records found.</td></tr>";
                     }
 
                     $conn->close(); // Close the database connection
@@ -105,7 +107,6 @@
                   </tbody>
                 </table>
               </div>
-              <!-- End of Responsive Table -->
             </div>
           </div>
         </div>
@@ -231,6 +232,51 @@
       $('#deleteModal').modal('show');
       var id = $(this).data('id');
       $('.id').val(id);
+    });
+
+    // Select/Deselect all checkboxes
+    $('#select_all').on('click', function() {
+      $('.row-checkbox').prop('checked', this.checked);
+    });
+
+    // When individual checkbox is unchecked, uncheck "select all"
+    $('.row-checkbox').on('click', function() {
+      if ($('.row-checkbox:checked').length == $('.row-checkbox').length) {
+        $('#select_all').prop('checked', true);
+      } else {
+        $('#select_all').prop('checked', false);
+      }
+    });
+
+    // Delete selected users
+    $('#delete_selected').on('click', function() {
+      var ids = [];
+      $('.row-checkbox:checked').each(function() {
+        ids.push($(this).val());
+      });
+
+      if (ids.length > 0) {
+        // Confirm deletion
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Redirect to delete script with selected IDs
+            window.location = '../admin/ms_delete.php?ids=' + ids.join(',');
+          }
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: 'No users selected for deletion.',
+        });
+      }
     });
   });
 
