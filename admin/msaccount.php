@@ -56,6 +56,10 @@
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#csvUploadModal">
                     <i class="fa fa-upload"></i> Import MS365 Account
                   </button>
+                  <!-- Button to open Download CSV Modal -->
+                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadCsvModal">
+                    <i class="fa fa-download"></i> Download Template CSV
+                  </button>
                 </div>
               </div>
             </div>
@@ -129,6 +133,24 @@
               <i class="fa fa-upload"></i> Upload CSV
             </button>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Downloading CSV Template -->
+  <div class="modal fade" id="downloadCsvModal" tabindex="-1" role="dialog" aria-labelledby="downloadCsvModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="downloadCsvModalLabel">Download Template CSV</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Click the button below to download the template CSV file for importing data.</p>
+          <a href="../admin/download_script.php" class="btn btn-primary">Download Template CSV</a>
         </div>
       </div>
     </div>
