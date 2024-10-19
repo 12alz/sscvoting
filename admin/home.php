@@ -75,14 +75,22 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <?php
-                $sql = "SELECT * FROM `microsoft`";
-                $query = $conn->query($sql);
+                          <?php
+              $sql = "SELECT COUNT(*) AS total FROM microsoft WHERE id NOT IN (SELECT voters_id FROM votes)";
+              $query = $conn->query($sql);
 
-                echo "<h3>".$query->num_rows."</h3>";
+              // Check if query is successful
+              if ($query) {
+                  $row = $query->fetch_assoc();
+                  echo "<h3>".$row['total']."</h3>";
+              } else {
+                  // Handle query error
+                  echo "Query failed: " . $conn->error;
+              }
               ?>
 
               <p>No. of <br>In Active Voters</p>
+
             </div>
             <div class="icon">
               <i class="fa fa-child"></i>
@@ -178,9 +186,29 @@
         <div class="col-xs-6">
           <h3>Voting Tally</h3>
         </div>
-        <div class="col-xs-6 text-right">
-       <input type="checkbox" data-toggle="switchbutton" checked data-onstyle="primary" data-offstyle="secondary">
-         
+        <?php 
+        // Update Switch
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
+            $status = isset($_POST['switchStatus']) ? 1 : 0;
+            $sql = "UPDATE admin SET switch=$status WHERE id=1 ";
+            $conn->query($sql);
+        }
+        // End Update Switch
+        // Check Switch 
+            $sql = "SELECT switch FROM admin";
+            $query = $conn->query($sql);
+            $row = $query->fetch_assoc();
+            $status = $row['switch'];
+        // End Check Switch ?> 
+        <script>
+          function toggleSwitch(){
+              document.getElementById('switchBtn').submit();
+          }
+        </script>
+      <div class="col-xs-6 text-right">
+        <form action="" id="switchBtn" method="post">
+        <input type="checkbox" name="switchStatus" data-toggle="switchbutton" <?php if ($status) echo 'checked'; ?> data-onstyle="primary" data-offstyle="secondary" onchange="toggleSwitch()">
+        </form>
         </div>
       </div>
       <div id="voting-tally">
