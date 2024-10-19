@@ -192,7 +192,7 @@ function checkSwitchState() {
 	xhr.send();
 }
 setInterval(checkSwitchState, 1000);
-// End Of Check ##############################################
+// End Of Check ##############################################s
 $(function(){
 	$('.content').iCheck({
 		checkboxClass: 'icheckbox_flat-green',
