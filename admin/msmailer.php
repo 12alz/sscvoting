@@ -36,7 +36,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail = new PHPMailer\PHPMailer\PHPMailer();
             $mail->isSMTP();
             $mail->SMTPDebug = 0; // Set to 0 for no debug output
-            $mail->Host = 'smtp.office365.com';
+            $mail->Host = 'smtp.gmail.com';
             $mail->Port = 587;
             $mail->SMTPSecure = 'tls';
             $mail->SMTPAuth = true;
