@@ -43,7 +43,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->Username = "santillanbsit@gmail.com";
             $mail->Password = "svlwwvxfgrbtxqum"; // Your email password
             $mail->setFrom('santillanbsit@gmail.com');
-            $mail->addAddress($username); // Email address to send tod
+            $mail->addAddress($username); // sEmail address to send tod
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
