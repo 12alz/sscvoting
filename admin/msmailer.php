@@ -16,11 +16,11 @@ if (isset($_POST["btn-forgotpass"])) {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            // Generate a unique token and set an expiration date (e.g., 1 hour from now)
+           
             $token = bin2hex(random_bytes(32));
             $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
 
-            // Store token and expiration in the database
+            
             $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
             $update_stmt = $conn->prepare($update_sql);
             $update_stmt->bind_param("sss", $token, $expiration, $username);
@@ -35,15 +35,15 @@ if (isset($_POST["btn-forgotpass"])) {
             // Initialize PHPMailer
             $mail = new PHPMailer\PHPMailer\PHPMailer();
             $mail->isSMTP();
-            $mail->SMTPDebug = 0; // Set to 0 for no debug output
+            $mail->SMTPDebug = 0; 
             $mail->Host = 'smtp.gmail.com';
             $mail->Port = 587;
             $mail->SMTPSecure = 'tls';
             $mail->SMTPAuth = true;
             $mail->Username = "santillanbsit@gmail.com";
-            $mail->Password = "svlwwvxfgrbtxqum"; // Your email password
+            $mail->Password = "svlwwvxfgrbtxqum"; 
             $mail->setFrom('santillanbsit@gmail.com');
-            $mail->addAddress($username); // sEmail address to send tod
+            $mail->addAddress($username); 
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';

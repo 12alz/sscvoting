@@ -1,16 +1,16 @@
 <?php
 include "includes/conn.php";
 
-$showForm = false; // Variable to control whether to show the form
+$showForm = false; 
 
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
 
-    // Prepare the SQL statement to prevent SQL injection
+  
     $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
     $stmt = $conn->prepare($sql);
 
-    // Check if preparation was successful
+   
     if ($stmt === false) {
         die('MySQL prepare error: ' . htmlspecialchars($conn->error));
     }
@@ -23,10 +23,10 @@ if (isset($_GET['token'])) {
         $row = $result->fetch_assoc();
         $expiration = $row['token_expiration'];
 
-        // Check if the token has expired
+
         if (strtotime($expiration) > time()) {
-            // Token is valid, allow the user to proceed
-            $showForm = true; // Enable the registration form
+           
+            $showForm = true; 
         } else {
             echo "<script>alert('This link has expired. Please request a new registration link.');</script>";
         }
@@ -39,7 +39,7 @@ if (isset($_GET['token'])) {
     echo "<script>alert('No token provided.');</script>";
 }
 
-// Close the database connection
+
 $conn->close();
 ?>
 
@@ -159,11 +159,11 @@ $conn->close();
 <?php endif; ?>
 
 <script>
-    // JavaScript for formatting student ID
+  
     document.getElementById('voters_id').addEventListener('input', function(e) {
-        var value = e.target.value.replace(/\D/g, ''); // Remove all non-numeric characters
+        var value = e.target.value.replace(/\D/g, ''); 
         if (value.length > 8) {
-            value = value.slice(0, 8); // Limit to 8 digits
+            value = value.slice(0, 8); 
         }
         var formattedValue = '';
         for (var i = 0; i < value.length; i += 4) {
