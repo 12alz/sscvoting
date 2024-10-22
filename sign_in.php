@@ -124,11 +124,11 @@ if(isset($_SESSION['voter'])){
                     <ul class="rd-navbar-nav">
                       <li><a href="index.php">Home</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="home-1.html">Home 1</a>
+                         
                           </li>
-                          <li><a href="home-2.html">Home 2</a>
+                        
                           </li>
-                          <li><a href="home-3.html">Home 3</a>
+                          
                           </li>
                         </ul>
                       </li>
