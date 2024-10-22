@@ -129,7 +129,7 @@ header("Pragma: no-cache");
                             <!-- </ul> -->
                       <!-- </li> --> 
                       <li><a href="news-post-page.php">News</a>
-                        <ul class="rd-navbar-dropdown">
+                    
                    
                       </li>
                       <!-- <li><a href="a#">Campus</a>
