@@ -128,21 +128,9 @@ header("Pragma: no-cache");
                                   <li><a href="apply.html">Apply</a></li> -->
                             <!-- </ul> -->
                       <!-- </li> --> 
-                      <li><a href="#">News</a>
+                      <li><a href="news-post-page.php">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.html">Classic news</a>
-                          </li>
-                          <li><a href="grid-news.html">Grid News</a>
-                          </li>
-                          <li><a href="masonry-news.html">Masonry News</a>
-                          </li>
-                          <li><a href="grid-news-3-columns.html">3 Column Grid News</a>
-                          </li>
-                          <li><a href="modern-news.html">Modern News</a>
-                          </li>
-                          <li><a href="news-post-page.php">News Post Page</a>
-                          </li>
-                        </ul>
+                   
                       </li>
                       <!-- <li><a href="#">Campus</a>
                         <ul class="rd-navbar-dropdown">
