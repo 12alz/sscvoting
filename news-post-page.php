@@ -247,7 +247,7 @@
           <h1>News</h1>
           <div class="offset-top-10 offset-md-top-35">
             <ul class="list-inline list-inline-lg list-inline-dashed p">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.php">Home</a></li>
               <li><a href="#">News</a></li>
               <li>News Post Page
               </li>
