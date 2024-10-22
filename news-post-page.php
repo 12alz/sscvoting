@@ -95,14 +95,7 @@
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <li><a href="index.php">Home</a>
-                        <ul class="rd-navbar-dropdown">
-                      
-                          </li>
-                    
-                          </li>
-                       
-                          </li>
-                        </ul>
+                        
                       </li>
                       <li><a href="#">Elements</a>
                         <ul class="rd-navbar-dropdown">
