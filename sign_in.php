@@ -123,16 +123,9 @@ if(isset($_SESSION['voter'])){
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <li><a href="index.php">Home</a>
-                        
-                         
-                          </li>
-                        
-                          </li>
-                          
-                          </li>
-                        </ul>
+                     
                       </li>
-                      <!-- <li><a href="#">Elements</a>
+                      <!-- s<li><a href="#">Elements</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="grid.html">Grid</a>
                           </li>
