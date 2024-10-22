@@ -213,7 +213,7 @@
                         </ul>
                       </li>
                       </li>
-                      <li><a href="donate.html">Donate</a>
+                 
                       </li>
                       <li><a href="contacts.html">Contacts</a>
                       </li>
