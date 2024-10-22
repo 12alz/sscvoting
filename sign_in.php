@@ -162,9 +162,9 @@ if(isset($_SESSION['voter'])){
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.html">Classic news</a>
+                          <li><a href="classic-news.php">Classic news</a>
                           </li>
-                          <li><a href="grid-news.html">Grid News</a>
+                          <li><a href="grid-news.php">Grid News</a>
                           </li>
                           <li><a href="masonry-news.html">Masonry News</a>
                           </li>
@@ -172,7 +172,7 @@ if(isset($_SESSION['voter'])){
                           </li>
                           <li><a href="modern-news.html">Modern News</a>
                           </li>
-                          <li><a href="news-post-page.html">News Post Page</a>
+                          <li><a href="news-post-page.php">News Post Page</a>
                           </li>
                         </ul>
                       </li>
