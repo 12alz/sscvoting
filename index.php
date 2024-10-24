@@ -120,19 +120,67 @@ header("Pragma: no-cache");
                           </li>
                         </ul>
                       </li> -->
-                      <!-- <li><a href="#">Pages</a>
-                            <ul class="rd-navbar-dropdown">                                  
-                                  <li><a href="sign_in.php">Login/Register</a></li>
-                                  <li><a href="coming-soon.html">Vision Statement</a></li>
-                                   <li><a href="search-results.html">Search Results</a></li>
-                                  <li><a href="apply.html">Apply</a></li> -->
-                            <!-- </ul> -->
-                      <!-- </li> --> 
-                      <li><a href="news-post-page.php">News</a>
-                    
-                   
+                      <li><a href="#">Pages</a>
+                        <div class="rd-navbar-megamenu">
+                          <div class="row section-relative">
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>Programs</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="academics.html">Academics</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>Pages</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="404.php">404</a></li>
+                                  <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                                  <li><a href="maintenance.html">Maintenance</a></li>
+                                  <li><a href="login-register.html">Login/Register</a></li>
+                                  <li><a href="search-result.php">Search Results</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>About</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="history.html">History</a></li>
+                                  <li><a href="people.html">People</a></li>
+                                  <li><a href="team-member-profile.html">Team Member Profile</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <h6>Event Calendar</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="calendar.html">Calendar</a></li>
+                                  <li><a href="day-event.html">Day Event</a></li>
+                                  <li><a href="event-page.html">Event Page</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
                       </li>
-                      <!-- <li><a href="a#">Campus</a>
+                      <li><a href="#">News</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="classic-news.html">Classic news</a>
+                          </li>
+                          <li><a href="grid-news.html">Grid News</a>
+                          </li>
+                          <li><a href="masonry-news.html">Masonry News</a>
+                          </li>
+                          <li><a href="grid-news-3-columns.html">3 Column Grid News</a>
+                          </li>
+                          <li><a href="modern-news.html">Modern News</a>
+                          </li>
+                          <li><a href="news-post-page.php">News Post Page</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Campus</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="grid-gallery.html">Grid Gallery</a>
                           </li>
@@ -143,7 +191,7 @@ header("Pragma: no-cache");
                           <li><a href="cobbles-gallery.html">Cobbles Gallery</a>
                           </li>
                         </ul>
-                      </li> -->
+                      </li>
                       <!-- <li><a href="#">Shop</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="product-catalog.html">Product Catalog</a>
