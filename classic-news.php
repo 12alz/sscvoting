@@ -164,10 +164,8 @@
                           </li>
                         </ul>
                       </li>
-                      
-                          </li>
-                        </ul>
                       </li>
+                 
                       </li>
                       <li><a href="contacts.html">Contacts</a>
                       </li>
