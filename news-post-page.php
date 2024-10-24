@@ -97,9 +97,7 @@
                       <li><a href="index.php">Home</a>
                         
                       </li>
-                     
-                        </ul>
-                      </li>
+                    
                       <li><a href="#">Pages</a>
                         <div class="rd-navbar-megamenu">
                           <div class="row section-relative">
