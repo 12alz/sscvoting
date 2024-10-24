@@ -113,27 +113,11 @@
                               <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="404.html">404</a></li>
-                                  <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                  <li><a href="maintenance.html">Maintenance</a></li>
+                                  <li><a href="404.php">404</a></li>
+                                  <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                                  <li><a href="maintenance.php">Maintenance</a></li>
                                   <li><a href="login-register.html">Login/Register</a></li>
-                                  <li><a href="coming-soon.html">Coming Soon</a></li>
-                                  <li><a href="search-results.html">Search Results</a></li>
-                                  <li><a href="apply.html">Apply</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                            <ul class="col-lg-3">
-                              <li>
-                                <h6>Layouts</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="header-transparent.html">Header Transparent</a></li>
-                                  <li><a href="header-center.html">Header Center, Footer Center</a></li>
-                                  <li><a href="header-minimal.html">Header Minimal, Footer Center</a></li>
-                                  <li><a href="header-corporate.html">Header Corporate</a></li>
-                                  <li><a href="header-hamburger-menu.html">Header Hamburger Menu</a></li>
-                                  <li><a href="footer-minimal.html">Footer Minimal</a></li>
-                                  <li><a href="footer-widget.html">Footer Widget</a></li>
+                                  <li><a href="search-result.php">Search Results</a></li>
                                 </ul>
                               </li>
                             </ul>
