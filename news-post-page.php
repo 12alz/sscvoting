@@ -97,24 +97,7 @@
                       <li><a href="index.php">Home</a>
                         
                       </li>
-                      <li><a href="#">Elements</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="grid.html">Grid</a>
-                          </li>
-                          <li><a href="icons.html">Icons</a>
-                          </li>
-                          <li><a href="tables.html">Tables</a>
-                          </li>
-                          <li><a href="progress-bars.html">Progress bars</a>
-                          </li>
-                          <li><a href="tabs-and-accordions.html">Tabs &amp; Accordions</a>
-                          </li>
-                          <li><a href="forms.html">Forms</a>
-                          </li>
-                          <li><a href="buttons.html">Buttons</a>
-                          </li>
-                          <li><a href="typography.html">Typography</a>
-                          </li>
+                     
                         </ul>
                       </li>
                       <li><a href="#">Pages</a>
@@ -179,10 +162,10 @@
                       </li>
                       <li class="active"><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.html">Classic news</a>
+                          <li><a href="classic-news.php">Classic news</a>
                           </li>
                           </li>
-                          <li><a href="news-post-page.html">News Post Page</a>
+                          <li><a href="news-post-page.php">News Post Page</a>
                           </li>
                         </ul>
                       </li>
