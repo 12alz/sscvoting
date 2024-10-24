@@ -147,14 +147,7 @@
                         <ul class="rd-navbar-dropdown">
                           <li><a href="classic-news.php">Classic news</a>
                           </li>
-                          <li><a href="grid-news.html">Grid News</a>
-                          </li>
-                          <li><a href="masonry-news.html">Masonry News</a>
-                          </li>
-                          <li><a href="grid-news-3-columns.html">3 Column Grid News</a>
-                          </li>
-                          <li><a href="modern-news.html">Modern News</a>
-                          </li>
+                       
                           <li><a href="news-post-page.php">News Post Page</a>
                           </li>
                         </ul>
@@ -183,7 +176,6 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a href="donate.html">Donate</a>
                       </li>
                       <li><a href="contacts.html">Contacts</a>
                       </li>
