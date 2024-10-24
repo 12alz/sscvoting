@@ -164,15 +164,7 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a href="#">Shop</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="product-catalog.html">Product Catalog</a>
-                          </li>
-                          <li><a href="single-product.html">Single Product</a>
-                          </li>
-                          <li><a href="shopping-cart.html">Shopping Cart</a>
-                          </li>
-                          <li><a href="checkout.html">Checkout</a>
+                      
                           </li>
                         </ul>
                       </li>
