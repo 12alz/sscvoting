@@ -171,7 +171,7 @@
                     </ul>
                     <!--RD Navbar Mobile Search-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
-                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-results.html" method="GET">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-result.php" method="GET">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-mobile-search-form-input">Search...</label>
                           <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-mobile-search-form-input" type="text" name="s" autocomplete="off"/>
@@ -183,7 +183,7 @@
                   <div>
                     <!--RD Navbar Search-->
                     <div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
-                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-result.php" data-search-live="rd-search-results-live" method="GET">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-search-form-input">Search</label>
                           <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off"/>
@@ -317,7 +317,7 @@
                 <div class="text-subline"></div>
                 <div class="offset-top-30">
                                   <!-- RD Search Form-->
-                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="search-results.html" method="GET">
+                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="search-result.php" method="GET">
                                     <div class="form-wrap">
                                       <div class="input-group">
                                         <input class="form-search-input  form-input" type="text" name="s" autocomplete="off"><span class="input-group-btn">
