@@ -181,13 +181,6 @@
                         <ul class="rd-navbar-dropdown">
                           <li><a href="classic-news.html">Classic news</a>
                           </li>
-                          <li><a href="grid-news.html">Grid News</a>
-                          </li>
-                          <li><a href="masonry-news.html">Masonry News</a>
-                          </li>
-                          <li><a href="grid-news-3-columns.html">3 Column Grid News</a>
-                          </li>
-                          <li><a href="modern-news.html">Modern News</a>
                           </li>
                           <li><a href="news-post-page.html">News Post Page</a>
                           </li>
