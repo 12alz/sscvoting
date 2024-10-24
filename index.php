@@ -166,7 +166,7 @@ header("Pragma: no-cache");
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.html">Classic news</a>
+                          <li><a href="classic-news.php">Classic news</a>
                           </li>
                           <li><a href="grid-news.html">Grid News</a>
                           </li>
