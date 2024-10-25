@@ -139,7 +139,6 @@ header("Pragma: no-cache");
                                   <li><a href="privacy-policy.php">Privacy Policy</a></li>
                                   <li><a href="maintenance.php">Maintenance</a></li>
                                   <li><a href="login-register.html">Login/Register</a></li>
-                                  <li><a href="search-result.php">Search Results</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -153,11 +152,7 @@ header("Pragma: no-cache");
                                 </ul>
                               </li>
                               <li>
-                                <h6>Event Calendar</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="calendar.php">Calendar</a></li>
-                                  <li><a href="day-event.html">Day Event</a></li>
-                                  <li><a href="event-page.html">Event Page</a></li>
+                             
                                 </ul>
                               </li>
                             </ul>
