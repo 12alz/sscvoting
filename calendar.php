@@ -261,7 +261,7 @@
                         <div class="post-event-body text-xl-start">
                           <h6><a href="event-page.html"> World Mental Health Month 2024</a></h6>
                           <ul class="list-inline list-inline-xs">
-                            <li><a href="team-member-profile.html"><span class="icon icon-xxs mdi mdi-account-outline align-middle"></span><span class="inset-left-10 text-dark align-middle">Walter Stanley</span></a></li>
+                            <li><a href="team-member-profile.html"><span class="icon icon-xxs mdi mdi-account-outline align-middle"></span><span class="inset-left-10 text-dark align-middle">Madridejos Community College - Supreme Student Council</span></a></li>
                           </ul>
                         </div>
                       </div>
