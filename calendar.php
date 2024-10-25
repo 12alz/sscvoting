@@ -295,7 +295,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.php">Learn More</a></div>
                       </div>
@@ -320,7 +320,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
@@ -345,7 +345,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/event.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/event.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
@@ -377,7 +377,7 @@
               <div class="row row-50 justify-content-sm-center justify-content-xxl-start">
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
@@ -402,7 +402,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
@@ -427,7 +427,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
@@ -459,7 +459,7 @@
               <div class="row row-50 justify-content-sm-center justify-content-xxl-start">
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
@@ -484,7 +484,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
@@ -509,7 +509,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href=""></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
@@ -534,7 +534,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/sisuka.jpeg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
