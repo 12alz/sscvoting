@@ -166,15 +166,8 @@ header("Pragma: no-cache");
                           </li>
                         </ul>
                       </li>
-                      <li><a href="#">Campus</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="grid-gallery.html">Grid Gallery</a>
-                          </li>
-                          <li><a href="grid-without-padding-gallery.html">Grid Without Padding Gallery</a>
-                          </li>
-                          <li><a href="masonry-gallery.html">Masonry Gallery</a>
-                          </li>
-                          <li><a href="cobbles-gallery.html">ddCobbles Gallery</a>
+                     
+                       
                           </li>
                         </ul>
                       </li>
