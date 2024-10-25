@@ -155,7 +155,7 @@ header("Pragma: no-cache");
                               <li>
                                 <h6>Event Calendar</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="calendar.html">Calendar</a></li>
+                                  <li><a href="calendar.php">Calendar</a></li>
                                   <li><a href="day-event.html">Day Event</a></li>
                                   <li><a href="event-page.html">Event Page</a></li>
                                 </ul>
