@@ -120,7 +120,7 @@ header("Pragma: no-cache");
                           </li>
                         </ul>
                       </li> -->
-                      <li><a href="#">Pages</a>
+                     <li><a href="#">Pages</a>
                         <div class="rd-navbar-megamenu">
                           <div class="row section-relative">
                             <ul class="col-lg-3">
@@ -166,12 +166,7 @@ header("Pragma: no-cache");
                           </li>
                         </ul>
                       </li>
-                        
-                          </li>
-                      
-                       
-                          </li>
-                        </ul>
+                    
                       </li>
                       <!-- <li><a href="#">Shop</a>
                         <ul class="rd-navbar-dropdown">
