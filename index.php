@@ -146,9 +146,9 @@ header("Pragma: no-cache");
                               <li>
                                 <h6>About</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="history.html">History</a></li>
-                                  <li><a href="people.html">People</a></li>
-                                  <li><a href="team-member-profile.html">Team Member Profile</a></li>
+                                  <li><a href="history.php">History</a></li>
+                                  <li><a href="people.php">People</a></li>
+                                  <li><a href="team-member-profile.php">Team Member Profile</a></li>
                                 </ul>
                               </li>
                               <li>
