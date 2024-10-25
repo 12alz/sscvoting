@@ -350,7 +350,7 @@ header("Pragma: no-cache");
                 </div></a>
             </div>
             <div class="col-sm-10 col-lg-6 text-lg-end">
-              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span><a class="text-dark" href="https://mccsscvoting.com/">Madridejos Community College</a></p>
+              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved Terms of Use</span><span>.&nbsp;</span><a class="text-dark" href="privacy-policy.php">Privacy Policy</a></p>
             </div>
           </div>
         </div>
