@@ -225,22 +225,22 @@
       <section class="section section-xl bg-default">
         <div class="slick-slider carousel-parent calendar-carousel" data-child="#child-calendar-carousel" data-arrows="true" data-for="#child-calendar-carousel" data-loop="false" data-dots="false" data-swipe="true" data-items="1" data-slide-to-scroll="1">
           <div class="item">
-            <h2 class="fw-bold">May 2022</h2>
+            <h2 class="fw-bold">May 2024</h2>
           </div>
           <div class="item">
-            <h2 class="fw-bold">June 2022</h2>
+            <h2 class="fw-bold">June 2024</h2>
           </div>
           <div class="item">
-            <h2 class="fw-bold">Jule 2022</h2>
+            <h2 class="fw-bold">Jule 2024</h2>
           </div>
           <div class="item">
-            <h2 class="fw-bold">August 2022</h2>
+            <h2 class="fw-bold">August 2024</h2>
           </div>
           <div class="item">
-            <h2 class="fw-bold">September2022</h2>
+            <h2 class="fw-bold">September2024</h2>
           </div>
           <div class="item">
-            <h2 class="fw-bold">October  2022</h2>
+            <h2 class="fw-bold">October  2024</h2>
           </div>
         </div>
         <!-- Slick Carousel-->
@@ -253,7 +253,7 @@
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
                     <div class="post-event-img-overlay"><img class="img-responsive" src="images/blog/events-01-420x420.jpg" width="420" height="420" alt="">
-                      <div class="post-event-overlay context-dark"><a class="btn button-primary" href="apply.html"></a>
+                      <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
                     </div>
