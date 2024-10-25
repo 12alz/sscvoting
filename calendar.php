@@ -833,7 +833,7 @@
           </div>
         </div>
       </section>
-      <!-- Corporate footer-->
+      <!-- Corporate footerc-->
       <!-- Corporate footer-->
       <footer class="page-footer">
         <div class="hr bg-gray-light"></div>
