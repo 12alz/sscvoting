@@ -307,7 +307,7 @@
                 <div class="text-subline"></div>
                 <div class="offset-top-30">
                                   <!-- RD Search Form-->
-                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="#" method="GET">
+                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="#" method="POST">
                                     <div class="form-wrap">
                                       <div class="input-group">
                                         <input class="form-search-input  form-input" type="text" name="s" autocomplete="off"><span class="input-group-btn">
