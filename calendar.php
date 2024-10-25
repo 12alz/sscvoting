@@ -270,9 +270,9 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/blog/events-02-420x420.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/event.jpg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
-                        <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
+                        <div class="offset-top-20"><a class="btn button-default" href="event-page.php">Learn More</a></div>
                       </div>
                     </div>
                     <div class="unit unit-lg flex-column flex-xl-row">
@@ -345,7 +345,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/blog/event-08-420x420.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/event.jpg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
@@ -353,15 +353,15 @@
                     <div class="unit unit-lg flex-column flex-xl-row">
                       <div class="unit-left">
                         <div class="post-event-meta text-center">
-                          <div class="h3 fw-bold d-inline-block d-xl-block">29</div>
-                          <p class="d-inline-block d-xl-block">May</p><span class="fw-bold d-inline-block d-xl-block inset-left-10 inset-xl-left-0">5:00pm</span>
+                          <div class="h3 fw-bold d-inline-block d-xl-block">31</div>
+                          <p class="d-inline-block d-xl-block">August</p><span class="fw-bold d-inline-block d-xl-block inset-left-10 inset-xl-left-0">5:00pm</span>
                         </div>
                       </div>
                       <div class="unit-body">
                         <div class="post-event-body text-xl-start">
-                          <h6><a href="event-page.html">NASA Schedules News Conference About Next Space Shuttle Launch</a></h6>
+                          <h6><a href="event-page.html">Battle Of The Bands 2024</a></h6>
                           <ul class="list-inline list-inline-xs">
-                            <li><a href="team-member-profile.html"><span class="icon icon-xxs mdi mdi-account-outline align-middle"></span><span class="inset-left-10 text-dark align-middle">Walter Stanley</span></a></li>
+                            <li><a href="team-member-profile.html"><span class="icon icon-xxs mdi mdi-account-outline align-middle"></span><span class="inset-left-10 text-dark align-middle">Madridejos Community College - Supreme Student Council</span></a></li>
                           </ul>
                         </div>
                       </div>
