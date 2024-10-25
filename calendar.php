@@ -253,7 +253,7 @@
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
                     <div class="post-event-img-overlay"><img class="img-responsive" src="images/blog/events-01-420x420.jpg" width="420" height="420" alt="">
-                     
+                      <div class="post-event-overlay context-dark"><a class="btn button-primary" href="apply.html"></a>
                         <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
                       </div>
                     </div>
