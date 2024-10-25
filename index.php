@@ -176,7 +176,7 @@ header("Pragma: no-cache");
                           </li>
                           <li><a href="masonry-gallery.html">Masonry Gallery</a>
                           </li>
-                          <li><a href="cobbles-gallery.html">Cobbles Gallery</a>
+                          <li><a href="cobbles-gallery.html">ddCobbles Gallery</a>
                           </li>
                         </ul>
                       </li>
