@@ -137,8 +137,9 @@ header("Pragma: no-cache");
                                 <ul class="list-unstyled offset-lg-top-20">
                                   <li><a href="404.php">404</a></li>
                                   <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                                  <li><a href="maintenance.php">Maintenance</a></li>
+                                  <li><a href="maintenance.html">Maintenance</a></li>
                                   <li><a href="login-register.html">Login/Register</a></li>
+                                  <li><a href="search-result.php">Search Results</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -146,17 +147,14 @@ header("Pragma: no-cache");
                               <li>
                                 <h6>About</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="history.php">History</a></li>
-                                  <li><a href="people.php">People</a></li>
-                                  <li><a href="team-member-profile.php">Team Member Profile</a></li>
+                                  <li><a href="history.html">History</a></li>
+                                  <li><a href="people.html">People</a></li>
+                                  <li><a href="team-member-profile.html">Team Member Profile</a></li>
                                 </ul>
                               </li>
                               <li>
-                             
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
+                              
+                       
                         </div>
                       </li>
                       <li><a href="#">News</a>
