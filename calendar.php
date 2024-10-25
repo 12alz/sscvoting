@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="keywords" content="intense web design multipurpose template">
+    <meta name="keywords" content="San o kapa man mahuman uy">
     <meta name="date" content="Dec 26">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
@@ -78,7 +78,7 @@
               </div>
               <div class="rd-navbar-menu-wrap clearfix">
                 <!--Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="d-inline-block" href="index-2.html">
+                <div class="rd-navbar-brand"><a class="d-inline-block" href="index.php">
                     <div class="unit align-items-sm-center unit-xl unit-spacing-custom">
                       <div class="unit-left"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                       </div>
@@ -91,7 +91,7 @@
                   <div class="rd-navbar-mobile-scroll">
                     <div class="rd-navbar-mobile-header-wrap">
                       <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="index-2.html"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
+                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
@@ -145,7 +145,7 @@
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.html">Classic news</a>
+                          <li><a href="classic-news.php">Classic news</a>
                           </li>
                           </li>
                           <li><a href="news-post-page.html">News Post Page</a>
@@ -171,7 +171,7 @@
                     </ul>
                     <!--RD Navbar Mobile Search-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
-                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="#" method="GET">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="#" method="POST">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-mobile-search-form-input">Search...</label>
                           <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-mobile-search-form-input" type="text" name="s" autocomplete="off"/>
@@ -183,7 +183,7 @@
                   <div>
                     <!--RD Navbar Search-->
                     <div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
-                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="#" data-search-live="rd-search-results-live" method="GET">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="#" data-search-live="rd-search-results-live" method="POST">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-search-form-input">Search</label>
                           <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off"/>
@@ -224,7 +224,7 @@
             <h2 class="fw-bold">June 2024</h2>
           </div>
           <div class="item">
-            <h2 class="fw-bold">Jule 2024</h2>
+            <h2 class="fw-bold">July 2024</h2>
           </div>
           <div class="item">
             <h2 class="fw-bold">August 2024</h2>
@@ -245,16 +245,16 @@
               <div class="row row-50 justify-content-sm-center justify-content-xxl-start">
                 <div class="col-md-6 col-lg-5 col-xxl-3">
                   <article class="post-event">
-                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/blog/events-01-420x420.jpg" width="420" height="420" alt="">
+                    <div class="post-event-img-overlay"><img class="img-responsive" src="images/classicnews2.jpg" width="420" height="420" alt="">
                       <div class="post-event-overlay context-dark"><a class="" href="#"></a>
-                        <div class="offset-top-20"><a class="btn button-default" href="event-page.html">Learn More</a></div>
+                        <div class="offset-top-20"><a class="btn button-default" href="event-page.php">Learn More</a></div>
                       </div>
                     </div>
                     <div class="unit unit-lg flex-column flex-xl-row">
                       <div class="unit-left">
                         <div class="post-event-meta text-center">
                           <div class="h3 fw-bold d-inline-block d-xl-block">16</div>
-                          <p class="d-inline-block d-xl-block">May</p><span class="fw-bold d-inline-block d-xl-block inset-left-10 inset-xl-left-0">5:00pm</span>
+                          <p class="d-inline-block d-xl-block">Oct</p><span class="fw-bold d-inline-block d-xl-block inset-left-10 inset-xl-left-0">5:00pm</span>
                         </div>
                       </div>
                       <div class="unit-body">
