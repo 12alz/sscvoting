@@ -139,7 +139,6 @@ header("Pragma: no-cache");
                                   <li><a href="privacy-policy.php">Privacy Policy</a></li>
                                   <li><a href="maintenance.php">Maintenance</a></li>
                                   <li><a href="login-register.html">Login/Register</a></li>
-                                  <li><a href="search-result.php">Search Results</a></li>
                                 </ul>
                               </li>
                             </ul>
