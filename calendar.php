@@ -254,14 +254,14 @@
                       <div class="unit-left">
                         <div class="post-event-meta text-center">
                           <div class="h3 fw-bold d-inline-block d-xl-block">16</div>
-                          <p class="d-inline-block d-xl-block">Oct</p><span class="fw-bold d-inline-block d-xl-block inset-left-10 inset-xl-left-0">5:00pm</span>
+                          <p class="d-inline-block d-xl-block">Oct</p><span class="fw-bold d-inline-block d-xl-block inset-left-10 inset-xl-left-0">8:00am</span>
                         </div>
                       </div>
                       <div class="unit-body">
                         <div class="post-event-body text-xl-start">
                           <h6><a href="event-page.html"> World Mental Health Month 2024</a></h6>
                           <ul class="list-inline list-inline-xs">
-                            <li><a href="team-member-profile.html"><span class="icon icon-xxs mdi mdi-account-outline align-middle"></span><span class="inset-left-10 text-dark align-middle">Madridejos Community College - Supreme Student Council</span></a></li>
+                            <li><a href="team-member-profile.php"><span class="icon icon-xxs mdi mdi-account-outline align-middle"></span><span class="inset-left-10 text-dark align-middle">Madridejos Community College - Supreme Student Council</span></a></li>
                           </ul>
                         </div>
                       </div>
