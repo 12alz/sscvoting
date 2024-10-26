@@ -123,35 +123,42 @@ if(isset($_SESSION['voter'])){
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <li><a href="index.php">Home</a>
-                     
                       </li>
-                      <!-- s<li><a href="#">Elements</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="grid.html">Grid</a>
-                          </li>
-                          <li><a href="icons.html">Icons</a>
-                          </li>
-                          <li><a href="tables.html">Tables</a>
-                          </li>
-                          <li><a href="progress-bars.html">Progress bars</a>
-                          </li>
-                          <li><a href="tabs-and-accordions.html">Tabs &amp; Accordions</a>
-                          </li>
-                          <li><a href="forms.html">Forms</a>
-                          </li>
-                          <li><a href="buttons.html">Buttons</a>
-                          </li>
-                          <li><a href="typography.html">Typography</a>
-                          </li>
-                        </ul>
-                      </li> -->
                       <li><a href="#">Pages</a>
-                            <ul class="rd-navbar-dropdown">                            
+                        <div class="rd-navbar-megamenu">
+                          <div class="row section-relative">
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>Programs</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="academics.html">Academics</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>Pages</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="404.php">404</a></li>
+                                  <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                                  <li><a href="maintenance.php">Maintenance</a></li>
                                   <li><a href="sign_in.php">Login/Register</a></li>
-                                  <li><a href="coming-soon.html">Vision Statement</a></li>
-                                  <li><a href="search-results.html">Search Results</a></li>
-                                  <li><a href="apply.html">Apply</a></li>
-                                  </ul>
+                                </ul>
+                              </li>
+                            </ul>
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>About</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="history.html">History</a></li>
+                                  <li><a href="people.html">People</a></li>
+                                  <li><a href="team-member-profile.html">Team Member Profile</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                              
+                       
+                        </div>
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
