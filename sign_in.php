@@ -33,7 +33,7 @@ if(isset($_SESSION['voter'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newsletter Subscription</title>
+    <title>Suprime Student Council</title>
     <!-- Include SweetAlert CSS and JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
