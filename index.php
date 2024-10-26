@@ -120,36 +120,54 @@ header("Pragma: no-cache");
                           </li>
                         </ul>
                       </li> -->
-                      <li><a href="#">Pages</a>
-                            <ul class="rd-navbar-dropdown">                            
+                     <li><a href="#">Pages</a>
+                        <div class="rd-navbar-megamenu">
+                          <div class="row section-relative">
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>Programs</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="academics.html">Academics</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>Pages</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="404.php">404</a></li>
+                                  <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                                  <li><a href="maintenance.php">Maintenance</a></li>
                                   <li><a href="sign_in.php">Login/Register</a></li>
-                                  <li><a href="coming-soon.html">Vision Statement</a></li>
-                                  <li><a href="search-results.html">Privacy Policy</a></li>
-                                  <li><a href="apply.html">History</a></li>
-                                  </ul>
+                                </ul>
+                              </li>
+                            </ul>
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>About</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="history.html">History</a></li>
+                                  <li><a href="people.html">People</a></li>
+                                  <li><a href="team-member-profile.html">Team Member Profile</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                              
+                       
+                        </div>
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="classic-news.php">Classic news</a>
                           </li>
                           </li>
-                          <li><a href="news-post-page.php">News  Page</a>
+                          <li><a href="news-post-page.php">News Post Page</a>
                           </li>
                         </ul>
                       </li>
-                      <!-- <li><a href="#">Campus</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="grid-gallery.html">Grid Gallery</a>
-                          </li>
-                          <li><a href="grid-without-padding-gallery.html">Grid Without Padding Gallery</a>
-                          </li>
-                          <li><a href="masonry-gallery.html">Masonry Gallery</a>
-                          </li>
-                          <li><a href="cobbles-gallery.html">Cobbles Gallery</a>
-                          </li>
-                        </ul>
+                    
                       </li>
-                      <li><a href="#">Shop</a>
+                      <!-- <li><a href="#">Shop</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="product-catalog.html">Product Catalog</a>
                           </li>
@@ -161,6 +179,8 @@ header("Pragma: no-cache");
                           </li>
                         </ul>
                       </li> -->
+                      <!-- <li><a href="donate.html">Donate</a> -->
+                      </li>
                       <li><a href="contacts.php">Contacts</a>
                       </li>
                       <!-- <li class="d-lg-none"><a href="shopping-cart.html">Shopping Cart (2)</a></li> -->
