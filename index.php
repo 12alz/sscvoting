@@ -124,8 +124,8 @@ header("Pragma: no-cache");
                             <ul class="rd-navbar-dropdown">                            
                                   <li><a href="sign_in.php">Login/Register</a></li>
                                   <li><a href="coming-soon.html">Vision Statement</a></li>
-                                  <li><a href="search-results.html">Search Results</a></li>
-                                  <li><a href="apply.html">Apply</a></li>
+                                  <li><a href="search-results.html">Privacy Policy</a></li>
+                                  <li><a href="apply.html">History</a></li>
                                   </ul>
                       </li>
                       <li><a href="#">News</a>
