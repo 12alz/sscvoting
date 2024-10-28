@@ -22,16 +22,16 @@ if (isset($_POST['add'])) {
         $course = htmlspecialchars($_POST['course']);
         $status = htmlspecialchars($_POST['status']);
         $voters_id = htmlspecialchars($_POST['voters_id']);
-        $checkUser = "SELECT * FROM voters WHERE voters_id ='$voters_id'";
+        $checkUser = "SELECT * FROM voters WHERE voters_id ='$voters_id' OR email='$email'";
         $result = mysqli_query($conn, $checkUser);
         $count = mysqli_num_rows($result);
         
         if ($count > 0) {
-            $_SESSION['error'] = 'ID already exists';
+            $_SESSION['error'] = 'ID or email already exists';
             header('Location: sign_in.php');
         } else {
-            $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, course, status, photo) 
-                    VALUES ('$voters_id', '$password', '$firstname', '$lastname', '$course', '$status', '$filename')";
+            $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, email, course, status, photo) 
+                    VALUES ('$voters_id', '$password', '$firstname', '$lastname', '$email','$course', '$status', '$filename')";
             
             if ($conn->query($sql)) {
                 $_SESSION['success'] = 'Voter added successfully';
