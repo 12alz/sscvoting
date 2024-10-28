@@ -112,19 +112,6 @@
                             </ul>
                             <ul class="col-lg-3">
                               <li>
-                              <li><a href="#">Pages</a>
-                        <div class="rd-navbar-megamenu">
-                          <div class="row section-relative">
-                            <ul class="col-lg-3">
-                              <li>
-                                <h6>Programs</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="academics.html">Academics</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                            <ul class="col-lg-3">
-                              <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
                                   <li><a href="404.php">404</a></li>
@@ -144,8 +131,6 @@
                                 </ul>
                               </li>
                               <li>
-                              
-                       
                         </div>
                       </li>
                       <li><a href="#">News</a>
@@ -157,11 +142,10 @@
                           </li>
                         </ul>
                       </li>
-                    
                       </li>
-                      <li><a href="contacts.html">Contacts</a>
                       </li>
-                      
+                      <li><a href="contacts.php">Contacts</a>
+                      </li>
                     </ul>
                     <!--RD Navbar Mobile Search-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">

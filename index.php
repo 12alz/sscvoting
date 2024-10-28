@@ -152,8 +152,6 @@ header("Pragma: no-cache");
                                 </ul>
                               </li>
                               <li>
-                              
-                       
                         </div>
                       </li>
                       <li><a href="#">News</a>
@@ -165,25 +163,10 @@ header("Pragma: no-cache");
                           </li>
                         </ul>
                       </li>
-                    
                       </li>
-                      <!-- <li><a href="#">Shop</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="product-catalog.html">Product Catalog</a>
-                          </li>
-                          <li><a href="single-product.html">Single Product</a>
-                          </li>
-                          <li><a href="shopping-cart.html">Shopping Cart</a>
-                          </li>
-                          <li><a href="checkout.html">Checkout</a>
-                          </li>
-                        </ul>
-                      </li> -->
-                      <!-- <li><a href="donate.html">Donate</a> -->
                       </li>
                       <li><a href="contacts.php">Contacts</a>
                       </li>
-                      <!-- <li class="d-lg-none"><a href="shopping-cart.html">Shopping Cart (2)</a></li> -->
                     </ul>
                     <!--RD Navbar Mobile Search-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
