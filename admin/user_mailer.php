@@ -71,7 +71,7 @@ if (isset($_POST["btn_forgotpass"])) {
         $mail->AddAddress($email);
         $mail->Subject = "Reset Password OTP";
         $mail->Body = "Use this OTP Code to reset your password: " . $reset_code . "<br/>" .
-                      "Click the link to reset password: http://localhost/jerson/admin/user_reset_pass.php?reset&email=" . urlencode($email);
+                      "Click the link to reset password: https://mccsscvoting.com/admin/user_reset_pass.php?reset&email=" . urlencode($email);
 
        
         if (!$mail->send()) {
@@ -146,8 +146,9 @@ if (isset($_POST["btn-new-password"])) {
     $stmt->close();
     $conn->close();
 
-    header("Location: ../admin/user_reset_pass.php");
+    header("Location: ../admin/user_reset_pass.php");//huhay kalibug
     exit();
 }
 
 ?>
+
