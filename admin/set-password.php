@@ -13,7 +13,7 @@ if (isset($_GET["reset"])) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #6a1b29, #b71c1c); 
+            background: #FBF5DF;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -49,18 +49,17 @@ if (isset($_GET["reset"])) {
         }
 
         button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
             width: 100%;
+            padding: 10px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
             font-size: 16px;
         }
-
         button:hover {
-            background-color: #0056b3;
+            background-color: #b71c1c;
         }
     </style>
 </head>
