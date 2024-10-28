@@ -161,7 +161,7 @@ header("Pragma: no-cache");
                           <li><a href="classic-news.php">Classic news</a>
                           </li>
                           </li>
-                          <li><a href="news-post-page.php">News Post Page</a>
+                          <li><a href="news-post-page.php">News  Page</a>
                           </li>
                         </ul>
                       </li>
