@@ -1,7 +1,6 @@
 <?php
-session_start(); // Start session to use session variables
+session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,7 +152,7 @@ session_start(); // Start session to use session variables
 <body>
     <div class="container">
         <div class="left-section">
-            <img src="images/logo-170x172.png" alt="Logo"> <!-- Ensure to use your logo here -->
+            <img src="images/logo-170x172.png" alt="Logo"> 
         </div>
         <div class="right-section">
             <h2>Forgot Password</h2>
