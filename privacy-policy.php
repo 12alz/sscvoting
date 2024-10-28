@@ -142,7 +142,7 @@
                           </li>
                          
                           </li>
-                          <li><a href="news-post-page.html">News Post Page</a>
+                          <li><a href="news-post-page.html">News  Page</a>
                           </li>
                         </ul>
                       </li>
