@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start session to use session variables
+session_start(); 
 ?>
 
 <!DOCTYPE html>
@@ -170,7 +170,7 @@ session_start(); // Start session to use session variables
     // Check if there's a session message to display
     if (isset($_SESSION['notify'])) {
         $message = addslashes($_SESSION['notify']);
-        if (strpos($message, 'A reset link has been sent to your email') !== false) {
+        if (strpos($message, 'A reset link has been sent to your email.') !== false) {
             echo "Swal.fire({
                 title: 'Success',
                 text: '$message',
