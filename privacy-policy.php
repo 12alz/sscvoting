@@ -71,7 +71,7 @@
                     <div class="rd-navbar-top-panel-left-part">
                       <div class="unit flex-row align-items-center unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
-                        <div class="unit-body"><a href="login-register.html">Login/Register</a></div>
+                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
                       </div>
                     </div>
                   </div>
@@ -79,7 +79,7 @@
               </div>
               <div class="rd-navbar-menu-wrap clearfix">
                 <!--Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="d-inline-block" href="index.html">
+                <div class="rd-navbar-brand"><a class="d-inline-block" href="index.php">
                     <div class="unit align-items-sm-center unit-xl unit-spacing-custom">
                       <div class="unit-left"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                       </div>
@@ -96,7 +96,7 @@
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li><a href="index.html">Home</a>
+                      <li><a href="index.php">Home</a>
                 
                       </li>
                      
@@ -138,17 +138,17 @@
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.html">Classic news</a>
+                          <li><a href="classic-news.php">Classic news</a>
                           </li>
                          
                           </li>
-                          <li><a href="news-post-page.html">News  Page</a>
+                          <li><a href="news-post-page.php">News  Page</a>
                           </li>
                         </ul>
                       </li>
                    
                       </li>
-                      <li><a href="contacts.html">Contacts</a>
+                      <li><a href="contacts.php">Contacts</a>
                       </li>
                      
                     </ul>
@@ -256,20 +256,20 @@
                   <li>
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">1-800-6547-321</a>
+                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713 </a>
                       </div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a></div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                      <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
                     </div>
                   </li>
                 </ul>
