@@ -213,9 +213,6 @@
                   <p> We collect some or all  this information in the following cases:</p>
                   <p>• You register as a voter on our platform </p>
                   <p>• You Fill out our contact form </p>
-
-
-
                 </div>
                 <div class="col-12">
                   <h6 class="fw-bold">How Your Personal Information Is Used</h6>
