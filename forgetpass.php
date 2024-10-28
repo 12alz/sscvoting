@@ -11,7 +11,7 @@ session_start();
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #FBF5DF;
+            background: url('images/color4.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
