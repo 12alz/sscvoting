@@ -239,7 +239,7 @@
                   <p>Continued use of our platform signifies your acceptance of this policy. If you do not accept the policy, please do not use our platform. Upon registration, we will further request your explicit acceptance of this privacy policy.</p>
                 </div>
                 <div class="col-12">
-                  <h6 class="fw-bold">Changes To Policy</h6>
+                  <h6 class="fw-bold">Changes abhaTo Policy</h6>
                   <p>We may update this policy at any time. You may be asked to review and re-accept this policy if changes occur in the future.</p>
                 </div>
               </div>
