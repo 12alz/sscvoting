@@ -302,10 +302,10 @@
               <h6 class="fw-bold">Newsletter</h6>
               <div class="text-subline"></div>
               <div class="offset-top-30 text-start">
-                <p>Enter your email address to get the latest University news, special events and student activities delivered right to your inbox.</p>
+                <p>Enter your email address to get the latest news, special events and student activities delivered right to your inbox.</p>
               </div>
               <div class="offset-top-10">
-                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="..admin/function.php">
                   <div class="form-wrap">
                     <div class="input-group input-group-sm">
                       <input class="form-input" placeholder="Your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
