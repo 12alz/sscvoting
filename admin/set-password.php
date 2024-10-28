@@ -1,10 +1,8 @@
 <?php
-session_start(); 
 include 'includes/conn.php';
 
 if (isset($_GET["reset"])) {
     $email = $_GET["email"];
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +13,7 @@ if (isset($_GET["reset"])) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #FBF5DF;
+            background: linear-gradient(135deg, #6a1b29, #b71c1c); 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -51,28 +49,27 @@ if (isset($_GET["reset"])) {
         }
 
         button {
-            width: 100%;
+            background-color: #007bff;
+            color: white;
             padding: 10px;
-            background-color: #d32f2f;
-            color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
+            width: 100%;
             font-size: 16px;
         }
 
         button:hover {
-            background-color: #b71c1c;
+            background-color: #0056b3;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="reset-password-box">
         <h2 class="reset-password-title">Reset Password</h2>
-        <form action="../admin/function.php" method="POST">
+        <form action="../admin/function.php" method="post">
             <div class="form-group has-feedback">
-                <input type="hidden" name="email" class="form-control" value="<?php echo htmlspecialchars($email); ?>" required readonly>
+                <input type="email" class="form-control" name="email" value="<?php echo $email ?>" required readonly>
             </div>
             <div class="form-group has-feedback">
                 <input type="password" class="form-control" placeholder="Set new password" name="password" required>
@@ -83,26 +80,10 @@ if (isset($_GET["reset"])) {
             <button type="submit" name="btn-new-password">Set Password</button>
         </form>
     </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        <?php
-        // Check if there's a session message to display
-        if (isset($_SESSION['notify'])) {
-            $message = addslashes($_SESSION['notify']);
-            $isSuccess = strpos($message, 'successfully') !== false;
-
-            echo "Swal.fire({
-                title: '" . ($isSuccess ? 'Success' : 'Error') . "',
-                text: '$message',
-                icon: '" . ($isSuccess ? 'success' : 'error') . "',
-                confirmButtonText: 'OK'
-            });";
-
-            // Clear the session message after displaying
-            unset($_SESSION['notify']);
-        }
-        ?>
-    });
-    </script>
 </body>
 </html>
+<?php
+} else {
+    // handle case when reset is not set
+}
+?>
