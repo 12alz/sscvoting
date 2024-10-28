@@ -373,46 +373,47 @@
       <!-- Page Footer-->
       <!-- Corporate footer-->
       <footer class="page-footer">
-        <div class="hr bg-gray-light"></div>
-        <div class="container section-xs block-after-divider">
-          <div class="row row-50 justify-content-xl-between justify-content-sm-center">
-            <div class="col-lg-3 col-xl-2">
-              <!--Footer brand--><a class="d-inline-block" href="news-post-page.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
-                <div>
-                  <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
-                </div>
-                <div>
-                  <p class="brand-slogan text-gray fst-italic font-accent">Community College</p>
-                </div></a>
-            </div>
-            <div class="col-sm-10 col-lg-5 col-xl-4 text-xl-start">
-              <h6 class="fw-bold">Contact us</h6>
-              <div class="text-subline"></div>
-              <div class="offset-top-30">
-                <ul class="list-unstyled contact-info list">
-                  <li>
-                    <div class="unit flex-row align-items-center unit-spacing-xs">
-                      <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="offset-top-15">
-                    <div class="unit flex-row align-items-center unit-spacing-xs">
-                      <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines
-                      </a></div>
-                    </div>
-                  </li>
-                  <li class="offset-top-15">
-                    <div class="unit flex-row align-items-center unit-spacing-xs">
-                      <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
-                    </div>
-                  </li>
-                </ul>
+          <div class="hr bg-gray-light"></div>
+          <div class="container section-xs block-after-divider">
+            <div class="row row-50 justify-content-xl-between justify-content-sm-center">
+              <div class="col-lg-3 col-xl-2">
+                <!--Footer brand--><a class="d-inline-block" href="index.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
+                  <div>
+                    <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
+                  </div>
+                  <div>
+                    <p class="brand-slogan text-gray fst-italic font-accent">Community College</p>
+                  </div></a>
               </div>
-              <div class="offset-top-15 text-start">
+              <div class="col-sm-10 col-lg-5 col-xl-4 text-xl-start">
+                <h6 class="fw-bold">Contact us</h6>
+                <div class="text-subline"></div>
+                <div class="offset-top-30">
+                  <ul class="list-unstyled contact-info list">
+                    <li>
+                      <div class="unit flex-row align-items-center unit-spacing-xs">
+                        <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
+                        <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713
+                        </a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="offset-top-15">
+                      <div class="unit flex-row align-items-center unit-spacing-xs">
+                        <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
+                        <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines
+                        </a></div>
+                      </div>
+                    </li>
+                    <li class="offset-top-15">
+                      <div class="unit flex-row align-items-center unit-spacing-xs">
+                        <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
+                        <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="offset-top-15 text-start">
                   <ul class="list-inline list-inline-xs list-inline-madison">
                     <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/madridejoscollege"></a></li>
                     <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
