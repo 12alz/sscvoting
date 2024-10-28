@@ -137,7 +137,7 @@ session_start();
     // Check if there's a session message to display
     if (isset($_SESSION['notify'])) {
         $message = addslashes($_SESSION['notify']);
-        if (strpos($message, 'A reset link has been sent to your email') !== false) {
+        if (strpos($message, 'Check your email for a link to reset your password.') !== false) {
             echo "Swal.fire({
                 title: 'Success',
                 text: '$message',
