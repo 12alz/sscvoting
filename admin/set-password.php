@@ -1,5 +1,5 @@
 <?php
-session_start(); // Ensure the session is started
+session_start(); 
 include 'includes/conn.php';
 
 if (isset($_GET["reset"])) {
