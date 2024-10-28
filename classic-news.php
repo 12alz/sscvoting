@@ -149,7 +149,7 @@
                     </ul>
                     <!--RD Navbar Mobile Search-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
-                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="" method="POST">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="#" method="POST">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-mobile-search-form-input">Search...</label>
                           <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-mobile-search-form-input" type="text" name="s" autocomplete="off"/>
