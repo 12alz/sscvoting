@@ -271,20 +271,20 @@
                   <li>
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">1-800-6547-321</a>
+                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713</a>
                       </div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a></div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                      <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
                     </div>
                   </li>
                 </ul>
