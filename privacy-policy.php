@@ -205,8 +205,14 @@
               <div class="row row-60">
                 <div class="col-12">
                   <p>We are Suprime Student Council Online Voting System ("we", "our", "us"). We’re committed to protecting and respecting your privacy. If you have questions about your personal information, please contact us.</p>
-                  <h6 class="fw-bold">General Information</h6>
-                  <p>Welcome to our Privacy Policy page! When you use our Suprime Student Council System, you trust us with your information. This Privacy Policy is meant to help you understand what data we collect, why we collect it, and what we do with it. When you share information with us, we can make our services even better for you. For instance, we can show you more relevant search results and ads, help you connect with people or to make sharing with others quicker and easier. As you use our services, we want you to be clear how we`re using information and the ways in which you can protect your privacy. This is important; we hope you will take time to read it carefully. Remember, you can find controls to manage your information and protect your privacy and security. We`ve tried to keep it as simple as possible.</p>
+                  <h6 class="fw-bold">What Information We Hold About You</h6>
+                  <p>The type of data that we collect and process includes:</p>
+                  <p>• Your name</p>
+                  <p>• Your email address</p>
+                  <p>• Any additional data you choose to share as information  in your profile </p>
+                  
+
+
                 </div>
                 <div class="col-12">
                   <h6 class="fw-bold">Right to Access, Correct and Delete Data and to Object to Data Processing</h6>
