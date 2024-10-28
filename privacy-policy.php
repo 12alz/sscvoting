@@ -210,35 +210,42 @@
                   <p>• Your name</p>
                   <p>• Your email address</p>
                   <p>• Any additional data you choose to share as information  in your profile </p>
-                  
+                  <p> We collect some or all  this information in the following cases:</p>
+                  <p>• You register as a voter on our platform </p>
+                  <p>• You Fill out our contact form </p>
 
 
+
                 </div>
                 <div class="col-12">
-                  <h6 class="fw-bold">Right to Access, Correct and Delete Data and to Object to Data Processing</h6>
-                  <p>Our customers have the right to access, correct and delete personal data relating to them, and to object to the processing of such data, by addressing a written request, at any time. The mccsscvoting makes every effort to put in place suitable precautions to safeguard the security and privacy of personal data, and to prevent it from being altered, corrupted, destroyed or accessed by unauthorized third parties. However, the Company does not control each and every risk related to the use of the Internet, and therefore warns the Site users of the potential risks involved in the functioning and use of the Internet. The Site may include links to other web sites or other internet sources. As the Company cannot control these web sites and external sources, the Company cannot be held responsible for the provision or display of these web sites and external sources, and may not be held liable for the content, advertising, products, services or any other material available on or from these web sites or external sources.</p>
+                  <h6 class="fw-bold">How Your Personal Information Is Used</h6>
+                  <p>We may use your personal information in the following ways:</p>
+                  <p>• To register you as a voter, enabling you to participate in elections</p>
+                  <p>• To inform you of voting-related news and activities on our system </p>
+                  <p>• To record your IP address when you perform certain actions, ensuring it is never publicly visible</p>
                 </div>
                 <div class="col-12">
-                  <h6 class="fw-bold">Management of Personal Data</h6>
-                  <p>You can view or edit your personal data online for many of our services. You can also make choices about our collection and use of your data. How you can access or control your personal data will depend on which services you use. You can choose whether you wish to receive promotional communications from our system by email, SMS, physical mail, and telephone. If you receive promotional email or SMS messages from us and would like to opt out, you can do so by following the directions in that message. You can also make choices about the receipt of promotional email, telephone calls, and postal mail by visiting and signing into Company Promotional Communications Manager, which allows you to update contact information, manage contact preferences, opt out of email subscriptions, and choose whether to share your contact information with our partners. These choices do not apply to mandatory service communications that are part of certain store services.</p>
+                  <h6 class="fw-bold">Additional Uses of Your Personal Information</h6>
+                  <p>In addition to notifying you about relevant activities, we may communicate important information, such as newsletters or announcements, via email. You can opt-in or opt-out of such emails in your profile..</p>
                 </div>
                 <div class="col-12">
-                  <h6 class="fw-bold">Information We Collect</h6>
-                  <p>yawa kalibug.</p>
-                </div>
-                <div class="col-12">
-                  <h6 class="fw-bold">How We Use Your Information</h6>
-                  <p>tabang .</p>
+                  <h6 class="fw-bold">Keeping Your Data Secure</h6>
+                  <p>We are committed to ensuring that any information you provide to us is secure. We have implemented suitable measures and procedures to prevent unauthorized access or disclosure of your information.</p>
                 </div>
                 <div class="col-12">
                   <h6 class="fw-bold">Your Rights</h6>
                   <p>You have the right to access the personal data we hold about you or obtain a copy of it. To do so, please contact us. If you believe the information we hold is incomplete or inaccurate, you may request that we correct it.</p>
                   <p>You also have the right to request the erasure of your personal data. Please contact us if you wish to have your data removed.</p>
-                  
                 </div>
                 <div class="col-12">
-                  <h6 class="fw-bold">Sharing Your Information</h6>
-                  <p>ayaw kol bata paku kul</p>
+                  <h6 class="fw-bold">Acceptance of This Policy</h6>
+                  <p>Continued use of our platform signifies your acceptance of this policy. If you do not accept the policy, please do not use our platform. Upon registration, we will further request your explicit acceptance of this privacy policy.</p>
+                </div>
+                <div class="col-12">
+                  <h6 class="fw-bold">Changes To Policy</h6>
+                  <p>We may update this policy at any time. You may be asked to review and re-accept this policy if changes occur in the future.</p>
+                </div>
+                
                 </div>
               </div>
               <div class="offset-top-30"><a class="btn button-primary" href="contacts.php">Contact Us</a></div>
