@@ -26,7 +26,7 @@ if (isset($_POST["btn-forgotpass"])) {
         $mail->AddAddress("$email");
         $mail->Subject = "Reset Password OTP";
         $mail->Body = "Use this OTP Code to reset your password: ".$reset_code."<br/>".
-        "Click the link to reset password:  https://mccsscvoting.com/admin/set-password.php?reset&email=$email"  //pulihan $reset_coede
+        "Click the link to reset password: http://mccsscvoting.com/admin/set-password.php?reset&email=$email"  //pulihan $reset_coede
         ;
 
 
@@ -45,49 +45,44 @@ if (isset($_POST["btn-forgotpass"])) {
         exit();
     }
 }
- // new password 
- if (isset($_POST["btn-new-password"])) {
-
+if (isset($_POST["btn-new-password"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
     $otp = $_POST["otp"];
 
+    // Prepare the SQL statement to avoid SQL injection
+    $stmt = $conn->prepare("SELECT `code` FROM `admin` WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-
-    $sql = "SELECT `code` FROM `admin` WHERE email='$email'";
-
-    $query = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($query) > 0) {
-
-        while ($res = mysqli_fetch_assoc($query)) {
-
-            $get_code = $res["code"];
-
-        }
+    if ($result->num_rows > 0) {
+        $res = $result->fetch_assoc();
+        $get_code = $res["code"];
 
         if ($otp === $get_code) {
-
-           
-
             $reset = random_int(100000, 999999);
-             $password = password_hash($password, PASSWORD_DEFAULT);
+            $password = password_hash($password, PASSWORD_DEFAULT);
 
-            $sql = "UPDATE `admin` SET `password`='$password', `code`=$reset  WHERE email='$email'";
-
-            $query = mysqli_query($conn, $sql);
-
-            $_SESSION["notify"] = "Your password has been reset successfully.";
+            // Prepare the update statement to avoid SQL injection
+            $update_stmt = $conn->prepare("UPDATE `admin` SET `password` = ?, `code` = ? WHERE email = ?");
+            $update_stmt->bind_param("sis", $password, $reset, $email);
+            
+            if ($update_stmt->execute()) {
+                $_SESSION["notify"] = "Your password has been reset successfully.";
+            } else {
+                $_SESSION["notify"] = "Failed to update password. Please try again.";
+            }
             header("Location: ../sign_in.php");
             exit();
         } else {
             $_SESSION["notify"] = "Invalid OTP. Please try again.";
-            header("Location: ../sign_in.php");
+            header("Location: ../admin/set-password.php");
             exit();
         }
     } else {
         $_SESSION["notify"] = "Email not found.";
-        header("Location: ../sign_in.php");
+        header("Location: ../admin/set-password.php");
         exit();
     }
 }
