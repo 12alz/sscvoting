@@ -1,7 +1,7 @@
 <?php
-session_start(); 
-?>
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,10 +102,10 @@ session_start();
             text-align: center;
         }
 
-        /* Responsive styling */
+        
         @media (max-width: 768px) {
             .container {
-                width: 700px; /* Fixed width for tablets */
+                width: 700px; 
             }
 
             .container .left-section {
@@ -170,7 +170,7 @@ session_start();
     // Check if there's a session message to display
     if (isset($_SESSION['notify'])) {
         $message = addslashes($_SESSION['notify']);
-        if (strpos($message, 'A reset link has been sent to your email.') !== false) {
+        if (strpos($message, 'A reset link has been sent to your email') !== false) {
             echo "Swal.fire({
                 title: 'Success',
                 text: '$message',
