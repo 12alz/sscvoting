@@ -224,6 +224,12 @@
                   <p>tabang .</p>
                 </div>
                 <div class="col-12">
+                  <h6 class="fw-bold">Your Rights</h6>
+                  <p>You have the right to access the personal data we hold about you or obtain a copy of it. To do so, please contact us. If you believe the information we hold is incomplete or inaccurate, you may request that we correct it.
+                     You also have the right to request the erasure of your personal data. Please contact us if you wish to have your data removed.
+                   </p>
+                </div>
+                <div class="col-12">
                   <h6 class="fw-bold">Sharing Your Information</h6>
                   <p>ayaw kol bata paku kul</p>
                 </div>
