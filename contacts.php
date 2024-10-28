@@ -139,27 +139,10 @@
                               <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="404.html">404</a></li>
-                                  <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                  <li><a href="maintenance.html">Maintenance</a></li>
+                                  <li><a href="404.php">404</a></li>
+                                  <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                                  <li><a href="maintenance.php">Maintenance</a></li>
                                   <li><a href="sign_in.php">Login/Register</a></li>
-                                  <li><a href="coming-soon.html">Coming Soon</a></li>
-                                  <li><a href="search-results.html">Search Results</a></li>
-                                  <li><a href="apply.html">Apply</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                            <ul class="col-lg-3">
-                              <li>
-                                <h6>Layouts</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="header-transparent.html">Header Transparent</a></li>
-                                  <li><a href="header-center.html">Header Center, Footer Center</a></li>
-                                  <li><a href="header-minimal.html">Header Minimal, Footer Center</a></li>
-                                  <li><a href="header-corporate.html">Header Corporate</a></li>
-                                  <li><a href="header-hamburger-menu.html">Header Hamburger Menu</a></li>
-                                  <li><a href="footer-minimal.html">Footer Minimal</a></li>
-                                  <li><a href="footer-widget.html">Footer Widget</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -173,62 +156,21 @@
                                 </ul>
                               </li>
                               <li>
-                                <h6>Event Calendar</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="calendar.html">Calendar</a></li>
-                                  <li><a href="day-event.html">Day Event</a></li>
-                                  <li><a href="event-page.html">Event Page</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
                         </div>
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.html">Classic news</a>
+                          <li><a href="classic-news.php">Classic news</a>
                           </li>
-                          <li><a href="grid-news.html">Grid News</a>
                           </li>
-                          <li><a href="masonry-news.html">Masonry News</a>
-                          </li>
-                          <li><a href="grid-news-3-columns.html">3 Column Grid News</a>
-                          </li>
-                          <li><a href="modern-news.html">Modern News</a>
-                          </li>
-                          <li><a href="news-post-page.html">News Post Page</a>
+                          <li><a href="news-post-page.php">News  Page</a>
                           </li>
                         </ul>
                       </li>
-                      <!-- <li><a href="#">Campus</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="grid-gallery.html">Grid Gallery</a>
-                          </li>
-                          <li><a href="grid-without-padding-gallery.html">Grid Without Padding Gallery</a>
-                          </li>
-                          <li><a href="masonry-gallery.html">Masonry Gallery</a>
-                          </li>
-                          <li><a href="cobbles-gallery.html">Cobbles Gallery</a>
-                          </li>
-                        </ul>
                       </li>
-                      <li><a href="#">Shop</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="product-catalog.html">Product Catalog</a>
-                          </li>
-                          <li><a href="single-product.html">Single Product</a>
-                          </li>
-                          <li><a href="shopping-cart.html">Shopping Cart</a>
-                          </li>
-                          <li><a href="checkout.html">Checkout</a>
-                          </li>
-                        </ul>
                       </li>
-                      <li><a href="donate.html">Donate</a>
-                      </li> -->
-                      <li class="active"><a href="contacts.php">Contacts</a>
+                      <li><a href="contacts.php">Contacts</a>
                       </li>
-                      <!-- <li class="d-lg-none"><a href="shopping-cart.html">Shopping Cart (2)</a></li> -->
                     </ul>
                     <!--RD Navbar Mobile Search-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
