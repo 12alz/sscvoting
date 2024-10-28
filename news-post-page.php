@@ -95,23 +95,9 @@
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <li><a href="index.php">Home</a>
-                        
                       </li>
-                    
+                      </li>
                       <li><a href="#">Pages</a>
-                        <div class="rd-navbar-megamenu">
-                          <div class="row section-relative">
-                            <ul class="col-lg-3">
-                              <li>
-                                <h6>Programs</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="academics.html">Academics</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                            <ul class="col-lg-3">
-                              <li>
-                              <li><a href="#">Pages</a>
                         <div class="rd-navbar-megamenu">
                           <div class="row section-relative">
                             <ul class="col-lg-3">
