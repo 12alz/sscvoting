@@ -1,7 +1,7 @@
 <?php
-session_start();
-
+session_start(); // Start session to use session variables
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,10 +102,10 @@ session_start();
             text-align: center;
         }
 
-        
+        /* Responsive styling */
         @media (max-width: 768px) {
             .container {
-                width: 700px; 
+                width: 700px; /* Fixed width for tablets */
             }
 
             .container .left-section {
@@ -153,7 +153,7 @@ session_start();
 <body>
     <div class="container">
         <div class="left-section">
-            <img src="images/logo-170x172.png" alt="Logo"> 
+            <img src="images/logo-170x172.png" alt="Logo"> <!-- Ensure to use your logo here -->
         </div>
         <div class="right-section">
             <h2>Forgot Password</h2>
