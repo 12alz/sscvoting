@@ -5,6 +5,7 @@ include 'includes/conn.php';
 if (isset($_POST['add'])) {
     $firstname = htmlspecialchars($_POST['firstname']);
     $lastname = htmlspecialchars($_POST['lastname']);
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $filename = $_FILES['photo']['name'];
     $validImageExtension = ['jpg', 'jpeg', 'png'];
