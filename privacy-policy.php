@@ -257,7 +257,7 @@
             <div class="col-lg-3 col-xl-2">
               <!--Footer brand--><a class="d-inline-block" href="index.html"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                 <div>
-                  <h6 class="barnd-name fw-bold offset-top-25">Madridejossssss</h6>
+                  <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
                 </div>
                 <div>
                   <p class="brand-slogan text-gray fst-italic font-accent">Community College</p>
