@@ -243,7 +243,7 @@
                   <p>We may update this policy at any time. You may be asked to review and re-accept this policy if changes occur in the future.</p>
                 </div>
               </div>
-              <div class="offset-top-30"><a class="btn button-primary" href="contacts.php">Contact Us</a></div>
+              <div class="offset-top-30"><a class="btn button-primary" href="contacts.php">Contactaa Us</a></div>
             </div>
           </div>
         </div>
