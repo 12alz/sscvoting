@@ -112,13 +112,25 @@
                             </ul>
                             <ul class="col-lg-3">
                               <li>
+                              <li><a href="#">Pages</a>
+                        <div class="rd-navbar-megamenu">
+                          <div class="row section-relative">
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>Programs</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="academics.html">Academics</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                            <ul class="col-lg-3">
+                              <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
                                   <li><a href="404.php">404</a></li>
                                   <li><a href="privacy-policy.php">Privacy Policy</a></li>
                                   <li><a href="maintenance.php">Maintenance</a></li>
-                                  <li><a href="login-register.html">Login/Register</a></li>
-                                  <li><a href="search-result.php">Search Results</a></li>
+                                  <li><a href="sign_in.php">Login/Register</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -132,40 +144,20 @@
                                 </ul>
                               </li>
                               <li>
-                                <h6>Event Calendar</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="calendar.html">Calendar</a></li>
-                                  <li><a href="day-event.html">Day Event</a></li>
-                                  <li><a href="event-page.html">Event Page</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
+                              
+                       
                         </div>
                       </li>
-                      <li class="active"><a href="#">News</a>
+                      <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="classic-news.php">Classic news</a>
                           </li>
-                       
-                          <li><a href="news-post-page.php">News Post Page</a>
+                          </li>
+                          <li><a href="news-post-page.php">News  Page</a>
                           </li>
                         </ul>
                       </li>
-                      <li><a href="#">Campus</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="grid-gallery.html">Grid Gallery</a>
-                          </li>
-                          <li><a href="grid-without-padding-gallery.html">Grid Without Padding Gallery</a>
-                          </li>
-                          <li><a href="masonry-gallery.html">Masonry Gallery</a>
-                          </li>
-                          <li><a href="cobbles-gallery.html">Cobbles Gallery</a>
-                          </li>
-                        </ul>
-                      </li>
-                      </li>
-                 
+                    
                       </li>
                       <li><a href="contacts.html">Contacts</a>
                       </li>
