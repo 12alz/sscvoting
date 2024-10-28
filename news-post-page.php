@@ -111,13 +111,25 @@
                             </ul>
                             <ul class="col-lg-3">
                               <li>
+                              <li><a href="#">Pages</a>
+                        <div class="rd-navbar-megamenu">
+                          <div class="row section-relative">
+                            <ul class="col-lg-3">
+                              <li>
+                                <h6>Programs</h6>
+                                <ul class="list-unstyled offset-lg-top-20">
+                                  <li><a href="academics.html">Academics</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                            <ul class="col-lg-3">
+                              <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
                                   <li><a href="404.php">404</a></li>
                                   <li><a href="privacy-policy.php">Privacy Policy</a></li>
                                   <li><a href="maintenance.php">Maintenance</a></li>
-                                  <li><a href="login-register.html">Login/Register</a></li>
-                                  <li><a href="search-result.php">Search Results</a></li>
+                                  <li><a href="sign_in.php">Login/Register</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -131,47 +143,25 @@
                                 </ul>
                               </li>
                               <li>
-                                <h6>Event Calendar</h6>
-                                <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="calendar.html">Calendar</a></li>
-                                  <li><a href="day-event.html">Day Event</a></li>
-                                  <li><a href="event-page.html">Event Page</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
                         </div>
                       </li>
-                      <li class="active"><a href="#">News</a>
+                      <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
                           <li><a href="classic-news.php">Classic news</a>
                           </li>
                           </li>
-                          <li><a href="news-post-page.php">News Post Page</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a href="#">Campus</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><a href="grid-gallery.html">Grid Gallery</a>
-                          </li>
-                          <li><a href="grid-without-padding-gallery.html">Grid Without Padding Gallery</a>
-                          </li>
-                          <li><a href="masonry-gallery.html">Masonry Gallery</a>
-                          </li>
-                          <li><a href="cobbles-gallery.html">Cobbles Gallery</a>
+                          <li><a href="news-post-page.php">News  Page</a>
                           </li>
                         </ul>
                       </li>
                       </li>
-                 
                       </li>
-                      <li><a href="contacts.html">Contacts</a>
+                      <li><a href="contacts.php">Contacts</a>
                       </li>
                     </ul>
                     <!--RD Navbar Mobile Search-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
-                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-result.php" method="GET">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="#" method="GET">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-mobile-search-form-input">Search...</label>
                           <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-mobile-search-form-input" type="text" name="s" autocomplete="off"/>
@@ -183,7 +173,7 @@
                   <div>
                     <!--RD Navbar Search-->
                     <div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
-                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-result.php" data-search-live="rd-search-results-live" method="GET">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="#" data-search-live="rd-search-results-live" method="GET">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-search-form-input">Search</label>
                           <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off"/>
@@ -317,7 +307,7 @@
                 <div class="text-subline"></div>
                 <div class="offset-top-30">
                                   <!-- RD Search Form-->
-                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="search-result.php" method="GET">
+                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="#" method="GET">
                                     <div class="form-wrap">
                                       <div class="input-group">
                                         <input class="form-search-input  form-input" type="text" name="s" autocomplete="off"><span class="input-group-btn">
@@ -437,33 +427,34 @@
                 </ul>
               </div>
               <div class="offset-top-15 text-start">
-                <ul class="list-inline list-inline-xs list-inline-madison">
-                  <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/madridejoscollege"></a></li>
-                  <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
-                  <li><a class="icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
-                  <li><a class="icon icon-xxs fa fa-instagram icon-circle icon-gray-light-filled" href="#"></a></li>
-                </ul>
+                  <ul class="list-inline list-inline-xs list-inline-madison">
+                    <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/madridejoscollege"></a></li>
+                    <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
+                    <li><a class="icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
+                    <li><a class="icon icon-xxs fa fa-instagram icon-circle icon-gray-light-filled" href="#"></a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-</div>
-                
-                  </div>
-                </form>
+           
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="bg-madison context-dark">
-          <div class="container text-lg-start section-5">
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span><a href="#"></a></p>
+          <div class="bg-madison context-dark">
+            <div class="container text-lg-start section-5">
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved Terms of Use</span><span>.&nbsp;</span><a class="text-dark" href="privacy-policy.php">Privacy Policy</a></p>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Java script-->
     <script src="dist/js/core.min.js"></script>
     <script src="dist/js/script.js"></script>
-  <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
+  <!-- Google Tag Manager --><noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>
