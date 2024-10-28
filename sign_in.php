@@ -271,11 +271,12 @@ if(isset($_SESSION['voter'])){
                           <label class="form-label form-label-outside" for="form-login-password">Password:</label>
                           <input class="form-input bg-default" id="form-login-password" type="password" name="password" data-constraints="@Required">
                         </div>
+                        <a href="forgot_password.php" class="small" style="color: #d32f2f; text-decoration: ;">Forgot Password?</a>
                         <div class="offset-top-20">
                           
                           <button class="btn button-primary d-block d-xl-inline-block" type="submit" name="login">Sign in</button><span class="inset-xl-left-20 align-middle small d-inline-block offset-top-20 offset-lg-top-0">Don't Have a account?</span>
                           <ul class="list-inline list-inline-xs list-inline-madison d-xl-inline-block inset-xl-left-10 inset-xxl-left-20 align-middle offset-top-15 offset-lg-top-0">
-                          <a href="verification.php" data-toggle="modal">Register Here</a>
+                          <a href="verification.php" data-toggle="modal" style="color: #d32f2f; font-weight: bold;">Register Here</a>
                             
                           </ul>
                         </div>
@@ -333,7 +334,7 @@ if(isset($_SESSION['voter'])){
                           <input class="form-input bg-default" id="password" type="password" name="password" data-constraints="@Required">
                         </div>
                        
-                         <a href="forgetpass.php" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right">Forgot Password?</a>
+                        <a href="forgetpass.php" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right" style="color: #d32f2f; text-decoration: none;">Forgot Password?</a>
                        
                         <div class="offset-top-20">
                           <button class="btn button-primary" type="submit" name="login">Login As Administrator</button>
