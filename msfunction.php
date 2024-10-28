@@ -10,7 +10,7 @@ if (isset($_GET['token'])) {
     $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
     $stmt = $conn->prepare($sql);
 
-   
+    
     if ($stmt === false) {
         die('MySQL prepare error: ' . htmlspecialchars($conn->error));
     }
@@ -23,10 +23,10 @@ if (isset($_GET['token'])) {
         $row = $result->fetch_assoc();
         $expiration = $row['token_expiration'];
 
-
+       
         if (strtotime($expiration) > time()) {
-           
-            $showForm = true; 
+            // Token is valid, allow the user to proceed
+            $showForm = true; // Enable the registration form
         } else {
             echo "<script>alert('This link has expired. Please request a new registration link.');</script>";
         }
@@ -48,52 +48,71 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Sign Up</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background: #FBF5DF;
             margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .container {
             background: #fff;
-            padding: 20px;
+            padding: 30px;
             max-width: 400px;
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .container:hover {
+            transform: translateY(-2px);
         }
         .form-wrap {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            position: relative;
         }
         label {
             display: block;
             font-size: 14px;
             margin-bottom: 5px;
-            color: #333;
+            color: #555;
         }
-        input[type="text"], input[type="password"], select, input[type="file"] {
+        input[type="text"], input[type="password"], input[type="email"], select, input[type="file"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 14px;
             color: #333;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #d32f2f;
+            outline: none;
+        }
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 35%;
+            cursor: pointer;
         }
         button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #d32f2f;
             color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s;
         }
         button:hover {
             background-color: #b71c1c;
@@ -101,14 +120,33 @@ $conn->close();
         p {
             text-align: center;
             color: #333;
+            margin-top: 10px;
         }
         .login-link {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 20px;
         }
         .login-link a {
-            color: #333;
+            color: #d32f2f;
             text-decoration: none;
+            font-weight: bold;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            input[type="text"], input[type="password"], input[type="email"], select {
+                padding: 10px;
+            }
+            button {
+                padding: 10px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -116,23 +154,49 @@ $conn->close();
 
 <?php if ($showForm): ?>
     <div class="container">
-        <form method="POST" action="sign_up.php" enctype="multipart/form-data">
+        <h2 style="text-align: center; color: #333;">Register</h2>
+        <form method="POST" action="sign_up.php" enctype="multipart/form-data" onsubmit="return validateForm()">
             <div class="form-wrap">
                 <label for="voters_id">Student ID</label>
-                <input type="text" class="form-control" id="voters_id" name="voters_id" required>
+                <input type="text" class="form-control" id="voters_id" name="voters_id" required pattern="\d{4}-\d{4}" title="Format: XXXX-XXXX (8 digits total)">
             </div>
+            
+            <div class="form-wrap">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required 
+                pattern="[a-zA-Z0-9._%+-]+@gmail\.com" 
+                title="Please enter a valid Gmail address. Example: username@gmail.com">
+            </div>
+
             <div class="form-wrap">
                 <label for="firstname">First Name</label>
-                <input type="text" name="firstname" required>
+                <input type="text" name="firstname" required pattern="[A-Za-z\s-]+" title="Only letters and spaces are allowed">
             </div>
+
             <div class="form-wrap">
                 <label for="lastname">Last Name</label>
-                <input type="text" name="lastname" required>
+                <input type="text" name="lastname" required pattern="[A-Za-z\s-]+" title="Only letters and spaces are allowed">
             </div>
+
+
             <div class="form-wrap">
                 <label for="password">Password</label>
-                <input type="password" name="password" required>
+                <div style="position: relative;">
+                    <input type="password" id="password" name="password" required minlength="8" 
+                           pattern="(?=.*[!@#$%^&*])(?=.*[A-Za-z])(?=.*\d).+" 
+                           title="Minimum 8 characters, at least one letter, one number, and one special character">
+                    <span class="eye-icon" onclick="togglePassword('password')">👁️</span>
+                </div>
             </div>
+
+            <div class="form-wrap">
+                <label for="confirm_password">Confirm Password</label>
+                <div style="position: relative;">
+                    <input type="password" id="confirm_password" name="confirm_password" required minlength="8">
+                    <span class="eye-icon" onclick="togglePassword('confirm_password')">👁️</span>
+                </div>
+            </div>
+
             <div class="form-wrap">
                 <label for="course">Course</label>
                 <select name="course" required>
@@ -144,10 +208,12 @@ $conn->close();
                     <option value="BSHM">BSHM</option>
                 </select>
             </div>
+
             <div class="form-wrap">
                 <label for="photo">Photo</label>
                 <input type="file" name="photo" accept=".jpg, .jpeg, .png">
             </div>
+            
             <button class="btn button-primary" type="submit" name="add">Register</button>
         </form>
         <div class="login-link">
@@ -159,11 +225,11 @@ $conn->close();
 <?php endif; ?>
 
 <script>
-  
+   
     document.getElementById('voters_id').addEventListener('input', function(e) {
-        var value = e.target.value.replace(/\D/g, ''); 
+        var value = e.target.value.replace(/\D/g, '');
         if (value.length > 8) {
-            value = value.slice(0, 8); 
+            value = value.slice(0, 8);
         }
         var formattedValue = '';
         for (var i = 0; i < value.length; i += 4) {
@@ -174,6 +240,23 @@ $conn->close();
         }
         e.target.value = formattedValue;
     });
+
+    function togglePassword(id) {
+        const passwordField = document.getElementById(id);
+        const type = passwordField.type === 'password' ? 'text' : 'password';
+        passwordField.type = type;
+    }
+
+    function validateForm() {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm_password').value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true; 
+    }
 </script>
 </body>
 </html>
