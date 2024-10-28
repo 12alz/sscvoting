@@ -305,7 +305,7 @@
                 <p>Enter your email address to get the latest news, special events and student activities delivered right to your inbox.</p>
               </div>
               <div class="offset-top-10">
-                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="admin/function.php">
+                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="">
                   <div class="form-wrap">
                     <div class="input-group input-group-sm">
                       <input class="form-input" placeholder="Your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
