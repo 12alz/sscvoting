@@ -362,7 +362,6 @@
                 <div class="offset-top-60 text-center"><a class="d-block" href="#"><img class="img-responsive d-inline-block" src="images/mental1.jpg" width="340" height="500" alt=""></a></div>
                 <div class="offset-top-60">
                   <h6 class="fw-bold"></h6>
-</div>
             
                   </div>
                 </div>
@@ -370,6 +369,9 @@
             </div>
           </div>
         </div>
+        <div>
+        <div>
+        <div>
       </section>
       <!-- Page Footer-->
       <!-- Corporate footer-->
