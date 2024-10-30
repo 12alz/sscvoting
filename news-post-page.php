@@ -81,8 +81,8 @@
                       <div class="unit-left"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                       </div>
                       <div class="unit-body">
-                        <div class="rd-navbar-brand-title">Jonathan Carroll</div>
-                        <div class="rd-navbar-brand-slogan">University</div>
+                        <div class="rd-navbar-brand-title">Madridejos</div>
+                        <div class="rd-navbar-brand-slogan">Community College</div>
                       </div>
                     </div></a></div>
                 <div class="rd-navbar-nav-wrap">
