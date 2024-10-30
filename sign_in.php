@@ -402,19 +402,7 @@ if(isset($_SESSION['voter'])){
                 </ul>
               </div>
             </div>
-            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
-              <h6 class="fw-bold">Newsletter</h6>
-              <div class="text-subline"></div>
-              <div class="offset-top-30 text-start">
-                <p>Enter your email address to get the latest  news, special events and student activities delivered right to your inbox.</p>
-              </div>
-              <div class="offset-top-10">
-              <form action="admin/newsletter_mailer.php" method="POST">
-              <div class="form-wrap">
-                  <div class="input-group input-group-sm">
-                      <input class="form-input" placeholder="Your e-mail" type="email" name="email" required>
-                      <span class="input-group-btn">
-                          <button class="btn btn-sm button-primary" type="submit" name="btn-subscribe">Subscribe</button>
+           
                     </div>
                   </div>
                 </form>
