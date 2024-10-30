@@ -64,7 +64,7 @@ if (isset($_POST["btn-subscribe"])) {
         $stmt->close();
         $conn->close();
         
-        header("Location: ../privacy-policy.php");
+        header("Location: ../news-post-page.php");
         
         exit();
         
