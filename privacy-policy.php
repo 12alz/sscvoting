@@ -255,7 +255,7 @@
         <div class="container section-xs block-after-divider">
           <div class="row row-50 justify-content-xl-between justify-content-sm-center">
             <div class="col-lg-3 col-xl-2">
-              <!--Footer brand--><a class="d-inline-block" href="index.html"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
+              <!--Footers brand--><a class="d-inline-block" href="index.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                 <div>
                   <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
                 </div>
@@ -271,7 +271,7 @@
                   <li>
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713</a>
+                      <div class="unit-body"><a class="text-dark" href="tel:#">63-948-3618-713</a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">1-800-6547-321</a>
                       </div>
                     </div>
                   </li>
@@ -291,27 +291,14 @@
               </div>
               <div class="offset-top-15 text-start">
                 <ul class="list-inline list-inline-xs list-inline-madison">
-                  <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/madridejoscollege"></a></li>
+                  <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-instagram icon-circle icon-gray-light-filled" href="#"></a></li>
                 </ul>
               </div>
             </div>
-            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
-              <h6 class="fw-bold">Newsletter</h6>
-              <div class="text-subline"></div>
-              <div class="offset-top-30 text-start">
-                <p>Enter your email address to get the latest news, special events and student activities delivered right to your inbox.</p>
-              </div>
-              <div class="offset-top-10">
-                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="">
-                  <div class="form-wrap">
-                    <div class="input-group input-group-sm">
-                      <input class="form-input" placeholder="Your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
-                        <button class="btn btn-sm button-primary" type="submit">Subscribe</button></span>
-                    </div>
-                  </div>
+            
                 </form>
               </div>
             </div>
