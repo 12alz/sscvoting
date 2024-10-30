@@ -423,7 +423,7 @@
               <h6 class="fw-bold">Newsletter</h6>
               <div class="text-subline"></div>
               <div class="offset-top-30 text-start">
-                <p>Enter your email address to get the latest University news, special events and student activities delivered right to your inbox.</p>
+                <p>Enter your email address to get the latest  news, special events and student activities delivered right to your inbox.</p>
               </div>
               <div class="offset-top-10">
               <form action="admin/newsletter_mailer.php" method="POST">
