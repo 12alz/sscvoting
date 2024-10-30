@@ -369,9 +369,6 @@
             </div>
           </div>
         </div>
-        <div>
-        <div>
-        <div>
       </section>
       <!-- Page Footer-->
       <!-- Corporate footer-->
