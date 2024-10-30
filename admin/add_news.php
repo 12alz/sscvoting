@@ -61,10 +61,7 @@
                 <label for="content" style="font-family: IBM Plex">News Content</label>
                 <textarea class="form-control" name="content" id="content" rows="4" placeholder="Enter News Content" required></textarea>
             </div>
-            <div class="form-group">
-                <label for="photo">Upload Photo</label>
-                <input type="file" class="form-control-file" name="photo" id="photo" accept="image/*">
-            </div>
+           
             <button type="submit" class="btn btn-danger btn-block" style="background: linear-gradient(135deg, #ff0000, #ff6347); color: white;" name="btn-add-news">Add News</button>
         </form>
       </div>
