@@ -344,10 +344,35 @@
         <!--Please, add the data attribute data-key="YOUR_API_KEY" in order to insert your own API key for the Google map.-->
         <!--Please note that YOUR_API_KEY should replaced with your key.-->
         <!--Example: <div class="google-map-container" data-key="YOUR_API_KEY">-->
-        <div class="google-map-container" data-key ="https://www.google.com/maps/place/Madridejos+Community+College/@11.2639573,123.7204278,17.54z/data=!4m6!3m5!1s0x33a88140310a21a9:0xc5b9b94e9c2702db!8m2!3d11.2636451!4d123.7235618!16s%2Fg%2F1hc28c7s2?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D"data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-zoom="5" data-icon="images/gmap_marker.png" data-icon-active="images/gmap_marker_active.png" data-styles="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:60}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:40},{&quot;visibility&quot;:&quot;on&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;administrative.province&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;lightness&quot;:30}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#ef8c25&quot;},{&quot;lightness&quot;:40}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.stroke&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;poi.park&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#b6c54c&quot;},{&quot;lightness&quot;:40},{&quot;saturation&quot;:-40}]},{}]">
-          <div class="google-map"></div>
-          <ul class="google-map-markers">
-            <li data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-description="9870 St Vincent Place, Glasgow"></li>
+        <style>
+        #map {
+            height: 400px; /* Adjust the height as needed */
+            width: 100%;   /* Full width */
+        }
+    </style>
+        <div id="map"></div>
+        <script>
+    function initMap() {
+        // Specify the location of Cebu Madridejos Community College
+        var location = { lat: 11.2636, lng: 123.7236 };
+
+        // Create a map object
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15, // Zoom level
+            center: location
+        });
+
+        // Create a marker
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: 'Cebu Madridejos Community College'
+        });
+    }
+</script>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAacKXD1U08c11PfTGbrfEiR7v58_f2byU&callback=initMap">
+</script>
           </ul>
         </div>
       </section>
