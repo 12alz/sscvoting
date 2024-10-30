@@ -21,6 +21,7 @@
       <li class=""><a href="positions.php"><i class="fa fa-tasks"></i> <span>SSC Positions</span></a></li>
       <li class=""><a href="candidates.php"><i class="fa fa-black-tie"></i> <span>SSC Candidates</span></a></li>
       <li class=""><a href="msaccount.php"><i class="fa fa-folder"></i> <span>MS365 Accounts</span></a></li>
+      <li class=""><a href="add_news.php"><i class="fa fa-folder"></i> <span>Newsletter</span></a></li>
       <li class="header">SETTINGS</li>
       <li class="" > <a href="print.php"><span class="glyphicon glyphicon-print"></span> Print Result</a></span></li>
     </ul>
