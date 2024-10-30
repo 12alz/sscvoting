@@ -3,7 +3,6 @@ session_start();
 include "includes/conn.php";
 
 if (isset($_POST["btn-subscribe"])) {
-    session_start();
 
     if (isset($_POST["email"])) {
         $email = $_POST["email"];
@@ -64,7 +63,7 @@ if (isset($_POST["btn-subscribe"])) {
         $stmt->close();
         $conn->close();
         
-        header("Location: ../classic-news.php");
+        header("Location: ../news-post-page.php");
         
         exit();
         
