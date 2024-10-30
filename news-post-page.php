@@ -7,8 +7,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="keywords" content="ayaw kol">
-    <meta name="date" content="Dec 26">
+    <meta name="keywords" content="Jerson Villaceran">
+    <meta name="date" content="October 22">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,700%7CMerriweather:400,300,300italic,400italic,700,700italic">
@@ -53,7 +53,8 @@
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle"></span></div>
-                          <div class="unit-body"><a href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a></div>
+                          <div class="unit-body"><a href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines
+                          </a></div>
                         </div>
                       </li>
                       <li>
@@ -68,7 +69,7 @@
                     <div class="rd-navbar-top-panel-left-part">
                       <div class="unit flex-row align-items-center unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
-                        <div class="unit-body"><a href="login-register.html">Login/Register</a></div>
+                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
                       </div>
                     </div>
                   </div>
@@ -76,7 +77,7 @@
               </div>
               <div class="rd-navbar-menu-wrap clearfix">
                 <!--Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="d-inline-block" href="index-2.html">
+                <div class="rd-navbar-brand"><a class="d-inline-block" href="news-post-page.php">
                     <div class="unit align-items-sm-center unit-xl unit-spacing-custom">
                       <div class="unit-left"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                       </div>
@@ -89,13 +90,12 @@
                   <div class="rd-navbar-mobile-scroll">
                     <div class="rd-navbar-mobile-header-wrap">
                       <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="index-2.html"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
+                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                       <li><a href="index.php">Home</a>
-                        </li>
-                          
+                      </li>
                       </li>
                       <li><a href="#">Pages</a>
                         <div class="rd-navbar-megamenu">
@@ -293,7 +293,7 @@
                 <div class="text-subline"></div>
                 <div class="offset-top-30">
                                   <!-- RD Search Form-->
-                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="http://localhost/jerson/search-result.php" method="GET">
+                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="#" method="GET">
                                     <div class="form-wrap">
                                       <div class="input-group">
                                         <input class="form-search-input  form-input" type="text" name="s" autocomplete="off"><span class="input-group-btn">
@@ -326,10 +326,10 @@
                 </div>
                 <div class="offset-top-60">
                   <!-- Facebook standart widget-->
-                  <div> 
+                  <div>
                     <div class="fb-root fb-widget">
                       <div class="fb-page-responsive">
-                        <div class="fb-page" data-href="https://www.facebook.com/madridejoscollege" data-tabs="timeline" data-height="900" data-small-header="falsez" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <div class="fb-page" data-href="https://www.facebook.com/madridejoscollege" data-tabs="timeline" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                           <div class="fb-xfbml-parse-ignore">
                             <blockquote cite="https://www.facebook.com/madridejoscollege"><a href="https://www.facebook.com/madridejoscollege"></a></blockquote>
                           </div>
@@ -341,7 +341,7 @@
                 <script async defer crossorigin="anonymous" 
                 src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"></script>
                 <div class="offset-top-60">
-                  <!--Recent posts-->
+                  <!--Recent postsass-->
            
                   <div class="offset-top-20 text-start">
                     <article class="widget-post">
@@ -359,6 +359,7 @@
                     </div>
                   </div>
                 </div>
+                <div class="offset-top-60 text-center"><a class="d-block" href="#"><img class="img-responsive d-inline-block" src="images/mental1.jpg" width="340" height="500" alt=""></a></div>
                 <div class="offset-top-60">
                   <h6 class="fw-bold"></h6>
             
@@ -376,7 +377,7 @@
         <div class="container section-xs block-after-divider">
           <div class="row row-50 justify-content-xl-between justify-content-sm-center">
             <div class="col-lg-3 col-xl-2">
-              <!--Footer brand--><a class="d-inline-block" href="news-post-page.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
+              <!--Footera brand--><a class="d-inline-block" href="index.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                 <div>
                   <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
                 </div>
@@ -399,8 +400,8 @@
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines
-                      </a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a>
+                    </div>
                     </div>
                   </li>
                   <li class="offset-top-15">
@@ -420,25 +421,66 @@
                 </ul>
               </div>
             </div>
-            </div>
-                
+            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
+              <h6 class="fw-bold">Newsletter</h6>
+              <div class="text-subline"></div>
+              <div class="offset-top-30 text-start">
+                <p>Enter your email address to get the latest  news, special events and student activities delivered right to your inbox.</p>
+              </div>
+              <div class="offset-top-10">
+              <form action="admin/newsletter_mailer.php" method="POST">
+              <div class="form-wrap">
+                  <div class="input-group input-group-sm">
+                      <input class="form-input" placeholder="Your e-mail" type="email" name="email" required>
+                      <span class="input-group-btn">
+                          <button class="btn btn-sm button-primary" type="submit" name="btn-subscribe">Subscribe</button>
+                    </div>
                   </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-        <div class="bg-madison context-dark">
-          <div class="container text-lg-start section-5">
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span><a href="#"></a></p>
+          <div class="bg-madison context-dark">
+            <div class="container text-lg-start section-5">
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved Terms of Use</span><span>.&nbsp;</span><a class="text-dark" href="privacy-policy.php">Privacy Policy</a></p>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Java script-->
     <script src="dist/js/core.min.js"></script>
     <script src="dist/js/script.js"></script>
-  <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
+  <!-- Google Tag Manager --><noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
+<!-- SweetAlert JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script>
+<?php
+    // Check if there's a session message to display
+    if (isset($_SESSION['message'])) {
+        $message = addslashes($_SESSION['message']);
+        if (strpos($message, 'Subscription successful! Please check your inbox') !== false) {
+            echo "swal({
+                title: 'Notification',
+                text: '$message',
+                icon: 'info',
+                button: 'OK'
+            });";
+        } else {
+            echo "swal({
+                title: 'Notification',
+                text: '$message',
+                icon: 'error',
+                button: 'OK'
+            });";
+        }
+        unset($_SESSION['message']);
+    }
+?>
+</script>
