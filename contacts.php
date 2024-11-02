@@ -83,7 +83,7 @@
                       </div>
                       <div class="unit-body">
                         <div class="rd-navbar-brand-title">Madridejos</div>
-                        <div class="rd-navbar-brand-slogan">Community College</div>
+                        <div class="rd-navbar-brand-slogan">Communitysss College</div>
                       </div>
                     </div></a></div>
                 <div class="rd-navbar-nav-wrap">
