@@ -93,9 +93,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mailCouncil->Password = "svlwwvxfgrbtxqum";
 
         // Notify the Suprime Student Council
-        $councilEmail = "villaceranjerson55@gmail.com";
+        $councilEmail = "villaceranjerson55@gmail.com"; // Replace with the actual email address of the council
         $mailCouncil->setFrom('santillanbsit@gmail.com', 'Suprime Student Council');
-        $mailCouncil->addAddress($councilEmail);
+        $mailCouncil->addAddress($councilEmail); // Council's email address
         $mailCouncil->isHTML(true);
         
         // Email for the council notification
@@ -119,14 +119,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Display errors
         $_SESSION['message'] = ''; // Reset previous messages
         foreach ($errors as $error) {
-            $_SESSION['message'] .= "<p>Error: $error</p>";
+            $_SESSION['message'] .= "Error: $error\n"; // Use newline for separation
         }
     }
 
     // Redirect to contacts page
     header("Location: ../contacts.php");
     exit();
-} else {
-    // Handle non-POST requests if needed
 }
 ?>
