@@ -217,7 +217,7 @@
               <h2 class="fw-bold">Get in Touch</h2>
               <hr class="divider bg-madison divider-lg-0">
               <div class="offset-top-30 offset-md-top-60">
-                <p>You can contact us any way that is convenient for you. We are available 24/7 via messenger or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
+                <p>You can contact us any way that is convenient for you. We are available 24/7 messenger or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
               </div>
               <div class="offset-top-30">
               <form action="admin/contacts_mailer.php" method="POST">
