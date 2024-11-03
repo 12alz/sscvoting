@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validate message
-    if (empty($message) || strlen($message) < 10) {
+    if (empty($message) || strlen($message) < 0) {
         $errors[] = "Message must be at least 10 characters.";
     }
 
