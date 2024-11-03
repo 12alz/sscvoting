@@ -31,13 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validate phone (10-digit numeric)
-    if (empty($phone) || !preg_match("/^\d{11}$/", $phone)) {
-        $errors[] = "Please enter a valid 10-digit phone number.";
+    if (empty($phone) || !preg_match("/^09\d{9}$/", $phone)) {
+        $errors[] = "Please enter a valid 11-digit phone number starting with 09.";
     }
 
     // Validate message
     if (empty($message) || strlen($message) < 0) {
-        $errors[] = "Message must be at least 10 characters.";
+        $errors[] = "Please Enter a message.";
     }
 
     // If there are no errors, proceed to send the email
