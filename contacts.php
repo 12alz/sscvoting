@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html class="wide wow-animation scrollTo" lang="en">
   <head>
