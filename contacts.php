@@ -220,43 +220,41 @@
                 <p>You can contact us any way that is convenient for you. We are available 24/7 via messenger or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
               </div>
               <div class="offset-top-30">
-              <form action="admin/contacts_mailer.php" method="POST" autocomplete="off">
-    <div class="row row-12">
-        <div class="col-xl-6">
-            <div class="form-wrap">
-                <label class="form-label form-label-outside" for="contact-me-name">First name</label>
-                <input class="form-input" id="contact-me-name" type="text" name="name" required autocomplete="given-name">
-            </div>
-        </div>
-        <div class="col-xl-6">
-            <div class="form-wrap">
-                <label class="form-label form-label-outside" for="contact-me-last-name">Last name</label>
-                <input class="form-input" id="contact-me-last-name" type="text" name="last-name" required autocomplete="family-name">
-            </div>
-        </div>
-        <div class="col-xl-6">
-            <div class="form-wrap">
-                <label class="form-label form-label-outside" for="contact-me-email">E-mail</label>
-                <input class="form-input" id="contact-me-email" type="email" name="email" required autocomplete="email">
-            </div>
-        </div>
-        <div class="col-xl-6">
-            <div class="form-wrap">
-                <label class="form-label form-label-outside" for="contact-me-phone">Phone</label>
-                <input class="form-input" id="contact-me-phone" type="text" name="phone" required autocomplete="tel">
-            </div>
-        </div>
-        <div class="col-xl-12">
-            <div class="form-wrap">
-                <label class="form-label form-label-outside" for="contact-me-message">Message</label>
-                <textarea class="form-input" id="contact-me-message" name="message" required style="height: 220px" autocomplete="off"></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="text-center text-xl-start offset-top-20">
-        <button class="btn button-primary" type="submit">Send Message</button>
- 
-
+              <form action="admin/contacts_mailer.php" method="POST">
+                  <div class="row row-12">
+                    <div class="col-xl-6">
+                      <div class="form-wrap">
+                        <label class="form-label form-label-outside" for="contact-me-name">First name</label>
+                        <input class="form-input" id="contact-me-name" type="text" name="name" data-constraints="@Required">
+                      </div>
+                    </div>
+                    <div class="col-xl-6">
+                      <div class="form-wrap">
+                        <label class="form-label form-label-outside" for="contact-me-last-name">Last name</label>
+                        <input class="form-input" id="contact-me-last-name" type="text" name="last-name" data-constraints="@Required">
+                      </div>
+                    </div>
+                    <div class="col-xl-6">
+                      <div class="form-wrap">
+                        <label class="form-label form-label-outside" for="contact-me-email">E-mail</label>
+                        <input class="form-input" id="contact-me-email" type="email" name="email" data-constraints="@Required @Email">
+                      </div>
+                    </div>
+                    <div class="col-xl-6">
+                      <div class="form-wrap">
+                        <label class="form-label form-label-outside" for="contact-me-phone">Phone</label>
+                        <input class="form-input" id="contact-me-phone" type="text" name="phone" data-constraints="@Required @IsNumeric">
+                      </div>
+                    </div>
+                    <div class="col-xl-12">
+                      <div class="form-wrap">
+                        <label class="form-label form-label-outside" for="contact-me-message">Message</label>
+                        <textarea class="form-input" id="contact-me-message" name="message" data-constraints="@Required" style="height: 220px"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-center text-xl-start offset-top-20">
+                    <button class="btn button-primary" type="submit">Send Message</button>
                   </div>
                 </form>
               </div>
