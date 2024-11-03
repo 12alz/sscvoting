@@ -4,10 +4,11 @@ include "includes/conn.php";
 require("PHPMailer/src/PHPMailer.php");
 require("PHPMailer/src/SMTP.php");
 require("PHPMailer/src/Exception.php");
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Start session for feedback messages
-    session_start();
+ 
 
     // Collect and sanitize form data
     $name = trim($_POST['name']);
