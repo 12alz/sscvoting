@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validate phone (10-digit numeric)
-    if (empty($phone) || !preg_match("/^\d{10}$/", $phone)) {
+    if (empty($phone) || !preg_match("/^\d{11}$/", $phone)) {
         $errors[] = "Please enter a valid 10-digit phone number.";
     }
 
