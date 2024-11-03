@@ -503,47 +503,4 @@ session_start();
     }
 ?>
 </script>
-<script>
-document.querySelector('form').addEventListener('submit', function(event) {
-    // Get form inputs
-    const name = document.getElementById('contact-me-name').value;
-    const lastName = document.getElementById('contact-me-last-name').value;
-    const email = document.getElementById('contact-me-email').value;
-    const phone = document.getElementById('contact-me-phone').value;
-    const message = document.getElementById('contact-me-message').value;
-
-    // Validation: Basic checks
-    const nameRegex = /^[a-zA-Z\s]{1,50}$/; // Allow letters and spaces, max 50 chars
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
-    const phoneRegex = /^[0-9\s-]{10,15}$/; // Allow digits, spaces, and hyphens, between 10-15 chars
-
-    if (!nameRegex.test(name) || !nameRegex.test(lastName)) {
-        alert('Please enter a valid name and last name.');
-        event.preventDefault();
-        return;
-    }
-
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
-        event.preventDefault();
-        return;
-    }
-
-    if (!phoneRegex.test(phone)) {
-        alert('Please enter a valid phone number.');
-        event.preventDefault();
-        return;
-    }
-
-    // Sanitize message
-    const sanitizedMessage = sanitizeInput(message);
-    document.getElementById('contact-me-message').value = sanitizedMessage;
-});
-
-function sanitizeInput(input) {
-    const element = document.createElement('div');
-    element.innerText = input; // Escapes HTML
-    return element.innerHTML; // Returns sanitized HTML
-}
-</script>
 

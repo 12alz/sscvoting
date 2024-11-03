@@ -1,49 +1,45 @@
 <?php
-
 include "includes/conn.php";
 require("PHPMailer/src/PHPMailer.php");
 require("PHPMailer/src/SMTP.php");
 require("PHPMailer/src/Exception.php");
 session_start();
 
+$errors = [];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Start session for feedback messages
- 
+    // Sanitize and validate input
+    $name = trim($_POST['name']);
+    $lastName = trim($_POST['last-name']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $message = trim($_POST['message']);
 
-    // // Collect and sanitize form data
-    // $name = trim($_POST['name']);
-    // $lastName = trim($_POST['last-name']);
-    // $email = trim($_POST['email']);
-    // $phone = trim($_POST['phone']);
-    // $message = trim($_POST['message']);
+    // Validate name
+    if (empty($name) || !preg_match("/^[a-zA-Z\s]+$/", $name)) {
+        $errors[] = "Please enter a valid first name.";
+    }
 
-    // // Validate form data
-    // $errors = [];
+    // Validate last name
+    if (empty($lastName) || !preg_match("/^[a-zA-Z\s]+$/", $lastName)) {
+        $errors[] = "Please enter a valid last name.";
+    }
 
-    // // Name validation
-    // if (empty($name) || !preg_match("/^[a-zA-Z\s]{1,50}$/", $name)) {
-    //     $errors[] = "First name is required and should only contain letters.";
-    // }
-    
-    // // Last name validation
-    // if (empty($lastName) || !preg_match("/^[a-zA-Z\s]{1,50}$/", $lastName)) {
-    //     $errors[] = "Last name is required and should only contain letters.";
-    // }
-    
-    // // Email validation
-    // if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    //     $errors[] = "Valid email is required.";
-    // }
-    
-    // // Phone validation
-    // if (empty($phone) || !preg_match("/^[0-9\s-]{10,15}$/", $phone)) {
-    //     $errors[] = "Phone must be numeric and can include spaces or hyphens.";
-    // }
-    
-    // // Message validation
-    // if (empty($message)) {
-    //     $errors[] = "Message is required.";
-    // }
+    // Validate email
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Please enter a valid email address.";
+    }
+
+    // Validate phone (10-digit numeric)
+    if (empty($phone) || !preg_match("/^\d{10}$/", $phone)) {
+        $errors[] = "Please enter a valid 10-digit phone number.";
+    }
+
+    // Validate message
+    if (empty($message) || strlen($message) < 10) {
+        $errors[] = "Message must be at least 10 characters.";
+    }
+
     // If there are no errors, proceed to send the email
     if (empty($errors)) {
         // Sanitize output to prevent XSS
@@ -75,7 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>Hi $name $lastName,</p>
             <p>Thank you for reaching out to us! We appreciate your message and will get back to you as soon as possible.</p>
             <p>This message has been received by the Suprime Student Council team.</p>
-           
             <p>We look forward to connecting with you!</p>
             <p>Sincerely,</p>
             <p>Suprime Student Council</p>
@@ -89,18 +84,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Initialize PHPMailer for council notification
         $mailCouncil = new PHPMailer\PHPMailer\PHPMailer();
         $mailCouncil->isSMTP();
-        $mailCouncil->SMTPDebug = 0; // Set to 0 for no debug output
+        $mailCouncil->SMTPDebug = 0; 
         $mailCouncil->Host = 'smtp.gmail.com';
         $mailCouncil->Port = 587;
         $mailCouncil->SMTPSecure = 'tls';
         $mailCouncil->SMTPAuth = true;
-        $mailCouncil->Username = "santillanbsit@gmail.com"; // Your email
-        $mailCouncil->Password = "svlwwvxfgrbtxqum"; // Your email password
+        $mailCouncil->Username = "santillanbsit@gmail.com";
+        $mailCouncil->Password = "svlwwvxfgrbtxqum";
 
         // Notify the Suprime Student Council
-        $councilEmail = "villaceranjerson55@gmail.com"; // Replace with the actual email address of the council
+        $councilEmail = "villaceranjerson55@gmail.com";
         $mailCouncil->setFrom('santillanbsit@gmail.com', 'Suprime Student Council');
-        $mailCouncil->addAddress($councilEmail); // Council's email address
+        $mailCouncil->addAddress($councilEmail);
         $mailCouncil->isHTML(true);
         
         // Email for the council notification
@@ -132,6 +127,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: ../contacts.php");
     exit();
 } else {
-   
+    // Handle non-POST requests if needed
 }
 ?>
