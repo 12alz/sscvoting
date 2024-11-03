@@ -216,7 +216,7 @@ $conn->close();
             <div class="form-wrap">
             <label>
                 <input type="checkbox" name="terms" required>
-                I agree to the terms of use and <a href="privacy-policy.php" target="_blank">Privacy policy</a>
+                I agree to the terms of use and <a href="privacy-policy.php" target="_blank">Privacy Policy</a>
             </label>
         </div>
             
