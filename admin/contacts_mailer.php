@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Display errors
         $_SESSION['message'] = ''; // Reset previous messages
         foreach ($errors as $error) {
-            $_SESSION['message'] .= "Error: $error";
+            $_SESSION['message'] .= "<br>$error";
         }
     }
 
