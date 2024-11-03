@@ -217,10 +217,10 @@
               <h2 class="fw-bold">Get in Touch</h2>
               <hr class="divider bg-madison divider-lg-0">
               <div class="offset-top-30 offset-md-top-60">
-                <p>You can contact us any way that is convenient for you. We are available 24/7 messenger or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
+                <p>You can contact us any way that is convenient for you. We are available 24/7 via messenger or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
               </div>
               <div class="offset-top-30">
-                <form class="rd-mailform text-start" data-form-output="form-output-global" data-form-type="contact" method="post" action="http://livedemo00.template-help.com/wt_59029_v3/bat/rd-mailform.php">
+              <form action="admin/contacts_mailer.php" method="POST">
                   <div class="row row-12">
                     <div class="col-xl-6">
                       <div class="form-wrap">
@@ -264,7 +264,7 @@
                 <h6 class="fw-bold">Socials</h6>
                 <div class="hr bg-gray-light offset-top-10"></div>
                 <ul class="list-inline list-inline-xs list-inline-madison">
-                  <li><a class="icon novi-icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/madridejoscollege"></a></li>
                   <li><a class="icon novi-icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon novi-icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon novi-icon icon-xxs fa fa-instagram icon-circle icon-gray-light-filled" href="#"></a></li>
@@ -471,3 +471,31 @@
               </script>
 
 </html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
+<!-- SweetAlert JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script>
+<?php
+    // Check if there's a session message to display
+    if (isset($_SESSION['message'])) {
+        $message = addslashes($_SESSION['message']);
+        if (strpos($message, 'Messages sent successfully! Please check your email') !== false) {
+            echo "swal({
+                title: 'Notification',
+                text: '$message',
+                icon: 'info',
+                button: 'OK'
+            });";
+        } else {
+            echo "swal({
+                title: 'Notification',
+                text: '$message',
+                icon: 'error',
+                button: 'OK'
+            });";
+        }
+        unset($_SESSION['message']);
+    }
+?>
+</script>
