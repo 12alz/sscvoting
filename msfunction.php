@@ -221,6 +221,9 @@ $conn->close();
         </div>
             
             <button class="btn button-primary" type="submit" name="add">Register</button>
+            <p style="text-align: center; color: #777; font-size: 12px; margin-top: 10px;">
+                This site is protected by CAPTCHA.
+            </p>
         </form>
         <div class="login-link">
             <p>Have an account? <a href="sign_in.php">Login here</a></p>
