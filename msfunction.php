@@ -213,6 +213,12 @@ $conn->close();
                 <label for="photo">Photo</label>
                 <input type="file" name="photo" accept=".jpg, .jpeg, .png">
             </div>
+            <div class="form-wrap">
+            <label>
+                <input type="checkbox" name="terms" required>
+                I agree to the <a href="terms_conditions.php" target="_blank">terms and conditions</a>
+            </label>
+        </div>
             
             <button class="btn button-primary" type="submit" name="add">Register</button>
         </form>
