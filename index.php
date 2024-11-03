@@ -170,7 +170,7 @@ header("Pragma: no-cache");
                     </ul>
                     <!--RD Navbar Mobile Search-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
-                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="" method="GET">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="" method="POST">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-mobile-search-form-input">Search...</label>
                           <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-mobile-search-form-input" type="text" name="s" autocomplete="off"/>
@@ -182,7 +182,7 @@ header("Pragma: no-cache");
                   <div>
                     <!--RD Navbar Search-->
                     <div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
-                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="" data-search-live="rd-search-results-live" method="GET">
+                      <form class="rd-navbar-search-form search-form-icon-right rd-search" action="" data-search-live="rd-search-results-live" method="POST">
                         <div class="form-wrap">
                           <label class="form-label" for="rd-navbar-search-form-input">Search</label>
                           <input class="rd-navbar-search-form-input form-input form-input-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off"/>
