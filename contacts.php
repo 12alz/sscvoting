@@ -493,7 +493,7 @@ session_start();
             });";
         } else {
             echo "swal({
-                title: 'Notification',
+                title: 'Error',
                 text: '$message',
                 icon: 'error',
                 button: 'OK'
