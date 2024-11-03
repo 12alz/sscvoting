@@ -21,38 +21,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
     // Name validation
-    // Name validation
-if (empty($name) || !preg_match("/^[a-zA-Z\s]{1,50}$/", $name)) {
-    $errors[] = "Please enter a valid first name (letters only, max 50 characters).";
-}
-
-// Last name validation
-if (empty($lastName) || !preg_match("/^[a-zA-Z\s]{1,50}$/", $lastName)) {
-    $errors[] = "Please enter a valid last name (letters only, max 50 characters).";
-}
-
-// Email validation
-if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = "Please provide a valid email address.";
-}
-
-// Phone validation
-if (empty($phone) || !preg_match("/^[0-9\s-]{10,15}$/", $phone)) {
-    $errors[] = "Phone number must be numeric and may include spaces or hyphens (10-15 characters).";
-}
-
-// Message validation
-if (empty($message)) {
-    $errors[] = "Please enter a message before submitting.";
-}
-
-// If there are errors, set the session message and redirect
-if (!empty($errors)) {
-    $_SESSION['message'] = implode("<br>", $errors); // Combine errors into a single message
-    header("Location: ../contacts.php");
-    exit();
-}
-
+    if (empty($name) || !preg_match("/^[a-zA-Z\s]{1,50}$/", $name)) {
+        $errors[] = "First name is required and should only contain letters.";
+    }
+    
+    // Last name validation
+    if (empty($lastName) || !preg_match("/^[a-zA-Z\s]{1,50}$/", $lastName)) {
+        $errors[] = "Last name is required and should only contain letters.";
+    }
+    
+    // Email validation
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Valid email is required.";
+    }
+    
+    // Phone validation
+    if (empty($phone) || !preg_match("/^[0-9\s-]{10,15}$/", $phone)) {
+        $errors[] = "Phone must be numeric and can include spaces or hyphens.";
+    }
+    
+    // Message validation
+    if (empty($message)) {
+        $errors[] = "Message is required.";
+    }
     // If there are no errors, proceed to send the email
     if (empty($errors)) {
         // Sanitize output to prevent XSS
