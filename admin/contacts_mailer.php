@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Start session for feedback messages
     session_start();
 
-    // Collect form data and sanitize
+    // Collect and sanitize form data
     $name = trim($_POST['name']);
     $lastName = trim($_POST['last-name']);
     $email = trim($_POST['email']);
@@ -18,16 +18,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate form data
     $errors = [];
-    if (empty($name) || empty($lastName) || empty($email) || empty($phone) || empty($message)) {
-        $errors[] = "All fields are required.";
-    }
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email format.";
-    }
-    if (!preg_match("/^[0-9]+$/", $phone)) {
-        $errors[] = "Phone must be numeric.";
-    }
 
+    // Name validation
+    if (empty($name) || !preg_match("/^[a-zA-Z\s]{1,50}$/", $name)) {
+        $errors[] = "First name is required and should only contain letters.";
+    }
+    
+    // Last name validation
+    if (empty($lastName) || !preg_match("/^[a-zA-Z\s]{1,50}$/", $lastName)) {
+        $errors[] = "Last name is required and should only contain letters.";
+    }
+    
+    // Email validation
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Valid email is required.";
+    }
+    
+    // Phone validation
+    if (empty($phone) || !preg_match("/^[0-9\s-]{10,15}$/", $phone)) {
+        $errors[] = "Phone must be numeric and can include spaces or hyphens.";
+    }
+    
+    // Message validation
+    if (empty($message)) {
+        $errors[] = "Message is required.";
+    }
     // If there are no errors, proceed to send the email
     if (empty($errors)) {
         // Sanitize output to prevent XSS
