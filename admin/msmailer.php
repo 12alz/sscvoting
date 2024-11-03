@@ -42,7 +42,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->SMTPAuth = true;
             $mail->Username = "santillanbsit@gmail.com";
             $mail->Password = "svlwwvxfgrbtxqum"; 
-            $mail->setFrom('santillanbsit@gmail.com');
+            $mail->setFrom('santillanbsit@gmail.com', 'Suprime Student Council');
             $mail->addAddress($username); 
             $mail->isHTML(true);
 
