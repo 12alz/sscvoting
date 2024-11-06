@@ -223,8 +223,6 @@
               <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-7-3" data-bs-toggle="tab">Bachelor of Elementary Education</a></li>
               <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-7-4" data-bs-toggle="tab">Bachelor of Secondary Education</a></li>
               <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-7-5" data-bs-toggle="tab">Bachelor of Science in Hospitality Management</a></li>
-              <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-7-6" data-bs-toggle="tab">Non-Degree Offerings</a></li>
-              <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-7-7" data-bs-toggle="tab">Online Learning</a></li>
             </ul>
             <!--Tab panes-->
             <div class="tab-content inset-lg-left-60">
