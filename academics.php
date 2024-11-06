@@ -411,16 +411,14 @@
                   <li>
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713
-                      </a>
+                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713</a>
                       </div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">2Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines
-                      </a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a></div>
                     </div>
                   </li>
                   <li class="offset-top-15">
@@ -440,20 +438,6 @@
                 </ul>
               </div>
             </div>
-            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
-              <h6 class="fw-bold">Newsletter</h6>
-              <div class="text-subline"></div>
-              <div class="offset-top-30 text-start">
-                <p>Enter your email address to get the latest University news, special events and student activities delivered right to your inbox.</p>
-              </div>
-              <div class="offset-top-10">
-                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="http://livedemo00.template-help.com/wt_59029_v3/bat/rd-mailform.php">
-                  <div class="form-wrap">
-                    <div class="input-group input-group-sm">
-                      <input class="form-input" placeholder="Your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
-                        <button class="btn btn-sm button-primary" type="submit">Subscribe</button></span>
-                    </div>
-                  </div>
                 </form>
               </div>
             </div>
@@ -461,7 +445,7 @@
         </div>
         <div class="bg-madison context-dark">
           <div class="container text-lg-start section-5">
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a></p>
+          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved Terms of Use</span><span>.&nbsp;</span><a class="text-dark" href="privacy-policy.php">Privacy Policy</a></p>
           </div>
         </div>
       </footer>
