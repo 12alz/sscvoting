@@ -249,14 +249,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4">
                       <ul class="list list-unstyled list-marked">
-                        <li>Physics</li>
-                        <li>Political Science</li>
-                        <li>Portuguese</li>
-                        <li>Psychology</li>
-                        <li>Religious Studies</li>
-                        <li>Sociology</li>
-                        <li>Spanish</li>
-                        <li>Statistics</li>
+                       
                       </ul>
                     </div>
                   </div>
