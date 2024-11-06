@@ -232,7 +232,7 @@
                 <div class="offset-lg-top-60">
                   <p>The BS Information Techonology program includes the study of the ultilization both hardware and software technologies involving planning, installing, customizing, operating, managing and administering, and maintaining information technology infrastructure that provides computing solutions to address the needs of an organization.</p>
                 </div>
-                <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/academics-01-770x480.jpg" width="770" height="480" alt=""></div>
+                <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/it.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
                 
                     </div>
