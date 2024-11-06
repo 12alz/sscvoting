@@ -335,7 +335,7 @@
                 <div class="hr divider bg-madison divider-md-0"></div>
                 <div class="offset-lg-top-60"><img class="img-responsive d-inline-block" src="images/hm.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
-                
+                  <p>The program related to the fields pf Hospitality and tourism education will equip students with competencies that are needed to execute operational tasks and management functions in food production (culinary), accommodation, food and beverage service, tourism, planing and product development, events planning, transportation services, travel and tour operations and other emerging sectors of hospitality and toursim industry.</p>
                 </div>
                 <div class="offset-top-30"><a class="btn button-primary" href="#">Choose a Program</a></div>
               </div>
@@ -343,36 +343,43 @@
                 <h2 class="fw-bold">Non-Degree Offerings</h2>
                 <div class="hr divider bg-madison divider-md-0"></div>
                 <div class="offset-lg-top-60">
-                
+                  <p>You don't have to be a Jonathan Carroll University student to have access to a JCU education.</p>
+                  <p>From online courses to on-campus experiences, there are a range of learning opportunities available for non-degree seekers.</p>
                 </div>
                 <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/hm.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
-                  <h6 class="fw-bold"></h6>
+                  <h6 class="fw-bold">Jonathan Carroll College</h6>
                   <div class="text-subline"></div>
                   <div class="offset-top-20">
-                   
+                    <p>Visit a class or take courses for credit without matriculating as a Jonathan Carroll University undergraduate.</p>
                   </div>
                 </div>
                 <div class="offset-top-30">
-                  <h6 class="fw-bold"></h6>
+                  <h6 class="fw-bold">Graduate & Professional Schools</h6>
                   <div class="text-subline"></div>
                   <div class="offset-top-20">
-                   
+                    <p>The schools of JCU offer non-degree programs ranging from research opportunities to continuing education.</p>
                   </div>
                 </div>
               </div>
               <div class="tab-pane fade" id="tabs-7-7">
-                <h2 class="fw-bold"></h2>
+                <h2 class="fw-bold">Online Learning</h2>
                 <div class="hr divider bg-madison divider-md-0"></div>
-               
+                <div class="offset-lg-top-60">
+                  <p>We explore online learning for a wide and global audience: from lifelong learners seeking to improve knowledge skills, to undergraduate and graduate students looking to supplement their current classes or take a class online for college credit, a certificate or a degree.</p>
                 </div>
                 <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/academics-07-770x480.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
-                  <h6 class="fw-bold"></h6>
+                  <h6 class="fw-bold">Programs List</h6>
                   <div class="text-subline"></div>
                   <div class="offset-top-20">
                     <ul class="list list-unstyled list-marked">
-                   
+                      <li>Introduction to Psychology</li>
+                      <li>Mental Lives of Babies and Animals</li>
+                      <li>Causes and Consequences of Corruption</li>
+                      <li>Capital Punishment: Race, Poverty, & Disadvantage</li>
+                      <li>Moral Foundations of Politics</li>
+                      <li>Introduction to Classical Music</li>
                     </ul>
                   </div>
                 </div>
@@ -404,14 +411,16 @@
                   <li>
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713</a>
+                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713
+                      </a>
                       </div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">2Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines
+                      </a></div>
                     </div>
                   </li>
                   <li class="offset-top-15">
@@ -431,6 +440,20 @@
                 </ul>
               </div>
             </div>
+            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
+              <h6 class="fw-bold">Newsletter</h6>
+              <div class="text-subline"></div>
+              <div class="offset-top-30 text-start">
+                <p>Enter your email address to get the latest University news, special events and student activities delivered right to your inbox.</p>
+              </div>
+              <div class="offset-top-10">
+                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="http://livedemo00.template-help.com/wt_59029_v3/bat/rd-mailform.php">
+                  <div class="form-wrap">
+                    <div class="input-group input-group-sm">
+                      <input class="form-input" placeholder="Your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
+                        <button class="btn btn-sm button-primary" type="submit">Subscribe</button></span>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
