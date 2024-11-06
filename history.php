@@ -255,11 +255,11 @@
               <h2 class="fw-bold">A Singular Focus</h2>
               <hr class="divider bg-madison divider-md-0">
               <div class="offset-top-30 offset-sm-top-60">
-                <p>President Smith articulated his hope and vision for the JCU at the first faculty meeting in 1888: "The question before us is how to become one in spirit, not necessarily in opinion."</p>
+                <p>What is Lorem Ipsum?"</p>
               </div>
-              <p>The University's commitment to answering that question - and many others - continues to guide it today.</p>
-              <p>As President Smith said in his inaugural address, "If we take ourselves back to the University in its early years, we would find many major differences from what we observe today. . . . And yet, many of us connected to the University feel that we might just as easily have been there - that going back to the University in its early days, or in fact at any time since its inception, we would know unmistakably that we were at the Jonathan Carroll University.</p>
-              <p>Why is this? The Jonathan Carroll University, from its very inception, has been driven by a singular focus on inquiry - with a firm belief in the value of open, rigorous, and intense inquiry and a common understanding that this must be the defining feature of this university. Everything about the Jonathan Carroll University that we recognize as distinctive flows from this commitment."</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <!-- <p>As President Smith said in his inaugural address, "If we take ourselves back to the University in its early years, we would find many major differences from what we observe today. . . . And yet, many of us connected to the University feel that we might just as easily have been there - that going back to the University in its early days, or in fact at any time since its inception, we would know unmistakably that we were at the Jonathan Carroll University.</p>
+              <p>Why is this? The Jonathan Carroll University, from its very inception, has been driven by a singular focus on inquiry - with a firm belief in the value of open, rigorous, and intense inquiry and a common understanding that this must be the defining feature of this university. Everything about the Jonathan Carroll University that we recognize as distinctive flows from this commitment."</p> -->
             </div>
           </div>
         </div>
