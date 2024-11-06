@@ -256,30 +256,18 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="tabs-7-2">
-                <h2 class="fw-bold">Graduate & Professional Study</h2>
+                <h2 class="fw-bold">Bachelor of Science in Business Administration</h2>
                 <div class="hr divider bg-madison divider-md-0"></div>
                 <div class="offset-lg-top-60">
-                  <p>Jonathan Carroll University offers advanced degrees through its Graduate School of Arts & Sciences and 12 professional schools. Browse the organizations below for information on programs of study, academic requirements, and faculty research.</p>
+                  <p>The Business Administration program utilizes an intergranted approach to study the interrelationships among the different functional areas of business and examine how the effective orchestration of these different components of business operations can lead to organizational success.</p>
                 </div>
-                <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/academics-02-770x480.jpg" width="770" height="480" alt=""></div>
+                <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/bsba.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
-                  <h6 class="fw-bold">Schools List</h6>
-                  <div class="text-subline"></div>
+                  <h6 class="fw-bold"></h6>
+                  
                   <div class="offset-top-20">
                     <ul class="list list-unstyled list-marked">
-                      <li>Graduate School of Arts & Sciences</li>
-                      <li>School of Architecture</li>
-                      <li>School of Art</li>
-                      <li>Divinity School</li>
-                      <li>School of Drama</li>
-                      <li>School of Engineering & Applied Science</li>
-                      <li>School of Forestry & Environmental Studies</li>
-                      <li>Law School</li>
-                      <li>School of Management</li>
-                      <li>School of Medicine</li>
-                      <li>School of Music</li>
-                      <li>School of Nursing</li>
-                      <li>School of Public Health</li>
+                     
                     </ul>
                   </div>
                 </div>
