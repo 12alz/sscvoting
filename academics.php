@@ -70,7 +70,7 @@
                     <div class="rd-navbar-top-panel-left-part">
                       <div class="unit flex-row align-items-center unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
-                        <div class="unit-body"><a href="login-register.html">Login/Register</a></div>
+                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
                       </div>
                     </div>
                   </div>
@@ -83,15 +83,15 @@
                       <div class="unit-left"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                       </div>
                       <div class="unit-body">
-                        <div class="rd-navbar-brand-title">Jonathan Carroll</div>
-                        <div class="rd-navbar-brand-slogan">University</div>
+                        <div class="rd-navbar-brand-title">Madridejos</div>
+                        <div class="rd-navbar-brand-slogan">Community College</div>
                       </div>
                     </div></a></div>
                 <div class="rd-navbar-nav-wrap">
                   <div class="rd-navbar-mobile-scroll">
                     <div class="rd-navbar-mobile-header-wrap">
                       <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="index-2.html"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
+                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
@@ -204,7 +204,7 @@
           <h1>Programs</h1>
           <div class="offset-top-10 offset-md-top-35">
             <ul class="list-inline list-inline-lg list-inline-dashed p">
-              <li><a href="index-2.html">Home</a></li>
+              <li><a href="index.php">Home</a></li>
               <li><a href="#">Pages</a></li>
               <li>Programs
               </li>
@@ -451,12 +451,12 @@
         <div class="container section-xs block-after-divider">
           <div class="row row-50 justify-content-xl-between justify-content-sm-center">
             <div class="col-lg-3 col-xl-2">
-              <!--Footer brand--><a class="d-inline-block" href="index-2.html"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
+              <!--Footer brand--><a class="d-inline-block" href="index.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                 <div>
-                  <h6 class="barnd-name fw-bold offset-top-25">Jonathan Carroll</h6>
+                  <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
                 </div>
                 <div>
-                  <p class="brand-slogan text-gray fst-italic font-accent">University</p>
+                  <p class="brand-slogan text-gray fst-italic font-accent">Community College</p>
                 </div></a>
             </div>
             <div class="col-sm-10 col-lg-5 col-xl-4 text-xl-start">
@@ -467,27 +467,29 @@
                   <li>
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">1-800-6547-321</a>
+                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713
+                      </a>
                       </div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">2Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines
+                      </a></div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                      <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
                     </div>
                   </li>
                 </ul>
               </div>
               <div class="offset-top-15 text-start">
                 <ul class="list-inline list-inline-xs list-inline-madison">
-                  <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/madridejoscollege"></a></li>
                   <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-instagram icon-circle icon-gray-light-filled" href="#"></a></li>
