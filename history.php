@@ -220,9 +220,9 @@
             <div class="col-md-4 order-md-2 text-md-start">
               <div class="inset-md-left-30"><img class="img-responsive d-inline-block img-rounded" src="images/users/user-christopher-smith-340x300.jpg" width="340" height="300" alt="">
                 <div class="offset-top-20">
-                  <h6 class="text-primary fw-bold">Christopher Smith</h6>
+                  <h6 class="text-primary fw-bold">Lorem Ipsum</h6>
                 </div>
-                <p>First president of the Jonathan Carroll University, served from 1876 to 1897.</p>
+                <p>First president of the School, served from 1876 to 1897.</p>
               </div>
             </div>
             <div class="col-md-8 order-md-1 text-md-start">
