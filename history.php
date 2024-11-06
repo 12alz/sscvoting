@@ -226,13 +226,13 @@
               </div>
             </div>
             <div class="col-md-8 order-md-1 text-md-start">
-              <h2 class="fw-bold">A Meeting of Minds</h2>
+              <h2 class="fw-bold">A Legacy of Learning , A future Difined by You </h2>
               <hr class="divider bg-madison divider-md-0">
               <div class="offset-top-30 offset-sm-top-60">
-                <p>The original board of trustees laid the groundwork for what would become today's Jonathan Carroll University on July 9, 1876, when the group gathered to hold the University's inaugural board meeting and drafted the University's articles of incorporation. This guiding document outlined elements the founders believed would build an enduring legacy for the University: a commitment to offering a rigorous academic program and an ambition to provide "opportunities for all departments of higher education to persons of both sexes on equal terms." On September 10, 1876, the State of California issued the University's official certificate of incorporation, marking the formal beginning of the University's life.</p>
+                <p>Madridejos Community College stands as a beacon of knowledge, with a storied history that dates back over fifty years. Founded with the mission to provide accessible, high-quality education, we have grown alongside our community, evolving with the changing educational needs and aspirations of our students. </p>
               </div>
-              <p>An initial pledge of $600,000 (roughly $16 million in today's currency) from oil magnate Jonathan Carroll, along with contributions by the American Baptist Education Society, helped to found the University. The University's land was donated by Marshall Field, owner of the historic Chicago department store that bore his name.</p>
-              <p>Christopher Smith, the University's first president, envisioned a university that was "bran splinter new, yet as solid as the ancient hills" - a modern research university, combining an English-style undergraduate college and a German-style graduate research institute. The Jonathan Carroll University fulfilled Christopher's dream, quickly becoming a national leader in higher education and research: an institution of scholars unafraid to cross boundaries, share ideas, and ask difficult questions.</p>
+              <p>Today, we continue to build on our rich heritage, enriched by the diversity, creativity, and passion of students like you. Join us and become part of a continuing legacy, where your contributions shape the future of our college and the broader world.</p>
+           
             </div>
           </div>
         </div>
@@ -266,7 +266,7 @@
       </section>
       <!-- Page Footer-->
       <!-- Corporate footer-->
-      footer class="page-footer">
+      <footer class="page-footer">
         <div class="hr bg-gray-light"></div>
         <div class="container section-xs block-after-divider">
           <div class="row row-50 justify-content-xl-between justify-content-sm-center">
