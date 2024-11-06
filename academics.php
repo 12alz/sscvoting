@@ -333,7 +333,7 @@
               <div class="tab-pane fade" id="tabs-7-5">
                 <h2 class="fw-bold">Bachelor of Science in Hospitality Managemen</h2>
                 <div class="hr divider bg-madison divider-md-0"></div>
-                <div class="offset-lg-top-60"><img class="img-responsive d-inline-block" src="images/academics-05-770x480.jpg" width="770" height="480" alt=""></div>
+                <div class="offset-lg-top-60"><img class="img-responsive d-inline-block" src="images/hm.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
                   <p>The program related to the fields pf Hospitality and tourism education will equip students with competencies that are needed to execute operational tasks and management functions in food production (culinary), accommodation, food and beverage service, tourism, planing and product development, events planning, transportation services, travel and tour operations and other emerging sectors of hospitality and toursim industry.</p>
                 </div>
