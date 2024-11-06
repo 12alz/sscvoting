@@ -127,7 +127,7 @@ header("Pragma: no-cache");
                               <li>
                                 <h6>Programs</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="academics.html">Academics</a></li>
+                                  <li><a href="academics.php">Academics</a></li>
                                 </ul>
                               </li>
                             </ul>
