@@ -273,62 +273,41 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="tabs-7-3">
-                <h2 class="fw-bold">Departments & Programs</h2>
+                <h2 class="fw-bold">Bachelor of Elementary Education</h2>
                 <div class="hr divider bg-madison divider-md-0"></div>
                 <div class="offset-lg-top-60">
-                  <p>The following is a list of our degree-granting academic departments and programs.</p>
+                  <p>The Bachelor of Elementary Education is an undergraduate teacher education program design ro prepare individuals intending to teach in elementary level. The BEED degree program aims to develop highly individual and competent teacher specializing in the content and pedagogy for elementary education.</p>
                 </div>
-                <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/academics-03-770x480.jpg" width="770" height="480" alt=""></div>
+                <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/education.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
-                  <h6 class="fw-bold">Programs of Study</h6>
-                  <div class="text-subline"></div>
+                  <h6 class="fw-bold"></h6>
+                  
                   <div class="row row-10 offset-top-20">
                     <div class="col-md-6 col-lg-4">
                       <ul class="list list-unstyled list-marked">
-                        <li>African American Studies</li>
-                        <li>African Studies</li>
-                        <li>American Studies</li>
-                        <li>Anthropology</li>
-                        <li>Applied Mathematics</li>
-                        <li>Architecture</li>
-                        <li>Art</li>
-                        <li>Astronomy</li>
+                      
                       </ul>
                     </div>
                     <div class="col-md-6 col-lg-4">
                       <ul class="list list-unstyled list-marked">
-                        <li>Biomedical Engineering</li>
-                        <li>Chemical Engineering</li>
-                        <li>Chemistry</li>
-                        <li>Computer Science</li>
-                        <li>East Asian Languages</li>
-                        <li>Ecology and Biology</li>
-                        <li>Economics</li>
-                        <li>Mathematics</li>
+                      
                       </ul>
                     </div>
                     <div class="col-md-6 col-lg-4">
                       <ul class="list list-unstyled list-marked">
-                        <li>Physics</li>
-                        <li>Political Science</li>
-                        <li>Portuguese</li>
-                        <li>Psychology</li>
-                        <li>Religious Studies</li>
-                        <li>Sociology</li>
-                        <li>Spanish</li>
-                        <li>Statistics</li>
+                      
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="tab-pane fade" id="tabs-7-4">
-                <h2 class="fw-bold">Global Education</h2>
+                <h2 class="fw-bold">Bachelor of Secondary Education</h2>
                 <div class="hr divider bg-madison divider-md-0"></div>
                 <div class="offset-lg-top-60">
-                  <p>The Eric and Nicole Fisher Center for International and Area Studies at JCU is the University's focal point for encouraging and coordinating teaching and research on global affairs, regions, and cultures around the world. From science and engineering to arts and humanities, explore the many different ways in which faculty, students, and scholars at Jonathan Carroll undertake study, research and discussion about international and global issues.</p>
+                  <p>The Bachelor of Secondary Education is and undergraduate teacher education program designed to equip teachers learners with adequate and relevat competencies to teach in thier chosen are of specilization/major in the secondary level.</p>
                 </div>
-                <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/academics-04-770x480.jpg" width="770" height="480" alt=""></div>
+                <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/education.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
                   <h6 class="fw-bold">Centers & Initiatives</h6>
                   <div class="text-subline"></div>
