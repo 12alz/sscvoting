@@ -12,9 +12,9 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,700%7CMerriweather:400,300,300italic,400italic,700,700italic">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/fonts.css">
+    <link rel="stylesheet" href="dist/css/style.css">
   </head>
   <body>
     <div class="preloader"> 
@@ -46,20 +46,22 @@
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-phone align-middle"></span></div>
-                          <div class="unit-body"><a href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block" href="tel:#">1-800-6547-321</a>
+                          <div class="unit-body"><a href="tel:#"></a> <a class="d-block d-lg-inline-block" href="tel:#">63-948-3618-713 
+                          </a>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle"></span></div>
-                          <div class="unit-body"><a href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
+                          <div class="unit-body"><a href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines
+                          </a></div>
                         </div>
                       </li>
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-email-open align-middle"></span></div>
-                          <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                          <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
                         </div>
                       </li>
                     </ul>
@@ -68,7 +70,7 @@
                     <div class="rd-navbar-top-panel-left-part">
                       <div class="unit flex-row align-items-center unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
-                        <div class="unit-body"><a href="login-register.html">Login/Register</a></div>
+                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
                       </div>
                     </div>
                   </div>
@@ -89,7 +91,7 @@
                   <div class="rd-navbar-mobile-scroll">
                     <div class="rd-navbar-mobile-header-wrap">
                       <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="index-2.html"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
+                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
@@ -202,7 +204,7 @@
           <h1>History</h1>
           <div class="offset-top-10 offset-md-top-35">
             <ul class="list-inline list-inline-lg list-inline-dashed p">
-              <li><a href="index-2.html">Home</a></li>
+              <li><a href="index.php">Home</a></li>
               <li><a href="#">Pages</a></li>
               <li><a href="#">About</a></li>
               <li>History
@@ -264,17 +266,17 @@
       </section>
       <!-- Page Footer-->
       <!-- Corporate footer-->
-      <footer class="page-footer">
+      footer class="page-footer">
         <div class="hr bg-gray-light"></div>
         <div class="container section-xs block-after-divider">
           <div class="row row-50 justify-content-xl-between justify-content-sm-center">
             <div class="col-lg-3 col-xl-2">
-              <!--Footer brand--><a class="d-inline-block" href="index-2.html"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
+              <!--Footer brand--><a class="d-inline-block" href="index.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                 <div>
-                  <h6 class="barnd-name fw-bold offset-top-25">Jonathan Carroll</h6>
+                  <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
                 </div>
                 <div>
-                  <p class="brand-slogan text-gray fst-italic font-accent">University</p>
+                  <p class="brand-slogan text-gray fst-italic font-accent">Community College</p>
                 </div></a>
             </div>
             <div class="col-sm-10 col-lg-5 col-xl-4 text-xl-start">
@@ -285,47 +287,33 @@
                   <li>
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#">1-800-1234-567,</a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">1-800-6547-321</a>
+                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713</a>
                       </div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-map-marker align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body text-start"><a class="text-dark" href="#">2130 Fulton Street San Diego, CA 94117-1080 USA</a></div>
+                      <div class="unit-body text-start"><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines</a></div>
                     </div>
                   </li>
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                      <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
                     </div>
                   </li>
                 </ul>
               </div>
               <div class="offset-top-15 text-start">
                 <ul class="list-inline list-inline-xs list-inline-madison">
-                  <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/madridejoscollege"></a></li>
                   <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-instagram icon-circle icon-gray-light-filled" href="#"></a></li>
                 </ul>
               </div>
             </div>
-            <div class="col-sm-10 col-lg-8 col-xl-4 text-xl-start">
-              <h6 class="fw-bold">Newsletter</h6>
-              <div class="text-subline"></div>
-              <div class="offset-top-30 text-start">
-                <p>Enter your email address to get the latest University news, special events and student activities delivered right to your inbox.</p>
-              </div>
-              <div class="offset-top-10">
-                <form class="rd-mailform form-subscribe" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="http://livedemo00.template-help.com/wt_59029_v3/bat/rd-mailform.php">
-                  <div class="form-wrap">
-                    <div class="input-group input-group-sm">
-                      <input class="form-input" placeholder="Your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
-                        <button class="btn btn-sm button-primary" type="submit">Subscribe</button></span>
-                    </div>
-                  </div>
                 </form>
               </div>
             </div>
@@ -333,7 +321,7 @@
         </div>
         <div class="bg-madison context-dark">
           <div class="container text-lg-start section-5">
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a></p>
+          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved Terms of Use</span><span>.&nbsp;</span><a class="text-dark" href="privacy-policy.php">Privacy Policy</a></p>
           </div>
         </div>
       </footer>
@@ -341,7 +329,7 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Java script-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="dist/js/core.min.js"></script>
+    <script src="dist/js/script.js"></script>
   <!-- Google Tag Manager --><noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager --></body>
 </html>

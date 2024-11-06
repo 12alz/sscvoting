@@ -394,7 +394,7 @@ if(isset($_SESSION['voter'])){
               </div>
               <div class="offset-top-15 text-start">
                 <ul class="list-inline list-inline-xs list-inline-madison">
-                  <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/madridejoscollege"></a></li>
                   <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-instagram icon-circle icon-gray-light-filled" href="#"></a></li>
