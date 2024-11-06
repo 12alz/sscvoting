@@ -126,7 +126,7 @@
                               <li>
                                 <h6>Programs</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="academics.html">Academics</a></li>
+                                  <li><a href="academics.php">Academics</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -227,12 +227,10 @@
             <!--Tab panes-->
             <div class="tab-content inset-lg-left-60">
               <div class="tab-pane fade" id="tabs-7-1">
-                <h2 class="fw-bold">Undergraduate Study</h2>
+                <h2 class="fw-bold">Bachelor of Science in Infomation Technology</h2>
                 <div class="hr divider bg-madison divider-md-0"></div>
                 <div class="offset-lg-top-60">
-                  <p>At Jonathan Carroll, we view college as a time for students to explore, exercise curiosity, and discover new interests and abilities.</p>
-                  <p>We provide students with an immersive, collaborative, and inspiring environment where they can develop a broadly informed, highly disciplined intellect that will help them be successful in whatever work they finally choose.</p>
-                  <p>Our students graduate with the values and knowledge they need to pursue meaningful work, find passion in life-long learning, and lead successful and purposeful lives.</p>
+                  <p>The BS Information Techonology program includes the study of the ultilization both hardware and software technologies involving planning, installing, customizing, operating, managing and administering, and maintaining information technology infrastructure that provides computing solutions to address the needs of an organization.</p>
                 </div>
                 <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/academics-01-770x480.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
