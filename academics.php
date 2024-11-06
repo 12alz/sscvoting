@@ -309,24 +309,24 @@
                 </div>
                 <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/education.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
-                  <h6 class="fw-bold">Centers & Initiatives</h6>
-                  <div class="text-subline"></div>
+                  <h6 class="fw-bold"></h6>
+                
                   <div class="offset-top-20">
-                    <p>Discover academic and research centers and initiatives concentrating specifically on international topics including area studies, languages, law, science, arts and humanities and more.</p>
+                    
                   </div>
                 </div>
                 <div class="offset-top-30">
-                  <h6 class="fw-bold">Faculty Research & Activities</h6>
-                  <div class="text-subline"></div>
+                  <h6 class="fw-bold"></h6>
+                  
                   <div class="offset-top-20">
-                    <p>Access the database of the Jonathan Carroll University faculty's worldwide research interests and projects. Spanning academic disciplines, JCU faculty members are involved in joint research centers and projects from Chile and Brazil to China and Japan.</p>
+                  
                   </div>
                 </div>
                 <div class="offset-top-30">
-                  <h6 class="fw-bold">Library Collections</h6>
-                  <div class="text-subline"></div>
+                  <h6 class="fw-bold"></h6>
+                  
                   <div class="offset-top-20">
-                    <p>Search the international collections of the Jonathan Carroll University Library, one of the world's leading research libraries which includes around 10.2 million volumes and information in all media, ranging from ancient papyruses to early printed books to electronic databases.</p>
+                  
                   </div>
                 </div>
               </div>
