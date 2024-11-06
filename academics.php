@@ -234,7 +234,20 @@
                 </div>
                 <div class="offset-top-30"><img class="img-responsive d-inline-block" src="images/it.jpg" width="770" height="480" alt=""></div>
                 <div class="offset-top-30">
-                
+                  <h6 class="fw-bold">Programs of Study</h6>
+                  <div class="text-subline"></div>
+                  <div class="row row-10 offset-top-20">
+                    <div class="col-md-6 col-lg-4">
+                      <ul class="list list-unstyled list-marked">
+                        <li>African American Studies</li>
+                        <li>African Studies</li>
+                        <li>American Studies</li>
+                        <li>Anthropology</li>
+                        <li>Applied Mathematics</li>
+                        <li>Architecture</li>
+                        <li>Art</li>
+                        <li>Astronomy</li>
+                      </ul>
                     </div>
                     <div class="col-md-6 col-lg-4">
                       <ul class="list list-unstyled list-marked">
