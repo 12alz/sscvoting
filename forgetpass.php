@@ -166,7 +166,7 @@ session_start();
     </div>
     <script>
     <?php
-    // Check if there's a session message to display
+    // Check if there's a session message to displays
     if (isset($_SESSION['notify'])) {
         $message = addslashes($_SESSION['notify']);
         if (strpos($message, 'A reset link has been sent to your email') !== false) {
