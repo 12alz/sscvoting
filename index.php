@@ -168,7 +168,7 @@ header("Pragma: no-cache");
                       <li><a href="contacts.php">Contacts</a>
                       </li>
                     </ul>
-                    <!--RD Navbar Mobile Search-->
+                    <!--RD Navbar Mobile Searchs-->
                     <div class="rd-navbar-search-mobile" id="rd-navbar-search-mobile">
                       <form class="rd-navbar-search-form search-form-icon-right rd-search" action="" method="POST">
                         <div class="form-wrap">
