@@ -232,7 +232,6 @@ $conn->close();
 <?php endif; ?>
 
 <script>
-   
     document.getElementById('voters_id').addEventListener('input', function(e) {
         var value = e.target.value.replace(/\D/g, '');
         if (value.length > 8) {
@@ -257,13 +256,28 @@ $conn->close();
     function validateForm() {
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirm_password').value;
-
+        const fileInput = document.querySelector('input[name="photo"]');
+        const file = fileInput.files[0];
+        
         if (password !== confirmPassword) {
             alert("Passwords do not match.");
             return false;
         }
-        return true; 
+
+        if (file) {
+            const allowedExtensions = ['.jpg', '.jpeg', '.png'];
+            const fileName = file.name.toLowerCase();
+            const fileExtension = fileName.substring(fileName.lastIndexOf('.'));
+            
+            if (!allowedExtensions.includes(fileExtension)) {
+                alert("Only JPG, JPEG, and PNG files are allowed.");
+                return false;
+            }
+        }
+
+        return true;
     }
 </script>
+
 </body>
 </html>
