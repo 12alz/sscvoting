@@ -1,12 +1,12 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-<body class=" skin-red" style="background: rgba(60, 141, 188, 0.9);">
 <style>
   .table-responsve{
     overflow-x: auto;
   }
 </style>
+<body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
@@ -60,7 +60,7 @@
             <div class="box-header with-border">
                <a href="trash.php" class="btn"><i class="fa fa-archive"></i> archived</a>
             </div>
-            <div class="box-body">
+            <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered">
                 <thead>
                    <th>Student ID</th>
