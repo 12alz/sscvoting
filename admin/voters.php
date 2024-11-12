@@ -2,6 +2,11 @@
 <?php include 'includes/header.php'; ?>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <body class=" skin-red" style="background: rgba(60, 141, 188, 0.9);">
+<style>
+  .table-responsve{
+    overflow-x: auto;
+  }
+</style>
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
