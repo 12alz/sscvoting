@@ -3,6 +3,7 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
+  
 
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
