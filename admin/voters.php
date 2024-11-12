@@ -3,6 +3,11 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <body class=" skin-red" style="background: rgba(60, 141, 188, 0.9);">
 <div class="wrapper">
+<style>
+  .table-responsve{
+    overflow-x: auto;
+  }
+</style>
 
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
@@ -55,7 +60,7 @@
             <div class="box-header with-border">
                <a href="trash.php" class="btn"><i class="fa fa-archive"></i> archived</a>
             </div>
-            <div class="box-body">
+            <div class="box-body table-responsive">
               <table id="example1" class="table table-bordered">
                 <thead>
                    <th>Student ID</th>
