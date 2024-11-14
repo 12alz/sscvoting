@@ -11,7 +11,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) s-->
+    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>Student Voters List</h1>
       <ol class="breadcrumb">

@@ -9,7 +9,7 @@ header("Pragma: no-cache");
     <!-- Site Title-->
     <title>Home</title>
     <meta charset="utf-8">
-    <!-- <meta name="format-detection" content="telephone=no"> -->
+    <!-- <metaaa name="format-detection" content="telephone=no"> -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
