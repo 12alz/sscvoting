@@ -41,7 +41,7 @@ header("Pragma: no-cache");
               <div class="rd-navbar-panel">
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
-                <h4 class="panel-title d-lg-none">Home</h4>
+                <h4 class="panel-title d-lg-none">Hacked</h4>
                 <!-- RD Navbar Right Side Toggle-->
                 <button class="rd-navbar-top-panel-toggle d-lg-none" data-rd-navbar-toggle=".rd-navbar-top-panel"><span></span></button>
                 <div class="rd-navbar-top-panel">
