@@ -99,10 +99,10 @@
     </section>   
   </div>
     
-  <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/votes_modal.php'; ?>
+  <?php include 'includes/footer'; ?>
+  <?php include 'includes/votes_modal'; ?>
 </div>
-<?php include 'includes/scripts.php'; ?>
+<?php include 'includes/scripts'; ?>
 
 </body>
 </html>
