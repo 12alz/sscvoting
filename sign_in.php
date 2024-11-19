@@ -1,12 +1,12 @@
 <?php
 session_start();
 if(isset($_SESSION['admin'])){
-    header('location: admin/home.php');
+    header('location: admin/home');
     exit(); // Ensure no further execution after redirection
 }
 
 if(isset($_SESSION['voter'])){
-    header('location: home.php');
+    header('location: home');
     exit(); // Ensure no further execution after redirection
 }
 ?>
