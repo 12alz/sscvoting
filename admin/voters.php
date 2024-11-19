@@ -9,8 +9,8 @@
   }
 </style>
 
-  <?php include 'includes/navbar'; ?>
-  <?php include 'includes/menubar'; ?>
+  <?php include 'includes/navbar.php'; ?>
+  <?php include 'includes/menubar.php'; ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
 
@@ -23,7 +23,7 @@
         Student Voters List
       </h1>
       <ol class="breadcrumb">
-        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="home.php"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Student</li>
       </ol>
     </section>
