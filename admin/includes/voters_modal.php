@@ -8,7 +8,7 @@
               <h4 class="modal-title"><b>Add New Voter</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="voters_add" enctype="multipart/form-data">
+              <form class="form-horizontal" method="POST" action="voters_add.php" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="voters_id" class="col-sm-3 control-label">Student id</label>
 
@@ -135,7 +135,7 @@
               <h4 class="modal-title"><b>Are you sure want to remove?</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="voters_delete">
+              <form class="form-horizontal" method="POST" action="voters_delete.php">
                 <input type="hidden" class="id" name="id">
                 <div class="text-center">
                     <p>REMOVE VOTER</p>
