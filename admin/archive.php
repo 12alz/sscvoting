@@ -52,7 +52,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="votes.php" class="btn"><i class="fa fa-reply"></i> back</a>
+               <a href="votes" class="btn"><i class="fa fa-reply"></i> back</a>
                <a href="#arch" data-toggle="modal" class="btn"><i class="fa fa-undo"></i> Restore</a>
             </div>
             <div class="box-body">
