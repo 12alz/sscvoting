@@ -17,7 +17,7 @@
         Votes
       </h1>
       <ol class="breadcrumb">
-        <li><a href="home.php"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Votes</li>
       </ol>
     </section>
@@ -52,7 +52,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-               <a href="archive.php" class="btn"><i class="fa fa-archive"></i> archived</a>
+               <a href="archive" class="btn"><i class="fa fa-archive"></i> archived</a>
                <a href="#reset" data-toggle="modal" class="btn"><i class="fa fa-close"></i> Remove</a>
             </div>
             <div class="box-body">

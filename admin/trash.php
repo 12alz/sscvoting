@@ -17,7 +17,7 @@
         Archived Voters List
       </h1>
       <ol class="breadcrumb">
-        <li><a href="home.php"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Student</li>
       </ol>
     </section>

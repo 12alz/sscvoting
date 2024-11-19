@@ -84,7 +84,7 @@ if (isset($_POST["btn_forgotpass"])) {
     }
 
     
-    header("Location: ../forgot_password.php");
+    header("Location: ../forgot_password");
     exit();
 }
 
