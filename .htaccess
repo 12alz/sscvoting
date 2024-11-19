@@ -1,4 +1,8 @@
 Options -Indexes
+
+RewriteCond %{THE_REQUEST} ^GET\ /(.+)\.php\ HTTP
+RewriteRule /(.+)\.php$ /$1 [R=301,L]
+
 <IfModule mod_headers.c>
     Header set X-Frame-Options "DENY"
     Header set X-XSS-Protection "1; mode=block"
@@ -11,7 +15,4 @@ Options -Indexes
 	# RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
 	# RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
 	# RewriteRule .* index.php [F,L]
-
-    RewriteCond %{THE_REQUEST} ^GET\ /(.+)\.php\ HTTP
-    RewriteRule /(.+)\.php$ /$1 [R=301,L]
 </IfModule>
