@@ -1,16 +1,5 @@
-# Process all files as PHP by default
-DefaultType application/x-httpd-php
-# Fix sub-directory requests by allowing 'index' as a DirectoryIndex value
-DirectoryIndex index index.html
+RewriteEngine on
 
-# Force the domain to load with the www subdomain prefix
-# If the request doesn't start with www...
-RewriteCond %{HTTP_HOST}   !^www\.foobar\.com [NC]
-# And the site name isn't empty
-RewriteCond %{HTTP_HOST}   !^$
-# Finally rewrite the request: end of rules, don't escape the output, and force a 301 redirect
-RewriteRule ^/?(.*)         http://www.foobar.example/$1 [L,R,NE]
-
-#get rid of trailing slashes
-RewriteCond %{HTTP_HOST} ^(www.)?foobar\.com$ [NC]
-RewriteRule ^(.+)/$ http://%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^(.+)\.php$ /$1 [R,L]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*?)/?$ /$1.php [NC,END]
