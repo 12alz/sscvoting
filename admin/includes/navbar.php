@@ -38,7 +38,7 @@
                 $query = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_assoc($query)) {
                   echo '<li>
-                          <a href="../admin/voters.php?id=' . htmlspecialchars($row['voters_id']) . '">
+                          <a href="../admin/voters?id=' . htmlspecialchars($row['voters_id']) . '">
                             <i class="fa fa-users text-aqua"></i> ' . htmlspecialchars($row['firstname'] . ' ' . $row['lastname']) . '
                           </a>
                         </li>';
@@ -46,7 +46,7 @@
                 ?>
               </ul>
             </li>
-            <li class="footer"><a href="../admin/voters.php">View all</a></li>
+            <li class="footer"><a href="../admin/voters">View all</a></li>
           </ul>
         </li>
  
