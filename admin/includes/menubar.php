@@ -21,7 +21,7 @@
       <li class=""><a href="positions"><i class="fa fa-tasks"></i> <span>SSC Positions</span></a></li>
       <li class=""><a href="candidates"><i class="fa fa-black-tie"></i> <span>SSC Candidates</span></a></li>
       <li class=""><a href="msaccount"><i class="fa fa-folder"></i> <span>MS365 Accounts</span></a></li>
-      <li class=""><a href="add_newsp"><i class="fa fa-newspaper-o"></i> <span>Newsletter</span></a></li>
+      <li class=""><a href="add_news"><i class="fa fa-newspaper-o"></i> <span>Newsletter</span></a></li>
       <li class="header">SETTINGS</li>
       <li class="" > <a href="print."><span class="glyphicon glyphicon-print"></span> Print Result</a></span></li>
     </ul>
