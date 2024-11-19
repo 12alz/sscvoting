@@ -14,16 +14,16 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">REPORTS</li>
-      <li class=""><a href="home.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <li class=""><a href="votes.php"><span class="glyphicon glyphicon-lock"></span> <span>Votes</span></a></li>
+      <li class=""><a href="home"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <li class=""><a href="votesp"><span class="glyphicon glyphicon-lock"></span> <span>Votes</span></a></li>
       <li class="header">MANAGE</li>
-      <li class=""><a href="voters.php"><i class="fa fa-users"></i> <span>Student Voters</span></a></li>
-      <li class=""><a href="positions.php"><i class="fa fa-tasks"></i> <span>SSC Positions</span></a></li>
-      <li class=""><a href="candidates.php"><i class="fa fa-black-tie"></i> <span>SSC Candidates</span></a></li>
-      <li class=""><a href="msaccount.php"><i class="fa fa-folder"></i> <span>MS365 Accounts</span></a></li>
-      <li class=""><a href="add_news.php"><i class="fa fa-newspaper-o"></i> <span>Newsletter</span></a></li>
+      <li class=""><a href="votersp"><i class="fa fa-users"></i> <span>Student Voters</span></a></li>
+      <li class=""><a href="positions"><i class="fa fa-tasks"></i> <span>SSC Positions</span></a></li>
+      <li class=""><a href="candidates"><i class="fa fa-black-tie"></i> <span>SSC Candidates</span></a></li>
+      <li class=""><a href="msaccount"><i class="fa fa-folder"></i> <span>MS365 Accounts</span></a></li>
+      <li class=""><a href="add_newsp"><i class="fa fa-newspaper-o"></i> <span>Newsletter</span></a></li>
       <li class="header">SETTINGS</li>
-      <li class="" > <a href="print.php"><span class="glyphicon glyphicon-print"></span> Print Result</a></span></li>
+      <li class="" > <a href="print."><span class="glyphicon glyphicon-print"></span> Print Result</a></span></li>
     </ul>
   </section>
   <!-- /.sidebar -->

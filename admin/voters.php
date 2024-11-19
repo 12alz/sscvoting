@@ -9,8 +9,8 @@
   }
 </style>
 
-  <?php include 'includes/navbar.php'; ?>
-  <?php include 'includes/menubar.php'; ?>
+  <?php include 'includes/navbar'; ?>
+  <?php include 'includes/menubar'; ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
 
