@@ -22,7 +22,7 @@
        SSC Candidates List
       </h1>
       <ol class="breadcrumb">
-        <li><a href="home.php"home.php><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Candidates</li>
       </ol>
     </section>

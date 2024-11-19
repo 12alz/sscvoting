@@ -8,6 +8,6 @@
 		$_SESSION['error'] = "An error occured during the restored process.";
 	}
 
-	header('location: archive.php');
+	header('location: archive');
 
 ?>

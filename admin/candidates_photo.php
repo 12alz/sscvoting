@@ -30,5 +30,5 @@
 		$_SESSION['error'] = 'Select candidate to update photo first';
 	}
 
-	header('location: candidates.php');
+	header('location: candidates');
 ?>

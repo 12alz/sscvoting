@@ -33,5 +33,5 @@
 		$_SESSION['error'] = 'Fill up add form first';
 	}
 
-	header('location: candidates.php');
+	header('location: candidates');
 ?>
