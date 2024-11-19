@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['admin'])){
-    header('location: admin/home');
+    header('location: admin/home.php');
     exit(); // Ensure no further execution after redirection
 }
 

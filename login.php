@@ -30,6 +30,6 @@ if (isset($_POST['login'])) {
 } else {
     $_SESSION['error'] = 'Input voter credentials first';
 }
-header('Location: sign_in');
+header('Location: sign_in.php');
 exit;
 ?>
