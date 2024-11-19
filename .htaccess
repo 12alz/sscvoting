@@ -9,7 +9,13 @@ RewriteRule ^(.*)$ https://mccsscvoting.com/$1 [R=301,L]
 RewriteCond %{THE_REQUEST} ^GET\ /(.+)\.php\ HTTP
 RewriteRule /(.+)\.php$ /$1 [R=301,L]
 
-# Options -Indexes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php [L,QSA]
+
+
+Options -Indexes # disable directory listing
 
 # <IfModule mod_headers.c>
 #     Header set X-Frame-Options "DENY"
