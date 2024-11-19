@@ -9,6 +9,6 @@
 		$_SESSION['error'] = "Something went wrong in reseting";
 	}
 
-	header('location: archive.php');
+	header('location: archive');
 
 ?>

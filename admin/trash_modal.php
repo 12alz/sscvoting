@@ -8,7 +8,7 @@
               <h4 class="modal-title"><b>Are you sure you want to delete?</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="trash_delete.php">
+              <form class="form-horizontal" method="POST" action="trash_delete">
                 <input type="hidden" class="id" name="id">
                 <div class="text-center">
                     <p>Delete Voter</p>
@@ -34,7 +34,7 @@
               <h4 class="modal-title"><b>Are you sure you want to restore?</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="trash_restore.php">
+              <form class="form-horizontal" method="POST" action="trash_restore">
                 <input type="hidden" class="id" name="id">
                 <div class="text-center">
                     <p>Restore Voter</p>

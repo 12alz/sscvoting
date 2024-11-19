@@ -9,7 +9,7 @@ if (isset($_GET["reset"]) && isset($_GET["email"])) {
     // Validate email format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION["notify"] = "Invalid email format.";
-        header("Location: ../sign_in.php");
+        header("Location: ../sign_in");
         exit();
     }
     
@@ -22,7 +22,7 @@ if (isset($_GET["reset"]) && isset($_GET["email"])) {
     
     if ($result->num_rows === 0) {
         $_SESSION["notify"] = "Email not found.";
-        header("Location: ../sign_in.php");
+        header("Location: ../sign_in");
         exit();
     }
 }
@@ -91,7 +91,7 @@ if (isset($_GET["reset"]) && isset($_GET["email"])) {
 <body>
     <div class="reset-password-box">
         <h2 class="reset-password-title">Reset Password</h2>
-        <form action="../admin/user_mailer.php" method="POST">
+        <form action="../admin/user_mailer" method="POST">
             <div class="form-group has-feedback">
             <input type="hidden" name="email" value="<?= htmlspecialchars($email); ?>">
             </div>

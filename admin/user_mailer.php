@@ -15,7 +15,7 @@ if (isset($_POST["btn_forgotpass"])) {
     
     if (!$stmt) {
         $_SESSION["notify"] = "Database error: Unable to prepare statement.";
-        header("Location: ../forgot_password.php");
+        header("Location: ../forgot_password");
         exit();
     }
 
@@ -25,7 +25,7 @@ if (isset($_POST["btn_forgotpass"])) {
 
     if ($query->num_rows === 0) {
         $_SESSION["notify"] = "Email not found! Please contact the administrator to reset a password.";
-        header("Location: ../forgot_password.php");
+        header("Location: ../forgot_password");
         exit();
     }
 
@@ -71,7 +71,7 @@ if (isset($_POST["btn_forgotpass"])) {
         $mail->AddAddress($email);
         $mail->Subject = "Reset Password OTP";
         $mail->Body = "Use this OTP Code to reset your password: " . $reset_code . "<br/>" .
-                      "Click the link to reset password: https://mccsscvoting.com/admin/user_reset_pass.php?reset&email=" . urlencode($email);
+                      "Click the link to reset password: https://mccsscvoting.com/admin/user_reset_pass?reset&email=" . urlencode($email);
 
        
         if (!$mail->send()) {
@@ -100,7 +100,7 @@ if (isset($_POST["btn-new-password"])) {
     
     if (!$stmt) {
         $_SESSION["notify"] = "Database error: Unable to prepare statement.";
-        header("Location: ../sign_in.php");
+        header("Location: ../sign_in");
         exit();
     }
 
@@ -123,7 +123,7 @@ if (isset($_POST["btn-new-password"])) {
             
             if (!$stmt) {
                 $_SESSION['message'] = "Database error: Unable to prepare statement.";
-                header("Location: ../sign_in.php");
+                header("Location: ../sign_in");
                 exit();
             }
 
@@ -132,7 +132,7 @@ if (isset($_POST["btn-new-password"])) {
 
             if ($stmt->affected_rows > 0) {
                 $_SESSION['message'] = "Your password has been reset successfully.";
-                header("Location: ../sign_in.php");
+                header("Location: ../sign_in.");
              
             } else {
                 $_SESSION['message'] = "Failed to reset the password. Please try again.";
@@ -146,7 +146,7 @@ if (isset($_POST["btn-new-password"])) {
     $stmt->close();
     $conn->close();
 
-    header("Location: ../admin/user_reset_pass.php");//huhay kalibug
+    header("Location: ../admin/user_reset_pass");//huhay kalibug
     exit();
 }
 

@@ -8,6 +8,6 @@
 		$_SESSION['error'] = "An error occured during the archiving process.";
 	}
 
-	header('location: votes.php');
+	header('location: votes');
 
 ?>

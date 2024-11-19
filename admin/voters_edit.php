@@ -20,6 +20,6 @@
 		$_SESSION['error'] = 'Voter Updated Error';
 	}
 
-	header('location: voters.php');
+	header('location: voters');
 
 ?>

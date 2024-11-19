@@ -39,4 +39,4 @@
 	}	
 	}
 
-	header('location: voters.php');
+	header('location: voters');

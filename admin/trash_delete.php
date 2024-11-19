@@ -15,6 +15,6 @@
 		$_SESSION['error'] = 'An error occured during the delete process.';
 	}
 
-	header('location: trash.php');
+	header('location: trash');
 	
 ?>

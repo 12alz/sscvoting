@@ -15,7 +15,7 @@
 		$_SESSION['error'] = 'An error occured during the archiving process.';
 	}
 
-	header('location: trash.php');
+	header('location: trash');
 
 	
 

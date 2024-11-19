@@ -30,5 +30,5 @@ if (isset($_FILES['csv_file'])) {
     }
 }
 
-header('Location: msaccount.php'); // Redirect back to your main page
+header('Location: msaccount'); // Redirect back to your main page
 ?>

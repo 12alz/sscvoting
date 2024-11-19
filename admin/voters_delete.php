@@ -15,7 +15,7 @@
 		$_SESSION['error'] = 'An error occured during the archiving process.';
 	}
 
-	header('location: voters.php');
+	header('location: voters');
 
 	
 
