@@ -1,14 +1,33 @@
+# Prevent directory listing
 Options -Indexes
+
+# Enable mod_rewrite
+RewriteEngine On
+
+# Remove .php extension from URLs (for links without .php)
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Add .php extension if the file exists
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+
+# Optional: Make sure index.php works without the .php extension
+RewriteRule ^index$ /index.php [L]
+
 <IfModule mod_headers.c>
+    # Set security-related HTTP headers
     Header set X-Frame-Options "DENY"
     Header set X-XSS-Protection "1; mode=block"
     Header set X-Content-Type-Options "nosniff"
     Header set Referrer-Policy "no-referrer"
     Header set Permissions-Policy "geolocation=()"
 </IfModule>
+
 <IfModule mod_rewrite.c>
-	RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
-	RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
-	RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
-	RewriteRule .* index.php [F,L]
+    # Block certain suspicious query strings that may contain XSS or malicious code
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* - [F,L]
 </IfModule>
