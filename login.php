@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
         if ($row['recstat'] == '0') {
             if (password_verify($password, $row['password'])) {
                 $_SESSION['voter'] = $row['id'];
-                header('Location: home.php');
+                header('Location: home');
                 exit;
             } else {
                 $_SESSION['error'] = 'Incorrect password';
@@ -30,6 +30,6 @@ if (isset($_POST['login'])) {
 } else {
     $_SESSION['error'] = 'Input voter credentials first';
 }
-header('Location: sign_in.php');
+header('Location: sign_in');
 exit;
 ?>
