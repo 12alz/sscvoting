@@ -23,7 +23,7 @@
       <li class=""><a href="msaccount"><i class="fa fa-folder"></i> <span>MS365 Accounts</span></a></li>
       <li class=""><a href="add_news"><i class="fa fa-newspaper-o"></i> <span>Newsletter</span></a></li>
       <li class="header">SETTINGS</li>
-      <li class="" > <a href="print."><span class="glyphicon glyphicon-print"></span> Print Result</a></span></li>
+      <li class="" > <a href="print"><span class="glyphicon glyphicon-print"></span> Print Result</a></span></li>
     </ul>
   </section>
   <!-- /.sidebar -->
