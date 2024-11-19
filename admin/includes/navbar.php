@@ -74,7 +74,7 @@
                 <a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">Edit</a>
               </div>
               <div class="pull-right">
-                <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                <a href="logout" class="btn btn-default btn-flat">Sign out</a>
               </div>
             </li>
           </ul>
@@ -106,4 +106,4 @@ $(document).ready(function() {
     </div>
   </nav>
 </header>
-<?php include 'includes/profile_modal.php'; ?>
+<?php include 'includes/profile_modal'; ?>
