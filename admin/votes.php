@@ -17,7 +17,7 @@
         Votes
       </h1>
       <ol class="breadcrumb">
-        <li><a href="home.php"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Votes</li>
       </ol>
     </section>
@@ -99,10 +99,10 @@
     </section>   
   </div>
     
-  <?php include 'includes/footer'; ?>
-  <?php include 'includes/votes_modal'; ?>
+  <?php include 'includes/footer.php'; ?>
+  <?php include 'includes/votes_modal.php'; ?>
 </div>
-<?php include 'includes/scripts'; ?>
+<?php include 'includes/scripts.php'; ?>
 
 </body>
 </html>
