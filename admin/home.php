@@ -144,7 +144,7 @@
             <div class="inner">
               <?php
                 $sql = "SELECT * FROM voters WHERE recstat = 0";
-                // $sql = "SELECT * FROM voters";
+                // $sql = "SELECT * FROM votersS";
                 $query = $conn->query($sql);
 
                 echo "<h3>".$query->num_rows."</h3>";
