@@ -1,21 +1,25 @@
+Options -Indexes # disable directory listing
+
+<IfModule mod_rewrite.c>
 RewriteEngine On
 
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-RewriteCond %{HTTPS} !^mccsscvoting\.com$ [NC]
-RewriteRule ^(.*)$ https://mccsscvoting.com/$1 [R=301,L]
+# RewriteCond %{HTTPS} !^mccsscvoting\.com$ [NC]
+# RewriteRule ^(.*)$ https://mccsscvoting.com/$1 [R=301,L]
 
-RewriteCond %{THE_REQUEST} ^GET\ /(.+)\.php\ HTTP
-RewriteRule /(.+)\.php$ /$1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}\.php -f 
-RewriteRule ^(.*)$ $1.php [L,QSA]
+RewriteRule ^(.*)$ $1.php [L]
 
 
-Options -Indexes # disable directory listing
+RewriteCond %{THE_REQUEST} ^GET\ /(.+)\.php\ HTTP
+RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+</IfModule>
+
+
 
 # <IfModule mod_headers.c>
 #     Header set X-Frame-Options "DENY"
