@@ -38,7 +38,7 @@
                 $query = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_assoc($query)) {
                   echo '<li>
-                          <a href="../admin/voters?id=' . htmlspecialchars($row['voters_id']) . '">
+                          <a href="../admin/voters.php?id=' . htmlspecialchars($row['voters_id']) . '">
                             <i class="fa fa-users text-aqua"></i> ' . htmlspecialchars($row['firstname'] . ' ' . $row['lastname']) . '
                           </a>
                         </li>';
@@ -46,7 +46,7 @@
                 ?>
               </ul>
             </li>
-            <li class="footer"><a href="../admin/voters">View all</a></li>
+            <li class="footer"><a href="../admin/voters.php">View all</a></li>
           </ul>
         </li>
  
@@ -74,7 +74,7 @@
                 <a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">Edit</a>
               </div>
               <div class="pull-right">
-                <a href="logout" class="btn btn-default btn-flat">Sign out</a>
+                <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
               </div>
             </li>
           </ul>
@@ -106,4 +106,4 @@ $(document).ready(function() {
     </div>
   </nav>
 </header>
-<?php include 'includes/profile_modal'; ?>
+<?php include 'includes/profile_modal.php'; ?>
