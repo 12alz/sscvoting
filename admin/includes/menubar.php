@@ -17,7 +17,7 @@
       <li class=""><a href="home"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       <li class=""><a href="votesp"><span class="glyphicon glyphicon-lock"></span> <span>Votes</span></a></li>
       <li class="header">MANAGE</li>
-      <li class=""><a href="votersp"><i class="fa fa-users"></i> <span>Student Voters</span></a></li>
+      <li class=""><a href="voters"><i class="fa fa-users"></i> <span>Student Voters</span></a></li>
       <li class=""><a href="positions"><i class="fa fa-tasks"></i> <span>SSC Positions</span></a></li>
       <li class=""><a href="candidates"><i class="fa fa-black-tie"></i> <span>SSC Candidates</span></a></li>
       <li class=""><a href="msaccount"><i class="fa fa-folder"></i> <span>MS365 Accounts</span></a></li>
