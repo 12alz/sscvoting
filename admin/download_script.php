@@ -14,8 +14,7 @@ header('Expires: 0');
 $output = fopen('php://output', 'w');
 
 // Add header row to the CSV
-fputcsv($output, ['Firstname', 'Lastname', 'Username']); // Customize as needed
-
+fputcsv($output, ['Firstname', 'Lastname', 'Username']); 
 // Optionally, you can add sample data
 // fputcsv($output, ['Sample Firstname', 'Sample Lastname', 'Sample Username']);
 

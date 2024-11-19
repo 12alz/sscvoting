@@ -16,6 +16,6 @@ if (isset($_POST['id'])) {
         $_SESSION['error'] = 'Failed to delete user';
     }
 
-    header('location: ../admin/msaccount.php'); // Redirect back to the page after deletion
+    header('location: ../admin/msaccount'); // Redirect back to the page after deletion
 }
 ?>

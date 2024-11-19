@@ -70,7 +70,7 @@ if (isset($_POST["btn-forgotpass"])) {
         $stmt->close();
         $conn->close();
         
-        header("Location: ../verification.php");
+        header("Location: ../verification");
         exit();
     }
 }

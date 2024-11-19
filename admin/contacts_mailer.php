@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirect to contacts page
-    header("Location: ../contacts.php");
+    header("Location: ../contacts");
     exit();
 } else {
     // Handle non-POST requests if needed

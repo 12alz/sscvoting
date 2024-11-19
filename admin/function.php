@@ -37,11 +37,11 @@ if (isset($_POST["btn-forgotpass"])) {
         }
 
         // Redirect to the forgot password page
-        header("Location: ../forgetpass.php");
+        header("Location: ../forgetpass");
         exit();
     } else {
         $_SESSION["notify"] = "Failed to update the reset code. Please try again.";
-        header("Location: ../forgetpass.php");
+        header("Location: ../forgetpass");
         exit();
     }
 }
@@ -78,16 +78,16 @@ if (isset($_POST["btn-forgotpass"])) {
             $query = mysqli_query($conn, $sql);
 
             $_SESSION["notify"] = "Your password has been reset successfully.";
-            header("Location: ../sign_in.php");
+            header("Location: ../sign_in");
             exit();
         } else {
             $_SESSION["notify"] = "Invalid OTP. Please try again.";
-            header("Location: ../sign_in.php");
+            header("Location: ../sign_in");
             exit();
         }
     } else {
         $_SESSION["notify"] = "Email not found.";
-        header("Location: ../sign_in.php");
+        header("Location: ../sign_in");
         exit();
     }
 }

@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
                 $stmt = $conn->prepare($updateLoginAttempts);
                 $stmt->bind_param('s', $email);
                 $stmt->execute();
-                header('location: ../sign_in.php');
+                header('location: ../sign_in');
                 exit();
             } else {
                 $_SESSION['error'] = 'Incorrect email or password'; 
@@ -65,6 +65,6 @@ if (isset($_POST['login'])) {
     $_SESSION['error'] = 'Input admin credentials first';
 }
 
-header('location: ../sign_in.php');
+header('location: ../sign_in');
 exit();
 ?>
