@@ -13,7 +13,7 @@
             </div>
             <div class="modal-footer">
               <a href="" class="btn btn-danger fa fa-close"> NO</a>
-               <a href="votes_reset.php" class="btn btn-primary pull-left fa fa-check">YES</a>
+               <a href="votes_reset" class="btn btn-primary pull-left fa fa-check">YES</a>
             </div>
         </div>
     </div>
