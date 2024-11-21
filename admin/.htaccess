@@ -1,4 +1,7 @@
-Options -Indexes # disable directory listing
+AuthType Basic
+AuthName "Restricted Access"
+AuthUserFile /.htpasswd
+Require valid-user
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
@@ -17,6 +20,8 @@ RewriteRule ^(.*)$ $1.php [L]
 
 RewriteCond %{THE_REQUEST} ^GET\ /(.+)\.php\ HTTP
 RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+
+Options -Indexes # disable directory listing
 </IfModule>
 
 <IfModule mod_headers.c>
