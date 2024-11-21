@@ -127,7 +127,7 @@ header("Pragma: no-cache");
                               <li>
                                 <h6>Programs</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="academics.php">Academics</a></li>
+                                  <li><a href="academics">Academics</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -135,10 +135,10 @@ header("Pragma: no-cache");
                               <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="404.php">404</a></li>
-                                  <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                                  <li><a href="maintenance.php">Maintenance</a></li>
-                                  <li><a href="sign_in.php">Login/Register</a></li>
+                                  <li><a href="404">404</a></li>
+                                  <li><a href="privacy-policy">Privacy Policy</a></li>
+                                  <li><a href="maintenance">Maintenance</a></li>
+                                  <li><a href="sign_in">Login/Register</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -146,8 +146,8 @@ header("Pragma: no-cache");
                               <li>
                                 <h6>About</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="history.php">History</a></li>
-                                  <li><a href="people.html">People</a></li>
+                                  <li><a href="history">History</a></li>
+                                  <li><a href="people">People</a></li>
                                   <li><a href="team-member-profile.html">Team Member Profile</a></li>
                                 </ul>
                               </li>
