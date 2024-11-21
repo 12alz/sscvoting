@@ -44,7 +44,7 @@ function notifySubscribers($title, $content) {
     $mail->SMTPSecure = 'tls';
     $mail->SMTPAuth = true;
     $mail->Username = "santillanbsit@gmail.com";
-    $mail->Password = "svlwwvxfgrbtxqum"; // Your email password
+    $mail->Password = "svlwwvxfgrbtxqum"; // Your email passwords
     $mail->setFrom('santillanbsit@gmail.com', 'Madridejos Community College Newsletter');
 
     // Fetch subscribers
