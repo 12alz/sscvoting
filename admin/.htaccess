@@ -1,6 +1,4 @@
-#PWPROTECTEDID:cxazgVocBa
 AuthType Basic
 AuthName "Restricted Access"
-AuthUserFile /home/u510162695/domains/mccsscvoting.com/public_html/admin/.htpasswd
+AuthUserFile .htpasswd
 Require valid-user
-#cxazgVocBa:PWPROTECTEDID
