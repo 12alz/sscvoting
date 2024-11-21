@@ -1,7 +1,14 @@
 <Files ".htaccess">
 	Requires all denied
 </Files>
-
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "no-referrer"
+    Header set Permissions-Policy "geolocation=()"
+	Header always set Strick-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
@@ -27,11 +34,4 @@ RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
 RewriteRule .* index.php [F,L]
 </IfModule>
 
-<IfModule mod_headers.c>
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
-    Header set X-Content-Type-Options "nosniff"
-    Header set Referrer-Policy "no-referrer-when-downgrade"
-    Header set Permissions-Policy "geolocation=()"
-	Header always set Strick-Transport-Security "max-age=31536000; includeSubDomains"
-</IfModule>
+
