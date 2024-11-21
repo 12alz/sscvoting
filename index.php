@@ -72,7 +72,7 @@ header("Pragma: no-cache");
                     <div class="rd-navbar-top-panel-left-part">
                       <div class="unit flex-row align-items-center unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
-                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
+                        <div class="unit-body"><a href="sign_in">Login/Register</a></div>
                       </div>
                     </div>
                   </div>
@@ -80,7 +80,7 @@ header("Pragma: no-cache");
               </div>
               <div class="rd-navbar-menu-wrap clearfix">
                 <!--Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="d-inline-block" href="index.php">
+                <div class="rd-navbar-brand"><a class="d-inline-block" href="index">
                     <div class="unit align-items-sm-center unit-xl unit-spacing-custom">
                       <div class="unit-left"><img width='170' height='172' src='https://mccsscvoting.com/images/2.png' alt=''/>
                       </div>
@@ -93,11 +93,11 @@ header("Pragma: no-cache");
                   <div class="rd-navbar-mobile-scroll">
                     <div class="rd-navbar-mobile-header-wrap">
                       <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='https://mccsscvoting.com/images/2.png' alt=''/></a></div>
+                      <div class="rd-navbar-mobile-brand"><a href="index"><img width='136' height='138' src='https://mccsscvoting.com/images/2.png' alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="active"><a href="index.php">Home</a>
+                      <li class="active"><a href="index">Home</a>
                        
                       </li>
                       <!-- <li><a href="#">Elements</a>
@@ -156,16 +156,16 @@ header("Pragma: no-cache");
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.php">Classic news</a>
+                          <li><a href="classic-news">Classic news</a>
                           </li>
                           </li>
-                          <li><a href="news-post-page.php">News  Page</a>
+                          <li><a href="news-post-page">News  Page</a>
                           </li>
                         </ul>
                       </li>
                       </li>
                       </li>
-                      <li><a href="contacts.php">Contacts</a>
+                      <li><a href="contacts">Contacts</a>
                       </li>
                     </ul>
                     <!--RD Navbar Mobile Searchs-->
@@ -319,7 +319,7 @@ header("Pragma: no-cache");
         <div class="container">
           <div class="row row-20 justify-content-sm-center align-items-md-center text-lg-start">
             <div class="col-sm-10 col-lg-6">
-              <!--Footer brand--><a class="d-inline-block" href="index.php">
+              <!--Footer brand--><a class="d-inline-block" href="index">
                 <div class="unit align-items-sm-center flex-column unit-md flex-lg-row unit-spacing-xxs">
                   <div class="unit-left"><img class="img-responsive d-inline-block" src="https://mccsscvoting.com/images/2.png" width="70" height="70" alt=""></div>
                   <div class="unit-body text-xxl-start">

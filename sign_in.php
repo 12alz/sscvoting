@@ -118,11 +118,11 @@ if(isset($_SESSION['voter'])){
                   <div class="rd-navbar-mobile-scroll">
                     <div class="rd-navbar-mobile-header-wrap">
                       <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
+                      <div class="rd-navbar-mobile-brand"><a href="index"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li><a href="index.php">Home</a>
+                      <li><a href="index">Home</a>
                       </li>
                       <li><a href="#">Pages</a>
                         <div class="rd-navbar-megamenu">
@@ -358,7 +358,7 @@ if(isset($_SESSION['voter'])){
         <div class="container section-xs block-after-divider">
           <div class="row row-50 justify-content-xl-between justify-content-sm-center">
             <div class="col-lg-3 col-xl-2">
-              <!--Footer brand--><a class="d-inline-block" href="index.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
+              <!--Footer brand--><a class="d-inline-block" href="index"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                 <div>
                   <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
                 </div>

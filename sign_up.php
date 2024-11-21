@@ -14,7 +14,7 @@ if (isset($_POST['add'])) {
     
     if (!in_array($imageExtension, $validImageExtension)) {
         $_SESSION['error'] = 'Invalid Image';
-        header('Location: sign_in.php');
+        header('Location: sign_in');
     } else {
         if (!empty($filename)) {
             move_uploaded_file($_FILES['photo']['tmp_name'], '../images/' . $filename);   
@@ -29,21 +29,21 @@ if (isset($_POST['add'])) {
         
         if ($count > 0) {
             $_SESSION['error'] = 'ID or email already exists';
-            header('Location: sign_in.php');
+            header('Location: sign_in');
         } else {
             $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, email, course, status, photo) 
                     VALUES ('$voters_id', '$password', '$firstname', '$lastname', '$email','$course', '$status', '$filename')";
             
             if ($conn->query($sql)) {
                 $_SESSION['success'] = 'Voter added successfully';
-                header('Location: sign_in.php');
+                header('Location: sign_in');
             } else {
                 $_SESSION['error'] = "Failed to Register";
-                header('Location: sign_in.php');
+                header('Location: sign_in');
             }
         }
     }
 } else {
     $_SESSION['error'] = "Failed to Register";
-    header('Location: sign_in.php');
+    header('Location: sign_in');
 }

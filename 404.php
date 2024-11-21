@@ -46,12 +46,12 @@
               <p>You may have mistyped the address or the page may have moved.</p>
             </div>
             <div class="offset-top-15 offset-lg-top-30">
-              <div class="group group-xl"><a class="btn button-primary btn-icon btn-icon btn-icon-left" href="./"><span class="icon fa fa-arrow-left"></span><span>Back to Home Page</span></a><a class="btn button-default btn-icon btn-icon btn-icon-left" href="contacts.php"><span class="icon fa fa-envelope"></span><span>Contact Us</span></a></div>
+              <div class="group group-xl"><a class="btn button-primary btn-icon btn-icon btn-icon-left" href="./"><span class="icon fa fa-arrow-left"></span><span>Back to Home Page</span></a><a class="btn button-default btn-icon btn-icon btn-icon-left" href="contacts"><span class="icon fa fa-envelope"></span><span>Contact Us</span></a></div>
             </div>
           </div>
         </div>
         <div>
-          <p>&copy; <span class="copyright-year"></span> All Rights Reserved Terms of Use and <a href="privacy-policy.php">Privacy Policy</a></p>
+          <p>&copy; <span class="copyright-year"></span> All Rights Reserved Terms of Use and <a href="privacy-policy">Privacy Policy</a></p>
         </div>
       </section>
     </div>

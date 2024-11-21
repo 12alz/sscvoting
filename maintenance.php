@@ -103,7 +103,7 @@
           </div>
         </div>
         <div>
-          <p>&copy; <span class="copyright-year"></span> All Rights Reserved Terms of Use and <a href="privacy-policy.html">Privacy Policy</a></p>
+          <p>&copy; <span class="copyright-year"></span> All Rights Reserved Terms of Use and <a href="privacy-policy">Privacy Policy</a></p>
         </div>
       </section>
     </div>

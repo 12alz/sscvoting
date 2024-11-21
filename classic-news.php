@@ -70,7 +70,7 @@
                     <div class="rd-navbar-top-panel-left-part">
                       <div class="unit flex-row align-items-center unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
-                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
+                        <div class="unit-body"><a href="sign_in">Login/Register</a></div>
                       </div>
                     </div>
                   </div>
@@ -91,11 +91,11 @@
                   <div class="rd-navbar-mobile-scroll">
                     <div class="rd-navbar-mobile-header-wrap">
                       <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
+                      <div class="rd-navbar-mobile-brand"><a href="index"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li><a href="index.php">Home</a>
+                      <li><a href="index">Home</a>
                       </li>
                       </li>
                    
@@ -106,7 +106,7 @@
                               <li>
                                 <h6>Programs</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="academics.php">Academics</a></li>
+                                  <li><a href="academics">Academics</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -114,10 +114,10 @@
                               <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="404.php">404</a></li>
-                                  <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                                  <li><a href="maintenance.php">Maintenance</a></li>
-                                  <li><a href="sign_in.php">Login/Register</a></li>
+                                  <li><a href="404">404</a></li>
+                                  <li><a href="privacy-policy">Privacy Policy</a></li>
+                                  <li><a href="maintenance">Maintenance</a></li>
+                                  <li><a href="sign_in">Login/Register</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -125,7 +125,7 @@
                               <li>
                                 <h6>About</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="history.php">History</a></li>
+                                  <li><a href="history">History</a></li>
                                   <li><a href="people.html">People</a></li>
                                   <li><a href="team-member-profile.html">Team Member Profile</a></li>
                                 </ul>
@@ -135,16 +135,16 @@
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.php">Classic news</a>
+                          <li><a href="classic-news">Classic news</a>
                           </li>
                           </li>
-                          <li><a href="news-post-page.php">News  Page</a>
+                          <li><a href="news-post-page">News  Page</a>
                           </li>
                         </ul>
                       </li>
                       </li>
                       </li>
-                      <li><a href="contacts.php">Contacts</a>
+                      <li><a href="contacts">Contacts</a>
                       </li>
                     </ul>
                     <!--RD Navbar Mobile Search-->
@@ -183,7 +183,7 @@
           <h1>Classic news</h1>
           <div class="offset-top-10 offset-md-top-35">
             <ul class="list-inline list-inline-lg list-inline-dashed p">
-              <li><a href="index.php">Home</a></li>
+              <li><a href="index">Home</a></li>
               <li><a href="#">News</a></li>
               <li>Classic news
               </li>
@@ -197,9 +197,9 @@
         <div class="container">
           <div class="row row-85 justify-content-sm-center">
             <div class="col-lg-8 text-lg-start row-30">
-              <article class="post-news post-news-wide"><a href="news-post-page.php"><img class="img-responsive w-100" src="images/classicnews.jpg" width="770" height="500" alt=""></a>
+              <article class="post-news post-news-wide"><a href="news-post-page"><img class="img-responsive w-100" src="images/classicnews.jpg" width="770" height="500" alt=""></a>
                 <div class="post-news-body">
-                  <h4 class="text-primary fw-bold"><a href="news-post-page.php">CONGRATULATIONS Mr. Jhon Fril Bacolod Villaceran,</a></h4>
+                  <h4 class="text-primary fw-bold"><a href="news-post-page">CONGRATULATIONS Mr. Jhon Fril Bacolod Villaceran,</a></h4>
                   <div class="offset-top-20">
                     <p>Tawag ng Tanghalan – The School Showdown', qualifiers! We are beyond proud and excited as you represent our school for the first time in history.</p>
                   </div>
@@ -208,15 +208,15 @@
                       <li><span class="icon icon-xs mdi mdi-calendar-clock align-middle text-madison"></span><span class="align-middle inset-left-10 fst-italic text-black">21 hours ago</span></li>
                       <li><span class="icon icon-xs mdi mdi-account align-middle text-madison"></span><span class="align-middle inset-left-10 fst-italic text-primary">Madridejos Community College - Supreme Student Council</span></li>
                       <li class="float-xl-end d-block offset-top-20 offset-lg-top-10">
-                        <div class="tags-list group group-sm"><a class="btn btn-xs button-primary fst-italic" href="news-post-page.php">News</a><a class="btn btn-xs button-primary fst-italic" href="news-post-page.php">Colleges</a></div>
+                        <div class="tags-list group group-sm"><a class="btn btn-xs button-primary fst-italic" href="news-post-page">News</a><a class="btn btn-xs button-primary fst-italic" href="news-post-page">Colleges</a></div>
                       </li>
                     </ul>
                   </div>
                 </div>
               </article>
-              <article class="post-news post-news-wide"><a href="news-post-page.php"><img class="img-responsive w-100" src="images/classicnews1.jpg" width="770" height="500" alt=""></a>
+              <article class="post-news post-news-wide"><a href="news-post-page"><img class="img-responsive w-100" src="images/classicnews1.jpg" width="770" height="500" alt=""></a>
                 <div class="post-news-body">
-                  <h4 class="text-primary fw-bold"><a href="news-post-page.php">Attention MCCNIANS! </a></h4>
+                  <h4 class="text-primary fw-bold"><a href="news-post-page">Attention MCCNIANS! </a></h4>
                   <div class="offset-top-20">
                     <p>Today, October 22, 2024 classes are suspended until such time that the heavy rainfall warning is lifted. Please be guided and keep safe! Thank you.</p>
                   </div>
@@ -225,15 +225,15 @@
                       <li><span class="icon icon-xs mdi mdi-calendar-clock align-middle text-madison"></span><span class="align-middle inset-left-10 fst-italic text-black">1 days ago</span></li>
                       <li><span class="icon icon-xs mdi mdi-account align-middle text-madison"></span><span class="align-middle inset-left-10 fst-italic text-primary">Madridejos Community College - Supreme Student Council</span></li>
                       <li class="float-xl-end d-block offset-top-20 offset-lg-top-10">
-                        <div class="tags-list group group-sm"><a class="btn btn-xs button-primary fst-italic" href="news-post-page.php">News</a><a class="btn btn-xs button-primary fst-italic" href="news-post-page.php">Colleges</a></div>
+                        <div class="tags-list group group-sm"><a class="btn btn-xs button-primary fst-italic" href="news-post-page">News</a><a class="btn btn-xs button-primary fst-italic" href="news-post-page">Colleges</a></div>
                       </li>
                     </ul>
                   </div>
                 </div>
               </article>
-              <article class="post-news post-news-wide"><a href="news-post-page.php"><img class="img-responsive w-100" src="images/classicnews2.jpg" width="770" height="500" alt=""></a>
+              <article class="post-news post-news-wide"><a href="news-post-page"><img class="img-responsive w-100" src="images/classicnews2.jpg" width="770" height="500" alt=""></a>
                 <div class="post-news-body">
-                  <h4 class="text-primary fw-bold"><a href="news-post-page.php">World Mental Health Month</a></h4>
+                  <h4 class="text-primary fw-bold"><a href="news-post-page">World Mental Health Month</a></h4>
                   <div class="offset-top-20">
                     <p>As we celebrate Mental Health Month, let’s take a moment to prioritize our well-being and support each other. This month is a powerful reminder of the importance of mental health awareness and breaking the stigma surrounding it. Join us for a series of events that foster connection, provide resources, and encourage open conversations. Together, we can create a community where everyone feels valued and supported. Remember, your mental health matters—let’s uplift each other on this journey.</p>
                   </div>
@@ -242,13 +242,13 @@
                       <li><span class="icon icon-xs mdi mdi-calendar-clock align-middle text-madison"></span><span class="align-middle inset-left-10 fst-italic text-black">18 days ago</span></li>
                       <li><span class="icon icon-xs mdi mdi-account align-middle text-madison"></span><span class="align-middle inset-left-10 fst-italic text-primary">Madridejos Community College - Supreme Student Council</span></li>
                       <li class="float-xl-end d-block offset-top-20 offset-lg-top-10">
-                        <div class="tags-list group group-sm"><a class="btn btn-xs button-primary fst-italic" href="news-post-page.php">News</a><a class="btn btn-xs button-primary fst-italic" href="news-post-page.php">Colleges</a></div>
+                        <div class="tags-list group group-sm"><a class="btn btn-xs button-primary fst-italic" href="news-post-page">News</a><a class="btn btn-xs button-primary fst-italic" href="news-post-page">Colleges</a></div>
                       </li>
                     </ul>
                   </div>
                 </div>
               </article>
-              <article class="post-news post-news-wide"><a href="news-post-page.php"><img class="img-responsive w-100" src="images/classicnews3.jpg" width="770" height="500" alt=""></a>
+              <article class="post-news post-news-wide"><a href="news-post-page"><img class="img-responsive w-100" src="images/classicnews3.jpg" width="770" height="500" alt=""></a>
                 <div class="post-news-body">
                   <h4 class="text-primary fw-bold"><a href="news-post-page.html">Announcement  To All Freshmen of Madridejos Community College</a></h4>
                   <div class="offset-top-20">
@@ -259,7 +259,7 @@
                       <li><span class="icon icon-xs mdi mdi-calendar-clock align-middle text-madison"></span><span class="align-middle inset-left-10 fst-italic text-black">26 days ago</span></li>
                       <li><span class="icon icon-xs mdi mdi-account align-middle text-madison"></span><span class="align-middle inset-left-10 fst-italic text-primary">Madridejos Community College - Supreme Student Council</span></li>
                       <li class="float-xl-end d-block offset-top-20 offset-lg-top-10">
-                        <div class="tags-list group group-sm"><a class="btn btn-xs button-primary fst-italic" href="news-post-page.php">News</a><a class="btn btn-xs button-primary fst-italic" href="news-post-page.php">Colleges</a></div>
+                        <div class="tags-list group group-sm"><a class="btn btn-xs button-primary fst-italic" href="news-post-page">News</a><a class="btn btn-xs button-primary fst-italic" href="news-post-page">Colleges</a></div>
                       </li>
                     </ul>
                   </div>
@@ -331,10 +331,10 @@
                   <div class="text-subline"></div>
                   <div class="offset-top-20">
                     <ul class="list list-marked list-marked-primary">
-                      <li><a href="news-post-page.php">News</a></li>
-                      <li><a href="news-post-page.php">Global Education</a></li>
-                      <li><a href="news-post-page.php">Law</a></li>
-                      <li><a href="news-post-page.php">Colleges</a></li>
+                      <li><a href="news-post-page">News</a></li>
+                      <li><a href="news-post-page">Global Education</a></li>
+                      <li><a href="news-post-page">Law</a></li>
+                      <li><a href="news-post-page">Colleges</a></li>
                     </ul>
                   </div>
                 </div>
@@ -375,7 +375,7 @@
         <div class="container section-xs block-after-divider">
           <div class="row row-50 justify-content-xl-between justify-content-sm-center">
             <div class="col-lg-3 col-xl-2">
-              <!--Footera brand--><a class="d-inline-block" href="index.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
+              <!--Footera brand--><a class="d-inline-block" href="index"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                 <div>
                   <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
                 </div>
@@ -426,7 +426,7 @@
                 <p>Enter your email address to get the latest  news, special events and student activities delivered right to your inbox.</p>
               </div>
               <div class="offset-top-10">
-              <form action="admin/newsletter_mailer.php" method="POST">
+              <form action="admin/newsletter_mailer" method="POST">
               <div class="form-wrap">
                   <div class="input-group input-group-sm">
                       <input class="form-input" placeholder="Your e-mail" type="email" name="email" required>

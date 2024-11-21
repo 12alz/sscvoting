@@ -1,4 +1,8 @@
 <?php
+header("Cache-control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 include "includes/conn.php";
 
 $showForm = false; 
@@ -155,7 +159,7 @@ $conn->close();
 <?php if ($showForm): ?>
     <div class="container">
         <h2 style="text-align: center; color: #333;">Register</h2>
-        <form method="POST" action="sign_up.php" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <form method="POST" action="sign_up" enctype="multipart/form-data" onsubmit="return validateForm()">
             <div class="form-wrap">
                 <label for="voters_id">Student ID</label>
                 <input type="text" class="form-control" id="voters_id" name="voters_id" required pattern="\d{4}-\d{4}" title="Format: XXXX-XXXX (8 digits total)">
@@ -216,7 +220,7 @@ $conn->close();
             <div class="form-wrap">
             <label>
                 <input type="checkbox" name="terms" required>
-                I agree to the terms of use and <a href="privacy-policy.php" target="_blank">Privacy Policy</a>
+                I agree to the terms of use and <a href="privacy-policy" target="_blank">Privacy Policy</a>
             </label>
         </div>
             
@@ -224,7 +228,7 @@ $conn->close();
             
         </form>
         <div class="login-link">
-            <p>Have an account? <a href="sign_in.php">Login here</a></p>
+            <p>Have an account? <a href="sign_in">Login here</a></p>
         </div>
     </div>
 <?php else: ?>

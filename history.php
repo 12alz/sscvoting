@@ -70,7 +70,7 @@
                     <div class="rd-navbar-top-panel-left-part">
                       <div class="unit flex-row align-items-center unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
-                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
+                        <div class="unit-body"><a href="sign_in">Login/Register</a></div>
                       </div>
                     </div>
                   </div>
@@ -91,12 +91,12 @@
                   <div class="rd-navbar-mobile-scroll">
                     <div class="rd-navbar-mobile-header-wrap">
                       <!--Navbar Brand Mobile-->
-                      <div class="rd-navbar-mobile-brand"><a href="index.php"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
+                      <div class="rd-navbar-mobile-brand"><a href="index"><img width='136' height='138' src='images/logo-170x172.png' alt=''/></a></div>
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
                     
-                      <li class="active"><a href="index.php">Home</a>
+                      <li class="active"><a href="index">Home</a>
                        
                       </li>
                       <!-- <li><a href="#">Elements</a>
@@ -126,7 +126,7 @@
                               <li>
                                 <h6>Programs</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="academics.php">Academics</a></li>
+                                  <li><a href="academics">Academics</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -134,10 +134,10 @@
                               <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="404.php">404</a></li>
-                                  <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                                  <li><a href="maintenance.php">Maintenance</a></li>
-                                  <li><a href="sign_in.php">Login/Register</a></li>
+                                  <li><a href="404">404</a></li>
+                                  <li><a href="privacy-policy">Privacy Policy</a></li>
+                                  <li><a href="maintenance">Maintenance</a></li>
+                                  <li><a href="sign_in">Login/Register</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -145,7 +145,7 @@
                               <li>
                                 <h6>About</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="history.php">History</a></li>
+                                  <li><a href="history">History</a></li>
                                   <li><a href="people.html">People</a></li>
                                   <li><a href="team-member-profile.html">Team Member Profile</a></li>
                                 </ul>
@@ -155,16 +155,16 @@
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.php">Classic news</a>
+                          <li><a href="classic-news">Classic news</a>
                           </li>
                           </li>
-                          <li><a href="news-post-page.php">News  Page</a>
+                          <li><a href="news-post-page">News  Page</a>
                           </li>
                         </ul>
                       </li>
                       </li>
                       </li>
-                      <li><a href="contacts.php">Contacts</a>
+                      <li><a href="contacts">Contacts</a>
                       </li>
                     </ul>
                     <!--RD Navbar Mobile Search-->
@@ -204,7 +204,7 @@
           <h1>History</h1>
           <div class="offset-top-10 offset-md-top-35">
             <ul class="list-inline list-inline-lg list-inline-dashed p">
-              <li><a href="index.php">Home</a></li>
+              <li><a href="index">Home</a></li>
               <li><a href="#">Pages</a></li>
               <li><a href="#">About</a></li>
               <li>History
@@ -271,7 +271,7 @@
         <div class="container section-xs block-after-divider">
           <div class="row row-50 justify-content-xl-between justify-content-sm-center">
             <div class="col-lg-3 col-xl-2">
-              <!--Footer brand--><a class="d-inline-block" href="index.php"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
+              <!--Footer brand--><a class="d-inline-block" href="index"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                 <div>
                   <h6 class="barnd-name fw-bold offset-top-25">Madridejos</h6>
                 </div>
@@ -321,7 +321,7 @@
         </div>
         <div class="bg-madison context-dark">
           <div class="container text-lg-start section-5">
-          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved Terms of Use</span><span>.&nbsp;</span><a class="text-dark" href="privacy-policy.php">Privacy Policy</a></p>
+          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>All Rights Reserved Terms of Use</span><span>.&nbsp;</span><a class="text-dark" href="privacy-policy">Privacy Policy</a></p>
           </div>
         </div>
       </footer>
