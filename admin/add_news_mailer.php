@@ -24,7 +24,7 @@ if (isset($_POST["btn-add-news"])) {
     $stmt->close();
     $conn->close();
 
-    // Redirect back to the same page to display messages
+    // Redirect back to the same page to display messagess
     header("Location: ../admin/add_news");
     exit();
 }
