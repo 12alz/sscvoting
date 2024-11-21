@@ -97,7 +97,7 @@ if(isset($_SESSION['voter'])){
                     <div class="rd-navbar-top-panel-left-part">
                       <div class="unit flex-row align-items-center unit-spacing-xs">
                         <div class="unit-left"><span class="icon mdi mdi-login align-middle"></span></div>
-                        <div class="unit-body"><a href="sign_in.php">Login/Register</a></div>
+                        <div class="unit-body"><a href="sign_in">Login/Register</a></div>
                       </div>
                     </div>
                   </div>
@@ -105,7 +105,7 @@ if(isset($_SESSION['voter'])){
               </div>
               <div class="rd-navbar-menu-wrap clearfix">
                 <!--Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="d-inline-block" href="index.php">
+                <div class="rd-navbar-brand"><a class="d-inline-block" href="index">
                     <div class="unit align-items-sm-center unit-xl unit-spacing-custom">
                       <div class="unit-left"><img width='170' height='172' src='images/logo-170x172.png' alt=''/>
                       </div>
@@ -131,7 +131,7 @@ if(isset($_SESSION['voter'])){
                               <li>
                                 <h6>Programs</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="academics.php">Academics</a></li>
+                                  <li><a href="academics">Academics</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -139,10 +139,10 @@ if(isset($_SESSION['voter'])){
                               <li>
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="404.php">404</a></li>
-                                  <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                                  <li><a href="maintenance.php">Maintenance</a></li>
-                                  <li><a href="sign_in.php">Login/Register</a></li>
+                                  <li><a href="404">404</a></li>
+                                  <li><a href="privacy-policy">Privacy Policy</a></li>
+                                  <li><a href="maintenance">Maintenance</a></li>
+                                  <li><a href="sign_in.">Login/Register</a></li>
                                 </ul>
                               </li>
                             </ul>
@@ -150,8 +150,8 @@ if(isset($_SESSION['voter'])){
                               <li>
                                 <h6>About</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
-                                  <li><a href="history.php">History</a></li>
-                                  <li><a href="people.html">People</a></li>
+                                  <li><a href="history">History</a></li>
+                                  <li><a href="peoplel">People</a></li>
                                   <li><a href="team-member-profile.html">Team Member Profile</a></li>
                                 </ul>
                               </li>
@@ -162,10 +162,10 @@ if(isset($_SESSION['voter'])){
                       </li>
                       <li><a href="#">News</a>
                         <ul class="rd-navbar-dropdown">
-                          <li><a href="classic-news.php">Classic news</a>
+                          <li><a href="classic-news">Classic news</a>
                           </li>
                           </li>
-                          <li><a href="news-post-page.php">News  Page</a>
+                          <li><a href="news-post-page">News  Page</a>
                           </li>
                         </ul>
                       </li>
@@ -193,7 +193,7 @@ if(isset($_SESSION['voter'])){
                           </li>
                         </ul>
                       </li> -->
-                      <li><a href="contacts.php">Contacts</a>
+                      <li><a href="contacts">Contacts</a>
                       </li>
                       <!-- <li class="d-lg-none"><a href="shopping-cart.html">Shopping Cart (2)</a></li> -->
                     </ul>
@@ -234,7 +234,7 @@ if(isset($_SESSION['voter'])){
           <h1>Login/Register</h1>
           <div class="offset-top-10 offset-md-top-35">
             <ul class="list-inline list-inline-lg list-inline-dashed p">
-              <li><a href="index.php">Home</a></li>
+              <li><a href="index">Home</a></li>
               <li><a href="#">Pages</a></li>
               <li>Login/Register
               </li>
@@ -262,7 +262,7 @@ if(isset($_SESSION['voter'])){
                   <div class="tab-content">
                     <div class="tab-pane fade" id="tabs-login-1">
                       <!-- RD Mailform-->
-                      <form method="post" action="login.php">
+                      <form method="post" action="login">
                         <div class="form-wrap">
                           <label class="form-label form-label-outside" for="form-login-username">Student ID:</label>
                           <input class="form-input bg-default" id="form-login-username" type="text" name="voter" data-constraints="@Required">
@@ -271,12 +271,12 @@ if(isset($_SESSION['voter'])){
                           <label class="form-label form-label-outside" for="form-login-password">Password:</label>
                           <input class="form-input bg-default" id="form-login-password" type="password" name="password" data-constraints="@Required">
                         </div>
-                        <a href="forgot_password.php" class="small" style="color: #d32f2f; text-decoration: ;">Forgot Password?</a>
+                        <a href="forgot_password" class="small" style="color: #d32f2f; text-decoration: ;">Forgot Password?</a>
                         <div class="offset-top-20">
                           
                           <button class="btn button-primary d-block d-xl-inline-block" type="submit" name="login">Sign in</button><span class="inset-xl-left-20 align-middle small d-inline-block offset-top-20 offset-lg-top-0">Don't Have a account?</span>
                           <ul class="list-inline list-inline-xs list-inline-madison d-xl-inline-block inset-xl-left-10 inset-xxl-left-20 align-middle offset-top-15 offset-lg-top-0">
-                          <a href="verification.php" data-toggle="modal" style="color: #d32f2f; font-weight: bold;">Register Here</a>
+                          <a href="verification" data-toggle="modal" style="color: #d32f2f; font-weight: bold;">Register Here</a>
                             
                           </ul>
                         </div>
@@ -324,7 +324,7 @@ if(isset($_SESSION['voter'])){
                       </form>
                     </div> -->
                     <div class="tab-pane fade" id="tabs-login-3">
-                      <form method="post" action="admin/login.php">
+                      <form method="post" action="admin/login">
                         <div class="form-wrap">
                         <label class="form-label form-label-outside" for="email">Email:</label>
                         <input class="form-input bg-default" id="email" type="email" name="email" data-constraints="@Required">
@@ -334,7 +334,7 @@ if(isset($_SESSION['voter'])){
                           <input class="form-input bg-default" id="password" type="password" name="password" data-constraints="@Required">
                         </div>
                        
-                        <a href="forgetpass.php" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right" style="color: #d32f2f; text-decoration: none;">Forgot Password?</a>
+                        <a href="forgetpass" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right" style="color: #d32f2f; text-decoration: none;">Forgot Password?</a>
                        
                         <div class="offset-top-20">
                           <button class="btn button-primary" type="submit" name="login">Login As Administrator</button>
