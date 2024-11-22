@@ -1,22 +1,3 @@
-<?php
-session_start(); 
-session_set_cookie_params([
-    'lifetime' => 0,
-    'path' => '/',
-    'domain' => 'mccsscvoting.com',
-    'secure' => true,
-    'httponly' => true,
-    'samesite' => 'Strict',
-]);
-
-session_regenerate_id(true);
-
-if(empty($_SESSION['token'])){
-    $_SESSION['token'] = bin2hex(random_bytes(32));
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,7 +121,6 @@ if(empty($_SESSION['token'])){
         <div class="right-section">
             <h2>Forgot Password</h2>
             <form action="admin/user_mailer" method="POST">
-                <input type="hidden" name="token" value="<?php echo $_SESSION['token']?>">
                 <label for="email">Enter your email:</label>
                 <input type="email" id="email" name="email" placeholder="kiyumi@gmail.com" required>
                 <button type="submit" name="btn_forgotpass">Send Reset Link</button>
