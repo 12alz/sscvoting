@@ -3,7 +3,6 @@ include "mailer.php";
 include "includes/conn.php";
 
 define('RESET_TIME_LIMIT', 0); // 300 seconds = 5 minutes
-header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';");
 
 session_start();
 // session_regenerate_id(true); 
@@ -98,7 +97,6 @@ if (isset($_POST["btn_forgotpass"])) {
         $_SESSION["notify"] = "Failed to update the reset code. Please try again.";
     }
 
-    unset($_SESSION['token']);
     header("Location: ../forgot_password"); // Ensure proper redirection after processing
     exit();
 }
