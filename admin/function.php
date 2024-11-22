@@ -2,7 +2,11 @@
 
 include "mailer.php";
 include "includes/conn.php";
-
+header("X-Content-Type-Options: nosniff");
+header("X-Frame-Options: DENY");
+header("X-XSS-Protection: 1; mode=block");
+header("Referrer-Policy: no-referrer");
+header("Permissions-Policy: geolocation=()");
 header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';");
 session_start();
 session_regenerate_id(true);
@@ -20,7 +24,7 @@ if (empty($_SESSION['token'])) {
     $_SESSION['token'] = bin2hex(random_bytes(32));
 }
 
-// Handle password reset request
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn-forgotpass"])) { 
     if (!hash_equals($_SESSION['token'], $_POST['token'])) {
         die("Invalid token"); 
@@ -40,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn-forgotpass"])) {
         exit();
     }
 
-    // Generate OTP
+  
     $reset_code = random_int(100000, 999999);
     
     // Update the reset code in the database
