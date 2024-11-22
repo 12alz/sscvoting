@@ -14,11 +14,11 @@ $mail->CharSet = "UTF-8";
 $mail->IsSMTP();  
 $mail->Host = "smtp.gmail.com"; 
 $mail->Port = 587;  
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
 $mail->SMTPAuth = true; 
 
 $mail->Username = "santillanbsit@gmail.com";  
-$mail->Password = "svlwwvxfgrbtxqum";  
+$mail->Password = "svlwwvxfgrbtxqum"; 
 
 
 $mail->IsHTML(true);
