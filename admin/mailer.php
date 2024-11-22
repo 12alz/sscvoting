@@ -8,20 +8,17 @@ require("PHPMailer/src/Exception.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-$mail = new PHPMailer(true);  // Create PHPMailer instance
+$mail = new PHPMailer(true);  
 
 $mail->CharSet = "UTF-8";
-$mail->IsSMTP();  // Set mailer to use SMTP
-$mail->Host = "smtp.gmail.com";  // Set the SMTP server to Gmail's SMTP
-$mail->Port = 587;  // Port number for TLS (alternative: 465 for SSL)
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  // Enable TLS encryption
-$mail->SMTPAuth = true;  // Enable SMTP authentication
+$mail->IsSMTP();  
+$mail->Host = "smtp.gmail.com"; 
+$mail->Port = 587;  
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  
+$mail->SMTPAuth = true; 
 
-$mail->Username = "santillanbsit@gmail.com";  // SMTP username (use environment variable or .env file for security)
-$mail->Password = "svlwwvxfgrbtxqum";  // SMTP password (use environment variable or .env file for security)
+$mail->Username = "santillanbsit@gmail.com";  
+$mail->Password = "svlwwvxfgrbtxqum";  
 
-// It is highly recommended to store your sensitive credentials (username/password) in environment variables or an encrypted config file.
-// Example: getenv('SMTP_USERNAME') and getenv('SMTP_PASSWORD') for security reasons.
 
-// Set email format to HTML
 $mail->IsHTML(true);
