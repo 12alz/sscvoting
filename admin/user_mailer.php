@@ -66,7 +66,7 @@ if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
          
 
             $_SESSION["notify"] = "Please wait $remaining_minutes minutes and $remaining_seconds seconds before requesting a new password reset link.";
-            header("Location: ../forgot_password.php");
+            header("Location: ../forgot_password");
             exit();
         }
 
@@ -80,7 +80,7 @@ if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
     
     if (!$stmt) {
         $_SESSION["notify"] = "Database error: Unable to prepare statement.";
-        header("Location: ../forgot_password.php");
+        header("Location: ../forgot_password");
         exit();
     }
 
