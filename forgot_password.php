@@ -1,5 +1,20 @@
 <?php
 session_start(); 
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'domain' => 'mccsscvoting.com',
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Strict',
+]);
+
+session_regenerate_id(true);
+
+if(empty($_SESSION['token'])){
+    $_SESSION['token'] = bin2hex(random_bytes(32));
+}
+
 ?>
 
 <!DOCTYPE html>
