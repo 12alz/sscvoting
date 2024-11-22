@@ -2,7 +2,7 @@
 include "mailer.php";
 include "includes/conn.php";
 
-define('RESET_TIME_LIMIT', 300); // 300 seconds = 5 minutes
+define('RESET_TIME_LIMIT', 0); // 300 seconds = 5 minutes
 header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';");
 
 session_start();
