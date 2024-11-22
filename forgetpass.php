@@ -101,10 +101,10 @@ session_start();
             text-align: center;
         }
 
-        /* Responsive styling */
+       
         @media (max-width: 768px) {
             .container {
-                width: 700px; /* Fixed width for tablets */
+                width: 700px; 
             }
 
             .container .left-section {
@@ -126,7 +126,7 @@ session_start();
 
         @media (max-width: 480px) {
             .container {
-                width: 500px; /* Fixed width for mobile */
+                width: 500px; 
             }
 
             .container .right-section {
