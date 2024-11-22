@@ -29,7 +29,7 @@ if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
     $email = filter_va($_POST["email"], FILTER_VALIDATE_EMAIl);
     if(!$email){
         $_SESSION["notify"] = "Invalid email address";
-        header("Location: ../forgot_password.php");
+        header("Location: ../forgot_password");
         exit();
     }
    
