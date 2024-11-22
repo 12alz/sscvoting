@@ -1,4 +1,9 @@
 <?php
+include "mailer.php";
+include "includes/conn.php";
+
+header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';")
+
 session_start();
 session_set_cookie_params([
     'lifetime' => 0,
@@ -8,16 +13,25 @@ session_set_cookie_params([
     'httponly' => true,
     'samesite' => 'Strict',
 ]);
-session_start();
-include "mailer.php";
-include "includes/conn.php";
-
 
 define('RESET_TIME_LIMIT', 300); // 300 seconds = 5 minutes
 
-if (isset($_POST["btn_forgotpass"])) {
-    $email = $_POST["email"];
+if(empty($_SESSION['token'])){
+    $_SESSION['token'] = bin2hex(random_bytes(32));
+}
 
+
+if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
+    if(!hash_equals($_SESSION['token'], $_POST['token'])){
+        die('Invalid token');
+    }
+
+    $email = filter_va($_POST["email"], FILTER_VALIDATE_EMAIl);
+    if(!$email){
+        $_SESSION["notify"] = "Invalid email address";
+        header("Location: ../forgot_password.php");
+        exit();
+    }
    
     $sql = "SELECT * FROM voters WHERE email = ?";
     $stmt = $conn->prepare($sql);
