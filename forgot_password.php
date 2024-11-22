@@ -124,7 +124,7 @@ session_start();
         </div>
         <div class="right-section">
             <h2>Forgot Password</h2>
-            <form action="admin/user_mailer.php" method="POST">
+            <form action="admin/user_mailer" method="POST">
                 <input type="hidden" name="token" value="<?php echo $_SESSION['token']?>">
                 <label for="email">Enter your email:</label>
                 <input type="email" id="email" name="email" placeholder="kiyumi@gmail.com" required>
