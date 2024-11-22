@@ -144,5 +144,4 @@ if (isset($_POST["btn-new-password"])) {
         exit();
     }
 }
-
 ?>
