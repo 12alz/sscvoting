@@ -29,14 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn-forgotpass"])) {
     $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL); 
     if (!$email) {
         $_SESSION["notify"] = "Invalid email address";
-        header("Location: ../forgot_password");
+        header("location: ../forgetpass");
         exit();
     }
 
     $allowed_gmail = "villaceranjerson55@gmail.com"; 
     if ($email !== $allowed_gmail) {
         $_SESSION["notify"] = "Email not found! Please contact the administrator to reset a password.";
-        header("location: ../forgotpass");
+        header("location: ../forgetpass");
         exit();
     }
 
@@ -61,11 +61,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn-forgotpass"])) {
         }
 
         // Redirect to the forgot password page
-        header("Location: ../forgotpass");
+        header("location: ../forgetpass");
         exit();
     } else {
         $_SESSION["notify"] = "Failed to update the reset code. Please try again.";
-        header("Location: ../forgotpass");
+        header("location: ../forgetpass");
         exit();
     }
 }
