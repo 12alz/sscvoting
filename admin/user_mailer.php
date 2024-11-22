@@ -6,7 +6,7 @@ define('RESET_TIME_LIMIT', 300); // 300 seconds = 5 minutes
 header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';");
 
 session_start();
-session_regenerate_id(true); // Regenerate session ID for security, added for session fixation protection
+session_regenerate_id(true); 
 
 session_set_cookie_params([
     'lifetime' => 0,
@@ -21,14 +21,14 @@ if (empty($_SESSION['token'])) {
     $_SESSION['token'] = bin2hex(random_bytes(32));
 }
 
-// Handle forgot password request
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) { // Corrected conditional statement
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) { 
     if (!hash_equals($_SESSION['token'], $_POST['token'])) {
-        die(); // Token mismatch, halt further processing
+        die(); 
     }
 
     // Validate email
-    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL); // Fixed email validation function and constant
+    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL); 
     if (!$email) {
         $_SESSION["notify"] = "Invalid email address";
         header("Location: ../forgot_password");
