@@ -20,7 +20,7 @@ if(empty($_SESSION['token'])){
 }
 
 
-if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
+if ($_SERVER($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
     if(!hash_equals($_SESSION['token'], $_POST['token'])){
         die();
     }
