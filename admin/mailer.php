@@ -4,16 +4,16 @@
 require("PHPMailer/src/PHPMailer.php");
 require("PHPMailer/src/SMTP.php");
 require("PHPMailer/src/Exception.php");
-
+$mail = new PHPMailer(true);
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 $mail->IsSMTP(); 
 
 $mail->CharSet="UTF-8";
 $mail->Host = "smtp.gmail.com";
 $mail->SMTPDebug = 1; 
-$mail->Port = 465 ; //465 or 587
+$mail->Port = 587 ; //465 or 587
 
-$mail->SMTPSecure = 'tls';  
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
 $mail->SMTPAuth = true; 
 $mail->IsHTML(true);
 
