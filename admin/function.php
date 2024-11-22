@@ -21,7 +21,7 @@ if (empty($_SESSION['token'])) {
 }
 
 // Handle password reset request
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) { 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn-forgotpass"])) { 
     if (!hash_equals($_SESSION['token'], $_POST['token'])) {
         die("Invalid token"); 
     }
