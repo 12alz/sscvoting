@@ -7,6 +7,7 @@ header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; scrip
 
 session_start();
 session_regenerate_id(true);
+
 session_set_cookie_params([
     'lifetime' => 0,
     'path' => '/',
@@ -27,7 +28,7 @@ if(empty($_SESSION['token'])){
         die();
     }
 
-    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIl);
+    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
     if(!$email){
         $_SESSION["notify"] = "Invalid email address";
         header("Location: ../forgot_password");
