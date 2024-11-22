@@ -128,15 +128,17 @@ if (isset($_POST["btn-new-password"])) {
         $res = $query->fetch_assoc();
         $get_code = $res["code"];
 
+      
         if ($otp === $get_code) {
             // Hash the new password securely
             $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
+            
             $sql = "UPDATE `voters` SET `password` = ?, `code` = NULL WHERE email = ?";
             $stmt = $conn->prepare($sql);
             
             if (!$stmt) {
-                $_SESSION['notify'] = "Database error: Unable to prepare statement.";
+                $_SESSION['message'] = "Database error: Unable to prepare statement.";
                 header("Location: ../sign_in");
                 exit();
             }
@@ -145,24 +147,24 @@ if (isset($_POST["btn-new-password"])) {
             $stmt->execute();
 
             if ($stmt->affected_rows > 0) {
-                $_SESSION['notify'] = "Your password has been reset successfully.";
-                header("Location: ../sign_in"); // Fixed redirect after successful password reset (removed unnecessary period)
-                exit();
+                $_SESSION['message'] = "Your password has been reset successfully.";
+                header("Location: ../sign_in.");
+             
             } else {
-                $_SESSION['notify'] = "Failed to reset the password. Please try again.";
+                $_SESSION['message'] = "Failed to reset the password. Please try again.";
             }
         } else {
-            $_SESSION['notify'] = "Invalid OTP. Please try again.";
+            $_SESSION['message'] = "Invalid OTP. Please try again.";
         }
     } else {
-        $_SESSION['notify'] = "Email not found.";
+        $_SESSION['message'] = "Email not found.";
     }
-
     $stmt->close();
     $conn->close();
 
-    header("Location: ../admin/user_reset_pass"); // Ensure proper redirection after password reset attempt
+    header("Location: ../admin/user_reset_pass");//huhay kalibug
     exit();
 }
 
 ?>
+
