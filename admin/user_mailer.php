@@ -6,6 +6,7 @@ define('RESET_TIME_LIMIT', 300); // 300 seconds = 5 minutes
 header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';")
 
 session_start();
+session_regenerate_id(true);
 session_set_cookie_params([
     'lifetime' => 0,
     'path' => '/',
@@ -20,8 +21,7 @@ if(empty($_SESSION['token'])){
 }
 
 
-// if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
+if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
     if(!hash_equals($_SESSION['token'], $_POST['token'])){
         die();
     }
