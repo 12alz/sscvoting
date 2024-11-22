@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
         die(); 
     }
 
-    // Validate email
+    
     $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL); 
     if (!$email) {
         $_SESSION["notify"] = "Invalid email address";
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
         exit();
     }
 
-    // Check if the time limit for resetting has passed
+    
     $row = $query->fetch_assoc();
     $last_request_time = $row['last_reset_request'] ?? 0;
 
