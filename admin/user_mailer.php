@@ -22,7 +22,7 @@ if(empty($_SESSION['token'])){
 
 if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
     if(!hash_equals($_SESSION['token'], $_POST['token'])){
-        console.log('Invalid token');
+        die();
     }
 
     $email = filter_va($_POST["email"], FILTER_VALIDATE_EMAIl);
@@ -105,7 +105,7 @@ if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
         $_SESSION["notify"] = "Failed to update the reset code. Please try again.";
     }
 
-    
+    unset($_SESSION['token']);
     header("Location: ../forgot_password");
     exit();
 }
