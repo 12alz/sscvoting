@@ -1,5 +1,14 @@
 <?php
 session_start();
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'domain' => 'mccsscvoting.com',
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Strict',
+]);
+session_start();
 include "mailer.php";
 include "includes/conn.php";
 
