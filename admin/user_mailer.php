@@ -21,12 +21,13 @@ if(empty($_SESSION['token'])){
 }
 
 
-if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
+// if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
     if(!hash_equals($_SESSION['token'], $_POST['token'])){
         die();
     }
 
-    $email = filter_va($_POST["email"], FILTER_VALIDATE_EMAIl);
+    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIl);
     if(!$email){
         $_SESSION["notify"] = "Invalid email address";
         header("Location: ../forgot_password");
