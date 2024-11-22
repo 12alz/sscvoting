@@ -156,8 +156,7 @@ session_start();
         </div>
         <div class="right-section">
             <h2>Forgot Password</h2>
-            <form action="admin/function.php" method="POST">
-            <input type="hidden" name="token" value="<?php echo $_SESSION['token']?>">
+            <form action="admin/function.php" method="post">
                 <label for="email">Enter your email:</label>
                 <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
                 <button type="submit" name="btn-forgotpass">Send Reset Link</button>
@@ -167,7 +166,7 @@ session_start();
     </div>
     <script>
     <?php
-    // Check if there's a session message to displayss
+    // Check if there's a session message to displays
     if (isset($_SESSION['notify'])) {
         $message = addslashes($_SESSION['notify']);
         if (strpos($message, 'A reset link has been sent to your email') !== false) {
