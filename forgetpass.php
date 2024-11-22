@@ -157,6 +157,7 @@ session_start();
         <div class="right-section">
             <h2>Forgot Password</h2>
             <form action="admin/function.php" method="post">
+            <input type="hidden" name="token" value="<?php echo $_SESSION['token']?>">
                 <label for="email">Enter your email:</label>
                 <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
                 <button type="submit" name="btn-forgotpass">Send Reset Link</button>
