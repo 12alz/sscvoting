@@ -9,7 +9,7 @@ header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; scrip
 session_start();
 include "mailer.php";
 include "includes/conn.php";
-session_regenerate_id(true); 
+session_regenerate_id(true); // Regenerate session ID for security
 
 session_set_cookie_params([
     'lifetime' => 0,
@@ -24,13 +24,13 @@ if (empty($_SESSION['token'])) {
     $_SESSION['token'] = bin2hex(random_bytes(32));
 }
 
-
+// Handle forgot password request
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) { 
     if (!hash_equals($_SESSION['token'], $_POST['token'])) {
-        die(); 
+        die(); // Token mismatch, halt further processing
     }
 
-    /
+    // Validate email
     $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
     if (!$email) {
         $_SESSION["notify"] = "Invalid email address";
@@ -114,7 +114,8 @@ if (isset($_POST["btn-new-password"])) {
 
         // Verify OTP and reset password
         if ($otp === $get_code) {
-            $new_password = password_hash($password, PASSWORD_DEFAULT); 
+            $new_password = password_hash($password, PASSWORD_DEFAULT); // Hash the new password
+
             // Generate a new reset code and update the password in the database
             $reset_code = random_int(100000, 999999);
             $sql = "UPDATE `admin` SET `password`=?, `code`=? WHERE email=?";
