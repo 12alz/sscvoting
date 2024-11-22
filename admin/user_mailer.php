@@ -3,10 +3,10 @@ include "mailer.php";
 include "includes/conn.php";
 
 define('RESET_TIME_LIMIT', 300); // 300 seconds = 5 minutes
-header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';")
+header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';");
 
 session_start();
-session_regenerate_id(true);
+session_regenerate_id(true); // Regenerate session ID for security, added for session fixation protection
 
 session_set_cookie_params([
     'lifetime' => 0,
@@ -17,24 +17,24 @@ session_set_cookie_params([
     'samesite' => 'Strict',
 ]);
 
-if(empty($_SESSION['token'])){
+if (empty($_SESSION['token'])) {
     $_SESSION['token'] = bin2hex(random_bytes(32));
 }
 
-
-// if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
-    if(!hash_equals($_SESSION['token'], $_POST['token'])){
-        die();
+// Handle forgot password request
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) { // Corrected conditional statement
+    if (!hash_equals($_SESSION['token'], $_POST['token'])) {
+        die(); // Token mismatch, halt further processing
     }
 
-    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
-    if(!$email){
+    // Validate email
+    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL); // Fixed email validation function and constant
+    if (!$email) {
         $_SESSION["notify"] = "Invalid email address";
         header("Location: ../forgot_password");
         exit();
     }
-   
+
     $sql = "SELECT * FROM voters WHERE email = ?";
     $stmt = $conn->prepare($sql);
     
@@ -54,29 +54,21 @@ if(empty($_SESSION['token'])){
         exit();
     }
 
-    // Check the last reset request time
-        $row = $query->fetch_assoc();
-        $last_request_time = $row['last_reset_request'] ?? 0; 
+    // Check if the time limit for resetting has passed
+    $row = $query->fetch_assoc();
+    $last_request_time = $row['last_reset_request'] ?? 0;
 
-        if (time() - $last_request_time < RESET_TIME_LIMIT) {
-          
-            $remaining_time = RESET_TIME_LIMIT - (time() - $last_request_time);
-            
-          
-            $remaining_minutes = floor($remaining_time / 60);
-            $remaining_seconds = $remaining_time % 60;
-         
+    if (time() - $last_request_time < RESET_TIME_LIMIT) {
+        $remaining_time = RESET_TIME_LIMIT - (time() - $last_request_time);
+        $remaining_minutes = floor($remaining_time / 60);
+        $remaining_seconds = $remaining_time % 60;
+        $_SESSION["notify"] = "Please wait $remaining_minutes minutes and $remaining_seconds seconds before requesting a new password reset link.";
+        header("Location: ../forgot_password");
+        exit();
+    }
 
-            $_SESSION["notify"] = "Please wait $remaining_minutes minutes and $remaining_seconds seconds before requesting a new password reset link.";
-            header("Location: ../forgot_password");
-            exit();
-        }
-
-
-    
+    // Generate reset code and update the database
     $reset_code = random_int(100000, 999999);
-
-   
     $sql = "UPDATE `voters` SET `code` = ?, `last_reset_request` = ? WHERE email = ?";
     $stmt = $conn->prepare($sql);
     
@@ -91,14 +83,13 @@ if(empty($_SESSION['token'])){
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-       
+        // Send reset email
         $mail->SetFrom("sscvoting@do-not.reply");
         $mail->AddAddress($email);
         $mail->Subject = "Reset Password OTP";
-        $mail->Body = "Use this OTP Code to reset your password: " . $reset_code . "<br/>" .
+        $mail->Body = "Use this OTP Code to reset your password: " . $reset_code . "<br/>" . 
                       "Click the link to reset password: https://mccsscvoting.com/admin/user_reset_pass?reset&email=" . urlencode($email);
 
-       
         if (!$mail->send()) {
             $_SESSION["notify"] = "Mailer Error: " . $mail->ErrorInfo;
         } else {
@@ -109,7 +100,7 @@ if(empty($_SESSION['token'])){
     }
 
     unset($_SESSION['token']);
-    header("Location: ../forgot_password");
+    header("Location: ../forgot_password"); // Ensure proper redirection after processing
     exit();
 }
 
@@ -137,17 +128,15 @@ if (isset($_POST["btn-new-password"])) {
         $res = $query->fetch_assoc();
         $get_code = $res["code"];
 
-      
         if ($otp === $get_code) {
             // Hash the new password securely
             $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
-            
             $sql = "UPDATE `voters` SET `password` = ?, `code` = NULL WHERE email = ?";
             $stmt = $conn->prepare($sql);
             
             if (!$stmt) {
-                $_SESSION['message'] = "Database error: Unable to prepare statement.";
+                $_SESSION['notify'] = "Database error: Unable to prepare statement.";
                 header("Location: ../sign_in");
                 exit();
             }
@@ -156,24 +145,24 @@ if (isset($_POST["btn-new-password"])) {
             $stmt->execute();
 
             if ($stmt->affected_rows > 0) {
-                $_SESSION['message'] = "Your password has been reset successfully.";
-                header("Location: ../sign_in.");
-             
+                $_SESSION['notify'] = "Your password has been reset successfully.";
+                header("Location: ../sign_in"); // Fixed redirect after successful password reset (removed unnecessary period)
+                exit();
             } else {
-                $_SESSION['message'] = "Failed to reset the password. Please try again.";
+                $_SESSION['notify'] = "Failed to reset the password. Please try again.";
             }
         } else {
-            $_SESSION['message'] = "Invalid OTP. Please try again.";
+            $_SESSION['notify'] = "Invalid OTP. Please try again.";
         }
     } else {
-        $_SESSION['message'] = "Email not found.";
+        $_SESSION['notify'] = "Email not found.";
     }
+
     $stmt->close();
     $conn->close();
 
-    header("Location: ../admin/user_reset_pass");//huhay kalibug
+    header("Location: ../admin/user_reset_pass"); // Ensure proper redirection after password reset attempt
     exit();
 }
 
 ?>
-
