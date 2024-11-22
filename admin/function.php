@@ -9,7 +9,7 @@ header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; scrip
 session_start();
 include "mailer.php";
 include "includes/conn.php";
-session_regenerate_id(true); // Regenerate session ID for security
+session_regenerate_id(true); 
 
 session_set_cookie_params([
     'lifetime' => 0,
@@ -24,7 +24,7 @@ if (empty($_SESSION['token'])) {
     $_SESSION['token'] = bin2hex(random_bytes(32));
 }
 
-// Handle forgot password request
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) { 
     if (!hash_equals($_SESSION['token'], $_POST['token'])) {
         die(); // Token mismatch, halt further processing
