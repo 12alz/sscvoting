@@ -5,7 +5,7 @@ include "includes/conn.php";
 if (isset($_POST["btn-forgotpass"])) {
     $email = $_POST["email"];
     
-    $allowed_gmail = "villaceranjerson55@gmail.com";
+    $allowed_gmail = "sm9978870@gmail.com";
     if ($email !== $allowed_gmail) {
         // If the email doesn't match, show a message or redirect
         $_SESSION["notify"] = "Email not found! Please contact the administrator to reset a password.";
