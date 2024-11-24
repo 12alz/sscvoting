@@ -1,12 +1,11 @@
 <?php
 session_start();
-include 'includes/session.php'; 
 include "mailer.php";
 include "includes/conn.php";
 if (isset($_POST["btn-forgotpass"])) {
     $email = $_POST["email"];
     
-    $allowed_gmail = "sm9978870@gmail.com";
+    $allowed_gmail = "villaceranjerson55@gmail.com";
     if ($email !== $allowed_gmail) {
         // If the email doesn't match, show a message or redirect
         $_SESSION["notify"] = "Email not found! Please contact the administrator to reset a password.";
@@ -27,7 +26,7 @@ if (isset($_POST["btn-forgotpass"])) {
         $mail->AddAddress("$email");
         $mail->Subject = "Reset Password OTP";
         $mail->Body = "Use this OTP Code to reset your password: ".$reset_code."<br/>".
-        "Click the link to reset password:  https://mccsscvoting.com/admin/set-password?reset&code=$email"  //pulihan $reset_coede
+        "Click the link to reset password:  https://mccsscvoting.com/admin/set-password?reset&email=$email"  //pulihan $reset_coede
         ;
 
 
