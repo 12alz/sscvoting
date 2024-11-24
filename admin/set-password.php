@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'includes/conn.php';
 
 if (isset($_GET["reset"])) {
@@ -62,11 +63,12 @@ if (isset($_GET["reset"])) {
             background-color: #b71c1c;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="reset-password-box">
         <h2 class="reset-password-title">Reset Password</h2>
-        <form action="../admin/function.php" method="post">
+        <form action="admin/function.php" method="post">
             <div class="form-group has-feedback">
                 <input type="hidden" name="email" class="form-control" name="email" value="<?php echo $email ?>" required readonly>
             </div>
@@ -79,6 +81,30 @@ if (isset($_GET["reset"])) {
             <button type="submit" name="btn-new-password">Set Password</button>
         </form>
     </div>
+    <script>
+         <?php
+    // Check if there's a session message to displays
+    if (isset($_SESSION['notify'])) {
+        $message = addslashes($_SESSION['notify']);
+        if (strpos($message, 'Your password has been reset successfully') !== false) {
+            echo "Swal.fire({
+                title: 'Success',
+                text: '$message',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });";
+        } else {
+            echo "Swal.fire({
+                title: 'Error',
+                text: '$message',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });";
+        }
+        unset($_SESSION['notify']);
+    }
+    ?>
+    </script>
 </body>
 </html>
 <?php
