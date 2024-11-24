@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "mailer.php";
+include 'includes/session.php'; 
 include "includes/conn.php";
 if (isset($_POST["btn-forgotpass"])) {
     $email = $_POST["email"];
