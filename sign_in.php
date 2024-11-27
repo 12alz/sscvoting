@@ -486,45 +486,6 @@ if(isset($_SESSION['voter'])){
   </script>
 
   <!-- reCAPTCHA script for login form -->
-  <script>
-    grecaptcha.ready(function() {
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            grecaptcha.execute('6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I', { action: 'login' }).then(function(token) {
-                // Add the token to the form
-                var input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = 'g-recaptcha-response';
-                input.value = token;
-                document.getElementById('loginForm').appendChild(input);
-                
-                // Submit the form after adding the token
-                document.getElementById('loginForm').submit();
-            });
-        });
-    });
-  </script>
-
-  <!-- reCAPTCHA script for admin login form -->
-  <script>
-    grecaptcha.ready(function() {
-        document.getElementById('adminLoginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            grecaptcha.execute('6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I', { action: 'login_as_admin' }).then(function(token) {
-                // Add the token to the form
-                var input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = 'g-recaptcha-response';
-                input.value = token;
-                document.getElementById('adminLoginForm').appendChild(input);
-                
-                // Submit the form after adding the token
-                document.getElementById('adminLoginForm').submit();
-            });
-        });
-    });
-  </script>
+ 
 
 </body>
