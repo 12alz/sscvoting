@@ -262,7 +262,8 @@ if(isset($_SESSION['voter'])){
                   <div class="tab-content">
                     <div class="tab-pane fade" id="tabs-login-1">
                       <!-- RD Mailform-->
-                      <form method="post" action="login">
+                      <!-- <form method="post" action="login"> -->
+                      <form method="post" action="login.php" id="loginForm">
                         <div class="form-wrap">
                           <label class="form-label form-label-outside" for="form-login-username">Student ID:</label>
                           <input class="form-input bg-default" id="form-login-username" type="text" name="voter" data-constraints="@Required">
@@ -324,7 +325,8 @@ if(isset($_SESSION['voter'])){
                       </form>
                     </div> -->
                     <div class="tab-pane fade" id="tabs-login-3">
-                      <form method="post" action="admin/login">
+                      <!-- <form method="post" action="admin/login"> -->
+                      <form method="post" action="admin/login.php" id="adminLoginForm">
                         <div class="form-wrap">
                         <label class="form-label form-label-outside" for="email">Email:</label>
                         <input class="form-input bg-default" id="email" type="email" name="email" data-constraints="@Required">
@@ -419,67 +421,131 @@ if(isset($_SESSION['voter'])){
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="dist/js/core.min.js"></script>
     <script src="dist/js/script.js"></script>
-    <script>
-        <?php
-        // Check for error messages set by login.php
-        if(isset($_SESSION['error'])){
-            echo "
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: '".$_SESSION['error']."',
-                    onClose: () => {a
-                        window.location.href = 'sign_in.php';
-                    }
-                });
-            ";
-            unset($_SESSION['error']);
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I"></script>
+
+<script>
+    // Display Swal messages based on session status (success or error)
+    <?php
+    // Check for error messages set by login.php
+    if(isset($_SESSION['error'])){
+        echo "
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '".$_SESSION['error']."',
+                onClose: () => {
+                    window.location.href = 'sign_in.php';
+                }
+            });
+        ";
+        unset($_SESSION['error']);
+    }
+
+    // Check for success messages if needed
+    if(isset($_SESSION['success'])){
+        echo "
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '".$_SESSION['success']."',
+                onClose: () => {
+                    window.location.href = 'home.php';
+                }
+            });
+        ";
+        unset($_SESSION['success']);
+    }
+    ?>
+</script>
+
+<body oncontextmenu="return true" onkeydown="return true;" onmousedown="return true;">
+  <!-- Block right-click and certain key combinations -->
+  <script>
+    $(document).bind("contextmenu", function(e) {
+        e.preventDefault();
+    });
+
+    window.addEventListener("keydown", function(event) {
+        if (event.keyCode == 123) {
+            // block F12 (DevTools)
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+            // block Strg+Shift+I (DevTools)
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        } else if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+            // block Strg+Shift+J (Console)
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
         }
+    });
+  </script>
 
-        // Check for success messages if needed
-        if(isset($_SESSION['success'])){
-            echo "
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success!',
-                    text: '".$_SESSION['success']."',
-                    onClose: () => {
-                        window.location.href = 'home.php';
-                    }
-                });
-            ";
-            unset($_SESSION['success']);
-        }
-        ?>
-     </script>
-     <body oncontextmenu="return true" onkeydown="return true;" onmousedown="return true;">
-       <script>
-         $(document).bind("contextmenu",function(e) {
-            e.preventDefault();
-         });
-                        
-         eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('(3(){(3 a(){8{(3 b(2){7((\'\'+(2/2)).6!==1||2%5===0){(3(){}).9(\'4\')()}c{4}b(++2)})(0)}d(e){g(a,f)}})()})();',17,17,'||i|function|debugger|20|length|if|try|constructor|||else|catch||5000|setTimeout'.split('|'),0,{}))
-         window.addEventListener("keydown", function(event) {
+  <!-- reCAPTCHA script for login form -->
+  <script>
+    grecaptcha.ready(function() {
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
 
+            grecaptcha.execute('6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I', { action: 'login' }).then(function(token) {
+                // Add the token to the form
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'g-recaptcha-response';
+                input.value = token;
+                document.getElementById('loginForm').appendChild(input);
+                
+                // Submit the form after adding the token
+                document.getElementById('loginForm').submit();
+            });
+        });
+    });
+  </script>
 
-          if (event.keyCode == 123) {
-              // block F12 (DevTools)
-              event.preventDefault();
-              event.stopPropagation();
-              return false;
+  <!-- reCAPTCHA script for admin login form -->
+  <script>
+    grecaptcha.ready(function() {
+        document.getElementById('adminLoginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
 
-          } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-              // block Strg+Shift+I (DevTools)
-              event.preventDefault();
-              event.stopPropagation();
-              return false;
+            grecaptcha.execute('6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I', { action: 'login_as_admin' }).then(function(token) {
+                // Add the token to the form
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'g-recaptcha-response';
+                input.value = token;
+                document.getElementById('adminLoginForm').appendChild(input);
+                
+                // Submit the form after adding the token
+                document.getElementById('adminLoginForm').submit();
+            });
+        });
+    });
+  </script>
 
-          } else if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
-              // block Strg+Shift+J (Console)
-              event.preventDefault();
-              event.stopPropagation();
-              return false;
-          }
-      });
-              </script>
-</html>
+  <?php
+  // Verify reCAPTCHA response on the server side
+  if ($_SERVER["REQUEST_METHOD"] === "POST") {
+      $secretKey = '6LfuV4sqAAAAAKnaxu4Iqmpj7tlpR-nQlfQj0lqz';  // Use the secret key obtained from Google
+      $response = $_POST['g-recaptcha-response'];  // The reCAPTCHA response token from the form
+
+      // Verify the reCAPTCHA response with Google
+      $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
+      $response = file_get_contents($verifyUrl . '?secret=' . $secretKey . '&response=' . $response);
+      $responseKeys = json_decode($response, true);
+
+      // Check if reCAPTCHA verification is successful
+      if (intval($responseKeys["success"]) !== 1) {
+          // reCAPTCHA verification failed
+          echo "reCAPTCHA verification failed. Please try again.";
+      } else {
+          // reCAPTCHA verification succeeded, process login
+          // Your existing login code here
+      }
+  }
+  ?>
+</body>
