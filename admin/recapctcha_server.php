@@ -1,4 +1,4 @@
-<!-- <?php
+ <?php
  
   if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $secretKey = '6LfuV4sqAAAAAKnaxu4Iqmpj7tlpR-nQlfQj0lqz'; 
@@ -17,4 +17,4 @@
         
       }
   }
-  ?> -->
+  ?> 
