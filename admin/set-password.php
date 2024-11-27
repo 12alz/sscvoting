@@ -64,6 +64,8 @@ if (isset($_GET["reset"])) {
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+<script src="https://www.google.com/recaptcha/api.js?render=6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I"></script>
 </head>
 <body>
     <div class="reset-password-box">

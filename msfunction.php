@@ -213,10 +213,10 @@ $conn->close();
                 </select>
             </div>
 
-            <div class="form-wrap">
+            <!-- <div class="form-wrap">
                 <label for="photo">Photo</label>
                 <input type="file" name="photo" accept=".jpg, .jpeg, .png">
-            </div>
+            </div> -->
             <div class="form-wrap">
             <label>
                 <input type="checkbox" name="terms" required>
