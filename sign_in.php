@@ -485,7 +485,7 @@ if(isset($_SESSION['voter'])){
     });
   </script>
 
-  <!-- reCAPTCHA script for login form -->
- 
+  
+
 
 </body>
