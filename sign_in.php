@@ -527,25 +527,4 @@ if(isset($_SESSION['voter'])){
     });
   </script>
 
-  <?php
-  // Verify reCAPTCHA response on the server side
-  if ($_SERVER["REQUEST_METHOD"] === "POST") {
-      $secretKey = '6LfuV4sqAAAAAKnaxu4Iqmpj7tlpR-nQlfQj0lqz';  // Use the secret key obtained from Google
-      $response = $_POST['g-recaptcha-response'];  // The reCAPTCHA response token from the form
-
-      // Verify the reCAPTCHA response with Google
-      $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
-      $response = file_get_contents($verifyUrl . '?secret=' . $secretKey . '&response=' . $response);
-      $responseKeys = json_decode($response, true);
-
-      // Check if reCAPTCHA verification is successful
-      if (intval($responseKeys["success"]) !== 1) {
-          // reCAPTCHA verification failed
-          echo "reCAPTCHA verification failed. Please try again.";
-      } else {
-          // reCAPTCHA verification succeeded, process login
-          // Your existing login code here
-      }
-  }
-  ?>
 </body>
