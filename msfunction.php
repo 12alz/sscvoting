@@ -282,6 +282,8 @@ $conn->close();
         return true;
     }
 </script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I"></script>
+
 
 </body>
 </html>
