@@ -4,7 +4,7 @@
 
 	if(!isset($_SESSION['admin']) || trim($_SESSION['admin']) == ''){
 		header('location: ../sign_in');
-		exit();
+		exit(); AKON I_FIX NI PARA MAG REDRECT WAIT
 	}
 
 	$user = $_SESSION['admin'];
@@ -12,5 +12,4 @@
 	$sql = "SELECT * FROM admin WHERE id = $user";
 	$query = $conn->query($sql);
 	$user = $query->fetch_assoc();
-	
 ?>
