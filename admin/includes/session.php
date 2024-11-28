@@ -7,29 +7,10 @@
 		exit();
 	}
 
-	$stmt = $conn->prepare("SELECT * FROM admin WHERE id = ?");
-	$stmt->bind_param('s', $_SESSION['admin']);
-	$stmt->execute();
-	$result = $stmt->get_result();
+	$user = $_SESSION['admin'];
 
-	if($result->num_rows=0){
-		header('location: ../sign_in');
-		exit();
-	}
-
-	$user = $result->fetch_assoc();
-	$stmt->close();
-
-	header('X-Frame-Options: DENY');
-	header('Content-Security-Policy: default-src \'self\'');
-	header('X-Content-Type-Options: nosniff');
-
-	if($_SERVER['REQUEST_METHOD'] === 'POST'){
-		if(!isset($_POST['_token']) || $_POST['_token'] !== $_SESSION['_token']){
-			header('location: ../sign_in');
-			exit();
-		}
-	}
-
-	$_SESSION['_token'] = bin2hex(random_bytes(32));
+	$sql = "SELECT * FROM admin WHERE id = $user";
+	$query = $conn->query($sql);
+	$user = $query->fetch_assoc();
+	
 ?>
