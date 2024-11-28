@@ -4,7 +4,7 @@
 
 	if(!isset($_SESSION['admin']) || trim($_SESSION['admin']) == ''){
 		header('location: ../sign_in');
-		exit(); AKON I_FIX NI PARA MAG REDRECT WAIT
+		exit(); 
 	}
 
 	$user = $_SESSION['admin'];
