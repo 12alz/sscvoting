@@ -449,7 +449,7 @@ if(isset($_SESSION['voter'])){
                 title: 'Success!',
                 text: '".$_SESSION['success']."',
                 onClose: () => {
-                    window.location.href = 'home.php';
+                    window.location.href = 'home';
                 }
             });
         ";

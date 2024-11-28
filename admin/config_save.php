@@ -1,7 +1,7 @@
 <?php
 	include 'includes/session.php';
 
-	$return = 'home.php';
+	$return = 'home';
 	if(isset($_GET['return'])){
 		$return = $_GET['return'];
 	}
