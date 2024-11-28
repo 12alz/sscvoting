@@ -1,18 +1,16 @@
 <?php
-	include '../includes/conn.php';
 	session_start();
+	include 'includes/conn.php';
 
 	if(!isset($_SESSION['admin']) || trim($_SESSION['admin']) == ''){
-		header('location: ../index');
-		exit();
+		header('Location: ../sign_in');
+		exit(); 
 	}
 
-	$conn = $pdo->open();
+	$user = $_SESSION['admin'];
 
-	$stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");
-	$stmt->execute(['id'=>$_SESSION['admin']]);
-	$admin = $stmt->fetch();
-
-	$pdo->close();
-
+	$sql = "SELECT * FROM admin WHERE id = $user";
+	$query = $conn->query($sql);
+	$user = $query->fetch_assoc();
+	
 ?>
