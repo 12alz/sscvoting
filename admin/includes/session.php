@@ -12,4 +12,5 @@
 	$sql = "SELECT * FROM admin WHERE id = $user";
 	$query = $conn->query($sql);
 	$user = $query->fetch_assoc();
+	exit(); 
 ?>
