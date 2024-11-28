@@ -1,12 +1,40 @@
+<Files ".htaccess">
+    Requires all denied
+</Files>
+
+<IfModule mod_headers.c>
+    # Set security headers
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "no-referrer"
+    Header set Permissions-Policy "geolocation=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # If the user is not logged in, redirect them to the login page when accessing /admin/home.php
-    RewriteCond %{REQUEST_URI} ^/admin/home\.php$ [NC]
-    RewriteCond %{HTTP_COOKIE} !admin_logged_in=true [NC]  # Replace with your session/cookie name
-    RewriteRule ^.*$ /admin/login.php [L,R=301]  # Redirect to the login page
+    # Disable HTTPS redirection (Remove the redirection to HTTPS)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-    # Deny direct access to /admin/home.php (403 Forbidden) if no other conditions match
-    RewriteCond %{REQUEST_URI} ^/admin/home\.php$ [NC]
-    RewriteRule ^.*$ - [F,L]  # Block with 403 Forbidden error
+    # Disable redirection to a specific domain (e.g., mccsscvoting.com)
+    # RewriteCond %{HTTP_HOST} !^mccsscvoting\.com$ [NC]
+    # RewriteRule ^(.*)$ https://mccsscvoting.com/$1 [R=301,L]
+
+    # Enable PHP file rewriting (no redirection)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^(.*)$ $1.php [L,QSA]  # Keep URLs clean without redirection
+
+    # Disable directory listing
+    Options -Indexes
+
+    # Block potentially harmful query strings (SQL injections, script attempts, etc.)
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* index.php [F,L]
 </IfModule>
