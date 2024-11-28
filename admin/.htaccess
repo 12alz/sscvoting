@@ -1,11 +1,12 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Deny direct access to /admin/home.php (404 or 403)
+    # If the user is not logged in, redirect them to the login page when accessing /admin/home.php
     RewriteCond %{REQUEST_URI} ^/admin/home\.php$ [NC]
-    RewriteRule ^.*$ - [F,L]  # Block with a 403 Forbidden error
-     # If the user is not logged in and tries to access /admin/home.php, redirect to login
+    RewriteCond %{HTTP_COOKIE} !admin_logged_in=true [NC]  # Replace with your session/cookie name
+    RewriteRule ^.*$ /admin/login.php [L,R=301]  # Redirect to the login page
+
+    # Deny direct access to /admin/home.php (403 Forbidden) if no other conditions match
     RewriteCond %{REQUEST_URI} ^/admin/home\.php$ [NC]
-    RewriteCond %{HTTP_COOKIE} !admin_logged_in=true [NC]  # Replace 'admin_logged_in' with your session cookie or flag
-    RewriteRule ^.*$ /admin/login.php [L,R=301]  # Permanent redirect to login page
+    RewriteRule ^.*$ - [F,L]  # Block with 403 Forbidden error
 </IfModule>
