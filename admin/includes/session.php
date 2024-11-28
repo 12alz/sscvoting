@@ -2,15 +2,21 @@
 	session_start();
 	include 'includes/conn.php';
 
-	if(!isset($_SESSION['admin']) || trim($_SESSION['admin']) == ''){
+	// Check if admin is logged in
+	if(!isset($_SESSION['admin']) || trim($_SESSION['admin']) == '') {
 		header('Location: ../sign_in');
 		exit(); 
 	}
 
-	$user = $_SESSION['admin'];
+	// Get the admin ID from the session
+	$userId = $_SESSION['admin'];
 
-	$sql = "SELECT * FROM admin WHERE id = $user";
-	$query = $conn->query($sql);
-	$user = $query->fetch_assoc();
-	
+	// Use a prepared statement to safely fetch the admin's data
+	$conn = $pdo->open();
+	$stmt = $conn->prepare("SELECT * FROM admin WHERE id = :id");
+	$stmt->execute(['id' => $userId]);
+	$user = $stmt->fetch(); // Fetch the data as an associative array
+
+	// Close the PDO connection
+	$pdo->close();
 ?>
