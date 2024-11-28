@@ -24,10 +24,4 @@
 	header('Content-Security-Policy: default-src \'self\'');
 	header('X-Content-Type-Options: nosniff');
 
-	if($_SERVER['REQUEST_METHOD'] === 'POST'){
-		if(!isset($_POST['_token']) || $_POST['_token'] !== $_SESSION['_token']){
-			header('location: ../sign_in');
-			exit();
-		}
-	}
 ?>
