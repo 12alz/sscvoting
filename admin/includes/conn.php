@@ -1,5 +1,5 @@
 <?php
-database credential
+// database credential
 $host = "127.0.0.1:3306";
 $dbname = "u510162695_votesystem";
 $username = "u510162695_votesystem";
