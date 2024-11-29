@@ -18,7 +18,7 @@ $password = "1Votesystem";
 	    die("Connection failed: " . $conn->connect_error);
 		//echo "Connection Failed";
 	}
-	//echo "Connection Success";
+	//echo "Connection Successs";
 
 	
 ?>
