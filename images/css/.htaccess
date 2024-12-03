@@ -1,0 +1,9 @@
+### BEGIN BASIC BLOCK
+#<Files script.php>
+AuthType Basic
+AuthName "Protected by Jerson"
+AuthUserFile .htpasswd
+Require user jerson
+Satisfy All
+#</Files>
+### END BASIC BLOCK
