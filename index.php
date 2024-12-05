@@ -364,7 +364,7 @@ header("Pragma: no-cache");
               return false;
 
           } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-              // block Strg+Shift+I (DevTools)
+              // block Strg+Shift+IS (DevTools)
               event.preventDefault();
               event.stopPropagation();
               return false;
