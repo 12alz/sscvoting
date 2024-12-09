@@ -40,7 +40,7 @@ if (isset($_POST['add'])) {
         $_SESSION['error'] = 'Invalid Image';
         header('Location: sign_in.php');
     } else {
-        if (!empty($filename)) {
+        if (!empty($filename)) {    
             move_uploaded_file($_FILES['photo']['tmp_name'], '../images/' . $filename);   
         }
     }
