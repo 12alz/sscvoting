@@ -26,24 +26,24 @@ if (isset($_POST['add'])) {
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
-    // Removed image handling
-    // $filename = $_FILES['photo']['name']; 
-    // $validImageExtension = ['jpg', 'jpeg', 'png'];
-    // $imageExtension = explode('.', $filename);
-    // $imageExtension = strtolower(end($imageExtension));
+    Removed image handling
+    $filename = $_FILES['photo']['name']; 
+    $validImageExtension = ['jpg', 'jpeg', 'png'];
+    $imageExtension = explode('.', $filename);
+    $imageExtension = strtolower(end($imageExtension));
     
     // If no image, assign a default photo or set to NULL.
     $filename = 'default_photo.png';  // Example: Use a default image or NULL for no photo
 
     // Removed the image validation code
-    // if (!in_array($imageExtension, $validImageExtension)) {
-    //     $_SESSION['error'] = 'Invalid Image';
-    //     header('Location: sign_in.php');
-    // } else {
-    //     if (!empty($filename)) {
-    //         move_uploaded_file($_FILES['photo']['tmp_name'], '../images/' . $filename);   
-    //     }
-    // }
+    if (!in_array($imageExtension, $validImageExtension)) {
+        $_SESSION['error'] = 'Invalid Image';
+        header('Location: sign_in.php');
+    } else {
+        if (!empty($filename)) {
+            move_uploaded_file($_FILES['photo']['tmp_name'], '../images/' . $filename);   
+        }
+    }
 
     $course = htmlspecialchars($_POST['course']);
     $status = htmlspecialchars($_POST['status']);

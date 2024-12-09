@@ -159,7 +159,7 @@ $conn->close();
 <?php if ($showForm): ?>
     <div class="container">
         <h2 style="text-align: center; color: #333;">Register</h2>
-        <form method="POST" action="sign_up" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <form method="POST" action="sign_up.php" enctype="multipart/form-data" onsubmit="return validateForm()">
             <div class="form-wrap">
                 <label for="voters_id">Student ID</label>
                 <input type="text" class="form-control" id="voters_id" name="voters_id" required pattern="\d{4}-\d{4}" title="Format: XXXX-XXXX (8 digits total)">
@@ -213,10 +213,10 @@ $conn->close();
                 </select>
             </div>
 
-            <!-- <div class="form-wrap">
+            <div class="form-wrap">
                 <label for="photo">Photo</label>
                 <input type="file" name="photo" accept=".jpg, .jpeg, .png">
-            </div> -->
+            </div>
             <div class="form-wrap">
             <label>
                 <input type="checkbox" name="terms" required>
@@ -228,7 +228,7 @@ $conn->close();
             
         </form>
         <div class="login-link">
-            <p>Have an account? <a href="sign_in">Login here</a></p>
+            <p>Have an account? <a href="sign_in.php">Login here</a></p>
         </div>
     </div>
 <?php else: ?>
@@ -282,8 +282,6 @@ $conn->close();
         return true;
     }
 </script>
-<script src="https://www.google.com/recaptcha/api.js?render=6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I"></script>
-
 
 </body>
 </html>
