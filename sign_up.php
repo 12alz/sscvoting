@@ -26,7 +26,7 @@ if (isset($_POST['add'])) {
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
-    Removed image handling
+    // Removed image handling
     $filename = $_FILES['photo']['name']; 
     $validImageExtension = ['jpg', 'jpeg', 'png'];
     $imageExtension = explode('.', $filename);
