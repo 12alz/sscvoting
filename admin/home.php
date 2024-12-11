@@ -378,6 +378,18 @@
 </script> 
 
 <style>
+  .chart-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.chart {
+  width: 100% !important;
+  height: auto !important; /* Ensures the chart resizes dynamically */
+}
+
 .small-box.bg-red {
     background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
     color: white; /* Ensure the text is visible */
