@@ -292,7 +292,7 @@ session_start();
                   </div>
                   <div class="offset-top-15">
                     <ul class="list list-unstyled">
-                      <li><span class="icon icon-xs text-madison mdi mdi-email-outline align-middle"></span><a class="align-middle inset-left-10" href="mailto:info@demolink.org">mccssc@gmail.com</a></li>
+                      <li><span class="icon icon-xs text-madison mdi mdi-email-outline align-middle"></span><a class="align-middle inset-left-10" href="mailto:info@demolink.org">sscmcc13@gmail.com</a></li>
                     </ul>
                   </div>
                 </div>
@@ -305,7 +305,8 @@ session_start();
                     <div class="unit flex-row unit-spacing-xs">
                       <div class="unit-left"><span class="icon icon-xs mdi mdi-map-marker text-madison"></span></div>
                       <div class="unit-body">
-                        <p><a class="text-dark" href="#">Bunakan Madridejos Cebu</a></p>
+                        <p><a class="text-dark" href="#">Crossing Bunakan, Madridejos, Cebu, Madridejos, Philippines
+                        </a></p>
                       </div>
                     </div>
                   </div>
@@ -320,10 +321,10 @@ session_start();
                       <div class="unit-left"><span class="icon icon-xs mdi mdi-calendar-clock text-madison"></span></div>
                       <div class="unit-body">
                         <div>
-                          <p>Mon-Fri: 8:00am-8:00pm</p>
+                          <p>Mon-Fri: 8:00am-5:00pm</p>
                         </div>
                         <div>
-                          <p>Sat: 8:00am-3:00pm</p>
+                          <p>Sat: 8:00am-5:00pm</p>
                         </div>
                         <div>
                           <p>Sun: Closed</p>
@@ -397,7 +398,7 @@ session_start();
                   <li>
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-phone align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a class="text-dark" href="tel:#">63-948-3618-713</a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">1-800-6547-321</a>
+                      <div class="unit-body"><a class="text-dark" href="tel:#"></a> <a class="d-block d-lg-inline-block text-dark" href="tel:#">63-948-3618-713</a>
                       </div>
                     </div>
                   </li>
