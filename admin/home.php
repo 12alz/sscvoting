@@ -226,8 +226,8 @@
                     <h4 class='box-title'><b>".$row['description']."</b></h4>
                   </div>
                   <div class='box-body'>
-                       <div class="chart-container">
-                            <canvas id="<?php echo slugify($row['description']); ?>" class="chart"></canvas>
+                    <div class='chart'>
+                      <canvas id='".slugify($row['description'])."' style='height:100px'></canvas>
                     </div>
                   </div>
                 </div>
