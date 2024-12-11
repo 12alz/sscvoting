@@ -304,7 +304,7 @@ header("Pragma: no-cache");
               <p>The Madridejos Community College dreams to mold professionally competitive,service   oriented,   productive,   and value-laden   citizens,   through   quality   education   andintegral formation. Inspired by its four-fold functions of effective instruction, personalenhancement, research and extension, and production, it shall become a deeply rootedfoundation   of   the   town   's   socio-economic   upliftment   and   a   prime   mover   for   nationbuilding.</p>
               <div class="offset-top-35">
                 <ul class="list-inline list-inline-sm list-inline-madison">
-                  <li><a class="icon icon-xxs fa fa-facebook icon-rect icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon icon-xxs fa fa-facebook icon-rect icon-gray-light-filled" href="https://www.facebook.com/madridejoscollege"></a></li>
                   <li><a class="icon icon-xxs fa fa-twitter icon-rect icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-google icon-rect icon-gray-light-filled" href="#"></a></li>
                   <li><a class="icon icon-xxs fa fa-instagram icon-rect icon-gray-light-filled" href="#"></a></li>
