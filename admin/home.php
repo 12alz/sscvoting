@@ -308,8 +308,8 @@
         scales: {
             x: {
                 ticks: {
-                    maxRotation: 90, // Rotate labels if they overflow
-                    minRotation: 45, // Make labels fit better on smaller screens
+                    maxRotation: 0, // Set to 0 to keep labels horizontal
+                    minRotation: 0, // Set to 0 to keep labels horizontal
                     autoSkip: true, // Skip labels if they overlap
                     font: {
                         size: 12, // Adjust font size for better readability
@@ -378,18 +378,6 @@
 </script> 
 
 <style>
-  .chart-container {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.chart {
-  width: 100% !important;
-  height: auto !important; /* Ensures the chart resizes dynamically */
-}
-
 .small-box.bg-red {
     background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
     color: white; /* Ensure the text is visible */
