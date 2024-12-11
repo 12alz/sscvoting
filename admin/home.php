@@ -212,32 +212,33 @@
         </div>
       </div>
       <div id="voting-tally">
-        <?php
-          $sql = "SELECT * FROM positions ORDER BY priority ASC";
-          $query = $conn->query($sql);
-          $inc = 3;
-          while($row = $query->fetch_assoc()){
-            $inc = ($inc == 3) ? 1 : $inc+1; 
-            if($inc == 1) echo "<div class='row'>";
-            echo "
-              <div class='col-sm-4'>
-                <div class='box box-solid'>
-                  <div class='box-header with-border'>
-                    <h4 class='box-title'><b>".$row['description']."</b></h4>
-                  </div>
-                  <div class='box-body'>
-                    <div class='chart'>
-                      <canvas id='".slugify($row['description'])."' style='height:100px'></canvas>
-                    </div>
-                  </div>
-                </div>
+  <?php
+    $sql = "SELECT * FROM positions ORDER BY priority ASC";
+    $query = $conn->query($sql);
+    $inc = 3;
+    while($row = $query->fetch_assoc()){
+      $inc = ($inc == 3) ? 1 : $inc+1; 
+      if($inc == 1) echo "<div class='row'>";
+      echo "
+        <div class='col-sm-4'>
+          <div class='box box-solid'>
+            <div class='box-header with-border'>
+              <h4 class='box-title'><b>".$row['description']."</b></h4>
+            </div>
+            <div class='box-body'>
+              <div class='chart-container'>
+                <canvas id='".slugify($row['description'])."'></canvas>
               </div>
-            ";
-            if($inc == 3) echo "</div>";  
-          }
-          if($inc == 1) echo "<div class='col-sm-6'></div></div>";
-        ?>
-      </div>
+            </div>
+          </div>
+        </div>
+      ";
+      if($inc == 3) echo "</div>";  
+    }
+    if($inc == 1) echo "<div class='col-sm-6'></div></div>";
+  ?>
+</div>
+
     </section>
     <!-- right col -->
   </div>
@@ -326,6 +327,7 @@
     options: barChartOptions
   });
 }
+
 
   <?php
     $sql = "SELECT * FROM positions ORDER BY priority ASC";
