@@ -118,9 +118,8 @@
                     <label for="edit_firstname" class="col-sm-3 control-label">Fullname</label>
 
                     <div class="col-sm-9">
-                    <label for="edit_firstname" class="col-sm-3 control-label">Fullname</label>
-                      <!-- <select type="text" class="form-control" id="edit_firstname" name="firstname" required>
-                          <option value="" selected>-Select-</option> -->
+                    <input type="text" class="form-control" id="edit_firstname" name="firstname" placeholder="Enter Full Name" required>
+                          <option value="" selected>-Select-</option>
                      <?php
                           $sql = "SELECT * FROM voters";
                           $query = $conn->query($sql);
