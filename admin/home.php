@@ -226,8 +226,9 @@
                     <h4 class='box-title'><b>".$row['description']."</b></h4>
                   </div>
                   <div class='box-body'>
-                    <div class='chart'>
-                      <canvas id='".slugify($row['description'])."' style='height:200px'></canvas>
+                    
+                      <div class='chart-container'>
+                <canvas id='".slugify($row['description'])."'></canvas>
                     </div>
                   </div>
                 </div>
@@ -303,12 +304,12 @@
   };
 
   var barChartOptions = {
-    responsive: true,           // Makes the chart responsive
-    maintainAspectRatio: false, // Allows the height to be adjusted
+    responsive: true,           // This makes the chart responsive
+    maintainAspectRatio: false, // Allows the chart to adjust its height as well
     scales: {
       y: {
         beginAtZero: true,     // Ensures the Y-axis starts from zero
-        stepSize: 1,          // Sets the step size to 1, ensuring whole number increments
+        stepSize: 1,          // Sets the step size to 1 for better readability
         ticks: {
           callback: function(value) {
             return value % 1 === 0 ? value : null; // Ensure only integers are shown
@@ -325,8 +326,6 @@
   });
 }
 
-
-  
 
   <?php
     $sql = "SELECT * FROM positions ORDER BY priority ASC";
@@ -356,6 +355,19 @@
 </script> 
 
 <style>
+  /* Ensure that the chart container takes the full width and is responsive */
+.chart-container {
+    position: relative;
+    width: 100%;  /* Takes the full width of the parent */
+    height: 400px;  /* Adjust the height based on your preference */
+}
+
+/* Ensure that canvas element takes up 100% of the width and adjusts height accordingly */
+.chart-container canvas {
+    width: 100% !important;
+    height: auto !important; /* Ensures the height adjusts based on width */
+}
+
 .small-box.bg-red {
     background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
     color: white; /* Ensure the text is visible */
