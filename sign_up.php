@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 include 'includes/conn.php';
 
@@ -26,28 +26,46 @@ if (isset($_POST['add'])) {
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
-    // Removed image handling
+    // Image upload logic
     $filename = $_FILES['photo']['name']; 
-    $validImageExtension = ['jpg', 'jpeg', 'png'];
-    $imageExtension = explode('.', $filename);
-    $imageExtension = strtolower(end($imageExtension));
-    
-    // If no image, assign a default photo or set to NULL.
-    // $filename = 'default_photo.png';  // Example: Use a default image or NULL for no photo
+    $validImageExtensions = ['jpg', 'jpeg', 'png'];
+    $imageExtension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
-    // Removed the image validation code
-    if (!in_array($imageExtension, $validImageExtension)) {
-        $_SESSION['error'] = 'Invalid Image';
+    // Check if the file is a valid image type
+    if (!in_array($imageExtension, $validImageExtensions)) {
+        $_SESSION['error'] = 'Invalid Image. Only JPG, JPEG, and PNG files are allowed.';
         header('Location: sign_in.php');
-    } else {
-        if (!empty($filename)) {    
-            move_uploaded_file($_FILES['photo']['tmp_name'], '../images/' . $filename);   
+        exit();
+    }
+
+    // Create a unique filename to avoid overwriting existing files
+    $newFilename = uniqid('photo_') . '.' . $imageExtension;
+
+    // Check if the upload directory exists, create it if not
+    $uploadDir = '../images/';
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0777, true); // Create directory with write permissions
+    }
+
+    // Move the uploaded file to the server
+    if ($_FILES['photo']['error'] == UPLOAD_ERR_OK) {
+        $uploadedFilePath = $uploadDir . $newFilename;
+        if (!move_uploaded_file($_FILES['photo']['tmp_name'], $uploadedFilePath)) {
+            $_SESSION['error'] = 'File upload failed. Please try again.';
+            header('Location: sign_in.php');
+            exit();
         }
+    } else {
+        $_SESSION['error'] = 'File upload error. Please try again.';
+        header('Location: sign_in.php');
+        exit();
     }
 
     $course = htmlspecialchars($_POST['course']);
     $status = htmlspecialchars($_POST['status']);
     $voters_id = htmlspecialchars($_POST['voters_id']);
+    
+    // Check if the user already exists
     $checkUser = "SELECT * FROM voters WHERE voters_id ='$voters_id' OR email='$email'";
     $result = mysqli_query($conn, $checkUser);
     $count = mysqli_num_rows($result);
@@ -55,31 +73,38 @@ if (isset($_POST['add'])) {
     if ($count > 0) {
         $_SESSION['error'] = 'ID or email already exists';
         header('Location: sign_in.php');
+        exit();
     } else {
-        $ip_adress = getUserIP();
+        $ip_address = getUserIP();
         $username = $email;  
-        
+
+        // Insert the user data into the database
         $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, email, course, status, photo) 
-                VALUES ('$voters_id', '$password', '$firstname', '$lastname', '$email','$course', '$status', '$filename')";
+                VALUES ('$voters_id', '$password', '$firstname', '$lastname', '$email', '$course', '$status', '$newFilename')";
         
         if ($conn->query($sql)) {
-            $log_sql = "INSERT INTO login_logs (ip_adress, timestamp, username) 
-                        VALUES ('$ip_adress', NOW(), '$username')";
+            // Log the login attempt
+            $log_sql = "INSERT INTO login_logs (ip_address, timestamp, username) 
+                        VALUES ('$ip_address', NOW(), '$username')";
             
             if ($conn->query($log_sql)) {
                 $_SESSION['success'] = 'Voter added successfully';
                 header('Location: sign_in.php');
+                exit();
             } else {
                 $_SESSION['error'] = 'Failed to log the registration details: ' . $conn->error;
                 header('Location: sign_in.php');
+                exit();
             }
         } else {
             $_SESSION['error'] = 'Failed to Register: ' . $conn->error;
             header('Location: sign_in.php');
+            exit();
         }
     }
 } else {
     $_SESSION['error'] = 'Failed to Register';
     header('Location: sign_in.php');
+    exit();
 }
 ?>
