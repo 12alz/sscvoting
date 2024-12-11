@@ -131,7 +131,7 @@
                         ?>
                       </select>
                     </div>
-                </div>
+              
              
                 <div class="form-group">
                     <label for="edit_course" class="col-sm-3 control-label">Course</label>
