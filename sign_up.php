@@ -33,7 +33,7 @@ if (isset($_POST['add'])) {
     $imageExtension = strtolower(end($imageExtension));
     
     // If no image, assign a default photo or set to NULL.
-    $filename = 'default_photo.png';  // Example: Use a default image or NULL for no photo
+    // $filename = 'default_photo.png';  // Example: Use a default image or NULL for no photo
 
     // Removed the image validation code
     if (!in_array($imageExtension, $validImageExtension)) {
