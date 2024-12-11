@@ -289,63 +289,48 @@
   //     options: barChartOptions
   //   });
   // }
+  
   function generateChart(ctx, labels, data) {
-    var barChartData = {
-        labels: labels,
-        datasets: [
-            {
-                label: 'Votes',
-                backgroundColor: 'rgba(60,141,188,0.9)',
-                borderColor: 'rgba(60,141,188,0.8)',
-                data: data
-            }
-        ]
-    };
+        var barChartData = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Votes',
+                    backgroundColor: 'rgba(60,141,188,0.9)',
+                    borderColor: 'rgba(60,141,188,0.8)',
+                    data: data
+                }
+            ]
+        };
 
-    var barChartOptions = {
-        responsive: true,
-        maintainAspectRatio: false,  // Allow height to adjust as well
-        scales: {
-            x: {
-                ticks: {
-                    maxRotation: 0, // Set to 0 to keep labels horizontal
-                    minRotation: 0, // Set to 0 to keep labels horizontal
-                    autoSkip: true, // Skip labels if they overlap
-                    font: {
-                        size: 12, // Adjust font size for better readability
-                        family: 'Arial, sans-serif', // Specify font family
+        var barChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,  // Allow height to adjust as well
+            scales: {
+                x: {
+                    ticks: {
+                        maxRotation: 20, // Rotate labels if they overflow
+                        minRotation: 45, // Make labels fit better on smaller screens
+                        autoSkip: true, // Skip labels if they overlap
                     }
+                },
+                y: {
+                    beginAtZero: true
                 }
             },
-            y: {
-                beginAtZero: true,
-                ticks: {
-                    font: {
-                        size: 12, // Font size for y-axis ticks
-                    }
+            plugins: {
+                legend: {
+                    display: true
                 }
             }
-        },
-        plugins: {
-            legend: {
-                display: true,
-                position: 'top', // Display the legend at the top of the chart
-                labels: {
-                    font: {
-                        size: 14 // Set font size for legend
-                    }
-                }
-            }
-        }
-    };
+        };
 
-    new Chart(ctx, {
-        type: 'bar',
-        data: barChartData,
-        options: barChartOptions
-    });
-}
-
+        new Chart(ctx, {
+            type: 'bar',
+            data: barChartData,
+            options: barChartOptions
+        });
+    }
 
 
   
