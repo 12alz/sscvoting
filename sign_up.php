@@ -52,12 +52,12 @@ if (isset($_POST['add'])) {
         $uploadedFilePath = $uploadDir . $newFilename;
         if (!move_uploaded_file($_FILES['photo']['tmp_name'], $uploadedFilePath)) {
             $_SESSION['error'] = 'File upload failed. Please try again.';
-            header('Location: sign_in.php');
+            header('Location: sign_in');
             exit();
         }
     } else {
         $_SESSION['error'] = 'File upload error. Please try again.';
-        header('Location: sign_in.php');
+        header('Location: sign_in');
         exit();
     }
 
@@ -72,7 +72,7 @@ if (isset($_POST['add'])) {
     
     if ($count > 0) {
         $_SESSION['error'] = 'ID or email already exists';
-        header('Location: sign_in.php');
+        header('Location: sign_in');
         exit();
     } else {
         $ip_address = getUserIP();
