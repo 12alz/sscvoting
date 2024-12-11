@@ -260,30 +260,58 @@
     setTimeout('location.reload(true);',t);
   }
 
+  // function generateChart(ctx, labels, data) {
+  //   var barChartData = {
+  //     labels: labels,
+  //     datasets: [
+  //       {
+  //         label: 'Votes',
+  //         backgroundColor: 'rgba(60,141,188,0.9)',
+  //         borderColor: 'rgba(60,141,188,0.8)',
+  //         data: data
+  //       }
+  //     ]
+  //   };
+
+  //   var barChartOptions = {
+  //     responsive: true,
+  //     maintainAspectRatio: true,
+  //     scales: {
+  //       y: {
+  //         beginAtZero: true
+  //       }
+  //     }
+  //   };
+
+  //   new Chart(ctx, {
+  //     type: 'bar',
+  //     data: barChartData,
+  //     options: barChartOptions
+  //   });
+  // }
   function generateChart(ctx, labels, data) {
   var barChartData = {
     labels: labels,
     datasets: [
       {
         label: 'Votes',
-        backgroundColor: 'rgba(60,141,188,0.9)',  // Blue color for bars
-        borderColor: 'rgba(60,141,188,0.8)',      // Border color for bars
-        data: data,
-        barThickness: 20 // Adjust this value to make the bars smaller (e.g., 20 is smaller than default)
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'rgba(60,141,188,0.8)',
+        data: data
       }
     ]
   };
 
   var barChartOptions = {
-    responsive: true,          // Makes the chart responsive
-    maintainAspectRatio: false, // Allows the chart to adjust its height
+    responsive: true,           // This makes the chart responsive
+    maintainAspectRatio: false, // Allows the chart to adjust its height as well
     scales: {
       y: {
-        beginAtZero: true,       // Ensures the Y-axis starts from zero
-        stepSize: 1,            // Sets the step size for Y-axis
+        beginAtZero: true,     // Ensures the Y-axis starts from zero
+        stepSize: 1,          // Sets the step size to 1 for better readability
         ticks: {
           callback: function(value) {
-            return value % 1 === 0 ? value : null; // Ensure only integers are shown on Y-axis
+            return value % 1 === 0 ? value : null; // Ensure only integers are shown
           }
         }
       }
