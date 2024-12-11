@@ -1,37 +1,33 @@
 <?php
-include "mailer.php";include "includes/conn.php";
-
+include "mailer.php";
+include "includes/conn.php";
 
 define('RESET_TIME_LIMIT', 300); // 300 seconds = 5 minutes
-header("Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';")
 
-session_start();
-session_set_cookie_params([
-    'lifetime' => 0,
-    'path' => '/',
-    'domain' => 'mccsscvoting.com',
-    'secure' => true,
-    'httponly' => true,
-    'samesite' => 'Strict',
-]);
+// Start the session if not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-if(empty($_SESSION['token'])){
+if (empty($_SESSION['token'])) {
     $_SESSION['token'] = bin2hex(random_bytes(32));
 }
 
-
-if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
-    if(!hash_equals($_SESSION['token'], $_POST['token'])){
-        die();
+// Handle the POST request for forgot password
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
+    if (!hash_equals($_SESSION['token'], $_POST['token'])) {
+        die(); // Token mismatch, terminate the process
     }
 
-    $email = filter_va($_POST["email"], FILTER_VALIDATE_EMAIl);
-    if(!$email){
+    // Validate email
+    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
+    if (!$email) {
         $_SESSION["notify"] = "Invalid email address";
         header("Location: ../forgot_password");
         exit();
     }
-   
+
+    // Prepare SQL to find the user
     $sql = "SELECT * FROM voters WHERE email = ?";
     $stmt = $conn->prepare($sql);
     
@@ -52,28 +48,22 @@ if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
     }
 
     // Check the last reset request time
-        $row = $query->fetch_assoc();
-        $last_request_time = $row['last_reset_request'] ?? 0; 
+    $row = $query->fetch_assoc();
+    $last_request_time = $row['last_reset_request'] ?? 0; 
 
-        if (time() - $last_request_time < RESET_TIME_LIMIT) {
-          
-            $remaining_time = RESET_TIME_LIMIT - (time() - $last_request_time);
-            
-          
-            $remaining_minutes = floor($remaining_time / 60);
-            $remaining_seconds = $remaining_time % 60;
-         
+    if (time() - $last_request_time < RESET_TIME_LIMIT) {
+        $remaining_time = RESET_TIME_LIMIT - (time() - $last_request_time);
+        $remaining_minutes = floor($remaining_time / 60);
+        $remaining_seconds = $remaining_time % 60;
+        $_SESSION["notify"] = "Please wait $remaining_minutes minutes and $remaining_seconds seconds before requesting a new password reset link.";
+        header("Location: ../forgot_password");
+        exit();
+    }
 
-            $_SESSION["notify"] = "Please wait $remaining_minutes minutes and $remaining_seconds seconds before requesting a new password reset link.";
-            header("Location: ../forgot_password");
-            exit();
-        }
-
-
-    
+    // Generate reset code
     $reset_code = random_int(100000, 999999);
 
-   
+    // Update reset code and timestamp
     $sql = "UPDATE `voters` SET `code` = ?, `last_reset_request` = ? WHERE email = ?";
     $stmt = $conn->prepare($sql);
     
@@ -88,14 +78,13 @@ if (isset($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST["btn_forgotpass"])) {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-       
+        // Send OTP via email
         $mail->SetFrom("sscvoting@do-not.reply");
         $mail->AddAddress($email);
         $mail->Subject = "Reset Password OTP";
-        $mail->Body = "Use this OTP Code to reset your password: " . $reset_code . "<br/>" .
+        $mail->Body = "Use this OTP Code to reset your password: " . $reset_code . "<br/>" . 
                       "Click the link to reset password: https://mccsscvoting.com/admin/user_reset_pass?reset&email=" . urlencode($email);
 
-       
         if (!$mail->send()) {
             $_SESSION["notify"] = "Mailer Error: " . $mail->ErrorInfo;
         } else {
@@ -119,7 +108,7 @@ if (isset($_POST["btn-new-password"])) {
     // Select the reset code from the database
     $sql = "SELECT `code` FROM `voters` WHERE email = ?";
     $stmt = $conn->prepare($sql);
-    
+
     if (!$stmt) {
         $_SESSION["notify"] = "Database error: Unable to prepare statement.";
         header("Location: ../sign_in");
@@ -134,12 +123,10 @@ if (isset($_POST["btn-new-password"])) {
         $res = $query->fetch_assoc();
         $get_code = $res["code"];
 
-      
         if ($otp === $get_code) {
             // Hash the new password securely
             $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
-            
             $sql = "UPDATE `voters` SET `password` = ?, `code` = NULL WHERE email = ?";
             $stmt = $conn->prepare($sql);
             
@@ -154,8 +141,7 @@ if (isset($_POST["btn-new-password"])) {
 
             if ($stmt->affected_rows > 0) {
                 $_SESSION['message'] = "Your password has been reset successfully.";
-                header("Location: ../sign_in.");
-             
+                header("Location: ../sign_in");
             } else {
                 $_SESSION['message'] = "Failed to reset the password. Please try again.";
             }
@@ -165,12 +151,11 @@ if (isset($_POST["btn-new-password"])) {
     } else {
         $_SESSION['message'] = "Email not found.";
     }
+
     $stmt->close();
     $conn->close();
 
-    header("Location: ../admin/user_reset_pass");//huhay kalibug
+    header("Location: ../admin/user_reset_pass");
     exit();
 }
-
 ?>
-
