@@ -212,35 +212,32 @@
         </div>
       </div>
       <div id="voting-tally">
-      <div class="row">
-    <?php
-        $sql = "SELECT * FROM positions ORDER BY priority ASC";
-        $query = $conn->query($sql);
-        $inc = 3;  // This will help to group 3 items per row, adjust as needed
-        while($row = $query->fetch_assoc()){
+        <?php
+          $sql = "SELECT * FROM positions ORDER BY priority ASC";
+          $query = $conn->query($sql);
+          $inc = 3;
+          while($row = $query->fetch_assoc()){
             $inc = ($inc == 3) ? 1 : $inc+1; 
-            if($inc == 1) echo "<div class='row'>"; // Start a new row every 3 items
-            ?>
-            
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="box box-solid">
-                    <div class="box-header with-border">
-                        <h4 class="box-title"><b><?php echo $row['description']; ?></b></h4>
+            if($inc == 1) echo "<div class='row'>";
+            echo "
+              <div class='col-sm-4'>
+                <div class='box box-solid'>
+                  <div class='box-header with-border'>
+                    <h4 class='box-title'><b>".$row['description']."</b></h4>
+                  </div>
+                  <div class='box-body'>
+                    <div class='chart'>
+                      <canvas id='".slugify($row['description'])."' style='height:100px'></canvas>
                     </div>
-                    <div class="box-body">
-                        <div class="chart-container">
-                            <canvas id="<?php echo slugify($row['description']); ?>" class="chart"></canvas>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </div>
-            <?php
-            if($inc == 3) echo "</div>";  // Close the row after every 3 items
-        }
-        if($inc == 1) echo "<div class='col-sm-6'></div></div>";  // Add an empty column if the last row isn't complete
-    ?>
-</div>
-
+              </div>
+            ";
+            if($inc == 3) echo "</div>";  
+          }
+          if($inc == 1) echo "<div class='col-sm-6'></div></div>";
+        ?>
+      </div>
     </section>
     <!-- right col -->
   </div>
@@ -264,46 +261,35 @@
   }
 
   function generateChart(ctx, labels, data) {
-        var barChartData = {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Votes',
-                    backgroundColor: 'rgba(60,141,188,0.9)',
-                    borderColor: 'rgba(60,141,188,0.8)',
-                    data: data
-                }
-            ]
-        };
+    var barChartData = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Votes',
+          backgroundColor: 'rgba(60,141,188,0.9)',
+          borderColor: 'rgba(60,141,188,0.8)',
+          data: data
+        }
+      ]
+    };
 
-        var barChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,  // Allow height to adjust as well
-            scales: {
-                x: {
-                    ticks: {
-                        maxRotation: 90, // Rotate labels if they overflow
-                        minRotation: 45, // Make labels fit better on smaller screens
-                        autoSkip: true, // Skip labels if they overlap
-                    }
-                },
-                y: {
-                    beginAtZero: true
-                }
-            },
-            plugins: {
-                legend: {
-                    display: true
-                }
-            }
-        };
+    var barChartOptions = {
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    };
 
-        new Chart(ctx, {
-            type: 'bar',
-            data: barChartData,
-            options: barChartOptions
-        });
-    }
+    new Chart(ctx, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    });
+  }
+
   
 
   <?php
@@ -334,19 +320,6 @@
 </script> 
 
 <style>
-  .chart-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;  /* To ensure no overflow when resizing */
-}
-
-.chart {
-    position: relative;
-    width: 100% !important;
-    height: auto !important; /* Ensure the chart height adjusts responsively */
-}
-
 .small-box.bg-red {
     background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
     color: white; /* Ensure the text is visible */
