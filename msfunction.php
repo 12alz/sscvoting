@@ -30,7 +30,7 @@ if (isset($_GET['token'])) {
        
         if (strtotime($expiration) > time()) {
             // Token is valid, allow the user to proceed
-            $showForm = true; // Enable the registration form
+            $showForm = true; // Enable the registration formrs
         } else {
             echo "<script>alert('This link has expired. Please request a new registration link.');</script>";
         }
