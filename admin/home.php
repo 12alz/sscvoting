@@ -164,8 +164,8 @@
           <div class="small-box bg-red">
             <div class="inner">
               <?php
-                // $sql = "SELECT * FROM votes GROUP BY voters_id";
-                $sql = "SELECT * FROM votes WHERE stat = 0";
+                $sql = "SELECT * FROM votes GROUP BY voters_id";
+                // $sql = "SELECT * FROM votes WHERE stat = 0";
                 $query = $conn->query($sql);
 
                 echo "<h3>".$query->num_rows."</h3>";
@@ -212,33 +212,32 @@
         </div>
       </div>
       <div id="voting-tally">
-  <?php
-    $sql = "SELECT * FROM positions ORDER BY priority ASC";
-    $query = $conn->query($sql);
-    $inc = 3;
-    while($row = $query->fetch_assoc()){
-      $inc = ($inc == 3) ? 1 : $inc+1; 
-      if($inc == 1) echo "<div class='row'>";
-      echo "
-        <div class='col-sm-4'>
-          <div class='box box-solid'>
-            <div class='box-header with-border'>
-              <h4 class='box-title'><b>".$row['description']."</b></h4>
-            </div>
-            <div class='box-body'>
-              <div class='chart-container'>
-                <canvas id='".slugify($row['description'])."'></canvas>
+        <?php
+          $sql = "SELECT * FROM positions ORDER BY priority ASC";
+          $query = $conn->query($sql);
+          $inc = 3;
+          while($row = $query->fetch_assoc()){
+            $inc = ($inc == 3) ? 1 : $inc+1; 
+            if($inc == 1) echo "<div class='row'>";
+            echo "
+              <div class='col-sm-4'>
+                <div class='box box-solid'>
+                  <div class='box-header with-border'>
+                    <h4 class='box-title'><b>".$row['description']."</b></h4>
+                  </div>
+                  <div class='box-body'>
+                    <div class='chart'>
+                      <canvas id='".slugify($row['description'])."' style='height:100px'></canvas>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      ";
-      if($inc == 3) echo "</div>";  
-    }
-    if($inc == 1) echo "<div class='col-sm-6'></div></div>";
-  ?>
-</div>
-
+            ";
+            if($inc == 3) echo "</div>";  
+          }
+          if($inc == 1) echo "<div class='col-sm-6'></div></div>";
+        ?>
+      </div>
     </section>
     <!-- right col -->
   </div>
@@ -261,73 +260,37 @@
     setTimeout('location.reload(true);',t);
   }
 
-  // function generateChart(ctx, labels, data) {
-  //   var barChartData = {
-  //     labels: labels,
-  //     datasets: [
-  //       {
-  //         label: 'Votes',
-  //         backgroundColor: 'rgba(60,141,188,0.9)',
-  //         borderColor: 'rgba(60,141,188,0.8)',
-  //         data: data
-  //       }
-  //     ]
-  //   };
-
-  //   var barChartOptions = {
-  //     responsive: true,
-  //     maintainAspectRatio: true,
-  //     scales: {
-  //       y: {
-  //         beginAtZero: true
-  //       }
-  //     }
-  //   };
-
-  //   new Chart(ctx, {
-  //     type: 'bar',
-  //     data: barChartData,s
-  //     options: barChartOptions
-  //   });
-  // }
-
-  //pulihan kung neccessary
   function generateChart(ctx, labels, data) {
-  var barChartData = {
-    labels: labels,
-    datasets: [
-      {
-        label: 'Votes',
-        backgroundColor: 'rgba(60,141,188,0.9)',
-        borderColor: 'rgba(60,141,188,0.8)',
-        data: data
-      }
-    ]
-  };
+    var barChartData = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Votes',
+          backgroundColor: 'rgba(60,141,188,0.9)',
+          borderColor: 'rgba(60,141,188,0.8)',
+          data: data
+        }
+      ]
+    };
 
-  var barChartOptions = {
-    responsive: true,           // Makes the chart responsive
-    maintainAspectRatio: false, // Allows the height to be adjusted
-    scales: {
-      y: {
-        beginAtZero: true,     // Ensures the Y-axis starts from zero
-        stepSize: 1,          // Sets the step size to 1, ensuring whole number increments
-        ticks: {
-          callback: function(value) {
-            return value % 1 === 0 ? value : null; // Ensure only integers are shown
-          }
+    var barChartOptions = {
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: {
+        y: {
+          beginAtZero: true
         }
       }
-    }
-  };
+    };
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: barChartData,
-    options: barChartOptions
-  });
-}
+    new Chart(ctx, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    });
+  }
 
+  
 
   <?php
     $sql = "SELECT * FROM positions ORDER BY priority ASC";
@@ -356,28 +319,16 @@
   ?>
 </script> 
 
-<style>.small-box.bg-red {
-    background: linear-gradient(135deg, #ff0000, #ff6347); 
-    color: white; 
+<style>
+.small-box.bg-red {
+    background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
+    color: white; /* Ensure the text is visible */
 }
-
 .small-box.bg-purple {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); 
-    color: white; 
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Adjust the colors as per your preference */
+    color: white; /* Ensure the text color stands out against the gradient */
 }
 
-/* Chart Container Styless */
-.chart-container {
-    position: relative;
-    width: 100%; 
-    height: 400px; 
-}
-
-/* Canvas Responsive Styles */
-.chart-container canvas {
-    width: 100% !important; 
-    height: auto !important; 
-}
 </style>
 </body>
 </html>
