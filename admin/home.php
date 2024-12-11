@@ -260,6 +260,37 @@
     setTimeout('location.reload(true);',t);
   }
 
+  // function generateChart(ctx, labels, data) {
+  //   var barChartData = {
+  //     labels: labels,
+  //     datasets: [
+  //       {
+  //         label: 'Votes',
+  //         backgroundColor: 'rgba(60,141,188,0.9)',
+  //         borderColor: 'rgba(60,141,188,0.8)',
+  //         data: data
+  //       }
+  //     ]
+  //   };
+
+  //   var barChartOptions = {
+  //     responsive: true,
+  //     maintainAspectRatio: true,
+  //     scales: {
+  //       y: {
+  //         beginAtZero: true
+  //       }
+  //     }
+  //   };
+
+  //   new Chart(ctx, {
+  //     type: 'bar',
+  //     data: barChartData,s
+  //     options: barChartOptions
+  //   });
+  // }
+
+  //pulihan kung neccessary
   function generateChart(ctx, labels, data) {
   var barChartData = {
     labels: labels,
@@ -274,11 +305,17 @@
   };
 
   var barChartOptions = {
-    responsive: true,          // Ensures the chart resizes with the container
-    maintainAspectRatio: false, // Allows dynamic resizing (adjusts height too)
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: true, // Starts the Y-axis at zero
+        stepSize: 1,       // Sets the step size to 1, ensuring whole numbers on the Y-axis
+        ticks: {
+          callback: function(value) {
+            return Math.round(value); // Rounds values to the nearest integer
+          }
+        }
       }
     }
   };
@@ -322,17 +359,17 @@
 
 <style>
 .small-box.bg-red {
-    background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
-    color: white; /* Ensure the text is visible */
+    background: linear-gradient(135deg, #ff0000, #ff6347); 
+    color: white; 
 }
 .small-box.bg-purple {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Adjust the colors as per your preference */
-    color: white; /* Ensure the text color stands out against the gradient */
-}
-.chart canvas {
-    width: 100% !important;  /* Ensures full width of the container */
+    background: linear-gradient(135deg, #6a11cb, #2575fc); 
+
+    .chart canvas {
+    width: 100% !important; 
     height: auto !important;
- } /* Keeps the aspect ratio of the chart */
+    }
+}
 
 </style>
 </body>
