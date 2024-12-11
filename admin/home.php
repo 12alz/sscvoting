@@ -356,19 +356,6 @@
 </script> 
 
 <style>
-  /* Ensure that the chart container takes the full width and is responsive */
-.chart-container {
-    position: relative;
-    width: 100%;
-    height: 400px; /* You can adjust the height as needed */
-}
-
-/* Ensure that canvas element takes up 100% of the width and adjusts height accordingly */
-.chart-container canvas {
-    width: 100% !important;
-    height: auto !important; /* This ensures the height is adjusted based on the width */
-}
-
 .small-box.bg-red {
     background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
     color: white; /* Ensure the text is visible */
