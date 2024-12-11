@@ -274,12 +274,18 @@
     };
 
     var barChartOptions = {
-      responsive: true,
-      maintainAspectRatio: true,
+      responsive: true,          // Makes the chart responsive
+      maintainAspectRatio: false, // Allows the chart to adjust its height
       scales: {
         y: {
           beginAtZero: true
         }
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top'
+        },
       }
     };
 
