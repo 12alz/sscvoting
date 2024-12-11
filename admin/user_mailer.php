@@ -24,7 +24,7 @@ if (isset($_POST["btn_forgotpass"])) {
     $query = $stmt->get_result();
 
     if ($query->num_rows === 0) {
-        $_SESSION["notify"] = "Email not found!";
+        $_SESSION["notify"] = "No user found with this email. Please try again.";
         header("Location: ../forgot_password");
         exit();
     }
