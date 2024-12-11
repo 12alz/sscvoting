@@ -260,35 +260,71 @@
     setTimeout('location.reload(true);',t);
   }
 
-  function generateChart(ctx, labels, data) {
-    var barChartData = {
-      labels: labels,
-      datasets: [
-        {
-          label: 'Votes',
-          backgroundColor: 'rgba(60,141,188,0.9)',
-          borderColor: 'rgba(60,141,188,0.8)',
-          data: data
-        }
-      ]
-    };
+  // function generateChart(ctx, labels, data) {
+  //   var barChartData = {
+  //     labels: labels,
+  //     datasets: [
+  //       {
+  //         label: 'Votes',
+  //         backgroundColor: 'rgba(60,141,188,0.9)',
+  //         borderColor: 'rgba(60,141,188,0.8)',
+  //         data: data
+  //       }
+  //     ]
+  //   };
 
-    var barChartOptions = {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        y: {
-          beginAtZero: true
+  //   var barChartOptions = {
+  //     responsive: true,
+  //     maintainAspectRatio: true,
+  //     scales: {
+  //       y: {
+  //         beginAtZero: true
+  //       }
+  //     }
+  //   };
+
+  //   new Chart(ctx, {
+  //     type: 'bar',
+  //     data: barChartData,
+  //     options: barChartOptions
+  //   });
+  // }
+  function generateChart(ctx, labels, data) {
+  var barChartData = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Votes',
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'rgba(60,141,188,0.8)',
+        data: data
+      }
+    ]
+  };
+
+  var barChartOptions = {
+    responsive: true,           // Makes the chart responsive
+    maintainAspectRatio: false, // Allows the height to be adjusted
+    scales: {
+      y: {
+        beginAtZero: true,     // Ensures the Y-axis starts from zero
+        stepSize: 1,          // Sets the step size to 1, ensuring whole number increments
+        ticks: {
+          callback: function(value) {
+            return value % 1 === 0 ? value : null; // Ensure only integers are shown
+          }
         }
       }
-    };
+    }
+  };
 
-    new Chart(ctx, {
-      type: 'bar',
-      data: barChartData,
-      options: barChartOptions
-    });
-  }
+  new Chart(ctx, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+  });
+}
+
 
   
 
@@ -320,6 +356,19 @@
 </script> 
 
 <style>
+  /* Ensure that the chart container takes the full width and is responsive */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* You can adjust the height as needed */
+}
+
+/* Ensure that canvas element takes up 100% of the width and adjusts height accordingly */
+.chart-container canvas {
+    width: 100% !important;
+    height: auto !important; /* This ensures the height is adjusted based on the width */
+}
+
 .small-box.bg-red {
     background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
     color: white; /* Ensure the text is visible */
