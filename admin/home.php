@@ -255,69 +255,95 @@
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
 
-<script>
-  function AutoRefresh(t){
-    setTimeout('location.reload(true);',t);
-  }
-
-  function generateChart(ctx, labels, data) {
-    var barChartData = {
-      labels: labels,
-      datasets: [
-        {
-          label: 'Votes',
-          backgroundColor: 'rgba(60,141,188,0.9)',
-          borderColor: 'rgba(60,141,188,0.8)',
-          data: data
-        }
-      ]
-    };
-
-    var barChartOptions = {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    };
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: barChartData,
-      options: barChartOptions
-    });
-  }
-
-  
-
-  <?php
-    $sql = "SELECT * FROM positions ORDER BY priority ASC";
-    $query = $conn->query($sql);
-    while($row = $query->fetch_assoc()){
-      $sql = "SELECT * FROM candidates WHERE position_id = '".$row['id']."'";
-      $cquery = $conn->query($sql);
-      $carray = array();
-      $varray = array();
-      while($crow = $cquery->fetch_assoc()){
-        array_push($carray, $crow['firstname']);
-        $sql = "SELECT * FROM votes WHERE candidate_id = '".$crow['id']."'";
-        $vquery = $conn->query($sql);
-        array_push($varray, $vquery->num_rows);
-      }
-      $carray = json_encode($carray);
-      $varray = json_encode($varray);
-  ?>
-      $(function(){
-        var description = '<?php echo slugify($row['description']); ?>';
-        var ctx = $('#'+description).get(0).getContext('2d');
-        generateChart(ctx, <?php echo $carray; ?>, <?php echo $varray; ?>);
-      });
-  <?php
+<style>
+    .chart {
+        position: relative;
+        width: 100% !important;
+        height: auto !important;
     }
-  ?>
-</script> 
+
+    /* Optional: Add this to allow scrolling if too many items are shown */
+    .chart-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+</style>
+
+<script>
+    function AutoRefresh(t){
+        setTimeout('location.reload(true);',t);
+    }
+
+    function generateChart(ctx, labels, data) {
+        var barChartData = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Votes',
+                    backgroundColor: 'rgba(60,141,188,0.9)',
+                    borderColor: 'rgba(60,141,188,0.8)',
+                    data: data
+                }
+            ]
+        };
+
+        var barChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,  // Allow height to adjust as well
+            scales: {
+                x: {
+                    ticks: {
+                        maxRotation: 90, // Rotate labels if they overflow
+                        minRotation: 45, // Make labels fit better on smaller screens
+                        autoSkip: true, // Skip labels if they overlap
+                    }
+                },
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true
+                }
+            }
+        };
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: barChartData,
+            options: barChartOptions
+        });
+    }
+
+    <?php
+        $sql = "SELECT * FROM positions ORDER BY priority ASC";
+        $query = $conn->query($sql);
+        while($row = $query->fetch_assoc()){
+            $sql = "SELECT * FROM candidates WHERE position_id = '".$row['id']."'";
+            $cquery = $conn->query($sql);
+            $carray = array();
+            $varray = array();
+            while($crow = $cquery->fetch_assoc()){
+                array_push($carray, $crow['firstname']);
+                $sql = "SELECT * FROM votes WHERE candidate_id = '".$crow['id']."'";
+                $vquery = $conn->query($sql);
+                array_push($varray, $vquery->num_rows);
+            }
+            $carray = json_encode($carray);
+            $varray = json_encode($varray);
+    ?>
+        $(function(){
+            var description = '<?php echo slugify($row['description']); ?>';
+            var ctx = $('#'+description).get(0).getContext('2d');
+            generateChart(ctx, <?php echo $carray; ?>, <?php echo $varray; ?>);
+        });
+    <?php
+        }
+    ?>
+</script>
+
+ 
 
 <style>
 .small-box.bg-red {
