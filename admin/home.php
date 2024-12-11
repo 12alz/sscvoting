@@ -261,46 +261,42 @@
   }
 
   function generateChart(ctx, labels, data) {
-        var barChartData = {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Votes',
-                    backgroundColor: 'rgba(60,141,188,0.9)',
-                    borderColor: 'rgba(60,141,188,0.8)',
-                    data: data
-                }
-            ]
-        };
+  var barChartData = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Votes',
+        backgroundColor: 'rgba(60,141,188,0.9)',  // Blue color for bars
+        borderColor: 'rgba(60,141,188,0.8)',      // Border color for bars
+        data: data,
+        barThickness: 20 // Adjust this value to make the bars smaller (e.g., 20 is smaller than default)
+      }
+    ]
+  };
 
-        var barChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,  // Allow height to adjust as well
-            scales: {
-                x: {
-                    ticks: {
-                        maxRotation: 90, // Rotate labels if they overflow
-                        minRotation: 45, // Make labels fit better on smaller screens
-                        autoSkip: true, // Skip labels if they overlap
-                    }
-                },
-                y: {
-                    beginAtZero: true
-                }
-            },
-            plugins: {
-                legend: {
-                    display: true
-                }
-            }
-        };
-
-        new Chart(ctx, {
-            type: 'bar',
-            data: barChartData,
-            options: barChartOptions
-        });
+  var barChartOptions = {
+    responsive: true,          // Makes the chart responsive
+    maintainAspectRatio: false, // Allows the chart to adjust its height
+    scales: {
+      y: {
+        beginAtZero: true,       // Ensures the Y-axis starts from zero
+        stepSize: 1,            // Sets the step size for Y-axis
+        ticks: {
+          callback: function(value) {
+            return value % 1 === 0 ? value : null; // Ensure only integers are shown on Y-axis
+          }
+        }
+      }
     }
+  };
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+  });
+}
+
 
   
 
