@@ -354,20 +354,28 @@
   ?>
 </script> 
 
-<style>
-.small-box.bg-red {
+<style>.small-box.bg-red {
     background: linear-gradient(135deg, #ff0000, #ff6347); 
     color: white; 
 }
+
 .small-box.bg-purple {
     background: linear-gradient(135deg, #6a11cb, #2575fc); 
-
-    .chart canvas {
-    width: 100% !important; 
-    height: auto !important;
-    }
+    color: white; 
 }
 
+/* Chart Container Styles */
+.chart-container {
+    position: relative;
+    width: 100%; 
+    height: 400px; 
+}
+
+/* Canvas Responsive Styles */
+.chart-container canvas {
+    width: 100% !important; 
+    height: auto !important; 
+}
 </style>
 </body>
 </html>
