@@ -6,6 +6,7 @@
     Header set X-XSS-Protection "1; mode=block"
     Header set X-Content-Type-Options "nosniff"
     Header set Referrer-Policy "no-referrer"
+   Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
    
 	Header always set Strick-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
