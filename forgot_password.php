@@ -125,7 +125,7 @@ session_start();
         </div>
         <div class="right-section">
             <h2>Forgot Password</h2>
-            <form action="admin/user_mailer" method="POST">
+            <form action="admin/user_mailer.php" method="POST">
                 <label for="email">Enter your email:</label>
                 <input type="email" id="email" name="email" placeholder="kiyumi@gmail.com" required>
                 <button type="submit" name="btn_forgotpass">Send Reset Link</button>
