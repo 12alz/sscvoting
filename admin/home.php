@@ -261,34 +261,35 @@
   }
 
   function generateChart(ctx, labels, data) {
-    var barChartData = {
-      labels: labels,
-      datasets: [
-        {
-          label: 'Votes',
-          backgroundColor: 'rgba(60,141,188,0.9)',
-          borderColor: 'rgba(60,141,188,0.8)',
-          data: data
-        }
-      ]
-    };
-
-    var barChartOptions = {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
+  var barChartData = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Votes',
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'rgba(60,141,188,0.8)',
+        data: data
       }
-    };
+    ]
+  };
 
-    new Chart(ctx, {
-      type: 'bar',
-      data: barChartData,
-      options: barChartOptions
-    });
-  }
+  var barChartOptions = {
+    responsive: true,          // Ensures the chart resizes with the container
+    maintainAspectRatio: false, // Allows dynamic resizing (adjusts height too)
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  };
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+  });
+}
+
 
   
 
@@ -328,6 +329,10 @@
     background: linear-gradient(135deg, #6a11cb, #2575fc); /* Adjust the colors as per your preference */
     color: white; /* Ensure the text color stands out against the gradient */
 }
+.chart canvas {
+    width: 100% !important;  /* Ensures full width of the container */
+    height: auto !important;
+ } /* Keeps the aspect ratio of the chart */
 
 </style>
 </body>
