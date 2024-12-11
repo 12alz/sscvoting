@@ -229,9 +229,9 @@
               <h2 class="fw-bold">A Legacy of Learning , A future Difined by You </h2>
               <hr class="divider bg-madison divider-md-0">
               <div class="offset-top-30 offset-sm-top-60">
-                <p>Madridejos Community College stands as a beacon of knowledge, with a storied history that dates back over fifty years. Founded with the mission to provide accessible, high-quality education, we have grown alongside our community, evolving with the changing educational needs and aspirations of our students. </p>
+                <p>As the oldest continuously run educational institution, Madridejos Community College remains committed to providing an academically rigorous education to students who will walk out of school ready for lives of leadership and service to their community. From literacy to music and art, each day at the Madridejos Community College is filled with activities that are both enriching and fun. </p>
               </div>
-              <p>Today, we continue to build on our rich heritage, enriched by the diversity, creativity, and passion of students like you. Join us and become part of a continuing legacy, where your contributions shape the future of our college and the broader world.</p>
+              <p>We strive to be committed to the students we are privileged to serve, in our alumni association, our dedicated, talented faculty and staff. We also take pride in having the most active and helpful group of partners, visionary parents, well-wishers, alumni and friends.</p>
            
             </div>
           </div>
