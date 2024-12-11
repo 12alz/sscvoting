@@ -459,19 +459,27 @@ if(isset($_SESSION['voter'])){
 </script>
 
 <script> 
-        document.addEventListener('DOMContentLoaded', function () {
-            const loginForm = document.querySelector('form');
-            const loginButton = document.querySelector('#login');
-            
-            // Check if geolocation is supported
-            if (navigator.geolocation) {
-                navigator.geolocation.watchPosition(
+      
+    document.getElementById('togglePassword').addEventListener('click', function (e) {
+        const password = document.getElementById('password');
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
+    });
+
+     // Select form input elements to disable initially
+        const formInputs = document.querySelectorAll('#admin_type, #email, #password');
+        const loginButton = document.querySelector('[name="admin_login_btn"]');
+
+        // Function to request and check location permissions
+        function requestLocation() {
+        if (navigator.geolocation) {
+                            navigator.geolocation.watchPosition(
                     function (position) {
-                        // If user allows location access
+                        console.log('Location access granted');
+                        formInputs.forEach(input => input.disabled = false);
                         loginButton.disabled = false;
-                        loginForm.querySelectorAll('input, button').forEach(function (element) {
-                            element.disabled = false;
-                        });
                     },
                     function (error) {
                         if (error.code === error.PERMISSION_DENIED) {
@@ -490,6 +498,7 @@ if(isset($_SESSION['voter'])){
                                 }, 1000);
                             });
                         }
+
                         if (error.code === error.POSITION_UNAVAILABLE || error.code === error.TIMEOUT) {
                             Swal.fire({
                                 title: 'Location Lost',
@@ -508,8 +517,8 @@ if(isset($_SESSION['voter'])){
                         }
                     }
                 );
-            } else {
-                Swal.fire({
+                    } else {
+            Swal.fire({
                 title: 'Geolocation Not Supported',
                 text: "Geolocation is not supported by this browser.",
                 icon: 'error',
@@ -518,13 +527,18 @@ if(isset($_SESSION['voter'])){
                 didOpen: () => {
                     Swal.showLoading();
                 }
-                }).then(() => {
-                    setTimeout(function() {
-                        window.location.reload();
-                    }, 1000);
-                });
-            }
-        });
+            }).then(() => {
+                setTimeout(function() {
+                    window.location.reload();
+                }, 1000);
+            });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        requestLocation();
+    });
+
     </script>
 
 
