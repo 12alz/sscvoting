@@ -364,7 +364,7 @@
     color: white; 
 }
 
-/* Chart Container Styles */
+/* Chart Container Styless */
 .chart-container {
     position: relative;
     width: 100%; 
