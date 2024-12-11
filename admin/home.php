@@ -212,32 +212,35 @@
         </div>
       </div>
       <div id="voting-tally">
-        <?php
-          $sql = "SELECT * FROM positions ORDER BY priority ASC";
-          $query = $conn->query($sql);
-          $inc = 3;
-          while($row = $query->fetch_assoc()){
+      <div class="row">
+    <?php
+        $sql = "SELECT * FROM positions ORDER BY priority ASC";
+        $query = $conn->query($sql);
+        $inc = 3;  // This will help to group 3 items per row, adjust as needed
+        while($row = $query->fetch_assoc()){
             $inc = ($inc == 3) ? 1 : $inc+1; 
-            if($inc == 1) echo "<div class='row'>";
-            echo "
-              <div class='col-sm-4'>
-                <div class='box box-solid'>
-                  <div class='box-header with-border'>
-                    <h4 class='box-title'><b>".$row['description']."</b></h4>
-                  </div>
-                  <div class='box-body'>
-                    <div class='chart'>
-                      <canvas id='".slugify($row['description'])."' style='height:100px'></canvas>
+            if($inc == 1) echo "<div class='row'>"; // Start a new row every 3 items
+            ?>
+            
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="box box-solid">
+                    <div class="box-header with-border">
+                        <h4 class="box-title"><b><?php echo $row['description']; ?></b></h4>
                     </div>
-                  </div>
+                    <div class="box-body">
+                        <div class="chart-container">
+                            <canvas id="<?php echo slugify($row['description']); ?>" class="chart"></canvas>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            ";
-            if($inc == 3) echo "</div>";  
-          }
-          if($inc == 1) echo "<div class='col-sm-6'></div></div>";
-        ?>
-      </div>
+            </div>
+            <?php
+            if($inc == 3) echo "</div>";  // Close the row after every 3 items
+        }
+        if($inc == 1) echo "<div class='col-sm-6'></div></div>";  // Add an empty column if the last row isn't complete
+    ?>
+</div>
+
     </section>
     <!-- right col -->
   </div>
@@ -279,7 +282,7 @@
             scales: {
                 x: {
                     ticks: {
-                        maxRotation: 60, // Rotate labels if they overflow
+                        maxRotation: 90, // Rotate labels if they overflow
                         minRotation: 45, // Make labels fit better on smaller screens
                         autoSkip: true, // Skip labels if they overlap
                     }
@@ -331,17 +334,19 @@
 </script> 
 
 <style>
-   .chart {
-        position: relative;
-        width: 100% !important;
-        height: auto !important;
-    }
+  .chart-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;  /* To ensure no overflow when resizing */
+}
 
-    /* Optional: Add this to allow scrolling if too many items are shown */
-    .chart-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
+.chart {
+    position: relative;
+    width: 100% !important;
+    height: auto !important; /* Ensure the chart height adjusts responsively */
+}
+
 .small-box.bg-red {
     background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
     color: white; /* Ensure the text is visible */
