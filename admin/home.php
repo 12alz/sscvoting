@@ -260,65 +260,35 @@
     setTimeout('location.reload(true);',t);
   }
 
-  // function generateChart(ctx, labels, data) {
-  //   var barChartData = {
-  //     labels: labels,
-  //     datasets: [
-  //       {
-  //         label: 'Votes',
-  //         backgroundColor: 'rgba(60,141,188,0.9)',
-  //         borderColor: 'rgba(60,141,188,0.8)',
-  //         data: data
-  //       }
-  //     ]
-  //   };
-
-  //   var barChartOptions = {
-  //     responsive: true,
-  //     maintainAspectRatio: true,
-  //     scales: {
-  //       y: {
-  //         beginAtZero: true
-  //       }
-  //     }
-  //   };
-
-  //   new Chart(ctx, {
-  //     type: 'bar',
-  //     data: barChartData,
-  //     options: barChartOptions
-  //   });
-  // }
   function generateChart(ctx, labels, data) {
     var barChartData = {
-        labels: labels,
-        datasets: [
-            {
-                label: 'Votes',
-                backgroundColor: 'rgba(60,141,188,0.9)',
-                borderColor: 'rgba(60,141,188,0.8)',
-                data: data
-            }
-        ]
+      labels: labels,
+      datasets: [
+        {
+          label: 'Votes',
+          backgroundColor: 'rgba(60,141,188,0.9)',
+          borderColor: 'rgba(60,141,188,0.8)',
+          data: data
+        }
+      ]
     };
 
     var barChartOptions = {
-        responsive: true,
-        maintainAspectRatio: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: {
+        y: {
+          beginAtZero: true
         }
+      }
     };
 
     new Chart(ctx, {
-        type: 'bar',
-        data: barChartData,
-        options: barChartOptions
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
     });
-}
-
+  }
 
   
 
@@ -350,18 +320,13 @@
 </script> 
 
 <style>
-  .chart {
-    position: relative;
-    width: 100% !important;
-    height: auto !important;
-}
 .small-box.bg-red {
-    background: linear-gradient(135deg, #ff0000, #ff6347); 
-    color: white; 
+    background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
+    color: white; /* Ensure the text is visible */
 }
 .small-box.bg-purple {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); 
-    color: white; 
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Adjust the colors as per your preference */
+    color: white; /* Ensure the text color stands out against the gradient */
 }
 
 </style>
