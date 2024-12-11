@@ -151,8 +151,8 @@ if(isset($_SESSION['voter'])){
                                 <h6>About</h6>
                                 <ul class="list-unstyled offset-lg-top-20">
                                   <li><a href="history">History</a></li>
-                                  <li><a href="peoplel">People</a></li>
-                                  <li><a href="team-member-profile.html">Team Member Profile</a></li>
+                                  <!-- <li><a href="peoplel">People</a></li>
+                                  <li><a href="team-member-profile.html">Team Member Profile</a></li> -->
                                 </ul>
                               </li>
                               <li>
