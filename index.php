@@ -344,7 +344,7 @@ header("Pragma: no-cache");
     <!-- Java script-->
     <script src="dist/js/core.min.js"></script>
     <script src="dist/js/script.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LfuV4sqAAAAAPsjFo7TvYq8CcYwSu0qMf227C6I"></script> -->
 
     </script>
      <body oncontextmenu="return true" onkeydown="return true;" onmousedown="return true;">
