@@ -15,7 +15,7 @@ if (isset($_POST["btn_forgotpass"])) {
     
     if (!$stmt) {
         $_SESSION["notify"] = "Database error: Unable to prepare statement.";
-        header("Location: ../forgot_password.php");
+        header("Location: ../forgot_password");
         exit();
     }
 
@@ -25,7 +25,7 @@ if (isset($_POST["btn_forgotpass"])) {
 
     if ($query->num_rows === 0) {
         $_SESSION["notify"] = "Email not found!";
-        header("Location: ../forgot_password.php");
+        header("Location: ../forgot_password");
         exit();
     }
 
@@ -77,7 +77,7 @@ if (isset($_POST["btn_forgotpass"])) {
         if (!$mail->send()) {
             $_SESSION["notify"] = "Mailer Error: " . $mail->ErrorInfo;
         } else {
-            $_SESSION["notify"] = "A reset link has been sent to your email.";
+            $_SESSION["notify"] = "Check your email for a link to reset your password.";
         }
     } else {
         $_SESSION["notify"] = "Failed to update the reset code. Please try again.";
