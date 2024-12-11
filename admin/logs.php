@@ -73,7 +73,7 @@
                 <tbody>
                     <?php while ($row = $result->fetch_assoc()) { ?>
                         <tr>
-                            <td><?php echo $row['id']; ?></td>
+                            <!-- <td><?php echo $row['id']; ?></td> -->
                             <td><?php echo $row['ip_adress']; ?></td>
                             <td><?php echo $row['username']; ?></td>
                             <td><?php echo date('Y-m-d H:i:s', strtotime($row['timestamp'])); ?></td>
