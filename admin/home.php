@@ -310,7 +310,7 @@
     scales: {
       y: {
         beginAtZero: true, // Starts the Y-axis at zero
-        stepSize: 1,       // Sets the step size to 1, ensuring whole numbers on the Y-axis
+        stepSize: 0,       // Sets the step size to 1, ensuring whole numbers on the Y-axis
         ticks: {
           callback: function(value) {
             return Math.round(value); // Rounds values to the nearest integer
