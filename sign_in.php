@@ -339,7 +339,7 @@ if(isset($_SESSION['voter'])){
                         <a href="forgetpass" data-toggle="modal" data-target="#modal-forgotpass" class="pull-right" style="color: #d32f2f; text-decoration: none;">Forgot Password?</a>
                        
                         <div class="offset-top-20">
-                          <button class="btn button-primary" type="submit" name="login">Login As Administrator</button>
+                          <button class="btn button-primary" type="submit" name="login" id="login">Login As Administrator</button>
                         </div>
                       </form>
                     </div>
