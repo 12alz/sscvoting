@@ -89,22 +89,22 @@ if (isset($_POST['add'])) {
             
             if ($conn->query($log_sql)) {
                 $_SESSION['success'] = 'Voter added successfully';
-                header('Location: sign_in.php');
+                header('Location: sign_in');
                 exit();
             } else {
                 $_SESSION['error'] = 'Failed to log the registration details: ' . $conn->error;
-                header('Location: sign_in.php');
+                header('Location: sign_in');
                 exit();
             }
         } else {
             $_SESSION['error'] = 'Failed to Register: ' . $conn->error;
-            header('Location: sign_in.php');
+            header('Location: sign_in');
             exit();
         }
     }
 } else {
     $_SESSION['error'] = 'Failed to Register';
-    header('Location: sign_in.php');
+    header('Location: sign_in');
     exit();
 }
 ?>
