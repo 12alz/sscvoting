@@ -289,48 +289,41 @@
   //     options: barChartOptions
   //   });
   // }
-  
   function generateChart(ctx, labels, data) {
-        var barChartData = {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Votes',
-                    backgroundColor: 'rgba(60,141,188,0.9)',
-                    borderColor: 'rgba(60,141,188,0.8)',
-                    data: data
-                }
-            ]
-        };
+  var barChartData = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Votes',
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'rgba(60,141,188,0.8)',
+        data: data
+      }
+    ]
+  };
 
-        var barChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,  // Allow height to adjust as well
-            scales: {
-                x: {
-                    ticks: {
-                        maxRotation: 20, // Rotate labels if they overflow
-                        minRotation: 0, // Make labels fit better on smaller screens
-                        autoSkip: true, // Skip labels if they overlap
-                    }
-                },
-                y: {
-                    beginAtZero: true
-                }
-            },
-            plugins: {
-                legend: {
-                    display: true
-                }
-            }
-        };
-
-        new Chart(ctx, {
-            type: 'bar',
-            data: barChartData,
-            options: barChartOptions
-        });
+  var barChartOptions = {
+    responsive: true,           // This makes the chart responsive
+    maintainAspectRatio: false, // Allows the chart to adjust its height as well
+    scales: {
+      y: {
+        beginAtZero: true,     // Ensures the Y-axis starts from zero
+        stepSize: 1,          // Sets the step size to 1 for better readability
+        ticks: {
+          callback: function(value) {
+            return value % 1 === 0 ? value : null; // Ensure only integers are shown
+          }
+        }
+      }
     }
+  };
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: barChartData,
+    options: barChartOptions
+  });
+}
 
 
   
