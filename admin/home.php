@@ -227,7 +227,7 @@
                   </div>
                   <div class='box-body'>
                     <div class='chart'>
-                      <canvas id='".slugify($row['description'])."' style='height:100px'></canvas>
+                      <canvas id='".slugify($row['description'])."' style='height:200px'></canvas>
                     </div>
                   </div>
                 </div>
