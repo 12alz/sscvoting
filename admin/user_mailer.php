@@ -4,22 +4,14 @@ include "includes/conn.php";
 
 define('RESET_TIME_LIMIT', 300); // 300 seconds = 5 minutes
 
-// Start the session if not already started
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+session_start();
 
-if (empty($_SESSION['token'])) {
-    $_SESSION['token'] = bin2hex(random_bytes(32));
-}
-
-// Handle the POST request for forgot password
+// Handle the forgot password request
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
-    if (!hash_equals($_SESSION['token'], $_POST['token'])) {
-        die(); // Token mismatch, terminate the process
+    if (!isset($_SESSION['token']) || !hash_equals($_SESSION['token'], $_POST['token'])) {
+        die("Invalid request");
     }
 
-    // Validate email
     $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
     if (!$email) {
         $_SESSION["notify"] = "Invalid email address";
@@ -27,10 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
         exit();
     }
 
-    // Prepare SQL to find the user
+    // Check if email exists in the database
     $sql = "SELECT * FROM voters WHERE email = ?";
     $stmt = $conn->prepare($sql);
-    
+
     if (!$stmt) {
         $_SESSION["notify"] = "Database error: Unable to prepare statement.";
         header("Location: ../forgot_password");
@@ -49,24 +41,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
 
     // Check the last reset request time
     $row = $query->fetch_assoc();
-    $last_request_time = $row['last_reset_request'] ?? 0; 
+    $last_request_time = $row['last_reset_request'] ?? 0;
 
     if (time() - $last_request_time < RESET_TIME_LIMIT) {
         $remaining_time = RESET_TIME_LIMIT - (time() - $last_request_time);
         $remaining_minutes = floor($remaining_time / 60);
         $remaining_seconds = $remaining_time % 60;
+
         $_SESSION["notify"] = "Please wait $remaining_minutes minutes and $remaining_seconds seconds before requesting a new password reset link.";
         header("Location: ../forgot_password");
         exit();
     }
 
-    // Generate reset code
+    // Generate and store reset code
     $reset_code = random_int(100000, 999999);
 
-    // Update reset code and timestamp
     $sql = "UPDATE `voters` SET `code` = ?, `last_reset_request` = ? WHERE email = ?";
     $stmt = $conn->prepare($sql);
-    
+
     if (!$stmt) {
         $_SESSION["notify"] = "Database error: Unable to prepare statement.";
         header("Location: ../forgot_password");
@@ -78,12 +70,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["btn_forgotpass"])) {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        // Send OTP via email
+        // Send the email with reset code and link
         $mail->SetFrom("sscvoting@do-not.reply");
         $mail->AddAddress($email);
         $mail->Subject = "Reset Password OTP";
-        $mail->Body = "Use this OTP Code to reset your password: " . $reset_code . "<br/>" . 
-                      "Click the link to reset password: https://mccsscvoting.com/admin/user_reset_pass?reset&email=" . urlencode($email);
+        $mail->Body = "Use this OTP Code to reset your password: " . $reset_code . "<br/>" .
+                      "Click the link to reset your password: https://mccsscvoting.com/admin/user_reset_pass?reset&email=" . urlencode($email);
 
         if (!$mail->send()) {
             $_SESSION["notify"] = "Mailer Error: " . $mail->ErrorInfo;
@@ -127,9 +119,10 @@ if (isset($_POST["btn-new-password"])) {
             // Hash the new password securely
             $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
+            // Update password in database
             $sql = "UPDATE `voters` SET `password` = ?, `code` = NULL WHERE email = ?";
             $stmt = $conn->prepare($sql);
-            
+
             if (!$stmt) {
                 $_SESSION['message'] = "Database error: Unable to prepare statement.";
                 header("Location: ../sign_in");
@@ -141,7 +134,7 @@ if (isset($_POST["btn-new-password"])) {
 
             if ($stmt->affected_rows > 0) {
                 $_SESSION['message'] = "Your password has been reset successfully.";
-                header("Location: ../sign_in");
+                header("Location: ../sign_in.");
             } else {
                 $_SESSION['message'] = "Failed to reset the password. Please try again.";
             }
