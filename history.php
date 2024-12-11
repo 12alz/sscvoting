@@ -241,7 +241,7 @@
       <section>
         <div class="container container-wide">
           <div class="row row-30">
-            <div class="col-md-4"><img class="img-responsive d-inline-block" src="images/history-01-570x370.jpg" width="570" height="370" alt=""></div>
+            <div class="col-md-4"><img class="img-responsive d-inline-block" src="images/Goodluck.jpg" width="570" height="370" alt=""></div>
             <div class="col-md-4"><img class="img-responsive d-inline-block" src="images/history-02-570x370.jpg" width="570" height="370" alt=""></div>
             <div class="col-md-4"><img class="img-responsive d-inline-block" src="images/history-03-570x370.jpg" width="570" height="370" alt=""></div>
           </div>
