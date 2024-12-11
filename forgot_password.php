@@ -101,16 +101,49 @@ session_start();
             text-align: center;
         }
 
-        /* Responsive styling */
+       
         @media (max-width: 768px) {
             .container {
-                width: 700px; /* Fixed width for tablets */
+                width: 700px; 
+            }
+
+            .container .left-section {
+                padding: 20px;
+            }
+
+            .container .right-section {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input[type="email"], button {
+                font-size: 15px;
             }
         }
 
         @media (max-width: 480px) {
             .container {
-                width: 500px; /* Fixed width for mobile */
+                width: 500px; 
+            }
+
+            .container .right-section {
+                padding: 30px 15px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            input[type="email"], button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button {
+                padding: 10px;
             }
         }
     </style>
@@ -121,24 +154,24 @@ session_start();
 <body>
     <div class="container">
         <div class="left-section">
-            <img src="images/logo-170x172.png" alt="Logo"> <!-- Ensure to use your logo here -->
+            <img src="images/logo-170x172.png" alt="Logo"> 
         </div>
         <div class="right-section">
             <h2>Forgot Password</h2>
-            <form action="admin/user_mailer" method="POST">
+            <form action="admin/user_mailer" method="post">
                 <label for="email">Enter your email:</label>
-                <input type="email" id="email" name="email" placeholder="kiyumi@gmail.com" required>
-                <button type="submit" name="btn_forgotpass">Send Reset Link</button>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                <button type="submit" name="btn-forgotpass">Send Reset Link</button>
             </form>
             <p>We'll send a link to reset your password.</p>
         </div>
     </div>
     <script>
     <?php
-    // Check if there's a session message to display
+    // Check if there's a session message to displays
     if (isset($_SESSION['notify'])) {
         $message = addslashes($_SESSION['notify']);
-        if (strpos($message, 'Check your email for a link to reset your password.') !== false) {
+        if (strpos($message, 'A reset link has been sent to your email') !== false) {
             echo "Swal.fire({
                 title: 'Success',
                 text: '$message',
@@ -156,6 +189,6 @@ session_start();
         unset($_SESSION['notify']);
     }
     ?>
-    </script>
+</script>
 </body>
 </html>
