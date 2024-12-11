@@ -68,6 +68,7 @@
                   <th>Firstname</th>
                   <th>Photo</th>
                   <th>Course</th>
+                  <th>Email</th>
                   <th>Actions</th>
                 </thead>
                 <tbody>
