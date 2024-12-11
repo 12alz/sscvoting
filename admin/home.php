@@ -260,35 +260,65 @@
     setTimeout('location.reload(true);',t);
   }
 
+  // function generateChart(ctx, labels, data) {
+  //   var barChartData = {
+  //     labels: labels,
+  //     datasets: [
+  //       {
+  //         label: 'Votes',
+  //         backgroundColor: 'rgba(60,141,188,0.9)',
+  //         borderColor: 'rgba(60,141,188,0.8)',
+  //         data: data
+  //       }
+  //     ]
+  //   };
+
+  //   var barChartOptions = {
+  //     responsive: true,
+  //     maintainAspectRatio: true,
+  //     scales: {
+  //       y: {
+  //         beginAtZero: true
+  //       }
+  //     }
+  //   };
+
+  //   new Chart(ctx, {
+  //     type: 'bar',
+  //     data: barChartData,
+  //     options: barChartOptions
+  //   });
+  // }
   function generateChart(ctx, labels, data) {
     var barChartData = {
-      labels: labels,
-      datasets: [
-        {
-          label: 'Votes',
-          backgroundColor: 'rgba(60,141,188,0.9)',
-          borderColor: 'rgba(60,141,188,0.8)',
-          data: data
-        }
-      ]
+        labels: labels,
+        datasets: [
+            {
+                label: 'Votes',
+                backgroundColor: 'rgba(60,141,188,0.9)',
+                borderColor: 'rgba(60,141,188,0.8)',
+                data: data
+            }
+        ]
     };
 
     var barChartOptions = {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        y: {
-          beginAtZero: true
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
         }
-      }
     };
 
     new Chart(ctx, {
-      type: 'bar',
-      data: barChartData,
-      options: barChartOptions
+        type: 'bar',
+        data: barChartData,
+        options: barChartOptions
     });
-  }
+}
+
 
   
 
