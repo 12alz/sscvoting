@@ -350,13 +350,18 @@
 </script> 
 
 <style>
+  .chart {
+    position: relative;
+    width: 100% !important;
+    height: auto !important;
+}
 .small-box.bg-red {
-    background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
-    color: white; /* Ensure the text is visible */
+    background: linear-gradient(135deg, #ff0000, #ff6347); 
+    color: white; 
 }
 .small-box.bg-purple {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Adjust the colors as per your preference */
-    color: white; /* Ensure the text color stands out against the gradient */
+    background: linear-gradient(135deg, #6a11cb, #2575fc); 
+    color: white; 
 }
 
 </style>
