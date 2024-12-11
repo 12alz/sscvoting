@@ -310,7 +310,7 @@
                 x: {
                     ticks: {
                         maxRotation: 20, // Rotate labels if they overflow
-                        minRotation: 25, // Make labels fit better on smaller screens
+                        minRotation: 0, // Make labels fit better on smaller screens
                         autoSkip: true, // Skip labels if they overlap
                     }
                 },
