@@ -103,6 +103,7 @@
 </div>
 
 <!-- Edit -->
+<!-- Edit -->
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -118,20 +119,10 @@
                     <label for="edit_firstname" class="col-sm-3 control-label">Fullname</label>
 
                     <div class="col-sm-9">
-                    <input type="text" class="form-control" id="edit_firstname" name="firstname" placeholder="Enter Full Name" required>
-                          <option value="" selected>-Select-</option>
-                     <?php
-                          $sql = "SELECT * FROM voters";
-                          $query = $conn->query($sql);
-                          while($row = $query->fetch_assoc()){
-                            echo "
-                              <option value='".$row['firstname']." ".$row['lastname']."'>".$row['firstname']." ".$row['lastname']."</option>
-                            ";
-                          }
-                        ?>
-                      </select>
+                      <!-- Changed select to input text field -->
+                      <input type="text" class="form-control" id="edit_firstname" name="firstname" placeholder="Enter Full Name" required>
                     </div>
-              
+                </div>
              
                 <div class="form-group">
                     <label for="edit_course" class="col-sm-3 control-label">Course</label>
@@ -140,10 +131,10 @@
                       <select type="text" class="form-control" id="edit_course" name="course" required>
                          <option value="" selected>-Select-</option>
                          <option value="BSIT">BSIT</option>
-                          <option value="BSBA">BSBA</option>
-                           <option value="BSED">BSED</option>
-                            <option value="BEED">BEED</option>
-                             <option value="BSHM">BSHM</option>
+                         <option value="BSBA">BSBA</option>
+                         <option value="BSED">BSED</option>
+                         <option value="BEED">BEED</option>
+                         <option value="BSHM">BSHM</option>
                       </select>
                     </div>
                 </div>
@@ -174,13 +165,13 @@
                 </div>
             </div>
             <div class="modal-footer">
-           
               <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
               </form>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Delete -->
 <div class="modal fade" id="delete">
