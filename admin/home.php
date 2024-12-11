@@ -255,26 +255,12 @@
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
 
-<style>
-    .chart {
-        position: relative;
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    /* Optional: Add this to allow scrolling if too many items are shown */
-    .chart-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-</style>
-
 <script>
-    function AutoRefresh(t){
-        setTimeout('location.reload(true);',t);
-    }
+  function AutoRefresh(t){
+    setTimeout('location.reload(true);',t);
+  }
 
-    function generateChart(ctx, labels, data) {
+  function generateChart(ctx, labels, data) {
         var barChartData = {
             labels: labels,
             datasets: [
@@ -315,37 +301,47 @@
             options: barChartOptions
         });
     }
+  
 
-    <?php
-        $sql = "SELECT * FROM positions ORDER BY priority ASC";
-        $query = $conn->query($sql);
-        while($row = $query->fetch_assoc()){
-            $sql = "SELECT * FROM candidates WHERE position_id = '".$row['id']."'";
-            $cquery = $conn->query($sql);
-            $carray = array();
-            $varray = array();
-            while($crow = $cquery->fetch_assoc()){
-                array_push($carray, $crow['firstname']);
-                $sql = "SELECT * FROM votes WHERE candidate_id = '".$crow['id']."'";
-                $vquery = $conn->query($sql);
-                array_push($varray, $vquery->num_rows);
-            }
-            $carray = json_encode($carray);
-            $varray = json_encode($varray);
-    ?>
-        $(function(){
-            var description = '<?php echo slugify($row['description']); ?>';
-            var ctx = $('#'+description).get(0).getContext('2d');
-            generateChart(ctx, <?php echo $carray; ?>, <?php echo $varray; ?>);
-        });
-    <?php
-        }
-    ?>
-</script>
-
- 
+  <?php
+    $sql = "SELECT * FROM positions ORDER BY priority ASC";
+    $query = $conn->query($sql);
+    while($row = $query->fetch_assoc()){
+      $sql = "SELECT * FROM candidates WHERE position_id = '".$row['id']."'";
+      $cquery = $conn->query($sql);
+      $carray = array();
+      $varray = array();
+      while($crow = $cquery->fetch_assoc()){
+        array_push($carray, $crow['firstname']);
+        $sql = "SELECT * FROM votes WHERE candidate_id = '".$crow['id']."'";
+        $vquery = $conn->query($sql);
+        array_push($varray, $vquery->num_rows);
+      }
+      $carray = json_encode($carray);
+      $varray = json_encode($varray);
+  ?>
+      $(function(){
+        var description = '<?php echo slugify($row['description']); ?>';
+        var ctx = $('#'+description).get(0).getContext('2d');
+        generateChart(ctx, <?php echo $carray; ?>, <?php echo $varray; ?>);
+      });
+  <?php
+    }
+  ?>
+</script> 
 
 <style>
+   .chart {
+        position: relative;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Optional: Add this to allow scrolling if too many items are shown */
+    .chart-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 .small-box.bg-red {
     background: linear-gradient(135deg, #ff0000, #ff6347); /* Red gradient */
     color: white; /* Ensure the text is visible */
