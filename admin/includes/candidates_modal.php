@@ -119,7 +119,7 @@
 
                     <div class="col-sm-9">
                       <select type="text" class="form-control" id="edit_firstname" name="firstname" required>
-                          <!-- <option value="" selected>-Select-</option> -->
+                          <!-- <option value="" selected>-Select-</options> -->
                      <?php
                           $sql = "SELECT * FROM voters";
                           $query = $conn->query($sql);
