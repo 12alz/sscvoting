@@ -274,7 +274,7 @@
               <!-- <p>As President Smith said in his inaugural address, "If we take ourselves back to the University in its early years, we would find many major differences from what we observe today. . . . And yet, many of us connected to the University feel that we might just as easily have been there - that going back to the University in its early days, or in fact at any time since its inception, we would know unmistakably that we were at the Jonathan Carroll University.</p>
               <p>Why is this? The Jonathan Carroll University, from its very inception, has been driven by a singular focus on inquiry - with a firm belief in the value of open, rigorous, and intense inquiry and a common understanding that this must be the defining feature of this university. Everything about the Jonathan Carroll University that we recognize as distinctive flows from this commitment."</p> -->
             </div>
-          </div>
+     
         </div>
       </section>
       <!-- Page Footer-->
