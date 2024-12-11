@@ -458,7 +458,7 @@ if(isset($_SESSION['voter'])){
     ?>
 </script>
 
-<script><script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
         const loginForm = document.querySelector('form');
         const loginButton = document.querySelector('#login');
@@ -532,6 +532,6 @@ if(isset($_SESSION['voter'])){
         }
     });
 </script>
-</script>
+
 
 </body>
