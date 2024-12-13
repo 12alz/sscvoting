@@ -59,6 +59,7 @@ $conn->close();
             font-family: 'Arial', sans-serif;
             background: url('images/color4.jpg') no-repeat center center fixed;
             margin: 0;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
