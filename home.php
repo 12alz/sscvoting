@@ -120,7 +120,7 @@
 												';
 											}
 	
-											$instruct = ($row['max_vote'] > 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
+											$instruct = ($row['max_vote'] > 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only two candidate';
 	
 											echo '
 												<div class="row">
