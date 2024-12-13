@@ -8,6 +8,7 @@ header("Permissions-Policy: geolocation=()");
 session_start();
 include "mailer.php";
 include "includes/conn.php";
+include 'includes/session.php';s
 
 // Helper function to send reset email
 function sendResetEmail($email, $reset_code) {
