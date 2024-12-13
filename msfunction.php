@@ -10,11 +10,9 @@ $showForm = false;
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
 
-  
     $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
     $stmt = $conn->prepare($sql);
 
-    
     if ($stmt === false) {
         die('MySQL prepare error: ' . htmlspecialchars($conn->error));
     }
@@ -27,10 +25,8 @@ if (isset($_GET['token'])) {
         $row = $result->fetch_assoc();
         $expiration = $row['token_expiration'];
 
-       
         if (strtotime($expiration) > time()) {
-            // Token is valid, allow the user to proceed
-            $showForm = true; // Enable the registration formrs
+            $showForm = true; // Enable the registration form
         } else {
             echo "<script>alert('This link has expired. Please request a new registration link.');</script>";
         }
@@ -42,7 +38,6 @@ if (isset($_GET['token'])) {
 } else {
     echo "<script>alert('No token provided.');</script>";
 }
-
 
 $conn->close();
 ?>
@@ -67,6 +62,7 @@ $conn->close();
             padding: 20px;
             box-sizing: border-box;
         }
+
         .container {
             background: #fff;
             padding: 30px;
@@ -76,19 +72,30 @@ $conn->close();
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
         }
+
         .container:hover {
             transform: translateY(-2px);
         }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
         .form-wrap {
             margin-bottom: 20px;
             position: relative;
         }
+
         label {
             display: block;
             font-size: 14px;
             margin-bottom: 5px;
             color: #555;
         }
+
         input[type="text"], input[type="password"], input[type="email"], select, input[type="file"] {
             width: 100%;
             padding: 12px;
@@ -98,16 +105,19 @@ $conn->close();
             color: #333;
             transition: border-color 0.3s;
         }
+
         input:focus {
             border-color: #d32f2f;
             outline: none;
         }
+
         .eye-icon {
             position: absolute;
             right: 10px;
             top: 35%;
             cursor: pointer;
         }
+
         button {
             width: 100%;
             padding: 12px;
@@ -119,28 +129,32 @@ $conn->close();
             font-size: 16px;
             transition: background-color 0.3s;
         }
+
         button:hover {
             background-color: #b71c1c;
         }
+
         p {
             text-align: center;
             color: #333;
             margin-top: 10px;
         }
+
         .login-link {
             text-align: center;
             margin-top: 20px;
         }
+
         .login-link a {
             color: #d32f2f;
             text-decoration: none;
             font-weight: bold;
         }
+
         .login-link a:hover {
             text-decoration: underline;
         }
 
-        
         @media (max-width: 480px) {
             .container {
                 padding: 20px;
@@ -159,7 +173,7 @@ $conn->close();
 
 <?php if ($showForm): ?>
     <div class="container">
-        <h2 style="text-align: center; color: #333;">Register</h2>
+        <h2>Register</h2>
         <form method="POST" action="sign_up.php" enctype="multipart/form-data" onsubmit="return validateForm()">
             <div class="form-wrap">
                 <label for="voters_id">Student ID</label>
@@ -167,10 +181,8 @@ $conn->close();
             </div>
             
             <div class="form-wrap">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required 
-                pattern="[a-zA-Z0-9._%+-]+@gmail\.com" 
-                title="Please enter a valid Gmail address. Example: username@gmail.com">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com" title="Please enter a valid Gmail address. Example: username@gmail.com">
             </div>
 
             <div class="form-wrap">
@@ -182,7 +194,6 @@ $conn->close();
                 <label for="lastname">Last Name</label>
                 <input type="text" name="lastname" required pattern="[A-Za-z\s-]+" title="Only letters and spaces are allowed">
             </div>
-
 
             <div class="form-wrap">
                 <label for="password">Password</label>
@@ -218,15 +229,15 @@ $conn->close();
                 <label for="photo">Photo</label>
                 <input type="file" name="photo" accept=".jpg, .jpeg, .png">
             </div>
+
             <div class="form-wrap">
-            <label>
-                <input type="checkbox" name="terms" required>
-                I agree to the terms of use and <a href="privacy-policy" target="_blank">Privacy Policy</a>
-            </label>
-        </div>
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the terms of use and <a href="privacy-policy" target="_blank">Privacy Policy</a>
+                </label>
+            </div>
             
-            <button class="btn button-primary" type="submit" name="add">Register</button>
-            
+            <button type="submit" name="add">Register</button>
         </form>
         <div class="login-link">
             <p>Have an account? <a href="sign_in.php">Login here</a></p>
