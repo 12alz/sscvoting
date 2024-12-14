@@ -4,7 +4,7 @@
 
 	if(isset($_POST['vote'])){
 		if(count($_POST) == 1){
-			$_SESSION['error'][] = 'Please vote atleast one candidateSS';
+			$_SESSION['error'][] = 'Please vote atleast one candidate';
 		}
 		else{
 			$_SESSION['post'] = $_POST;
