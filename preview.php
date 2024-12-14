@@ -13,9 +13,9 @@ while($row = $query->fetch_assoc()){
         // Strictly enforce exactly 2 votes per position
         if($row['max_vote'] > 1){ 				
             // Check if exactly 2 candidates are selected
-            if(count($_POST[$position]) != 2){ 					
+            if(count($_POST[$position]) != $row['max_vote']){ 					
                 $output['error'] = true; 					
-                $output['message'][] = '<li>You must select exactly 2 candidates for '.$row['description'].'</li>'; 				
+                $output['message'][] = '<li>You must select exactly '.$row['max_vote'].' candidates for '.$row['description'].'</li>'; 				
             } 				
             else{ 					
                 foreach($_POST[$position] as $key => $values){ 						
