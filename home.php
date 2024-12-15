@@ -87,7 +87,7 @@
 										include 'includes/slugify.php';
 	
 										$candidate = '';
-										$sql = "SELECT * FROM positions ORDER BY priority ASC";
+										$sql = "SELECT * FROM positions ";
 										$query = $conn->query($sql);
 										while($row = $query->fetch_assoc()){
 											$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
