@@ -8,7 +8,7 @@
 		$voter = $query->fetch_assoc();
 	}
 	else{
-		header('location: 404');
+		header('location: index');
 		exit();
 	}
 
