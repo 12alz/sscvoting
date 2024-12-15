@@ -111,10 +111,8 @@
 														}
 													}
 												}
-												$input = ($row['max_vote'] > 1) ? 
-												'<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : 
-												'<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
-																							$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
+												$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
+												$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
 												$candidate .= '
 													<li>
 														'.$input.'<button type="button" class="btn btn-primary btn-sm btn-flat clist platform" data-platform="'.$crow['platform'].'" data-fullname="'.$crow['firstname'].' '.$crow['lastname'].'"><i class="fa fa-search"></i> Platform</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
@@ -250,18 +248,6 @@ $(function(){
 	});
 
 });
-</script>
-<script> 
-	document.querySelectorAll('.flat-red').forEach(function(checkbox) {
-    checkbox.addEventListener('change', function() {
-        var checkedCheckboxes = document.querySelectorAll('.flat-red:checked').length;
-        if (checkedCheckboxes > 2) {
-            alert("You can only select 2 candidates.");
-            checkbox.checked = false;  // Uncheck the current box
-        }
-    });
-});
-
 </script>
 </body>
 </html>
