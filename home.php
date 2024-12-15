@@ -92,25 +92,26 @@
 										while($row = $query->fetch_assoc()){
 											$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
 											$cquery = $conn->query($sql);
-											$selectedCandidates = isset($_SESSION['post'][slugify($row['description'])]) ? $_SESSION['post'][slugify($row['description'])] : [];
-										
 											while($crow = $cquery->fetch_assoc()){
 												$slug = slugify($row['description']);
 												$checked = '';
-												
-												if(is_array($selectedCandidates) && in_array($crow['id'], $selectedCandidates)){
-													$checked = 'checked';
+												if(isset($_SESSION['post'][$slug])){
+													$value = $_SESSION['post'][$slug];
+	
+													if(is_array($value)){
+														foreach($value as $val){
+															if($val == $crow['id']){
+																$checked = 'checked';
+															}
+														}
+													}
+													else{
+														if($value == $crow['id']){
+															$checked = 'checked';
+														}
+													}
 												}
-										
-												$input = ($row['max_vote'] > 1) ? 
-														 '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : 
-														 '<input type="radio" class="flat-red '.$slug.'" name="'.$slug.'" value="'.$crow['id'].'" '.$checked.'>';
-										
-												// Disable further selection if max votes are reached
-												if($row['max_vote'] > 1 && count($selectedCandidates) >= $row['max_vote'] && !in_array($crow['id'], $selectedCandidates)) {
-													$input = str_replace('<input', '<input disabled', $input);  // Disable other checkboxes
-												}
-										
+												$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
 												$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
 												$candidate .= '
 													<li>
