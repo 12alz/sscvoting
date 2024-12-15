@@ -176,88 +176,78 @@
 <?php include 'includes/scripts.php'; ?>
 <script>
 // Check Voting Status #####################################
+let lastSwitchStatus = null;
+function checkSwitchState() {
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", "status.php", true);
+	xhr.onload = function() {
+		if (xhr.status == 200) {
+			var response = JSON.parse(xhr.responseText);
+			if(lastSwitchStatus !== null && lastSwitchStatus != response.switch){
+				location.reload();
+			}
+			lastSwitchStatus =  response.switch;
+		}
+	};
+	xhr.send();
+}
+setInterval(checkSwitchState, 1000);
+// End Of Check ##############################################s
 $(function(){
-    // Initialize iCheck
-    $('.content').iCheck({
-        checkboxClass: 'icheckbox_flat-green',
-        radioClass: 'iradio_flat-green'
-    });
+	$('.content').iCheck({
+		checkboxClass: 'icheckbox_flat-green',
+		radioClass: 'iradio_flat-green'
+	});
 
-    // Function to check the number of selected checkboxes
-    function updateCheckboxState() {
-        $('.flat-red').each(function() {
-            // Get the checkbox's name (position identifier)
-            var name = $(this).attr('name');
-            var checkedCount = $("input[name='" + name + "']:checked").length;
+	$(document).on('click', '.reset', function(e){
+	    e.preventDefault();
+	    var desc = $(this).data('desc');
+	    $('.'+desc).iCheck('uncheck');
+	});
 
-            // Disable checkboxes if two candidates are already selected for that position
-            if (checkedCount >= 2) {
-                $("input[name='" + name + "']:not(:checked)").prop('disabled', true);
-            } else {
-                $("input[name='" + name + "']").prop('disabled', false);
-            }
-        });
-    }
+	$(document).on('click', '.platform', function(e){
+		e.preventDefault();
+		$('#platform').modal('show');
+		var platform = $(this).data('platform');
+		var fullname = $(this).data('fullname');
+		$('.candidate').html(fullname);
+		$('#plat_view').html(platform);
+	});
 
-    // Event handler for checkbox click
-    $(document).on('ifChanged', '.flat-red', function() {
-        updateCheckboxState();
-    });
+	$('#preview').click(function(e){
+		e.preventDefault();
+		var form = $('#ballotForm').serialize();
+		if(form == ''){
+			$('.message').html('You must vote atleast one candidate');
+			$('#alert').show();
+		}
+		else{
+			$.ajax({
+				type: 'POST',
+				url: 'preview.php',
+				data: form,
+				dataType: 'json',
+				success: function(response){
+					if(response.error){
+						var errmsg = '';
+						var messages = response.message;
+						for (i in messages) {
+							errmsg += messages[i]; 
+						}
+						$('.message').html(errmsg);
+						$('#alert').show();
+					}
+					else{
+						$('#preview_modal').modal('show');
+						$('#preview_body').html(response.list);
+					}
+				}
+			});
+		}
+		
+	});
 
-    // Reset button functionality
-    $(document).on('click', '.reset', function(e) {
-        e.preventDefault();
-        var desc = $(this).data('desc');
-        $('.' + desc).iCheck('uncheck');
-        updateCheckboxState();  // Recheck the state after reset
-    });
-
-    // Platform view modal
-    $(document).on('click', '.platform', function(e) {
-        e.preventDefault();
-        $('#platform').modal('show');
-        var platform = $(this).data('platform');
-        var fullname = $(this).data('fullname');
-        $('.candidate').html(fullname);
-        $('#plat_view').html(platform);
-    });
-
-    // Preview button functionality
-    $('#preview').click(function(e) {
-        e.preventDefault();
-        var form = $('#ballotForm').serialize();
-        if (form == '') {
-            $('.message').html('You must vote at least one candidate');
-            $('#alert').show();
-        } else {
-            $.ajax({
-                type: 'POST',
-                url: 'preview.php',
-                data: form,
-                dataType: 'json',
-                success: function(response) {
-                    if (response.error) {
-                        var errmsg = '';
-                        var messages = response.message;
-                        for (i in messages) {
-                            errmsg += messages[i]; 
-                        }
-                        $('.message').html(errmsg);
-                        $('#alert').show();
-                    } else {
-                        $('#preview_modal').modal('show');
-                        $('#preview_body').html(response.list);
-                    }
-                }
-            });
-        }
-    });
-
-    // Initialize the checkbox states when the page loads
-    updateCheckboxState();
 });
-
 </script>
-<script></script>
 </body>
 </html>
