@@ -176,78 +176,91 @@
 <?php include 'includes/scripts.php'; ?>
 <script>
 // Check Voting Status #####################################
-let lastSwitchStatus = null;
-function checkSwitchState() {
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", "status.php", true);
-	xhr.onload = function() {
-		if (xhr.status == 200) {
-			var response = JSON.parse(xhr.responseText);
-			if(lastSwitchStatus !== null && lastSwitchStatus != response.switch){
-				location.reload();
-			}
-			lastSwitchStatus =  response.switch;
-		}
-	};
-	xhr.send();
-}
-setInterval(checkSwitchState, 1000);
-// End Of Check ##############################################s
 $(function(){
-	$('.content').iCheck({
-		checkboxClass: 'icheckbox_flat-green',
-		radioClass: 'iradio_flat-green'
-	});
+    // Initialize iCheck
+    $('.content').iCheck({
+        checkboxClass: 'icheckbox_flat-green',
+        radioClass: 'iradio_flat-green'
+    });
 
-	$(document).on('click', '.reset', function(e){
-	    e.preventDefault();
-	    var desc = $(this).data('desc');
-	    $('.'+desc).iCheck('uncheck');
-	});
+    // Function to check the number of selected checkboxes
+    function updateCheckboxState() {
+        $('.flat-red').each(function() {
+            // Get the checkbox's name (position identifier)
+            var name = $(this).attr('name');
+            var positionId = $(this).closest('.box').attr('id'); // Get position ID
+            var maxVotes = parseInt($('#' + positionId).data('maxvotes')); // Get the max votes for this position
+            
+            // Get the number of selected checkboxes for this position
+            var checkedCount = $("input[name='" + name + "']:checked").length;
 
-	$(document).on('click', '.platform', function(e){
-		e.preventDefault();
-		$('#platform').modal('show');
-		var platform = $(this).data('platform');
-		var fullname = $(this).data('fullname');
-		$('.candidate').html(fullname);
-		$('#plat_view').html(platform);
-	});
+            // Disable checkboxes if the number of selected candidates has reached maxVotes
+            if (checkedCount >= maxVotes) {
+                $("input[name='" + name + "']:not(:checked)").prop('disabled', true);
+            } else {
+                $("input[name='" + name + "']").prop('disabled', false);
+            }
+        });
+    }
 
-	$('#preview').click(function(e){
-		e.preventDefault();
-		var form = $('#ballotForm').serialize();
-		if(form == ''){
-			$('.message').html('You must vote atleast one candidate');
-			$('#alert').show();
-		}
-		else{
-			$.ajax({
-				type: 'POST',
-				url: 'preview.php',
-				data: form,
-				dataType: 'json',
-				success: function(response){
-					if(response.error){
-						var errmsg = '';
-						var messages = response.message;
-						for (i in messages) {
-							errmsg += messages[i]; 
-						}
-						$('.message').html(errmsg);
-						$('#alert').show();
-					}
-					else{
-						$('#preview_modal').modal('show');
-						$('#preview_body').html(response.list);
-					}
-				}
-			});
-		}
-		
-	});
+    // Event handler for checkbox change
+    $(document).on('ifChanged', '.flat-red', function() {
+        updateCheckboxState();
+    });
 
+    // Reset button functionality
+    $(document).on('click', '.reset', function(e) {
+        e.preventDefault();
+        var desc = $(this).data('desc');
+        $('.' + desc).iCheck('uncheck');
+        updateCheckboxState();  // Recheck the state after reset
+    });
+
+    // Platform view modal
+    $(document).on('click', '.platform', function(e) {
+        e.preventDefault();
+        $('#platform').modal('show');
+        var platform = $(this).data('platform');
+        var fullname = $(this).data('fullname');
+        $('.candidate').html(fullname);
+        $('#plat_view').html(platform);
+    });
+
+    // Preview button functionality
+    $('#preview').click(function(e) {
+        e.preventDefault();
+        var form = $('#ballotForm').serialize();
+        if (form == '') {
+            $('.message').html('You must vote at least one candidate');
+            $('#alert').show();
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: 'preview.php',
+                data: form,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.error) {
+                        var errmsg = '';
+                        var messages = response.message;
+                        for (i in messages) {
+                            errmsg += messages[i]; 
+                        }
+                        $('.message').html(errmsg);
+                        $('#alert').show();
+                    } else {
+                        $('#preview_modal').modal('show');
+                        $('#preview_body').html(response.list);
+                    }
+                }
+            });
+        }
+    });
+
+    // Initialize the checkbox states when the page loads
+    updateCheckboxState();
 });
+
 </script>
 </body>
 </html>
