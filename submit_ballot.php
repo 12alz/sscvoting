@@ -3,7 +3,7 @@
 	include 'includes/slugify.php';
 
 	if(isset($_POST['vote'])){
-		if(count($_POST) == 2){
+		if(count($_POST) == 1){
 			$_SESSION['error'][] = 'Please vote atleast one candidate';
 		}
 		else{
