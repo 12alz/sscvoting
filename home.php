@@ -111,7 +111,7 @@
 														}
 													}
 												}
-												$input = ($row['max_vote'] > = 2) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
+												$input = ($row['max_vote'] >= 2) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
 												$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
 												$candidate .= '
 													<li>
@@ -249,88 +249,5 @@ $(function(){
 
 });
 </script>
-<!-- <script>
-	$(function(){
-    // Initialize iCheck
-    $('.content').iCheck({
-        checkboxClass: 'icheckbox_flat-green',
-        radioClass: 'iradio_flat-green'
-    });
-
-    // Function to check the number of selected checkboxes
-    function updateCheckboxState() {
-        $('.flat-red').each(function() {
-            // Get the checkbox's name (position identifier)
-            var name = $(this).attr('name');
-            var checkedCount = $("input[name='" + name + "']:checked").length;
-
-            // Disable checkboxes if two candidates are already selected for that position
-            if (checkedCount >= 2) {
-                $("input[name='" + name + "']:not(:checked)").prop('disabled', true);
-            } else {
-                $("input[name='" + name + "']").prop('disabled', false);
-            }
-        });
-    }
-
-    // Event handler for checkbox click
-    $(document).on('ifChanged', '.flat-red', function() {
-        updateCheckboxState();
-    });
-
-    // Reset button functionality
-    $(document).on('click', '.reset', function(e) {
-        e.preventDefault();
-        var desc = $(this).data('desc');
-        $('.' + desc).iCheck('uncheck');
-        updateCheckboxState();  // Recheck the state after reset
-    });
-
-    // Platform view modal
-    $(document).on('click', '.platform', function(e) {
-        e.preventDefault();
-        $('#platform').modal('show');
-        var platform = $(this).data('platform');
-        var fullname = $(this).data('fullname');
-        $('.candidate').html(fullname);
-        $('#plat_view').html(platform);
-    });
-
-    // Preview button functionality
-    $('#preview').click(function(e) {
-        e.preventDefault();
-        var form = $('#ballotForm').serialize();
-        if (form == '') {
-            $('.message').html('You must vote at least one candidate');
-            $('#alert').show();
-        } else {
-            $.ajax({
-                type: 'POST',
-                url: 'preview.php',
-                data: form,
-                dataType: 'json',
-                success: function(response) {
-                    if (response.error) {
-                        var errmsg = '';
-                        var messages = response.message;
-                        for (i in messages) {
-                            errmsg += messages[i]; 
-                        }
-                        $('.message').html(errmsg);
-                        $('#alert').show();
-                    } else {
-                        $('#preview_modal').modal('show');
-                        $('#preview_body').html(response.list);
-                    }
-                }
-            });
-        }
-    });
-
-    // Initialize the checkbox states when the page loads
-    updateCheckboxState();
-});
-
-</script> -->
 </body>
 </html>
