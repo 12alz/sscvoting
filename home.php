@@ -111,7 +111,7 @@
 														}
 													}
 												}
-												$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
+												$input = ($row['max_vote'] > = 2) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
 												$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
 												$candidate .= '
 													<li>
@@ -174,7 +174,7 @@
 </div>
 
 <?php include 'includes/scripts.php'; ?>
-<!-- <script>
+<script>
 // Check Voting Status #####################################
 let lastSwitchStatus = null;
 function checkSwitchState() {
@@ -248,8 +248,8 @@ $(function(){
 	});
 
 });
-</script> -->
-<script>
+</script>
+<!-- <script>
 	$(function(){
     // Initialize iCheck
     $('.content').iCheck({
@@ -331,6 +331,6 @@ $(function(){
     updateCheckboxState();
 });
 
-</script>
+</script> -->
 </body>
 </html>
