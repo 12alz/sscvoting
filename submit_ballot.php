@@ -1,10 +1,10 @@
 <?php
 	include 'includes/session.php';
 	include 'includes/slugify.php';
-	s
+
 	if(isset($_POST['vote'])){
 		if(count($_POST) == 2){
-			$_SESSION['error'][] = 'Please vote atleast one candidatess';
+			$_SESSION['error'][] = 'Please vote atleast one candidate';
 		}
 		else{
 			$_SESSION['post'] = $_POST;
