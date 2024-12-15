@@ -120,7 +120,7 @@
 												';
 											}
 	
-											$instruct = ($row['max_vote'] == 2) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
+											$instruct = ($row['max_vote'] > 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
 	
 											echo '
 												<div class="row">
@@ -248,34 +248,6 @@ $(function(){
 	});
 
 });
-</script>
-<script> 
-	$('#ballotForm').submit(function(e) {
-    var formData = $(this).serializeArray();
-    var selectedVotes = {};
-    
-    formData.forEach(function(item) {
-        if (!selectedVotes[item.name]) {
-            selectedVotes[item.name] = [];
-        }
-        selectedVotes[item.name].push(item.value);
-    });
-
-    // Check that exactly 2 candidates are selected for each position
-    var isValid = true;
-    for (var position in selectedVotes) {
-        if (selectedVotes[position].length !== 2) {
-            isValid = false;
-            break;
-        }
-    }
-
-    if (!isValid) {
-        alert('You must select exactly two candidates for each position.');
-        e.preventDefault();  // Prevent form submission
-    }
-});
-
 </script>
 </body>
 </html>
