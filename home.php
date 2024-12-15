@@ -111,7 +111,10 @@
 														}
 													}
 												}
-												$input = ($row['max_vote'] <= 1) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
+												$input = ($row['max_vote'] > 1) ? 
+    '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : 
+    '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
+
 												$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
 												$candidate .= '
 													<li>
@@ -120,7 +123,7 @@
 												';
 											}
 	
-											$instruct = ($row['max_vote'] <= 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
+											$instruct = ($row['max_vote'] > 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
 	
 											echo '
 												<div class="row">
