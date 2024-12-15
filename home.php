@@ -111,10 +111,7 @@
 														}
 													}
 												}
-												$input = ($row['max_vote'] > 1) ? 
-    '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : 
-    '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
-
+												$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
 												$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
 												$candidate .= '
 													<li>
@@ -253,15 +250,31 @@ $(function(){
 });
 </script>
 <script>
-    document.querySelector('form').addEventListener('submit', function(event) {
-        let selected = document.querySelectorAll('input[name="position[]"]:checked');
-        let maxVote = 2;  // o kahit anong limit, depende sa max_vote
-        if (selected.length > maxVote) {
-            alert('You can only select up to ' + maxVote + ' candidates.');
-            event.preventDefault(); // Stop form submission
+$(function() {
+    // Mag-monitor ng mga pagbabago sa mga checkboxes
+    $('input[type="checkbox"]').on('ifChanged', function() {
+        var maxVotes = 2;  // Maximum na kandidato na pwedeng piliin
+        var selected = $(this).closest('.box').find('input[type="checkbox"]:checked').length;
+        
+        if (selected > maxVotes) {
+            // Kung lumampas sa maxVotes, alisin ang pinakahuling pagpili
+            $(this).iCheck('uncheck');
+            // Ipakita ang error message
+            $('.message').html('You can only select up to ' + maxVotes + ' candidates.');
+            $('#alert').show();
+        } else {
+            // Kung tama lang ang pagpili, itago ang error message
+            $('#alert').hide();
         }
     });
-</script>
 
+    // Reset button: mag-unclick ng mga selected checkboxes
+    $(document).on('click', '.reset', function(e) {
+        e.preventDefault();
+        var desc = $(this).data('desc');
+        $('.' + desc).iCheck('uncheck');
+    });
+});
+</script>
 </body>
 </html>
