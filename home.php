@@ -89,29 +89,34 @@
 										$candidate = '';
 										$sql = "SELECT * FROM positions ORDER BY priority ASC";
 										$query = $conn->query($sql);
-										while($row = $query->fetch_assoc()){
+										while ($row = $query->fetch_assoc()) {
+											$maxVote = $row['max_vote'];  // Kunin ang max_vote mula sa database
+											$slug = slugify($row['description']);
+											$candidate = '';
 											$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
 											$cquery = $conn->query($sql);
-											while($crow = $cquery->fetch_assoc()){
-												$slug = slugify($row['description']);
+											while ($crow = $cquery->fetch_assoc()) {
 												$checked = '';
-												if(isset($_SESSION['post'][$slug])){
+												if (isset($_SESSION['post'][$slug])) {
 													$value = $_SESSION['post'][$slug];
-	
-													if(is_array($value)){
-														foreach($value as $val){
-															if($val == $crow['id']){
+													if (is_array($value)) {
+														foreach ($value as $val) {
+															if ($val == $crow['id']) {
 																$checked = 'checked';
 															}
 														}
-													}
-													else{
-														if($value == $crow['id']){
+													} else {
+														if ($value == $crow['id']) {
 															$checked = 'checked';
 														}
 													}
 												}
-												$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
+												
+												// Gamitin ang checkbox o radio button base sa max_vote
+												$input = ($maxVote > 1) 
+													? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug.'[]" value="'.$crow['id'].'" '.$checked.'>' 
+													: '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
+												
 												$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
 												$candidate .= '
 													<li>
@@ -119,13 +124,13 @@
 													</li>
 												';
 											}
-	
-											$instruct = ($row['max_vote'] > 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
-	
+											
+											$instruct = ($maxVote > 1) ? 'You may select up to '.$maxVote.' candidates' : 'Select only one candidate';
+										
 											echo '
 												<div class="row">
 													<div class="col-xs-12">
-														<div class="box box-solid" id="'.$row['id'].'">
+														<div class="box box-solid" id="'.$row['id'].'" data-max-vote="'.$maxVote.'">
 															<div class="box-header with-border">
 																<h3 class="box-title"><b>'.$row['description'].'</b></h3>
 															</div>
@@ -138,15 +143,6 @@
 																<div id="candidate_list">
 																	<ul>
 																		'.$candidate.'
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											';
-	
-											$candidate = '';
 	
 										}	
 	
