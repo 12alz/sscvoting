@@ -249,32 +249,5 @@ $(function(){
 
 });
 </script>
-<script>
-$(function() {
-    // Mag-monitor ng mga pagbabago sa mga checkboxes
-    $('input[type="checkbox"]').on('ifChanged', function() {
-        var maxVotes = 2;  // Maximum na kandidato na pwedeng piliin
-        var selected = $(this).closest('.box').find('input[type="checkbox"]:checked').length;
-        
-        if (selected > maxVotes) {
-            // Kung lumampas sa maxVotes, alisin ang pinakahuling pagpili
-            $(this).iCheck('uncheck');
-            // Ipakita ang error message
-            $('.message').html('You can only select up to ' + maxVotes + ' candidates.');
-            $('#alert').show();
-        } else {
-            // Kung tama lang ang pagpili, itago ang error message
-            $('#alert').hide();
-        }
-    });
-
-    // Reset button: mag-unclick ng mga selected checkboxes
-    $(document).on('click', '.reset', function(e) {
-        e.preventDefault();
-        var desc = $(this).data('desc');
-        $('.' + desc).iCheck('uncheck');
-    });
-});
-</script>
 </body>
 </html>
