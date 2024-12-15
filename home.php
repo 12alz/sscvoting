@@ -246,18 +246,26 @@ $(function(){
 		}
 		
 	});
-c
+
 });
 </script>
-<script>
-function limitCheckboxes(checkbox) {
-    var checkboxes = document.querySelectorAll("input[type=checkbox]");
-    var checkedCount = Array.from(checkboxes).filter(i => i.checked).length;
-    if (checkedCount > 2) {
-        checkbox.checked = false;
-        alert("You can only select up to 2 candidates.");
-    }
-} </script>
-
+<script> 
+	document.querySelectorAll(".candidate-checkbox").forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+        var checkedCount = document.querySelectorAll(".candidate-checkbox:checked").length;
+        if (checkedCount >= 2) {
+            document.querySelectorAll(".candidate-checkbox").forEach(function(cb) {
+                if (!cb.checked) {
+                    cb.disabled = true; // Disable unchecked checkboxes
+                }
+            });
+        } else {
+            document.querySelectorAll(".candidate-checkbox").forEach(function(cb) {
+                cb.disabled = false; // Enable all checkboxes if less than 2 are checked
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
