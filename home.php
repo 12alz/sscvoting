@@ -246,8 +246,18 @@ $(function(){
 		}
 		
 	});
-
+c
 });
 </script>
+<script>
+function limitCheckboxes(checkbox) {
+    var checkboxes = document.querySelectorAll("input[type=checkbox]");
+    var checkedCount = Array.from(checkboxes).filter(i => i.checked).length;
+    if (checkedCount > 2) {
+        checkbox.checked = false;
+        alert("You can only select up to 2 candidates.");
+    }
+} </script>
+
 </body>
 </html>
