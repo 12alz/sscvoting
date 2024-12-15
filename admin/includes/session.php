@@ -3,7 +3,7 @@
 	include 'includes/conn.php';
 
 	if(!isset($_SESSION['admin']) || trim($_SESSION['admin']) == ''){
-		header('Location: ../sign_in');
+		header('Location: ../404');
 		exit(); 
 	}
 
