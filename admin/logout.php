@@ -13,7 +13,7 @@ if (ini_get("session.use_cookies")) {
         '', 
         time() - 42000, // Expire in the past
         $params["path"], 
-        $params["domain"], 
+        $params["https://mccsscvoting.com"], 
         $params["secure"], 
         $params["httponly"]
     );
