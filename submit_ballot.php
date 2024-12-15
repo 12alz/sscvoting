@@ -16,7 +16,7 @@
 				$position = slugify($row['description']);
 				$pos_id = $row['id'];
 				if(isset($_POST[$position])){
-					if($row['max_vote'] > 1){
+					if($row['max_vote'] > 2){
 						if(count($_POST[$position]) > $row['max_vote']){
 							$error = true;
 							$_SESSION['error'][] = 'You can only choose '.$row['max_vote'].' candidates for '.$row['description'];
