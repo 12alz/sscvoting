@@ -250,6 +250,24 @@ $(function(){
 });
 </script> -->
 <script>
+	// Check Voting Status #####################################
+let lastSwitchStatus = null;
+function checkSwitchState() {
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", "status.php", true);
+	xhr.onload = function() {
+		if (xhr.status == 200) {
+			var response = JSON.parse(xhr.responseText);
+			if(lastSwitchStatus !== null && lastSwitchStatus != response.switch){
+				location.reload();
+			}
+			lastSwitchStatus =  response.switch;
+		}
+	};
+	xhr.send();
+}
+setInterval(checkSwitchState, 1000);
+// End Of Check ##############################################s
 
 $(function(){
     // Initialize iCheck
