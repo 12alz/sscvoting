@@ -252,5 +252,16 @@ $(function(){
 
 });
 </script>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        let selected = document.querySelectorAll('input[name="position[]"]:checked');
+        let maxVote = 2;  // o kahit anong limit, depende sa max_vote
+        if (selected.length > maxVote) {
+            alert('You can only select up to ' + maxVote + ' candidates.');
+            event.preventDefault(); // Stop form submission
+        }
+    });
+</script>
+
 </body>
 </html>
