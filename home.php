@@ -249,5 +249,17 @@ $(function(){
 
 });
 </script>
+<script> 
+	document.querySelectorAll('.flat-red').forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+        var checkedCheckboxes = document.querySelectorAll('.flat-red:checked').length;
+        if (checkedCheckboxes > 2) {
+            alert("You can only select 2 candidates.");
+            checkbox.checked = false;  // Uncheck the current box
+        }
+    });
+});
+
+</script>
 </body>
 </html>
