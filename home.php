@@ -218,7 +218,7 @@ $(function(){
 		e.preventDefault();
 		var form = $('#ballotForm').serialize();
 		if(form == ''){
-			$('.message').html('You must vote atleast one candidate');
+			$('.message').html('You must vote atleast one candidatsse');
 			$('#alert').show();
 		}
 		else{
