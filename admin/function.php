@@ -67,7 +67,7 @@ if (isset($_POST["btn-new-password"])) {
     // Direct SQL query to get the code from the database
     $sql = "SELECT `code` FROM `admin` WHERE email = '$email'";
     $result = $conn->query($sql);
-zzzzzz
+
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $get_code = $row['code'];
