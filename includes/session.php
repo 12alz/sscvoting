@@ -9,7 +9,7 @@
 	}
 	else{
 		header('location: index');
-		
+		exit();
 	}
 
 ?>
