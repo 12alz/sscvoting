@@ -6,7 +6,7 @@ if (isset($_POST['id'])) {
     $id = $_POST['id'];
 
     // Fetch the voter details using the provided ID
-    $query = "SELECT id, firstname, lastname, username FROM microsoft WHERE id = ?";
+    $query = "SELECT id, Firstname, Lastname, username FROM microsoft WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $id);
     $stmt->execute();
