@@ -88,8 +88,8 @@
 										$sql = "SELECT * FROM positions ORDER BY priority ASC";
 										$query = $conn->query($sql);
 										while($row = $query->fetch_assoc()){
-											// For President, Vice President, Secretary, and Treasurer, display to all students regardless of course
-											if (in_array($row['description'], ['President', 'Vice President', 'Secretary', 'Treasurer'])) {
+											// For President, Vice President, Secretary, Treasurer, PIO (Open to all courses)
+											if (in_array($row['description'], ['President', 'Vice President', 'Secretary', 'Treasurer', 'PIO'])) {
 												$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
 											} else {
 												// For other positions, filter candidates by course
@@ -167,7 +167,7 @@
 								<?php
 							}
 						}
-					
+					}
 				?>
 			</section>
 		</div>
@@ -209,9 +209,8 @@ $(function(){
 	    $('.'+desc).iCheck('uncheck');
 	});
 
-	$(document).on('click', '.platform', function(e){
-		e.preventDefault();
-		$('#platform').modal('show');
+	// Preview Modal Show
+	$('.platform').click(function(){
 		var platform = $(this).data('platform');
 		var fullname = $(this).data('fullname');
 		$('.candidate').html(fullname);
