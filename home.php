@@ -174,7 +174,7 @@
 </div>
 
 <?php include 'includes/scripts.php'; ?>
-<!-- <script>
+<script>
 // Check Voting Status #####################################
 let lastSwitchStatus = null;
 function checkSwitchState() {
@@ -248,8 +248,8 @@ $(function(){
 	});
 
 });
-</script> -->
-<script>
+</script> 
+<!-- <script>
 
 $(function(){
     // Initialize iCheck
@@ -332,6 +332,6 @@ $(function(){
     updateCheckboxState();
 });
 
-</script>
+</script> -->
 </body>
 </html>
