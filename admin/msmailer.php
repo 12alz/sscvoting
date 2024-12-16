@@ -5,8 +5,12 @@ include "includes/conn.php";
 if (isset($_POST["btn-forgotpass"])) {
     session_start();
 
-    if (isset($_POST["username"])) {
+    // Ensure the username field is set
+    if (isset($_POST["username"]) && !empty($_POST["username"])) {
         $username = $_POST["username"];
+
+        // Sanitize the username input to avoid any injection
+        $username = htmlspecialchars($username);
 
         // Check if the user is already registered by looking up the username in the database
         $check_user_sql = "SELECT * FROM microsoft WHERE username = ?";
@@ -16,10 +20,11 @@ if (isset($_POST["btn-forgotpass"])) {
         $result = $check_user_stmt->get_result();
 
         if ($result->num_rows > 0) {
-            // User already registered, show an alert message
+            // If user is found, they are already registered
             $_SESSION['message'] = 'You have already registered. Please check your email for further instructions.';
         } else {
-            // Proceed with the registration process if the user is not registered
+            // If the user is not found, proceed with the registration process
+
             // Generate a token for the password reset
             $token = bin2hex(random_bytes(32));
             $expiration = date("Y-m-d H:i:s", strtotime("+15 minutes"));
@@ -62,7 +67,7 @@ if (isset($_POST["btn-forgotpass"])) {
                 <p>Suprime Student Council</p>
             ";
 
-            // Check if the email was sent
+            // Check if the email was sent successfully
             if ($mail->send()) {
                 $_SESSION['message'] = 'MS365 Account email sent successfully. Please check your Outlook inbox!';
             } else {
@@ -74,10 +79,13 @@ if (isset($_POST["btn-forgotpass"])) {
         $check_user_stmt->close();
         $conn->close();
         
-        // Redirect to the verification page
+        // Redirect to the verification page to show the message
+        header("Location: ../verification");
+        exit();
+    } else {
+        $_SESSION['message'] = 'Please provide a valid username!';
         header("Location: ../verification");
         exit();
     }
 }
-
 ?>
