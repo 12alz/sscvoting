@@ -5,70 +5,68 @@
 
 	<?php include 'includes/navbar.php'; ?>
 	
-	 
-	  <div class="content-wrapper">
-	    <div class="container">
+	<div class="content-wrapper">
+		<div class="container">
 
-	      <!-- Main content -->
-	      <section class="content">
-	      	<?php
-	      		$parse = parse_ini_file('admin/config.ini', FALSE, INI_SCANNER_RAW);
-    			$title = $parse['election_title'];
-	      	?>
-	      	<h1 class="page-header text-center title"><b><?php echo strtoupper($title); ?></b></h1>
-	        <div class="row">
-	        	<div class="col-sm-10 col-sm-offset-1">
-	        		<?php
-				        if(isset($_SESSION['error'])){
-				        	?>
-				        	<div class="alert alert-danger alert-dismissible">
-				        		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					        	<ul>
-					        		<?php
-					        			foreach($_SESSION['error'] as $error){
-					        				echo "
-					        					<li>".$error."</li>
-					        				";
-					        			}
-					        		?>
-					        	</ul>
-					        </div>
-				        	<?php
-				         	unset($_SESSION['error']);
-
-				        }
-				        if(isset($_SESSION['success'])){
-				          	echo "
-				            	<div class='alert alert-success alert-dismissible'>
-				              		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-				              		<h4><i class='icon fa fa-check'></i> Success!</h4>
-				              	".$_SESSION['success']."
-				            	</div>
-				          	";
-				          	unset($_SESSION['success']);
-				        }
-
-				    ?>
-
-				    <div class="alert alert-danger alert-dismissible" id="alert" style="display:none;">
-		        		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			        	<span class="message"></span>
-			        </div>
-				    <?php
-					// Check If Voting Started
-					$ssql = "SELECT switch FROM admin WHERE id = 1";
-					$squery = $conn->query($ssql);
-					$row  = $squery->fetch_assoc();
-
-					if($row['switch'] == 0){
+			<!-- Main content -->
+			<section class="content">
+				<?php
+					$parse = parse_ini_file('admin/config.ini', FALSE, INI_SCANNER_RAW);
+					$title = $parse['election_title'];
+				?>
+				<h1 class="page-header text-center title"><b><?php echo strtoupper($title); ?></b></h1>
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+						<?php
+							if(isset($_SESSION['error'])){
+								?>
+								<div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+									<ul>
+										<?php
+											foreach($_SESSION['error'] as $error){
+												echo "<li>".$error."</li>";
+											}
+										?>
+									</ul>
+								</div>
+								<?php
+							unset($_SESSION['error']);
+							}
+							if(isset($_SESSION['success'])){
+								echo "
+								<div class='alert alert-success alert-dismissible'>
+									<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+									<h4><i class='icon fa fa-check'></i> Success!</h4>
+									".$_SESSION['success']."
+								</div>
+								";
+								unset($_SESSION['success']);
+							}
 						?>
-						<div class="text-center">
-							<h3>Please wait for voting to start.</h3>
+
+						<div class="alert alert-danger alert-dismissible" id="alert" style="display:none;">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							<span class="message"></span>
 						</div>
-						
-					<?php // End 
-					} 
-						else{
+
+						<?php
+						// Check If Voting Started
+						$ssql = "SELECT switch FROM admin WHERE id = 1";
+						$squery = $conn->query($ssql);
+						$row  = $squery->fetch_assoc();
+
+						if($row['switch'] == 0){
+							?>
+							<div class="text-center">
+								<h3>Please wait for voting to start.</h3>
+							</div>
+						<?php
+						} else {
+							// Get the course of the logged-in student
+							$course = $voter['course']; // Assuming course is stored in the session or in the $voter variable
+
+							// Fetching representatives based on course
 							$sql = "SELECT * FROM votes WHERE voters_id = '".$voter['id']."'";
 							$vquery = $conn->query($sql);
 							if($vquery->num_rows > 0){
@@ -85,19 +83,20 @@
 								<form method="POST" id="ballotForm" action="submit_ballot.php">
 									<?php
 										include 'includes/slugify.php';
-	
+
 										$candidate = '';
 										$sql = "SELECT * FROM positions ORDER BY priority ASC";
 										$query = $conn->query($sql);
 										while($row = $query->fetch_assoc()){
-											$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
+											// Filter candidates based on the selected course
+											$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."' AND course='".$course."'";
 											$cquery = $conn->query($sql);
 											while($crow = $cquery->fetch_assoc()){
 												$slug = slugify($row['description']);
 												$checked = '';
 												if(isset($_SESSION['post'][$slug])){
 													$value = $_SESSION['post'][$slug];
-	
+
 													if(is_array($value)){
 														foreach($value as $val){
 															if($val == $crow['id']){
@@ -119,9 +118,9 @@
 													</li>
 												';
 											}
-	
+
 											$instruct = ($row['max_vote'] > 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
-	
+
 											echo '
 												<div class="row">
 													<div class="col-xs-12">
@@ -145,32 +144,26 @@
 													</div>
 												</div>
 											';
-	
+
 											$candidate = '';
-	
 										}	
-	
 									?>
 									<div class="text-center">
 										<button type="button" class="btn btn-success btn-flat" id="preview"><i class="fa fa-file-text"></i> Preview</button> 
 										<button type="submit" class="btn btn-primary btn-flat" name="vote"><i class="fa fa-check-square-o"></i> Submit</button>
 									</div>
 								</form>
-								
 								<?php
 							}
 						}
-						//<!-- End Voting Ballot -->
-				    ?>
-	        	</div>
-	        </div>
-	      </section>
-	     
-	    </div>
-	  </div>
+					}
+				?>
+			</section>
+		</div>
+	</div>
   
-  	<?php include 'includes/footer.php'; ?>
-  	<?php include 'includes/ballot_modal.php'; ?>
+	<?php include 'includes/footer.php'; ?>
+	<?php include 'includes/ballot_modal.php'; ?>
 </div>
 
 <?php include 'includes/scripts.php'; ?>
@@ -192,7 +185,7 @@ function checkSwitchState() {
 	xhr.send();
 }
 setInterval(checkSwitchState, 1000);
-// End Of Check ##############################################s
+// End Of Check ##############################################
 $(function(){
 	$('.content').iCheck({
 		checkboxClass: 'icheckbox_flat-green',
@@ -218,7 +211,7 @@ $(function(){
 		e.preventDefault();
 		var form = $('#ballotForm').serialize();
 		if(form == ''){
-			$('.message').html('You must vote atleast one candidate');
+			$('.message').html('You must vote at least one candidate');
 			$('#alert').show();
 		}
 		else{
@@ -244,9 +237,7 @@ $(function(){
 				}
 			});
 		}
-		
 	});
-
 });
 </script>
 </body>
