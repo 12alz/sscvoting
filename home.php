@@ -5,6 +5,7 @@
 
 	<?php include 'includes/navbar.php'; ?>
 	
+	
 	<div class="content-wrapper">
 		<div class="container">
 
@@ -30,20 +31,31 @@
 										?>
 									</ul>
 								</div>
-								<?php
-							unset($_SESSION['error']);
-							}
-							if(isset($_SESSION['success'])){
-								echo "
-								<div class='alert alert-success alert-dismissible'>
-									<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-									<h4><i class='icon fa fa-check'></i> Success!</h4>
-									".$_SESSION['success']."
-								</div>
-								";
-								unset($_SESSION['success']);
-							}
-						?>
+							    <?php
+										if(isset($_SESSION['error'])){
+										echo "
+										<script>
+											Swal.fire({
+												icon: 'error',
+												text: '{$_SESSION['error']}',
+											});
+										</script>
+									";
+										unset($_SESSION['error']);
+										}
+										if(isset($_SESSION['success'])){
+										echo "
+													<script>
+														Swal.fire({
+														icon: 'success',
+														text: '{$_SESSION['success']}',
+														height: '1000px',
+														});
+													</script>
+												";
+										unset($_SESSION['success']);
+										}
+									?>
 
 						<div class="alert alert-danger alert-dismissible" id="alert" style="display:none;">
 							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -250,5 +262,6 @@ $(function(){
 	});
 });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
