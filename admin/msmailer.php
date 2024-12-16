@@ -18,7 +18,7 @@ if (isset($_POST["btn-forgotpass"])) {
         if ($result->num_rows > 0) {
            
             $token = bin2hex(random_bytes(32));
-            $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
+            $expiration = date("Y-m-d H:i:s", strtotime("+15 minutes"));
 
             
             $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
@@ -53,7 +53,7 @@ if (isset($_POST["btn-forgotpass"])) {
                 <p>You're invited to participate in our upcoming vote!</p>
                 <p>To cast your vote, please click the link below to register your account:</p>
                 <p><a href='$reset_url'>Register</a></p>
-                <p><strong>Note:</strong> This link is only valid for 3 minutes.</p>
+                <p><strong>Note:</strong> This link is only valid for 15 minutes.</p>
                 <p>Sincerely,</p>
                 <p>Suprime Student Council</p>
             ";
