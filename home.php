@@ -88,7 +88,7 @@
 										$sql = "SELECT * FROM positions ORDER BY priority ASC";
 										$query = $conn->query($sql);
 										while($row = $query->fetch_assoc()){
-											// For President, VP, Secretary, and Treasurer, display to all students regardless of course
+											// For President, Vice President, Secretary, and Treasurer, display to all students regardless of course
 											if (in_array($row['description'], ['President', 'Vice President', 'Secretary', 'Treasurer'])) {
 												$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
 											} else {
