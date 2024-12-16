@@ -4,7 +4,7 @@ include 'includes/conn.php'; // Include your database connection
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $firstname =htmlspecialchars($_POST['firstname']);
+    $firstname = htmlspecialchars($_POST['firstname']);
     $lastname = htmlspecialchars($_POST['lastname']);
     $username = htmlspecialchars($_POST['username']);
 
