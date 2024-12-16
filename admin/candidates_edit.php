@@ -7,7 +7,7 @@
 		$lastname = htmlspecialchars($_POST['lastname']);
 		$course = $_POST['course'];
 		$position = $_POST['position'];
-		$platform = $_POST['platform'];
+		$platform = htmlspecialchars($_POST['platform']);
 
 		$sql = "UPDATE candidates SET firstname = '$firstname', lastname = '$lastname', course = '$course', position_id = '$position', platform = '$platform' WHERE id = '$id'";
 		if($conn->query($sql)){
