@@ -13,7 +13,7 @@ if (isset($_FILES['csv_file'])) {
             $username = $data[2];
 
             // Prepare the SQL statement
-            $stmt = $conn->prepare("INSERT INTO import_ms365 (Firstname, Lastname, Username) VALUES (?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO microsoft (Firstname, Lastname, Username) VALUES (?, ?, ?)");
             
             // Check if the statement was prepared correctly
             if ($stmt === false) {
@@ -30,5 +30,5 @@ if (isset($_FILES['csv_file'])) {
     }
 }
 
-header('Location: msaccount'); // Redirect back to your main page
+header('Location: msaccount');
 ?>
