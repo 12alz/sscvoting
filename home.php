@@ -92,65 +92,71 @@
 											if (in_array($row['description'], ['President', 'Vice President', 'Secretary', 'Treasurer'])) {
 												$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
 											} else {
-												// Filter candidates by course for other positions
+												// For other positions, filter candidates by course
 												$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."' AND course='".$course."'";
 											}
 											$cquery = $conn->query($sql);
-											while($crow = $cquery->fetch_assoc()){
-												$slug = slugify($row['description']);
-												$checked = '';
-												if(isset($_SESSION['post'][$slug])){
-													$value = $_SESSION['post'][$slug];
+											if ($cquery->num_rows > 0) {
+												// Only display positions with relevant candidates
+												while($crow = $cquery->fetch_assoc()){
+													$slug = slugify($row['description']);
+													$checked = '';
+													if(isset($_SESSION['post'][$slug])){
+														$value = $_SESSION['post'][$slug];
 
-													if(is_array($value)){
-														foreach($value as $val){
-															if($val == $crow['id']){
+														if(is_array($value)){
+															foreach($value as $val){
+																if($val == $crow['id']){
+																	$checked = 'checked';
+																}
+															}
+														}
+														else{
+															if($value == $crow['id']){
 																$checked = 'checked';
 															}
 														}
 													}
-													else{
-														if($value == $crow['id']){
-															$checked = 'checked';
-														}
-													}
+													$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
+													$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
+													$candidate .= '
+														<li>
+															'.$input.'<button type="button" class="btn btn-primary btn-sm btn-flat clist platform" data-platform="'.$crow['platform'].'" data-fullname="'.$crow['firstname'].' '.$crow['lastname'].'"><i class="fa fa-search"></i> Platform</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
+														</li>
+													';
 												}
-												$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red '.$slug.'" name="'.$slug."[]".'" value="'.$crow['id'].'" '.$checked.'>' : '<input type="radio" class="flat-red '.$slug.'" name="'.slugify($row['description']).'" value="'.$crow['id'].'" '.$checked.'>';
-												$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
-												$candidate .= '
-													<li>
-														'.$input.'<button type="button" class="btn btn-primary btn-sm btn-flat clist platform" data-platform="'.$crow['platform'].'" data-fullname="'.$crow['firstname'].' '.$crow['lastname'].'"><i class="fa fa-search"></i> Platform</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
-													</li>
-												';
-											}
 
-											$instruct = ($row['max_vote'] > 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
+												$instruct = ($row['max_vote'] > 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
 
-											echo '
-												<div class="row">
-													<div class="col-xs-12">
-														<div class="box box-solid" id="'.$row['id'].'">
-															<div class="box-header with-border">
-																<h3 class="box-title"><b>'.$row['description'].'</b></h3>
-															</div>
-															<div class="box-body">
-																<p>'.$instruct.'
-																	<span class="pull-right">
-																		<button type="button" class="btn btn-success btn-sm btn-flat reset" data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reset</button>
-																	</span>
-																</p>
-																<div id="candidate_list">
-																	<ul>
-																		'.$candidate.'
-																	</ul>
+												echo '
+													<div class="row">
+														<div class="col-xs-12">
+															<div class="box box-solid" id="'.$row['id'].'">
+																<div class="box-header with-border">
+																	<h3 class="box-title"><b>'.$row['description'].'</b></h3>
+																</div>
+																<div class="box-body">
+																	<p>'.$instruct.'
+																		<span class="pull-right">
+																			<button type="button" class="btn btn-success btn-sm btn-flat reset" data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reset</button>
+																		</span>
+																	</p>
+																	<div id="candidate_list">
+																		<ul>
+																			'.$candidate.'
+																		</ul>
+																	</div>
 																</div>
 															</div>
 														</div>
 													</div>
-												</div>
-											';
+												';
 
-											$candidate = '';
+												$candidate = '';
+											} else {
+												// If no relevant candidates, skip this position
+												continue;
+											}
 										}	
 									?>
 									<div class="text-center">
@@ -161,7 +167,7 @@
 								<?php
 							}
 						}
-					
+					}
 				?>
 			</section>
 		</div>
