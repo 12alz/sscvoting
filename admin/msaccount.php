@@ -65,7 +65,7 @@
               </div>
             </div>
             <div class="box-body">
-              <!-- Responsive Table -->
+             
               <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
@@ -80,7 +80,7 @@
                     <?php
                     include "includes/conn.php"; 
 
-                    // Fetch the records from the database
+                  
                     $query = "SELECT id, Firstname, Lastname, username FROM microsoft"; 
                     $result = $conn->query($query);
 
@@ -101,12 +101,12 @@
                         echo "<tr><td colspan='4'>No records found.</td></tr>";
                     }
 
-                    $conn->close(); // Close the database connection
+                    $conn->close(); 
                     ?>
                   </tbody>
                 </table>
               </div>
-              <!-- End of Responsive Table -->
+            
             </div>
           </div>
         </div>
@@ -172,11 +172,11 @@
             <input type="hidden" name="id" class="id">
             <div class="form-group">
               <label for="edit_firstname">First Name:</label>
-              <input type="text" class="form-control" id="edit_firstname" name="firstname" required>
+              <input type="text" class="form-control" id="edit_firstname" name="Firstname" required>
             </div>
             <div class="form-group">
               <label for="edit_lastname">Last Name:</label>
-              <input type="text" class="form-control" id="edit_lastname" name="lastname" required>
+              <input type="text" class="form-control" id="edit_lastname" name="Lastname" required>
             </div>
             <div class="form-group">
               <label for="edit_username">Username:</label>
@@ -243,8 +243,8 @@
       dataType: 'json',
       success: function(response) {
         $('.id').val(response.id);
-        $('#edit_firstname').val(response.Firstname);
-        $('#edit_lastname').val(response.Lastname);
+        $('#edit_firstname').val(response.firstname);
+        $('#edit_lastname').val(response.lastname);
         $('#edit_username').val(response.username);
       }
     });
