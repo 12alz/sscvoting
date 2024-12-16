@@ -3,8 +3,8 @@
 
 	if(isset($_POST['edit'])){
 		$id = $_POST['id'];
-		$firstname = $_POST['firstname'];
-		$lastname = $_POST['lastname'];
+		$firstname = htmlspecialchars($_POST['firstname']);
+		$lastname = htmlspecialchars($_POST['lastname']);
 		$course = $_POST['course'];
 		$position = $_POST['position'];
 		$platform = $_POST['platform'];
