@@ -10,11 +10,11 @@
 	}
 
 	if(isset($_POST['save'])){
-		$curr_password = $_POST['curr_password'];
-		$username = $_POST['email'];
-		$password = $_POST['password'];
-		$firstname = $_POST['firstname'];
-		$lastname = $_POST['lastname'];
+		$curr_password = htmlspecialchars($_POST['curr_password']);
+		$username = htmlspecialchars($_POST['email']);
+		$password = htmlspecialchars($_POST['password']);
+		$firstname =htmlspecialchars($_POST['firstname']);
+		$lastname = htmlspecialchars($_POST['lastname']);
 		$photo = $_FILES['photo']['name'];
 		if(password_verify($curr_password, $user['password'])){
 			if(!empty($photo)){
@@ -50,5 +50,6 @@
 	}
 
 	header('location:'.$return);
+	exit();
 
 ?>
