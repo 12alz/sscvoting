@@ -22,5 +22,6 @@
 	}
 
 	header('location: candidates');
+	exit();
 
 ?>
