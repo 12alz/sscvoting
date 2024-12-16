@@ -1,6 +1,6 @@
 <?php
-include 'includes/session.php'; // Include your session check
-include 'includes/conn.php'; // Include your database connection
+include 'includes/session.php'; 
+include 'includes/conn.php'; 
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
