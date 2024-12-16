@@ -1,14 +1,15 @@
 <?php
-include 'includes/session.php'; 
-include 'includes/conn.php'; 
+include 'includes/session.php'; // Include your session check
+include 'includes/conn.php'; // Include your database connection
+
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $firstname = htmlspecialchars($_POST['firstname']);
-    $lastname =htmlspecialchars($_POST['lastname']);
-    $username = htmlspecialchars($_POST['username']);
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $username = $_POST['username'];
 
     // Update the user details in the database
-    $query = "UPDATE microsoft SET firstname = ?, lastname = ?, username = ? WHERE id = ?";
+    $query = "UPDATE import_ms365 SET firstname = ?, lastname = ?, username = ? WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("sssi", $firstname, $lastname, $username, $id);
 
@@ -18,7 +19,6 @@ if (isset($_POST['id'])) {
         $_SESSION['error'] = 'Failed to update user';
     }
 
-    header('location: ../admin/msaccount'); 
-    exit();
+    header('location: ../admin/msaccount'); // Redirect back to the page after editing
 }
 ?>
