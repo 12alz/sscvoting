@@ -2,9 +2,9 @@
 	include 'includes/session.php';
 
 	if(isset($_POST['add'])){
-		$firstname = $_POST['firstname'];
-		$lastname = $_POST['lastname'];
-		$position = $_POST['position'];
+		$firstname = htmlspecialchars($_POST['firstname']);
+		$lastname = htmlspecialchars($_POST['lastname']);
+		$position = htmlspecialchars($_POST['position']);
 		$course = $_POST['course'];
 		$platform = $_POST['platform'];
 		$filename = $_FILES['photo']['name'];
