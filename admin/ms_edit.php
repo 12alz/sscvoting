@@ -19,6 +19,7 @@ if (isset($_POST['id'])) {
         $_SESSION['error'] = 'Failed to update user';
     }
 
-    header('location: ../admin/msaccount'); // Redirect back to the page after editing
+    header('location: ../admin/msaccount'); 
+    exit();
 }
 ?>
