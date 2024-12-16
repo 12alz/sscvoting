@@ -3,7 +3,7 @@
 
 	if(isset($_POST['edit'])){
 		$id = $_POST['id'];
-		$description = $_POST['description'];
+		$description =htmlspecialchars($_POST['description']);
 		$max_vote = $_POST['max_vote'];
 
 		$sql = "UPDATE positions SET description = '$description', max_vote = '$max_vote' WHERE id = '$id'";
