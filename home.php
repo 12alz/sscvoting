@@ -185,30 +185,33 @@
 <?php include 'includes/scripts.php'; ?>
 
 <script>
-// JavaScript for handling course selection and dynamic candidate visibility
+<script>
 $(document).ready(function() {
-    // Handle course selection
+    // Handle course selection change
     $('#course').change(function() {
         var selectedCourse = $(this).val();  // Get the selected course
+        
+        // If a course is selected, filter candidates based on the selected course
         if (selectedCourse) {
-            // If a course is selected, show relevant candidates
+            // Show candidates whose data-course matches the selected course, hide others
             $('#voting-ballot .candidate').each(function() {
-                var course = $(this).data('course');  // Assuming each candidate has a 'data-course' attribute
+                var course = $(this).data('course');  // Get the course for this candidate
                 if (course === selectedCourse) {
                     $(this).show();  // Show this candidate
                 } else {
-                    $(this).hide();  // Hide candidates from other courses
+                    $(this).hide();  // Hide this candidate
                 }
             });
         } else {
-            // If no course is selected, hide all candidates
-            $('#voting-ballot .candidate').hide();
+            // If no course is selected, show all candidates
+            $('#voting-ballot .candidate').show();
         }
     });
 
-    // Initialize visibility based on the initial selection (if any)
+    // Initialize the filtering (in case a course is selected by default)
     $('#course').trigger('change');
 });
+</script>
 
 </script>
 
