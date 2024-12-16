@@ -3,8 +3,8 @@
 
 	if(isset($_POST['edit'])){
 		$id = $_POST['id'];
-		$firstname = $_POST['firstname'];
-		$lastname = $_POST['lastname'];
+		$firstname =htmlspecialchars($_POST['firstname']);
+		$lastname = htmlspecialchars($_POST['lastname']);
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 		$course = $_POST['course'];
 
@@ -21,5 +21,6 @@
 	}
 
 	header('location: voters');
+	exit();
 
 ?>
