@@ -78,10 +78,10 @@
                   </thead>
                   <tbody>
                     <?php
-                    include "includes/conn.php"; // Make sure your database connection is included
+                    include "includes/conn.php"; // Makeee sure your database connection is included
 
                     // Fetch the records from the database
-                    $query = "SELECT id, firstname, lastname, username FROM import_ms365"; // Adjust the query as needed
+                    $query = "SELECT id, firstname, lastname, username FROM microsoft"; // Adjust the query as needed
                     $result = $conn->query($query);
 
                     if ($result->num_rows > 0) {
