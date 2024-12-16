@@ -89,7 +89,7 @@
 										$query = $conn->query($sql);
 										while($row = $query->fetch_assoc()){
 											// For President, Vice President, Secretary, Treasurer, PIO (Open to all courses)
-											if (in_array($row['description'], ['President', 'Vice President', 'Secretary', 'Treasurer', 'PIO'])) {
+											if (in_array($row['description'], ['President', 'Vice-President', 'Secretary', 'Treasurer', 'P.I.O'])) {
 												$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
 											} else {
 												// For other positions, filter candidates by course
