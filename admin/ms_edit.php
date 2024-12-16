@@ -4,8 +4,8 @@ include 'includes/conn.php';
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $firstname = htmlspecialchars($_POST['firstname']);
-    $lastname = htmlspecialchars($_POST['lastname']);
+    $firstname = htmlspecialchars($_POST['Firstname']);
+    $lastname = htmlspecialchars($_POST['Lastname']);
     $username = htmlspecialchars($_POST['username']);
 
     // Update the user details in the database
