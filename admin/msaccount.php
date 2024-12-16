@@ -88,9 +88,9 @@
                         // Output data for each row
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>
-                                    <td>{$row['firstname']}</td>
-                                    <td>{$row['lastname']}</td>
-                                    <td>{$row['username']}</td>
+                                    <td>{$row['Firstname']}</td>
+                                    <td>{$row['Lastname']}</td>
+                                    <td>{$row['Username']}</td>
                                     <td>
                                            <a href ='' class='btn btn-sm edit btn-flat fa fa-edit' data-id='".$row['id']."'></a>
                                           <a href ='' class='btn btn-sm delete btn-flat fa fa-trash' data-id='".$row['id']."'></a>
