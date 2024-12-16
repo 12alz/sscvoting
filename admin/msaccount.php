@@ -81,15 +81,15 @@
                     include "includes/conn.php"; // Make sure your database connection is included
 
                     // Fetch the records from the database
-                    $query = "SELECT id, Firstname, Lastname, username FROM microsoft"; // Adjust the query as needed
+                    $query = "SELECT id, firstname, lastname, username FROM import_ms365"; // Adjust the query as needed
                     $result = $conn->query($query);
 
                     if ($result->num_rows > 0) {
                         // Output data for each row
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>
-                                    <td>{$row['Firstname']}</td>
-                                    <td>{$row['Lastname']}</td>
+                                    <td>{$row['firstname']}</td>
+                                    <td>{$row['lastname']}</td>
                                     <td>{$row['username']}</td>
                                     <td>
                                            <a href ='' class='btn btn-sm edit btn-flat fa fa-edit' data-id='".$row['id']."'></a>
