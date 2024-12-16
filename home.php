@@ -8,7 +8,7 @@
 	<div class="content-wrapper">
 		<div class="container">
 
-			<!-- Mainssss content -->
+			<!-- Main content -->
 			<section class="content">
 				<?php
 					$parse = parse_ini_file('admin/config.ini', FALSE, INI_SCANNER_RAW);
@@ -88,8 +88,13 @@
 										$sql = "SELECT * FROM positions ORDER BY priority ASC";
 										$query = $conn->query($sql);
 										while($row = $query->fetch_assoc()){
-											// Filter candidates based on the selected course
-											$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."' AND course='".$course."'";
+											// For President, VP, Secretary, and Treasurer, display to all students regardless of course
+											if (in_array($row['description'], ['President', 'Vice President', 'Secretary', 'Treasurer'])) {
+												$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
+											} else {
+												// Filter candidates by course for other positions
+												$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."' AND course='".$course."'";
+											}
 											$cquery = $conn->query($sql);
 											while($crow = $cquery->fetch_assoc()){
 												$slug = slugify($row['description']);
@@ -156,7 +161,7 @@
 								<?php
 							}
 						}
-					
+					}
 				?>
 			</section>
 		</div>
