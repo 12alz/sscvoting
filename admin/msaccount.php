@@ -4,14 +4,13 @@
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
   
-
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+    <!-- Content Header -->
     <section class="content-header">
       <h1>Student Voters List</h1>
       <ol class="breadcrumb">
@@ -53,11 +52,10 @@
             <div class="box-header with-border">
               <div class="row">
                 <div class="col-md-6">
-                  <!-- Button to open CSV Upload Modal -->
+                  <!-- Buttons for CSV Upload and Download -->
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#csvUploadModal">
                     <i class="fa fa-upload"></i> Import MS365 Account
                   </button>
-                  <!-- Button to open Download CSV Modal -->
                   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadCsvModal">
                     <i class="fa fa-download"></i> Download Template CSV
                   </button>
@@ -65,7 +63,7 @@
               </div>
             </div>
             <div class="box-body">
-              <!-- Responsive Table -->
+              <!-- Table -->
               <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
@@ -78,22 +76,21 @@
                   </thead>
                   <tbody>
                     <?php
-                    include "includes/conn.php"; // Make sure your database connection is included
+                    include "includes/conn.php"; // Include DB connection
 
-                    // Fetch the records from the database
-                    $query = "SELECT id, Firstname, Lastname, username FROM microsoft"; // Adjust the query as needed
+                    // Fetch student records
+                    $query = "SELECT id, Firstname, Lastname, username FROM microsoft";
                     $result = $conn->query($query);
 
                     if ($result->num_rows > 0) {
-                        // Output data for each row
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>
                                     <td>{$row['Firstname']}</td>
                                     <td>{$row['Lastname']}</td>
                                     <td>{$row['username']}</td>
                                     <td>
-                                           <a href ='' class='btn btn-sm edit btn-flat fa fa-edit' data-id='".$row['id']."'></a>
-                                          <a href ='' class='btn btn-sm delete btn-flat fa fa-trash' data-id='".$row['id']."'></a>
+                                       <a href='' class='btn btn-sm edit btn-flat fa fa-edit' data-id='".$row['id']."'></a>
+                                       <a href='' class='btn btn-sm delete btn-flat fa fa-trash' data-id='".$row['id']."'></a>
                                     </td>
                                   </tr>";
                         }
@@ -101,12 +98,11 @@
                         echo "<tr><td colspan='4'>No records found.</td></tr>";
                     }
 
-                    $conn->close(); // Close the database connection
+                    $conn->close(); // Close DB connection
                     ?>
                   </tbody>
                 </table>
               </div>
-              <!-- End of Responsive Table -->
             </div>
           </div>
         </div>
@@ -114,7 +110,7 @@
     </section>
   </div>
 
-  <!-- Modal for CSV Upload -->
+  <!-- CSV Upload Modal -->
   <div class="modal fade" id="csvUploadModal" tabindex="-1" role="dialog" aria-labelledby="csvUploadModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -157,7 +153,7 @@
     </div>
   </div>
 
-  <!-- Modal for Editing -->
+  <!-- Edit Modal -->
   <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -189,7 +185,7 @@
     </div>
   </div>
 
-  <!-- Modal for Deleting -->
+  <!-- Delete Modal -->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -218,15 +214,15 @@
 
   <script>
   $(function(){
-    // Edit user
+    // Edit User
     $(document).on('click', '.edit', function(e){
       e.preventDefault();
       $('#editModal').modal('show');
       var id = $(this).data('id');
-      getRow(id);
+      getRow(id); // Fetch user data
     });
 
-    // Delete user
+    // Delete User
     $(document).on('click', '.delete', function(e){
       e.preventDefault();
       $('#deleteModal').modal('show');
@@ -238,10 +234,11 @@
   function getRow(id) {
     $.ajax({
       type: 'POST',
-      url: '../admin/msrows.php',
+      url: '../admin/msrows.php', // This file should return the user data as JSON
       data: {id: id},
       dataType: 'json',
       success: function(response) {
+        // Populate the form with the user's details
         $('.id').val(response.id);
         $('#edit_firstname').val(response.firstname);
         $('#edit_lastname').val(response.lastname);
