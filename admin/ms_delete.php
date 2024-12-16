@@ -6,7 +6,7 @@ if (isset($_POST['id'])) {
     $id = $_POST['id'];
 
     // Delete the user from the database
-    $query = "DELETE FROM microsoft WHERE id = ?";
+    $query = "DELETE FROM import_ms365 WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $id);
 
