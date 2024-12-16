@@ -3,9 +3,9 @@ include 'includes/session.php';
 include 'includes/conn.php'; 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $username = $_POST['username'];
+    $firstname = htmlspecialchars($_POST['firstname']);
+    $lastname =htmlspecialchars($_POST['lastname']);
+    $username = htmlspecialchars($_POST['username']);
 
     // Update the user details in the database
     $query = "UPDATE microsoft SET firstname = ?, lastname = ?, username = ? WHERE id = ?";
