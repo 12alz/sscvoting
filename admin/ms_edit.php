@@ -9,7 +9,7 @@ if (isset($_POST['id'])) {
     $username = htmlspecialchars($_POST['username']);
 
     // Update the user details in the database
-    $query = "UPDATE microsoft SET firstname = ?, lastname = ?, username = ? WHERE id = ?";
+    $query = "UPDATE microsoft SET Firstname = ?, Lastname = ?, username = ? WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("sssi", $firstname, $lastname, $username, $id);
 
