@@ -243,8 +243,8 @@
       dataType: 'json',
       success: function(response) {
         $('.id').val(response.id);
-        $('#edit_firstname').val(response.firstname);
-        $('#edit_lastname').val(response.lastname);
+        $('#edit_firstname').val(response.Firstname);
+        $('#edit_lastname').val(response.Lastname);
         $('#edit_username').val(response.username);
       }
     });
