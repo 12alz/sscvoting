@@ -3,7 +3,7 @@
 include "includes/conn.php";
 
 if (isset($_POST["btn-forgotpass"])) {
-    session_start();  // Start the session to store session messages
+    session_start(); 
 
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
