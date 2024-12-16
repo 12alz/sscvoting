@@ -55,6 +55,7 @@
 												";
 										unset($_SESSION['success']);
 										}
+									}
 									?>
 
 						<div class="alert alert-danger alert-dismissible" id="alert" style="display:none;">
