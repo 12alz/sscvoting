@@ -61,9 +61,9 @@
                     <th>Student ID</th>
                     <th>Lastname</th>
                     <th>Firstname</th>
-                    <th>MS365 Email</th> 
                     <th>Photo</th>
                     <th>Course</th>
+                    <th>MS365 Email</th> 
                     <th>Actions</th>
                   </thead>
                   <tbody>
@@ -140,13 +140,12 @@
           $('.id').val(response.id);
           $('#edit_firstname').val(response.firstname);
           $('#edit_lastname').val(response.lastname);
-          $('#edit_ms365_email').val(response.ms365_email);
           $('#edit_password').val(response.password);
           $('#edit_course').val(response.course);
           $('#edit_status').val(response.status);
           $('#edit_voters_id').val(response.voters_id);
           $('.fullname').html(response.firstname + ' ' + response.lastname);
-     
+          $('#edit_ms365_email').val(response.ms365_email);  // Added for MS365 Email
         }
       });
     }
