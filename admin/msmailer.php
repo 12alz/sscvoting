@@ -1,10 +1,8 @@
 <?php
-
 include "includes/conn.php";
 
 if (isset($_POST["btn-forgotpass"])) {
     session_start();
-
 
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
@@ -16,11 +14,16 @@ if (isset($_POST["btn-forgotpass"])) {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-           
+            // Fetch user details (first name, last name)
+            $row = $result->fetch_assoc();
+            $firstname = $row['firstname']; // Assuming your database has 'firstname' column
+            $lastname = $row['lastname'];   // Assuming your database has 'lastname' column
+
+            // Generate token and expiration date
             $token = bin2hex(random_bytes(32));
             $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
 
-            
+            // Update the database with the token and expiration
             $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
             $update_stmt = $conn->prepare($update_sql);
             $update_stmt->bind_param("sss", $token, $expiration, $username);
@@ -47,7 +50,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
-            $reset_url = "https://mccsscvoting.com/msfunction.php?token=$token&email=$username&firstname=$Firstname&lastname=$Lastname";
+            $reset_url = "https://mccsscvoting.com/msfunction.php?token=$token&email=$username&firstname=$firstname&lastname=$lastname";
             $mail->Body = "
                 <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
@@ -75,5 +78,4 @@ if (isset($_POST["btn-forgotpass"])) {
         exit();
     }
 }
-
 ?>
