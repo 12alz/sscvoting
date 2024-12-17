@@ -8,7 +8,6 @@
   <?php include 'includes/menubar.php'; ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -21,6 +20,7 @@
         <li class="active">Student</li>
       </ol>
     </section>
+
     <!-- Main content -->
     <section class="content">
       <?php
@@ -59,11 +59,11 @@
                 <thead>
                    <th>Student ID</th>
                    <th>Lastname</th>
-                  <th>Firstname</th>
-                  <th>Photo</th>
-                  <th>Course</th>
-                  <th>MS365 Email</th> 
-                  <th>Actions</th>
+                   <th>Firstname</th>
+                   <th>Photo</th>
+                   <th>Course</th>
+                   <th>MS365 Email</th> 
+                   <th>Actions</th>
                 </thead>
                 <tbody>
                   <?php
@@ -79,15 +79,12 @@
 
                           <td>
                             <img src='".$image."' width='30px' height='30px'>
-                           
                           </td>
                           <td>".$row['course']."</td>
-                           <td>".$row['email']."</td>
-                          <td>".$row['status']."</td>
+                          <td>".$row['ms365_email']."</td> <!-- Use ms365_email instead of email -->
                           <td>
-                             <a href ='' class='btn  btn-sm delete btn-flat fa fa-undo' data-id='".$row['id']."'></a>
-                             <a href ='' class='btn btn-sm edit btn-flat fa fa-trash' data-id='".$row['id']."'></a>
-                           
+                             <a href='' class='btn btn-sm delete btn-flat fa fa-undo' data-id='".$row['id']."'></a>
+                             <a href='' class='btn btn-sm edit btn-flat fa fa-trash' data-id='".$row['id']."'></a>
                           </td>
                         </tr>
                       ";
@@ -103,21 +100,22 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'trash_modal.php'; ?>
+  <?php include 'trash_modal.php'; ?> <!-- Ensure this contains modal code -->
 </div>
 <?php include 'includes/scripts.php'; ?>
+
 <script>
 $(function(){
   $(document).on('click', '.edit', function(e){
     e.preventDefault();
-    $('#edit').modal('show');
+    $('#edit').modal('show'); // Make sure the modal has the correct ID
     var id = $(this).data('id');
     getRow(id);
   });
 
   $(document).on('click', '.delete', function(e){
     e.preventDefault();
-    $('#delete').modal('show');
+    $('#delete').modal('show'); // Make sure the modal has the correct ID
     var id = $(this).data('id');
     getRow(id);
   });
@@ -143,6 +141,7 @@ function getRow(id){
       $('#edit_password').val(response.password);
       $('#edit_course').val(response.course);
       $('#edit_voters_id').val(response.voters_id);
+      $('#edit_ms365_email').val(response.ms365_email);  // Fill MS365 Email for editing
       $('.fullname').html(response.firstname+' '+response.lastname);
     }
   });
