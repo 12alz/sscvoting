@@ -168,7 +168,7 @@ $conn->close();
             
             <div class="form-wrap">
                 <label for="email">MS365 Email</label>
-                <input type="email" name="email" id="email" required 
+                <label for="email" name="email" id="email" required 
                 pattern="^[a-zA-Z0-9._%+-]+@mcclawis\.edu\.ph$" 
                 value="<?php echo htmlspecialchars($email); ?>" 
                 title="Please enter a valid email address from the mcclawis.edu.ph domain.">
