@@ -181,6 +181,27 @@
         </div>
         <!-- ./col -->
       </div>
+      <div class="row">
+  <h3>Enable/Disable Voting by Course</h3>
+  <?php
+    // Fetch all courses and their voting status (from the course_switches table)
+    $sql = "SELECT * FROM course_switches";
+    $query = $conn->query($sql);
+
+    while ($row = $query->fetch_assoc()) {
+        ?>
+        <div class="col-xs-6">
+            <form method="POST" action="">
+                <label for="switch_<?php echo $row['course_name']; ?>"><?php echo $row['course_name']; ?> Voting</label>
+                <input type="checkbox" name="switch_<?php echo $row['course_name']; ?>" data-toggle="switchbutton" <?php echo $row['switch'] == 1 ? 'checked' : ''; ?> data-onstyle="primary" data-offstyle="secondary" onchange="this.form.submit()">
+                <input type="hidden" name="course_name" value="<?php echo $row['course_name']; ?>">
+            </form>
+        </div>
+        <?php
+    }
+  ?>
+</div>
+
 
       <div class="row">
         <div class="col-xs-6">
