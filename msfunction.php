@@ -167,7 +167,7 @@ $conn->close();
             </div>
             
             <div class="form-wrap">
-            <label for="email">Email</label>
+            <label for="email">MS365 Email</label>
             <input type="email" name="email" id="email" required 
                 pattern="[a-zA-Z0-9._%+-]+@gmail\.com" 
                 title="Please enter a valid Gmail address. Example: username@gmail.com">
