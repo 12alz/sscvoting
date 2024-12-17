@@ -9,6 +9,10 @@ $showForm = false;
 
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
+    $email = $_GET['email'];
+    $firstname = $_GET['firstname'];
+    $lastname = $_GET['lastname'];
+    
 
   
     $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
