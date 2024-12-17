@@ -17,7 +17,7 @@ if (isset($_POST['add'])) {
         header('Location: sign_in.php');
     } else {
         if (!empty($filename)) {
-            move_uploaded_file($_FILES['photo']['tmp_name'], '../images/' . $filename);   
+            move_uploaded_file($_FILES['photo']['tmp_name'], 'images/' . $filename);   
         }
         
         $course = htmlspecialchars($_POST['course']);
@@ -28,7 +28,7 @@ if (isset($_POST['add'])) {
         $count = mysqli_num_rows($result);
         
         if ($count > 0) {
-            $_SESSION['error'] = 'ID or email already exists';
+            $_SESSION['error'] = 'ID or MS365 already exists';
             header('Location: sign_in.php');
         } else {
             $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, email, course, status, photo) 
