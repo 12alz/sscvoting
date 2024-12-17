@@ -95,12 +95,6 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_ms365_email" class="col-sm-3 control-label">MS365 Email</label>
-                    <div class="col-sm-9">
-                      <input type="email" class="form-control" id="edit_ms365_email" name="ms365_email" placeholder="example@mcclawis.edu.ph">
-                    </div>
-                </div>
-                <div class="form-group">
                     <label for="edit_password" class="col-sm-3 control-label">Password</label>
 
                     <div class="col-sm-9">
