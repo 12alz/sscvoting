@@ -84,7 +84,7 @@
                               </a>
                             </td>
                             <td>".$row['course']."</td>
-                            <td>".$row['ms365_email']."</td> <!-- Display MS365 email -->
+                            <td>".$row['email']."</td> <!-- Display MS365 email -->
                             <td>
                               <a href='' class='btn btn-sm edit btn-flat fa fa-edit' data-id='".$row['id']."'></a>
                               <a href='' class='btn btn-sm delete btn-flat fa fa-close' data-id='".$row['id']."'></a>
