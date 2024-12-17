@@ -16,8 +16,8 @@ if (isset($_POST["btn-forgotpass"])) {
         if ($result->num_rows > 0) {
             // Fetch user details (first name, last name)
             $row = $result->fetch_assoc();
-            $firstname = $row['firstname']; // Assuming your database has 'firstname' column
-            $lastname = $row['lastname'];   // Assuming your database has 'lastname' column
+            $firstname = $row['Firstname']; // Assuming your database has 'firstname' column
+            $lastname = $row['Lastname'];   // Assuming your database has 'lastname' column
 
             // Generate token and expiration date
             $token = bin2hex(random_bytes(32));
