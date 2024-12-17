@@ -207,7 +207,7 @@
         <div class="col-xs-6">
           <h3>Voting Tally</h3>
         </div>
-        <?php 
+        <!-- <?php 
         // Update Switch
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             $status = isset($_POST['switchStatus']) ? 1 : 0;
@@ -220,7 +220,7 @@
             $query = $conn->query($sql);
             $row = $query->fetch_assoc();
             $status = $row['switch'];
-        // End Check Switch ?> 
+        // End Check Switch ?>  -->
         <script>
           function toggleSwitch(){
               document.getElementById('switchBtn').submit();
