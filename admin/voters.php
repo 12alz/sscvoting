@@ -61,9 +61,9 @@
                     <th>Student ID</th>
                     <th>Lastname</th>
                     <th>Firstname</th>
+                    <th>MS365 Email</th> 
                     <th>Photo</th>
                     <th>Course</th>
-                    <th>MS365 Email</th> <!-- MS365 Email Column -->
                     <th>Actions</th>
                   </thead>
                   <tbody>
