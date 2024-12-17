@@ -58,7 +58,7 @@
               <table id="example1" class="table table-bordered">
                 <thead>
                    <th>Student ID</th>
-                   <th>Lastname</th>
+                   <th>Lastnamess</th>
                   <th>Firstname</th>
                   <th>Photo</th>
                   <th>Course</th>
