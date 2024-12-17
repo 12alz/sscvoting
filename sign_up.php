@@ -28,7 +28,7 @@ if (isset($_POST['add'])) {
         $count = mysqli_num_rows($result);
         
         if ($count > 0) {
-            $_SESSION['error'] = 'ID or email already exists';
+            $_SESSION['error'] = 'ID or MS365 already exists';
             header('Location: sign_in.php');
         } else {
             $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, email, course, status, photo) 
