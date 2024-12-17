@@ -178,12 +178,12 @@ $conn->close();
 
             <div class="form-wrap">
                 <label for="firstname">First Name</label>
-                <input type="text" name="firstname" id="firstname" value="<?php echo htmlspecialchars($firstname); ?>" >
+                <input type="text" name="firstname" id="firstname" value="<?php echo htmlspecialchars($firstname); ?>" readonly>
             </div>
 
             <div class="form-wrap">
                 <label for="lastname">Last Name</label>
-                <input type="text" name="lastname" required pattern="[A-Za-z\s-]+" value="<?php echo htmlspecialchars($lastname); ?>" title="Only letters and spaces are allowed">
+                <input type="text" name="lastname" required pattern="[A-Za-z\s-]+" value="<?php echo htmlspecialchars($lastname); ?>" title="Only letters and spaces are allowed" readonly>
             </div>
 
             <div class="form-wrap">
