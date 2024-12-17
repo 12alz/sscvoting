@@ -1,8 +1,5 @@
-<?php
-include 'includes/session.php'; 
-include 'includes/header.php'; 
-?>
-
+<?php include 'includes/session.php'; ?>
+<?php include 'includes/header.php'; ?>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 <body class="skin-red" style="background: rgba(60, 141, 188, 0.9);">
@@ -12,7 +9,7 @@ include 'includes/header.php';
         overflow-x: auto;
       }
     </style>
-    
+
     <?php include 'includes/navbar.php'; ?>
     <?php include 'includes/menubar.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -50,7 +47,7 @@ include 'includes/header.php';
           unset($_SESSION['success']);
         }
         ?>
-        
+
         <div class="row">
           <div class="col-xs-12">
             <div class="box">
@@ -66,7 +63,7 @@ include 'includes/header.php';
                     <th>Firstname</th>
                     <th>Photo</th>
                     <th>Course</th>
-                    <th>MS365 Email</th>
+                    <th>MS365 Email</th> <!-- MS365 Email Column -->
                     <th>Actions</th>
                   </thead>
                   <tbody>
@@ -87,7 +84,7 @@ include 'includes/header.php';
                               </a>
                             </td>
                             <td>".$row['course']."</td>
-                            <td>".$row['ms365_email']."</td>
+                            <td>".$row['ms365_email']."</td> <!-- Display MS365 email -->
                             <td>
                               <a href='' class='btn btn-sm edit btn-flat fa fa-edit' data-id='".$row['id']."'></a>
                               <a href='' class='btn btn-sm delete btn-flat fa fa-close' data-id='".$row['id']."'></a>
