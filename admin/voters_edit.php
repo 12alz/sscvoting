@@ -5,10 +5,11 @@
 		$id = $_POST['id'];
 		$firstname =htmlspecialchars($_POST['firstname']);
 		$lastname = htmlspecialchars($_POST['lastname']);
+		$email = htmlspecialchars($_POST['email']);
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 		$course = $_POST['course'];
 
-		$sql = "UPDATE voters SET firstname = '$firstname', lastname = '$lastname', password = '$password' , course = '$course' WHERE id = '$id'";
+		$sql = "UPDATE voters SET firstname = '$firstname', lastname = '$lastname', password = '$password' ,email = '$email' , course = '$course' WHERE id = '$id'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Voter updated successfully';
 		}
