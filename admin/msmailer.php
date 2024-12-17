@@ -14,14 +14,14 @@ if (isset($_POST["btn-forgotpass"])) {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            // Fetch user details (first name, last name)
+           
             $row = $result->fetch_assoc();
-            $firstname = $row['Firstname']; // Assuming your database has 'firstname' column
-            $lastname = $row['Lastname'];   // Assuming your database has 'lastname' column
+            $firstname = $row['Firstname']; 
+            $lastname = $row['Lastname'];   
 
             // Generate token and expiration date
             $token = bin2hex(random_bytes(32));
-            $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
+            $expiration = date("Y-m-d H:i:s", strtotime("+5 minutes"));
 
             // Update the database with the token and expiration
             $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
