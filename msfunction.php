@@ -169,8 +169,8 @@ $conn->close();
             <div class="form-wrap">
             <label for="email">MS365 Email</label>
             <input type="email" name="email" id="email" required 
-                pattern="[a-zA-Z0-9._%+-]+@gmail\.com" 
-                title="Please enter a valid Gmail address. Example: username@gmail.com">
+            pattern="^[a-zA-Z0-9._%+-]+@mcclawis\.edu\.ph$" 
+            title="Please enter a valid email address from the mcclawis.edu.ph domain.">
             </div>
 
             <div class="form-wrap">
@@ -235,7 +235,6 @@ $conn->close();
 <?php else: ?>
     <p>The registration link has expired or is invalid.</p>
 <?php endif; ?>
-
 <script>
     document.getElementById('voters_id').addEventListener('input', function(e) {
         var value = e.target.value.replace(/\D/g, '');
@@ -263,12 +262,14 @@ $conn->close();
         const confirmPassword = document.getElementById('confirm_password').value;
         const fileInput = document.querySelector('input[name="photo"]');
         const file = fileInput.files[0];
-        
+
+        // Check if passwords match
         if (password !== confirmPassword) {
             alert("Passwords do not match.");
             return false;
         }
 
+        // Validate file extension
         if (file) {
             const allowedExtensions = ['.jpg', '.jpeg', '.png'];
             const fileName = file.name.toLowerCase();
@@ -278,6 +279,15 @@ $conn->close();
                 alert("Only JPG, JPEG, and PNG files are allowed.");
                 return false;
             }
+        }
+
+        // Validate email domain
+        const email = document.getElementById('email').value;
+        const domain = email.substring(email.lastIndexOf('@') + 1).toLowerCase();
+
+        if (domain !== "mcclawis.edu.ph") {
+            alert("Please enter a valid email address with the domain mcclawis.edu.ph");
+            return false;
         }
 
         return true;
