@@ -175,7 +175,8 @@ $conn->close();
 
             <div class="form-wrap">
                 <label for="firstname">First Name</label>
-                <input type="text" name="firstname" required pattern="[A-Za-z\s-]+" title="Only letters and spaces are allowed">
+                <input type="text" id="lastname" name="lastname" value="<?php echo htmlspecialchars($lastname); ?>" readonly>
+
             </div>
 
             <div class="form-wrap">
