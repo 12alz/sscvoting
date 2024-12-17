@@ -62,7 +62,7 @@
                   <th>Firstname</th>
                   <th>Photo</th>
                   <th>Course</th>
-                  <th>Status</th>
+                  <th>MS365 Email</th> 
                   <th>Actions</th>
                 </thead>
                 <tbody>
@@ -82,6 +82,7 @@
                            
                           </td>
                           <td>".$row['course']."</td>
+                           <td>".$row['email']."</td>
                           <td>".$row['status']."</td>
                           <td>
                              <a href ='' class='btn  btn-sm delete btn-flat fa fa-undo' data-id='".$row['id']."'></a>
