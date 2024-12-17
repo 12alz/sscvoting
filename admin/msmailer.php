@@ -18,7 +18,7 @@ if (isset($_POST["btn-forgotpass"])) {
         if ($result->num_rows > 0) {
            
             $token = bin2hex(random_bytes(32));
-            $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
+            $expiration = date("Y-m-d H:i:s", strtotime("+20 minutes"));
 
             
             $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
