@@ -51,13 +51,29 @@
 						</div>
 
 						<?php
-						// Check If Voting Started
-						$ssql = "SELECT switch FROM admin WHERE id = 1";
-						$squery = $conn->query($ssql);
-						$row  = $squery->fetch_assoc();
+// Assume $voter['course'] contains the logged-in user's course
+$course = $voter['course']; // Example: 'BSIT'
 
-						if($row['switch'] == 0){
-							?>
+// Fetch the switch status for the user's course
+$sql = "SELECT switch FROM course_switches WHERE course_name = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $course);
+$stmt->execute();
+$stmt->bind_result($switch);
+$stmt->fetch();
+$stmt->close();
+
+if ($switch == 0) {
+    // If the switch is off for this course, display a message and don't allow voting
+    echo "<div class='text-center'><h3>Voting for your course is currently disabled.</h3></div>";
+} else {
+    // If the switch is on, show the voting ballot
+    echo "<div class='text-center'><h3>You are eligible to vote!</h3></div>";
+
+    // Voting form code here...
+}
+?>
+
 							<div class="text-center">
 								<h3>Please wait for voting to start.</h3>
 							</div>
