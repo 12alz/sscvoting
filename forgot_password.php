@@ -127,7 +127,7 @@ session_start();
             <h2>Forgot Password</h2>
             <form action="admin/user_mailer" method="POST">
                 <label for="email">Enter your email:</label>
-                <input type="email" id="email" name="email" placeholder="kiyumi@gmail.com" required>
+                <input type="email" id="email" name="email" placeholder="example@mcclawis.edu.ph" required>
                 <button type="submit" name="btn_forgotpass">Send Reset Link</button>
             </form>
             <p>We'll send a link to reset your password.</p>

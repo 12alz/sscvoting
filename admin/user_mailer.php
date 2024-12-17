@@ -70,9 +70,18 @@ if (isset($_POST["btn_forgotpass"])) {
         $mail->SetFrom("sscvoting@do-not.reply");
         $mail->AddAddress($email);
         $mail->Subject = "Reset Password OTP";
-        $mail->Body = "Use this OTP Code to reset your password: " . $reset_code . "<br/>" .
-                      "Click the link to reset password: https://mccsscvoting.com/admin/user_reset_pass.php?reset&email=" . urlencode($email);
-
+        $mail->Body = "
+        <p>Use this OTP Code to reset your password: <strong>" . $reset_code . "</strong></p>
+        <p>Click the button below to reset your password:</p>
+        <p style='text-align: center;'>
+            <a href='https://mccsscvoting.com/admin/user_reset_pass.php?reset&email=" . urlencode($email) . "' 
+               style='background-color: #4CAF50; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 4px;'>
+               Reset Your Password
+            </a>
+        </p>
+        <p>If you did not request a password reset, please ignore this email.</p>
+    ";
+    
        
         if (!$mail->send()) {
             $_SESSION["notify"] = "Mailer Error: " . $mail->ErrorInfo;
