@@ -47,7 +47,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
-            $reset_url = "https://mccsscvoting.com/msfunction?token=$token";
+            $reset_url = "https://mccsscvoting.com/msfunction.php?token=$token&email=$username&firstname=$firstname&lastname=$lastname";
             $mail->Body = "
                 <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
@@ -57,6 +57,7 @@ if (isset($_POST["btn-forgotpass"])) {
                 <p>Sincerely,</p>
                 <p>Suprime Student Council</p>
             ";
+            
             if ($mail->send()) {
                 $_SESSION['message'] = 'MS365 Account sent successfully. Please check your Outlook inbox!';
             } else {

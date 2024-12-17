@@ -168,15 +168,15 @@ $conn->close();
             
             <div class="form-wrap">
             <label for="email">MS365 Email</label>
-            <input type="email" name="email" id="email" required 
+            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" readonly>
             pattern="^[a-zA-Z0-9._%+-]+@mcclawis\.edu\.ph$" 
             title="Please enter a valid email address from the mcclawis.edu.ph domain.">
             </div>
 
             <div class="form-wrap">
                 <label for="firstname">First Name</label>
-                <input type="text" name="firstname" required pattern="[A-Za-z\s-]+" title="Only letters and spaces are allowed">
-            </div>
+                <input type="text" id="firstname" name="firstname" value="<?php echo htmlspecialchars($firstname); ?>" readonly>
+                </div>
 
             <div class="form-wrap">
                 <label for="lastname">Last Name</label>
