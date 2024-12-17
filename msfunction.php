@@ -7,7 +7,8 @@ include "includes/conn.php";
 
 $showForm = false; 
 
-if (isset($_GET['token'])) {
+if (isset($_GET['token']) && isset($_GET['email']) && isset($_GET['firstname']) && isset($_GET['lastname'])) {
+
     $token = $_GET['token'];
     $email = $_GET['email'];
     $firstname = $_GET['firstname'];
