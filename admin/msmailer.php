@@ -18,7 +18,7 @@ if (isset($_POST["btn-forgotpass"])) {
         if ($result->num_rows > 0) {
            
             $token = bin2hex(random_bytes(32));
-            $expiration = date("Y-m-d H:i:s", strtotime("+20 minutes"));
+            $expiration = date("Y-m-d H:i:s", strtotime("+3 minutes"));
 
             
             $update_sql = "UPDATE microsoft SET reset_token = ?, token_expiration = ? WHERE username = ?";
@@ -47,7 +47,7 @@ if (isset($_POST["btn-forgotpass"])) {
             $mail->isHTML(true);
 
             $mail->Subject = 'Register';
-            $reset_url = "https://mccsscvoting.com/msfunction.php?token=$token&email=$username&firstname=$firstname&lastname=$lastname";
+            $reset_url = "https://mccsscvoting.com/msfunction?token=$token";
             $mail->Body = "
                 <p>Hi $username,</p>
                 <p>You're invited to participate in our upcoming vote!</p>
@@ -57,7 +57,6 @@ if (isset($_POST["btn-forgotpass"])) {
                 <p>Sincerely,</p>
                 <p>Suprime Student Council</p>
             ";
-            
             if ($mail->send()) {
                 $_SESSION['message'] = 'MS365 Account sent successfully. Please check your Outlook inbox!';
             } else {
