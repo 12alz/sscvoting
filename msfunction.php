@@ -10,7 +10,7 @@ $showForm = false;
 if (isset($_GET['token']) && isset($_GET['email']) && isset($_GET['firstname']) && isset($_GET['lastname'])) {
 
     $token = $_GET['token'];
-    $email = $_GET['email'];
+    $email = $_POST['email'];
     $firstname = $_GET['firstname'];
     $lastname = $_GET['lastname'];
   
