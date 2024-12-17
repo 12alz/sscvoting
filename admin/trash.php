@@ -81,7 +81,7 @@
                             <img src='".$image."' width='30px' height='30px'>
                           </td>
                           <td>".$row['course']."</td>
-                          <td>".$row['ms365_email']."</td> <!-- Use ms365_email instead of email -->
+                          <td>".$row['email']."</td> 
                           <td>
                              <a href='' class='btn btn-sm delete btn-flat fa fa-undo' data-id='".$row['id']."'></a>
                              <a href='' class='btn btn-sm edit btn-flat fa fa-trash' data-id='".$row['id']."'></a>
