@@ -5,6 +5,7 @@ if (isset($_POST['add'])) {
     // Properly using htmlspecialchars to prevent XSS attacks
     $firstname = htmlspecialchars($_POST['firstname']);
     $lastname = htmlspecialchars($_POST['lastname']);
+    $email = htmlspecialchars($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     $filename = $_FILES['photo']['name'];
@@ -45,7 +46,7 @@ if (isset($_POST['add'])) {
             $_SESSION['error'] = 'Voter already exists with this ID.';
         } else {
             // Insert the new voter data into the database
-            $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, course, status, photo) 
+            $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, email, course, status, photo) 
                     VALUES ('$voters_id', '$password', '$firstname', '$lastname', '$course', 'active', '$filename')";
 
             // Execute the SQL query and handle errors
