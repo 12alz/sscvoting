@@ -114,7 +114,7 @@
 
         <div class="col-xs-6 text-right">
           <form action="" id="switchBtn" method="post">
-            <input type="checkbox" name="switchStatus" data-toggle="switchbutton" <?php if ($status) echo 'checked'; ?> data-onstyle="primary" data-offstyle="secondary" onchange="toggleSwitch()">
+            <input type="checkbox" name="switchStatus" data-toggle="switchbutton" <?php if ($switch) echo 'checked'; ?> data-onstyle="primary" data-offstyle="secondary" onchange="toggleSwitch()">
           </form>
         </div>
       </div>
