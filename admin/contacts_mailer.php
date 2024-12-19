@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
         $message = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8')); 
 
-        // Initialize PHPMailer for user notification
+ 
         $mailUser = new PHPMailer\PHPMailer\PHPMailer();
         $mailUser->isSMTP();
         $mailUser->SMTPDebug = 0; 
@@ -59,13 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mailUser->SMTPAuth = true;
         $mailUser->Username = "santillanbsit@gmail.com";
         $mailUser->Password = "svlwwvxfgrbtxqum"; 
-        
-        // Notify the user
+ 
         $mailUser->setFrom('santillanbsit@gmail.com', 'Suprime Student Council');
-        $mailUser->addAddress($email); // User's email address
+        $mailUser->addAddress($email);
         $mailUser->isHTML(true);
         
-        // Email to the user
         $mailUser->Subject = 'New Contact Message from ' . $name . ' ' . $lastName;
         $mailUser->Body = "
             <p>Hi $name $lastName,</p>
@@ -76,12 +74,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>Suprime Student Council</p>
         ";
 
-        // Send the email to the user
+        
         if (!$mailUser->send()) {
             $_SESSION['message'] = 'Failed to send email to user. Please try again.';
         }
 
-        // Initialize PHPMailer for council notification
         $mailCouncil = new PHPMailer\PHPMailer\PHPMailer();
         $mailCouncil->isSMTP();
         $mailCouncil->SMTPDebug = 0; 
@@ -92,13 +89,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mailCouncil->Username = "santillanbsit@gmail.com";
         $mailCouncil->Password = "svlwwvxfgrbtxqum";
 
-        // Notify the Suprime Student Council
-        $councilEmail = "villaceranjerson55@gmail.com";
+        
+        $councilEmail = "sscmcclawis@gmail.com";
         $mailCouncil->setFrom('santillanbsit@gmail.com', 'Suprime Student Council');
         $mailCouncil->addAddress($councilEmail);
         $mailCouncil->isHTML(true);
         
-        // Email for the council notification
+        
         $mailCouncil->Subject = 'New Contact Message from ' . $name . ' ' . $lastName . ' (Notification)';
         $mailCouncil->Body = "
             <p>You have received a new contact message:</p>
@@ -109,24 +106,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>Please respond to the sender as soon as possible.</p>
         ";
 
-        // Send the email to the council
+       
         if (!$mailCouncil->send()) {
             $_SESSION['message'] = 'Failed to send email to council. Please try again.';
         } else {
             $_SESSION['message'] = 'Messages sent successfully! Please check your email.';
         }
     } else {
-        // Display errors
-        $_SESSION['message'] = ''; // Reset previous messages
+      
+        $_SESSION['message'] = '';
         foreach ($errors as $error) {
             $_SESSION['message'] .= "$error";
         }
     }
 
-    // Redirect to contacts page
+    
     header("Location: ../contacts");
     exit();
 } else {
-    // Handle non-POST requests if needed
+   
 }
 ?>
