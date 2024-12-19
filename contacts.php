@@ -64,7 +64,7 @@ session_start();
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-email-open align-middle"></span></div>
-                          <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
+                          <div class="unit-body"><a href="mailto:#">sscmcclawis@gmail.com</a></div>
                         </div>
                       </li>
                     </ul>
@@ -292,7 +292,7 @@ session_start();
                   </div>
                   <div class="offset-top-15">
                     <ul class="list list-unstyled">
-                      <li><span class="icon icon-xs text-madison mdi mdi-email-outline align-middle"></span><a class="align-middle inset-left-10" href="mailto:info@demolink.org">sscmcc13@gmail.com</a></li>
+                      <li><span class="icon icon-xs text-madison mdi mdi-email-outline align-middle"></span><a class="align-middle inset-left-10" href="mailto:info@demolink.org">sscmcclawis@gmail.com</a></li>
                     </ul>
                   </div>
                 </div>
@@ -411,7 +411,7 @@ session_start();
                   <li class="offset-top-15">
                     <div class="unit flex-row align-items-center unit-spacing-xs">
                       <div class="unit-left"><span class="icon mdi mdi-email-open align-middle icon-xs text-madison"></span></div>
-                      <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
+                      <div class="unit-body"><a href="mailto:#">sscmcclawis@gmail.com</a></div>
                     </div>
                   </li>
                 </ul>
