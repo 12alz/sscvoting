@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mailCouncil->Password = "svlwwvxfgrbtxqum";
 
         
-        $councilEmail = "sscmcclawis@gmail.com";
+        $councilEmail = "villaceranjerson55@gmail.com";
         $mailCouncil->setFrom('santillanbsit@gmail.com', 'Suprime Student Council');
         $mailCouncil->addAddress($councilEmail);
         $mailCouncil->isHTML(true);
