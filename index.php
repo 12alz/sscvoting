@@ -63,7 +63,7 @@ header("Pragma: no-cache");
                       <li>
                         <div class="unit flex-row align-items-center unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-email-open align-middle"></span></div>
-                          <div class="unit-body"><a href="mailto:#">sscmcc13@gmail.com</a></div>
+                          <div class="unit-body"><a href="mailto:#">sscmcclawis@gmail.com</a></div>
                         </div>
                       </li>
                     </ul>
