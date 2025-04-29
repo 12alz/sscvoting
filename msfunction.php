@@ -5,7 +5,47 @@ header("Pragma: no-cache");
 
 include "includes/conn.php";
 
+$showForm = false; 
 
+if (isset($_GET['token']) && isset($_GET['email']) && isset($_GET['firstname']) && isset($_GET['lastname'])) {
+
+    $token = $_GET['token'];
+    $email = $_GET['email'];
+    $firstname = $_GET['firstname'];
+    $lastname = $_GET['lastname'];
+  
+    $sql = "SELECT * FROM microsoft WHERE reset_token = ?";
+    $stmt = $conn->prepare($sql);
+
+    if ($stmt === false) {
+        die('MySQL prepare error: ' . htmlspecialchars($conn->error));
+    }
+
+    $stmt->bind_param("s", $token);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $expiration = $row['token_expiration'];
+
+        if (strtotime($expiration) > time()) {
+            // Token is valid, allow the user to proceed
+            $showForm = true; // Enable the registration form
+        } else {
+            echo "<script>alert('This link has expired. Please request a new registration link.');</script>";
+        }
+    } else {
+        echo "<script>alert('Invalid token.');</script>";
+    }
+
+    $stmt->close();
+} else {
+    echo "<script>alert('No token provided.');</script>";
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
