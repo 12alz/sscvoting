@@ -1,9 +1,9 @@
 <?php
 // database credential
-$host = "127.0.0.1:3306";
-$dbname = "u602214709_event";
-$username = "u602214709_event1";
-$password = "Event$@13";
+$host = "localhost";
+$dbname = "voting";
+$username = "root";
+$password = "";
 
 //create connections
 	$conn = new mysqli($host, $username, $password, $dbname);
